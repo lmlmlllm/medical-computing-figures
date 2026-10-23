@@ -1,0 +1,185 @@
+{
+  "case_id": "MCF063-F1",
+  "dedup_id": "DOI:10.1109/TBME.1985.325532|original1985|Figure1-whole",
+  "title": "A Real-Time QRS Detection Algorithm",
+  "source_url": "https://doi.org/10.1109/TBME.1985.325532",
+  "pmid": "3997178",
+  "source_figure": "Whole Figure1, printed231; supporting Methods and other viewed figures are dependencies, not additional units.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "admission_state": "ADMITTED_AFTER_BOUNDED_FIXED24_ASSESSMENT",
+  "states": {
+    "reading": "Root read all seven extracted pages of the pinned 1985 original scan; not every reported result/table cell was individually verified. Source reviewer independently read all seven extracted pages and viewed printed231/233/234. Linked correction required institutional login and remains unread. No detector code or ECG data used.",
+    "visual": "Whole Figure1 on printed231 viewed as one unit; Methods pages233/234 viewed for equations/conditions. Current original diagram has four actual whole root views; independent image-only→source-aware→author03 followup are successive stages of one reader, not independent samples. Native reviewer also viewed scoped rasters; tool resizing and generic Quartz limitations recorded.",
+    "archive": "Source scan, text and page pixels retained local-review-only; excluded from distribution."
+  },
+  "question": "Which processed waveforms support QRS recognition, and how do waveform-specific conditional states differ from delayed display alignment?",
+  "semantic_spec": "tests/batches/qrs-signal-state-01/author-03/inputs/figure_spec.json",
+  "semantic_inventory": {
+    "elements": 20,
+    "relations": 28,
+    "claims": 4,
+    "visible_literals": 39
+  },
+  "element_groups": [
+    "Sampled ECG, bandpass, derivative, squaring, integration, two peak domains, joint recognition and output.",
+    "Generic conditional equation recipe with separate F/I peak, signal/noise estimates and thresholds.",
+    "Initialization phases, event-derived RR/time, prior-waveform slope and qualified recognition/searchback context."
+  ],
+  "source_relations": [
+    {
+      "location": "printed230–232; whole Figure1/caption on231",
+      "meaning": "Processing order, two-waveform recognition, sampling/window labels and separately delayed original display."
+    },
+    {
+      "location": "printed233–234 Eq12–23",
+      "meaning": "Conditional estimate weights, separate values, nominal thresholds and detailed primary-threshold halving."
+    },
+    {
+      "location": "printed231–232 overview;234 Eq24–29 and T-wave paragraph",
+      "meaning": "Initialization, RR membership/limits/conditional replacement, timing, slope and searchback qualifications."
+    }
+  ],
+  "visual_design": "A separates transformations and a comparison/display lane. B aligns mutually exclusive update rows and keeps the nominal threshold recipe distinct from the override note. C separates initialization order from continuing event history; stable named references avoid implying a complete execution scheduler. Color roles have text and line-style counterparts.",
+  "transferable_rules": [
+    "A shared conditional formula does not merge waveform-specific numerical states.",
+    "Local classification/update conditions are distinct from final joint acceptance; alternative rows are not serial operations.",
+    "A nominal derived-state formula need not remain an invariant through an incompletely specified override.",
+    "Display-aligned traces are not processing dependencies solely because panels are adjacent; initialization duration does not define seeds or bootstrap."
+  ],
+  "unknowns": [
+    "Secondary-threshold recomputation/restoration and repeated irregular-rhythm handling are not fully scheduled by the supplied source.",
+    "Exact S/N seeds and bootstrap from two heartbeats to eight intervals are unspecified.",
+    "F/I peak matching, stored-peak reclassification, equality/end-point cases not explicitly stated, ties, slope window and full execution order remain incomplete.",
+    "Eq29 has an explicit all-eight in-bound condition and RR2←RR1 direction; overview sudden-change substitution lacks a complete trigger.",
+    "Linked correction was not read; detailed filter coefficients, gains and numeric delays are omitted."
+  ],
+  "source_tensions": "Overview “both thresholds” can refer to the two primary waveform thresholds; detailed Eq22–23 explicitly halve I1/F1. Treat as unresolved scope/scheduling, not a proved contradiction. Visual Eq29 resolves OCR direction; do not silently turn overview sudden-change wording into an implemented scheduler.",
+  "license": "IEEE copyright present in the original scan; no affirmative original-art redistribution permission established. Own explanation/code and licensed DejaVu font only in the28member ZIP.",
+  "notice_scope": "Known linked correction could not be read without institutional login; no claim of exhaustive correction/retraction verification.",
+  "transfer_entry": "tests/batches/qrs-signal-state-01/README.md",
+  "fixed_assessment": {
+    "supported": 24,
+    "failed": 0,
+    "unassessed": 0
+  },
+  "test_limits": [
+    "Exactly24 source/evidence-aware model assessments; no human expert, new heldout-paper or general accuracy claim.",
+    "Independent native:2221glyphs/39strings/38logicalvectors; minimum13pt, fixed tolerance0.25pt. Native PDF max advance0.006328125pt. Separate explicitFT static hinted advance0.24853515625pt; plain Quartz face identity unestablished.",
+    "Two root appearance edits executed and actually viewed; scientific content and actual native bindings preserved. Earlier failed preparation retained.",
+    "28memberZIP; same-host root OS replay7commands,10canonical files byte-identical,40before/40after controls. Each phase19existing data-read refusals14positive input reads2write refusals4actual-connect refusals1allowed output roundtrip. This is not an independently executed replay.",
+    "No ECG trace reconstruction, detector run, clinical validation, browser/editor/print or journal-specific acceptance.",
+    "General rules were frozen before Methods and applied here. New QRS-specific wording is a post-assessment generalization with no separate other-case behavioral validation yet.",
+    "No wrong/correct pair performed in this batch; no controlled TP/FP score."
+  ],
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/protocol.json",
+      "bytes": 5624,
+      "sha256": "62623f332c759b7d701cb17d9b5ea5e805bf198cc168f29fcb6e0e426fb45d61"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/semantic-protocol-freeze-01.json",
+      "bytes": 629,
+      "sha256": "348c9e7e94467f0774b6b8fa3c45ad55e5853a30aaa7cb141dccce410199a845"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-rag-01/selection-before-methods.json",
+      "bytes": 3127,
+      "sha256": "e653fc2590af33bd3c22ee144b77d68c434587ba5cfd433b50128919b63d31b5"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-rag-01/source-reading-01.json",
+      "bytes": 7381,
+      "sha256": "c2decde6a1be0928a2454ea64ea3d2c7aa43e0ecc37fc3e81af63f80d25b7e4c"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-rag-01/independent-source-01/TERMINAL.json",
+      "bytes": 1207,
+      "sha256": "9e32ebaf97bcf16cf636db326c1537e9c50e37161bbfc1bbe88b7a1f3b290c6a"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-729c81/stage1-reader-01/TERMINAL.json",
+      "bytes": 957,
+      "sha256": "af6ed16cb510b8776c59832ff56831c426488bd2ec2b96a23edb5ba1562959f2"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-729c81/stage2-reader-01/TERMINAL.json",
+      "bytes": 1398,
+      "sha256": "81f400f821e086c509ad0ddb4c88c53c9d9facaa6c03ad92b968eab19ecbdc06"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-729c81/followup-author03-01/TERMINAL.json",
+      "bytes": 1387,
+      "sha256": "cbab7baa57c1349c403f6a5efad4e0b1d1ef41e28bef1e5f111f1303d82d8eb0"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/author-03/TERMINAL.json",
+      "bytes": 1916,
+      "sha256": "9525eb3526670b49610e2d19e1dd484fbe020037ab81f8cd668583afb528739b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/output-audit/native-independent-01/TERMINAL.json",
+      "bytes": 1036,
+      "sha256": "88c53bfde6f14ebecaa09b094181b22dfb86a3863990408f1b7c0f255b5fa00b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/edit-probes-02/TERMINAL.json",
+      "bytes": 714,
+      "sha256": "cb96bd7710801fb36cd08a1204fe2c73330cbbc08e42a217af6a66447387dced"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/replay-01/TERMINAL.json",
+      "bytes": 1043,
+      "sha256": "f007a6d00815cc144831043de3c0b8fd5ff14e416fa7902be3cfc5c766c2be37"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/final-assessment-01/TERMINAL.json",
+      "bytes": 2228,
+      "sha256": "7deac96969bb546f9f9f22e7e512750d25453d03075ef700b974f62a53d6d7f3"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-signal-state-01/root-final-readback-01.json",
+      "bytes": 2197,
+      "sha256": "2f50eadf450f215ac261570afec31f8e580f431b628c835939dc92ca15f6ffe5"
+    }
+  ],
+  "current_exports": "tests/batches/qrs-signal-state-01/author-03/render",
+  "separate_control_test": {
+    "entry": "tests/batches/qrs-output-direction-control-01/README.md",
+    "scope": "One isolated developed-case pair, separate from baseline fixed24; two successive same-reader stages.",
+    "change": "C_O/R11 output direction reversed while correct semantics/caption and other content remained unchanged.",
+    "each_stage": {
+      "TP": 1,
+      "FN": 0,
+      "unassessed": 0,
+      "strict_location": 1,
+      "explanation": 1,
+      "committed_correction": 1,
+      "fault_denominator": 1,
+      "correct_target_false_positive": 0,
+      "correct_all_scientific_false_positive": 0,
+      "correct_denominator": 1
+    },
+    "source_unknowns_preserved": true,
+    "policy_before_reports": true,
+    "prekey_classification_units": 181,
+    "prekey_quote_occurrences_verified": 208,
+    "key_after_classification_seal": true,
+    "scoring_terminal": {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-8e41a2/scorer-final-01/TERMINAL.json",
+      "bytes": 2383,
+      "sha256": "ba7cbc48d242b698659a6c5b4354160ab03be51ade7306865ff78ad778a90521"
+    },
+    "repair_terminal": {
+      "path": "<SKILL_ROOT>/tests/batches/qrs-output-direction-control-01/repair-01/TERMINAL.json",
+      "bytes": 1316,
+      "sha256": "e39aad92b42ab6df5d79864f656471e8ecffb65eceb239bfe39ba397cbc46258"
+    },
+    "repair": "Key-informed restoration after scoring;16inputs/10canonical outputs and PDF raster byte-match baseline; preview/PDF whole views performed.",
+    "limits": "No new blind/heldout test, human expert review, general accuracy, full native audit or OS replay; no added catalog/paper units."
+  }
+}

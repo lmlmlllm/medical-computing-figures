@@ -1,0 +1,407 @@
+{
+  "id": "MCF082-F1",
+  "revision": "whole-transfer-01",
+  "created_utc": "2026-10-19T07:32:54.726706+00:00",
+  "status": "complete_whole_figure_joint_verification_at_declared_abstraction",
+  "semantic_status": "full_joint_verified",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "role": "locally_undeveloped_paper_transfer_under_unchanged_P1",
+  "new_case_units": 1,
+  "new_paper_units": 1,
+  "paper": {
+    "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+    "doi": "10.1186/s13059-021-02556-z",
+    "PMCID": "PMC8715620",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+    "version_read": "Published article, 2021-12-28; Europe PMC XML PMC8715620.1 version1; publisher PDF21pages; Additional file2 Supplementary Methods3pages; acquired2026-10-19.",
+    "code_read": false,
+    "model_executed": false
+  },
+  "figure": {
+    "number": "Figure1",
+    "scope": "Whole original both panels with explicitly attributed Methods explanations; source numeric scatter/score marks represented as disclosed schematic roles, not reconstructed empirical coordinates.",
+    "original_entity_groups": 34,
+    "original_relation_groups": 22,
+    "delivered_objects": 81,
+    "delivered_relations": 43,
+    "source_notes": 13,
+    "active_source_bindings": 152
+  },
+  "scientific_question": "How do paired and unpaired RNA/ATAC cells yield comparable latent representations while keeping neural inference distinct from probability-model generation and post-fit correction?",
+  "semantic_readback": {
+    "inputs": "Three cohorts with four observed matrices; same-cell rows in paired RNA/ATAC, distinct gene/peak feature spaces; unobserved modalities are not zeros.",
+    "inference": "log1p counts enter modality-specific neural encoders; per-cell posterior combines one prior with factors approximating posterior/prior ratios only for observed modalities.",
+    "generation": "Corresponding posterior draws feed modality-specific multinomial generative models without neural decoders; shared theta=softmax(z), feature and batch parameters; four original reconstruction roles retained.",
+    "correction": "Posterior means, distinct from draws, are mean-zero scaled. Paired cohort provides unimodal predictors and joint targets for separate RNA/ATAC XGBoost maps; apply maps to single-modality cohorts, retain paired joint reference.",
+    "outputs": "Common UMAP/Louvain roles; all point/grid positions schematic; observed-subset training includes selected subsets for paired cells.",
+    "unknown": "Supplement Eq5 prints alpha0 in scale and shift positions while Eq4/Eq6 distinguish scale alpha1; exact Eq5 and implementation unresolved. Centering axis and prime-output sampling convention not invented."
+  },
+  "design": {
+    "canvas": {
+      "background": "#ffffff",
+      "height_pt": 1840,
+      "origin": "top-left",
+      "raster_dpi": 144,
+      "unit": "pt",
+      "width_pt": 2300
+    },
+    "primitives": 253,
+    "text_primitives": 100,
+    "minimum_text_pt": 18,
+    "scope": "Editable SVG text/vector primitives, vector PDF and PNG. Actual whole-page/zoom review; no target-journal-width print proof or arbitrary editor roundtrip."
+  },
+  "controlled_assessment": {
+    "score": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/score-01.json",
+      "bytes": 107038,
+      "sha256": "9de0aea2fac7de46994122850822e51c5e35c6396d560e277047109ffdf08c66"
+    },
+    "root_readback": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/root-score-readback.json",
+      "bytes": 5753,
+      "sha256": "bf9bfaaa9674624c02a8b5bf07fb942db9679510fe64b793d7802c0dcbccf94d"
+    },
+    "inventory_claims": 316,
+    "claims_by_stage": {
+      "image_only": 139,
+      "source": 148,
+      "insufficient_packet_only": 29
+    },
+    "support_counts": {
+      "not_assessable_with_available_evidence": 33,
+      "supported_at_available_stage": 283
+    },
+    "source_aspects": {
+      "detection": {
+        "level": "full",
+        "points": 2
+      },
+      "localization": {
+        "level": "full",
+        "points": 2
+      },
+      "explanation": {
+        "level": "full",
+        "points": 2
+      },
+      "original_repair_proposal": {
+        "level": "partial",
+        "points": 1
+      }
+    },
+    "PNG_source_fidelity": "not_assessable; correct abstention, no later source or key backfill",
+    "correct_control": {
+      "candidate": "A",
+      "targeted_false_positive_present": false,
+      "other_established_unsupported_scientific_visual_families": []
+    },
+    "insufficient_control": "known packet content retained; hidden determining properties remain unknown; no method guess",
+    "original_proposal_partial_reason": "The original proposal correctly replaces both labels, corrects the caption and explicitly keeps valid neural encoders, latent/likelihood parameters and routes. It says to repair image and caption together. It does not direct correction of the underlying authoritative decoder definitions/contradictory exclusion statements or synchronization and regeneration of every dependent delivered representation. Under the frozen full-dependency rubric, that is a correct core repair with a material synchronization omission.",
+    "later_actual_repair_credit": false,
+    "provenance_support_boundary": "Cobolt scorer retains 33 historical-access/crop-byte claims as not independently assessable. scMoMaT scorer supports provenance only at supplied-access-receipt level, not as independent forensic proof. Retain both judgments and do not pool their status counts as a comparable accuracy statistic.",
+    "denominator": {
+      "planned_transfer_papers": 2,
+      "this_paper": 1,
+      "controlled_error_families": 1,
+      "correct_controls": 1,
+      "insufficient_controls": 1,
+      "claims_checks_stages_repairs_replays_not_independent_trials": true
+    }
+  },
+  "actual_repair": {
+    "root_key_informed": true,
+    "source_authority": "Reviewed source-derived science01 restored the altered authority; correct scene/output not copied as repair.",
+    "all14_bundle_and5_prepare_match_correct": true,
+    "all8_actual_repaired_exports_match_correct": true,
+    "later_final_refinement": "9pt label-baseline clearance fix was already applied before candidate exports.",
+    "original_reader_proposal_not_backfilled": true
+  },
+  "acceptance": {
+    "native_checks": 21540,
+    "native_all_passed": true,
+    "actual_whole_detail_PNG_PDF": "root and independent final visual accepted",
+    "ZIP_members": 39,
+    "prepared_byte_matches": 5,
+    "export_byte_matches": 8,
+    "subprocesses_exit0": 6,
+    "actual_final_ZIP_extracted": true,
+    "same_host": true,
+    "OS_sandbox": false,
+    "cross_platform_tested": false
+  },
+  "protocol_execution": [
+    {
+      "id": "T01",
+      "execution": "completed_with_stated_scope",
+      "result": "P0 then P1 before fixed two-paper selection; authored-record search found no prior local use. Foundation-model unseen not asserted."
+    },
+    {
+      "id": "T02",
+      "execution": "completed_with_stated_scope",
+      "result": "Whole original Figure1 both panels and necessary detail actually viewed; complete caption/Methods/supplement scope in source registry and prelayout access."
+    },
+    {
+      "id": "T03",
+      "execution": "completed_with_stated_scope",
+      "result": "Source-first stable whole inventory mapped bidirectionally to scientific/native objects, including repeated identities and equivalent groupings. Unknown exact formulas are not certified."
+    },
+    {
+      "id": "T04",
+      "execution": "completed_with_stated_scope",
+      "result": "Versioned source notes and precise locators; all active source pointers resolve within delivered figure_spec and equal bundle; scientific support reviewed separately."
+    },
+    {
+      "id": "T05",
+      "execution": "completed_with_stated_scope",
+      "result": "Inputs, stages, identities, conditions, unknowns and excluded inferences retained; no empirical outputs invented."
+    },
+    {
+      "id": "T06",
+      "execution": "completed_with_stated_scope",
+      "result": "Science01 spec/caption/coverage before case layout. All subsequent source-specific/layout edits retained as new versions."
+    },
+    {
+      "id": "T07",
+      "execution": "completed_with_stated_scope",
+      "result": "Frozen producer, independent inspector, replay driver, rules, fonts and installed runtime pins unchanged. Preexport expectations from sealed scene/source fonts before actual export."
+    },
+    {
+      "id": "T08",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual final SVG/PDF native geometry, paths, text origins, glyph/font mapping and scientific bindings checked under frozen support/tolerances."
+    },
+    {
+      "id": "T09",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual final PNG and independent PDF whole/detail rasters viewed by root and independent reviewer; final blocking visual findings resolved."
+    },
+    {
+      "id": "T10",
+      "execution": "completed_with_stated_scope",
+      "result": "One shared scientific-error family, neutral correct and genuinely insufficient controls fixed before candidate rendering. Multiple manifestations not independent trials."
+    },
+    {
+      "id": "T11",
+      "execution": "completed_with_stated_scope",
+      "result": "Fresh image reader first saw only neutral PNGs, sealed raw, then authorized full original/source/captions and sealed second raw. No key or policy given to reader."
+    },
+    {
+      "id": "T12",
+      "execution": "completed_with_stated_scope",
+      "result": "Different fresh reader received only genuinely incomplete anonymous packet with removed determining inputs; full graphs/captions/source/key withheld."
+    },
+    {
+      "id": "T13",
+      "execution": "completed_with_stated_scope",
+      "result": "Scorer policy-first receipt; C and all image/source material claims classified/sealed before explicit key release and key-access receipt."
+    },
+    {
+      "id": "T14",
+      "execution": "completed_with_stated_scope",
+      "result": "Completed separate aspect scores and all-claim support ledger. Original partial proposal/unknown/unsupported outcomes retained, no composite accuracy. See controlled_assessment."
+    },
+    {
+      "id": "T15",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual altered scientific authority repaired from reviewed source; dependent scene/spec/caption/native index/manifests regenerated, all8 outputs byteequal correct control before any later explicit refinement; native and actual visual rechecked. No proposal backfill."
+    },
+    {
+      "id": "T16",
+      "execution": "completed_with_stated_scope",
+      "result": "Final39-member ZIP explicit whitelist:27required+11authored evidence+manifest; original article media/fulltext/cache/screenshots excluded; licenses and active dependencies provided."
+    },
+    {
+      "id": "T17",
+      "execution": "completed_with_stated_scope",
+      "result": "Final exact ZIP hash verified, really extracted to fresh directory, own packaged driver/producer in fresh processes;5prepare+8exports byteequal,6subprocesses exit0, markeronce, package unchanged."
+    },
+    {
+      "id": "T18",
+      "execution": "completed_with_stated_scope",
+      "result": "Failed candidate data-status assembly and all source/layout/visual revisions retained. No outcome-conditioned generic rule/tool/tolerance changes; finite samehost/file-format scope only."
+    }
+  ],
+  "failure_history": [
+    "construction01 used unsupported controlled-test-altered data status; frozen validator rejected. Construction02 uses already-supported synthetic-test. Generic validator/rules unchanged; old failed data retained.",
+    "All case-specific source/layout revisions and earlier raw/scoring records remain immutable. No success-conditioned replacement of either fixed target."
+  ],
+  "limitations": [
+    "Exactly one controlled family with one correct and one insufficient control on this paper; related stages/claims/checks/glyphs/repairs/replays do not increase independent sample counts.",
+    "Source scientific unknowns remain unknown; no author-code audit, original model/experiment replication, new numerical or biological result, expert acceptance, clinical claim, general accuracy or model-weight training.",
+    "Artifact replay is the pinned samehost Darwin environment; startup isolation only, no OSsandbox or crossplatform result. Stable full-skill distribution remains1.44.0; these caseZIPs are not a new whole-skill release."
+  ],
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/protocol-01.json",
+      "bytes": 20247,
+      "sha256": "2f2c02a3c37d44a52fc370573b55f51de9dd876fb4601588b0537209474b73bb"
+    },
+    "P1": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/freeze-01/P1-freeze.json",
+      "bytes": 24175,
+      "sha256": "ae56894949b791607ea7562cc45bc6003c86eeea25ac6d6effe50feb516dbc4b"
+    },
+    "selection": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/selection-01.json",
+      "bytes": 3575,
+      "sha256": "4671613b07484032725bd43a72b54b9a649160cbbbbe64cac1dfe03272c8553f"
+    },
+    "source_registry": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/source-01/source-registry.json",
+      "bytes": 7262,
+      "sha256": "8d1ba45f470363f5004ef59fd92572bee3b6a7e7d822ed945f48b14a62c5f867"
+    },
+    "original_figure": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/source-01/13059_2021_2556_Fig1_HTML.jpg",
+      "bytes": 76154,
+      "sha256": "0fa9061fd89231f7fdb1648ff4944b57d1b8b9e02d3098ce974a681d1d146397"
+    },
+    "primary_text": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/source-01/primary.xml",
+      "bytes": 229575,
+      "sha256": "bec624f4f016510ae02dfe1d9c6f2d8d6b16e32d9d0bae6f2f92dfe11b4c385d"
+    },
+    "prelayout_spec": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/science-01/scientific-spec.json",
+      "bytes": 48954,
+      "sha256": "c405ce7cf92ab822ef4aeee26fb6d1ea12f95fe45a9e3ee33ade65a31f06a6eb"
+    },
+    "prelayout_access": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/science-01/access-and-prelayout-receipt.json",
+      "bytes": 3842,
+      "sha256": "aa3ef0dcc7e0ae99cd2dea27afdabc68a69c3f4d94e6ed92c53eed5908977acf"
+    },
+    "whole_inventory": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/science-01/whole-coverage.json",
+      "bytes": 36476,
+      "sha256": "3251d3229195eb0b2be6cd359954237a2f92d1a367ca6717102c3490846a4988"
+    },
+    "source_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/science-review-01/review.json",
+      "bytes": 4347,
+      "sha256": "f46418d2cc8d77f7e081a63f0dde4b1f445d092b88be37e0fa5e3aa7735e30e8"
+    },
+    "current_science_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/science-review-01/review.json",
+      "bytes": 4347,
+      "sha256": "f46418d2cc8d77f7e081a63f0dde4b1f445d092b88be37e0fa5e3aa7735e30e8"
+    },
+    "preexport": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/pre-export-expectations.json",
+      "bytes": 9078,
+      "sha256": "2eb1968407b200de29cba571a944d1fe5df20264426917d1e1f5387bb1179ce6"
+    },
+    "layout_map": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/layout-02/mapping.json",
+      "bytes": 118691,
+      "sha256": "de91346f813505fa5c258959eeedc32e8f70f4e83f59c8d1d48dfa81fe69d16e"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/native-01/report.json",
+      "bytes": 1717504,
+      "sha256": "5d8d11b4355c9ab1642aa0d63378b425577f45115b4f0918bc06b864a26c2b02"
+    },
+    "root_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/visual-01/root-review.json",
+      "bytes": 3094,
+      "sha256": "2e744218a537f0c2ebbffea78c9b4b1b007bbdfa2d5de144c3146ca5c190ab96"
+    },
+    "independent_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/final-visual-review-01/review.json",
+      "bytes": 10315,
+      "sha256": "98ffff30e6021cb16f257dddee60a903f4290ac520de86516fa5220ce6210829"
+    },
+    "delivered_sources": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/delivered-dependency-check.json",
+      "bytes": 21776,
+      "sha256": "539c6c0ae8b604e4abc4c9b88470394f08f562938280c91139311c3244b1a492"
+    },
+    "controlled_input_failure_history": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/construction-02/input-assembly-02.json",
+      "bytes": 5278,
+      "sha256": "c3732ba4fe3f967da5a4433a71db57e2576800da2bfac00c756dbd8e39b27c7a"
+    },
+    "controlled_pair": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/construction-02/pre-export-pair-diff.json",
+      "bytes": 4142,
+      "sha256": "40d4b7d21dc8e26d7447d68b24529460dd9fa92bb3eb648f42d10e3cad4a7a83"
+    },
+    "image_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/image-stage-01/reader/raw-report.md",
+      "bytes": 7097,
+      "sha256": "7d8e807541731898df64aae4df6198d818ed23b30b67961635e31b851f4fb861"
+    },
+    "source_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/source-stage-01/reader/raw-report.md",
+      "bytes": 8994,
+      "sha256": "e35901acfd3b923d075e959c28bdd3252b42e27c90c05c2398b21bb85a203c0f"
+    },
+    "insufficient_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/insufficient-01/reader/raw-report.md",
+      "bytes": 1448,
+      "sha256": "75d204d7d21a3aa2950f5a3dc9ea7547d61d3d66aa78e84698c5d3fc99817d82"
+    },
+    "prekey_image_source": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/prekey-image-source.json",
+      "bytes": 150881,
+      "sha256": "cc6e56c0b4bee2b313f3e2f7b7efc88d90ccb9b12077edf01360052693fa4223"
+    },
+    "prekey_insufficient": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/prekey-insufficient.json",
+      "bytes": 17730,
+      "sha256": "15a43739662be5d94fa592246024f03cca1ecb7fabdc78b0ca3c436d9ceea238"
+    },
+    "key_release": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/key-release-01.json",
+      "bytes": 5405,
+      "sha256": "c8e1b89a360c059ff34345b4430514762565f8af45cd2e80c1da75abf1b9ce78"
+    },
+    "score": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/score-01.json",
+      "bytes": 107038,
+      "sha256": "9de0aea2fac7de46994122850822e51c5e35c6396d560e277047109ffdf08c66"
+    },
+    "score_root_readback": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-02/assessment-01/root-score-readback.json",
+      "bytes": 5753,
+      "sha256": "bf9bfaaa9674624c02a8b5bf07fb942db9679510fe64b793d7802c0dcbccf94d"
+    },
+    "repair_authority": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/repair-authority-and-closure.json",
+      "bytes": 19412,
+      "sha256": "58d8a9f0f934eb309d12d04d1a2485160bf7e2b9814e126a22936ebce2402e8d"
+    },
+    "repair_actual_exports": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/repair-01/repair-export-check.json",
+      "bytes": 5986,
+      "sha256": "cb9ceafa44eca980fb497fb7a5db6676df5380ef087f32da1679de903de44971"
+    },
+    "zip": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/cobolt-whole-figure1-final-01.zip",
+      "bytes": 2589784,
+      "sha256": "0818201b6b95b425622f87420968a349aee697011cb52f863b5544e760d694d7"
+    },
+    "actual_extraction": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/zip-replay-01/extraction-receipt-01.json",
+      "bytes": 9720,
+      "sha256": "eda0b339bf55c3012718c3e2845ec565289444c3d6c9ae8e206a2e7419cfac5b"
+    },
+    "actual_replay": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/zip-replay-01/run-01/replay-report.json",
+      "bytes": 35011,
+      "sha256": "775c3a365eefc4fc24e69ae9805d93350b194f6cf38c9a9a0759baee5365af9b"
+    },
+    "replay_root_readback": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/zip-replay-01/root-readback.json",
+      "bytes": 2677,
+      "sha256": "b3ba0de62c6e56f847e432b7eaa9927c11800148501c75f05f0342f8e41b589a"
+    },
+    "baseline_change": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-cobolt-01/layout-02/baseline-change-and-replay.json",
+      "bytes": 3823,
+      "sha256": "8d91a172c2d92117e1230630c9da15f14e01d60f00ae0d12870d54db4f995d37"
+    }
+  }
+}

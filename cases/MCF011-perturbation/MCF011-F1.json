@@ -1,0 +1,530 @@
+{
+  "case_id": "MCF011-F1",
+  "dedup_id": "10.1038/s41586-022-05688-9|publisher-VOR-2023-02-08|Figure1",
+  "paper": {
+    "title": "Dissecting cell identity via network inference and in silico gene perturbation",
+    "authors": "Kamimoto et al.",
+    "journal": "Nature",
+    "volume": "614",
+    "pages": "742–751",
+    "year": 2023,
+    "online_date": "2023-02-08",
+    "doi": "10.1038/s41586-022-05688-9",
+    "pmcid": "PMC9946838",
+    "pmid": "36755098",
+    "version": "Publisher version of record, 8 February 2023; publisher HTML and artwork are the primary source. PMC, PubMed and Crossref corroborate identity.",
+    "preprint_scope": "No preprint used; the DOI year component 2022 is not the publication year."
+  },
+  "scientific_task": "Read the whole original Figure 1 as a generic CellOracle workflow plus mouse haematopoiesis application, distinguishing inferred regulatory models, computational perturbation and state-direction outputs.",
+  "transfer_task": "Produce an original editable zebrafish noto workflow that separates promoter/motif-based inference, predicted local-state response and two separately performed biological perturbation/control comparisons.",
+  "states": {
+    "metadata": "Publisher/PMC/PubMed/Crossref identity and bounded publication-status check recorded on 2026-10-11.",
+    "text": "Relevant Figure 1 caption, inference/simulation Methods, zebrafish Results, experimental comparisons and limitations read; Figure 3 and Extended Data Figure 11 are caption/results evidence only.",
+    "visual": "Source records document actual whole Figure 1 a–i plus panel-a detail views; whole Figure 4 a–g was additionally viewed later as supporting context. Only original Figure 1 is admitted as this case.",
+    "semantic": "Application-specific inputs, inferred-edge status, target-shift propagation, neighbour projection, named comparators and selected phenotype-evidence boundaries checked. Original independent audit found one minor early-stage omission; targeted retest resolved it while retaining six unknowns.",
+    "license": "Publisher CC BY 4.0 observed; no separate Figure 1 exception observed in inspected caption. Original source files remain local-only for this collection.",
+    "code": "No source-code, raw-data or run-parameter audit and no CellOracle/model/biological experiment performed. Executing the diagram renderer is artifact reproduction only.",
+    "transfer": "perturbation-01 maintenance example: 18 frozen development requirements including retained ambiguities/unknowns; original independent model audit 0 blocking + 1 minor, then one targeted nonblind retest resolves that finding with 0 remaining targeted findings and 0 new semantic/visual findings. Author source-free reproduction passes 2 trees × 6 exports. Controlled-test outcomes are not included or inferred."
+  },
+  "example_role": {
+    "kind": "maintenance development example",
+    "not_a_reserved_holdout": true,
+    "not_human_expert_certification": true,
+    "source_familiarity": "The source was introduced and read during development. Retest used the original independent reviewer, who knew the initial finding."
+  },
+  "original_figure_count": 1,
+  "source_whole_figures_actually_viewed_count": 2,
+  "counting_boundary": "The one catalog case is original Figure 1, whole a–i. Its panel-a crop and subsequently viewed supporting Figure 4 are not additional cases. No caption-only source figure is counted.",
+  "caption_only_not_counted": [
+    "Figure 3",
+    "Figure 5",
+    "Extended Data Figure 1",
+    "Selected captions among Extended Data Figures 9–12, including Figure 11"
+  ],
+  "local_source_path_base": "tests/batches/perturbation-01",
+  "original_figure": {
+    "file": ".inspection/figure1-original.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-022-05688-9/MediaObjects/41586_2022_5688_Fig1_HTML.png",
+    "source_figure": "Publisher Figure 1, whole a–i",
+    "pixels": [
+      2150,
+      1863
+    ],
+    "sha256": "2ab461fc9678d477efb26821fb387cfa87511a1342f6f47d459c437712434062",
+    "observation": "Source-preparation, parent and independent records document whole-image viewing. Panel a gives the method; lower mouse panels distinguish observed embedding/pseudotime-derived reference, simulated fields and score summaries.",
+    "display_metadata": "Source probe and parent record report 1696×1469 presentation. This card does not make a new display-size measurement. The independent audit separately withdrew unverified historical display-size assertions in its erratum."
+  },
+  "parent_detail": {
+    "file": ".inspection/figure1a-detail.png",
+    "source_figure": "Publisher Figure 1a, unchanged crop",
+    "crop_xyxy": [
+      0,
+      0,
+      1595,
+      570
+    ],
+    "pixels": [
+      1595,
+      570
+    ],
+    "sha256": "c4ea60f27251f6c8247cad6934a4349d4c039af6eccd965f7a6188b283ccdd82",
+    "observation": "Input/base-GRN, cell-group-specific networks, propagation and predicted transitions actually viewed in source records; the crop is not an additional case."
+  },
+  "supporting_source_views": [
+    {
+      "file": ".inspection/figure4-support.png",
+      "source_figure": "Publisher Figure 4, whole a–g, 1200-pixel preview",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-022-05688-9/MediaObjects/41586_2022_5688_Fig4_HTML.png",
+      "pixels": [
+        1200,
+        971
+      ],
+      "sha256": "669594ad4158918daeb6f9b886c9e0f166e82e9d1ce285742a38a9c51ce40231",
+      "counted_as_catalog_case": false,
+      "observation": "Later actual views cover WT reference/markers/stages, two distinct composition comparisons, mutant/control and noto/tyr annotations and density projections. No bar digitization or cell-lineage reconstruction."
+    }
+  ],
+  "source_scope_history": [
+    {
+      "stage": "Frozen source probe",
+      "record": "tests/batches/perturbation-01/source-probe.json",
+      "state": "Figure 1 whole and panel-a crop actually viewed. Figure 4 was then caption-only, and no figure had been admitted to the catalog. This historical statement remains byte-identical."
+    },
+    {
+      "stage": "Later source expansion",
+      "records": [
+        "tests/batches/perturbation-01/parent-source-review.json",
+        "tests/batches/perturbation-01/supporting-source-view.json"
+      ],
+      "state": "Whole Figure 4 a–g additionally viewed by parent/author; independent audit also inspected it. It supplies support only and does not add a counted case. Figure 3 and Extended Data 11 remain caption/results-only."
+    },
+    {
+      "stage": "Clarification without rewriting frozen probe",
+      "record": "tests/batches/perturbation-01/pre-render-clarification.md",
+      "state": "Correct scope: genotype-defined groups were not randomized; single-cell data generation and analysis were blinded. The earlier ambiguous probe wording and freeze-time view scope are preserved as historical records."
+    },
+    {
+      "stage": "Initial independent finding and revision",
+      "records": [
+        "tests/batches/perturbation-01/independent-review.json",
+        "tests/batches/perturbation-01/early-qualifier-revision.json",
+        "tests/batches/perturbation-01/independent-retest.json"
+      ],
+      "state": "Original 0-blocking/1-minor audit is preserved. Early was added to the predicted label, caption B and matching relation condition; measured depletion wording stayed unchanged. Targeted nonblind retest resolved the one minor finding."
+    }
+  ],
+  "source_records": [
+    {
+      "file": ".inspection/publisher.html",
+      "url": "https://www.nature.com/articles/s41586-022-05688-9",
+      "sha256": "79b149adddcc6b0a9b419178a92fda9742d5e27e11e39f03981fea9d2a050630",
+      "bytes": 724705
+    },
+    {
+      "file": ".inspection/publisher-text.txt",
+      "url": "https://www.nature.com/articles/s41586-022-05688-9",
+      "sha256": "1aabf356adb47f0e8788ec38a5b628a6cac2b041bf1b9c52ca56445d030ade45",
+      "bytes": 176926
+    },
+    {
+      "file": ".inspection/pmc.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946838/",
+      "sha256": "9e9fb92f41332d602c6bc7f53c2edeb31af78b39edcbea374304114af4cc55d2",
+      "bytes": 412588
+    },
+    {
+      "file": ".inspection/pmc-text.txt",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946838/",
+      "sha256": "563d90f3ba4e0f19a2f8b2867550ebbc6f2847c2706767737aedb316d15deef9",
+      "bytes": 174275
+    },
+    {
+      "file": ".inspection/figure1-page.html",
+      "url": "https://www.nature.com/articles/s41586-022-05688-9/figures/1",
+      "sha256": "e5175fd25d161a0bdbdce3e781ccb2fb237190a67de5fd3707350e350dd2dc8b",
+      "bytes": 176452
+    },
+    {
+      "file": ".inspection/pubmed.xml",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=36755098&retmode=xml",
+      "sha256": "8b71dd032890013c6b3886b523db0f3e09cd22e69317ef4fea3dac8596fb906b",
+      "bytes": 42999
+    },
+    {
+      "file": ".inspection/crossref.json",
+      "url": "https://api.crossref.org/works/10.1038/s41586-022-05688-9",
+      "sha256": "e0e112793fe9fb16e6c2b874701f4a0fc2589619da82e191f1e432fbc4085391",
+      "bytes": 34468
+    },
+    {
+      "file": ".inspection/figure4-support.png",
+      "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-022-05688-9/MediaObjects/41586_2022_5688_Fig4_HTML.png",
+      "sha256": "669594ad4158918daeb6f9b886c9e0f166e82e9d1ce285742a38a9c51ce40231",
+      "bytes": 685663,
+      "scope": "Later actually viewed supporting Figure 4; not another catalog case."
+    }
+  ],
+  "read_locators": {
+    "Fig1": "Full caption and whole original figure a–i; generic method and mouse example.",
+    "Sec5 / Fig3": "Zebrafish promoter/motif inputs, noto prediction, early-stage inhibition and different later-stage signal; source text lines 169–177. Figure 3 pixels not viewed.",
+    "Sec6 / Fig4": "Separate 10 hpf mutant/sibling and F0 noto/tyr crispant comparisons; WT readout reference; Fig. 4 pixels additionally viewed later.",
+    "Sec8": "Absent-input-state, motif/expression coverage and data-quality limits.",
+    "Sec11 / Sec15": "Potential base network and within-group regularized expression fitting.",
+    "Sec16 / Sec17": "Target expression-shift clamping, propagation, neighbour projection and pseudotime-gradient score context; detailed score output is not reproduced.",
+    "Sec41 / Sec43": "Genotype-defined groups, randomization/blinding scope and embryo-pool methods.",
+    "Sec52": "Readout reference annotation and embedding/density projection.",
+    "Fig16": "Extended Data Figure 11 caption, approximately 25 embryos/sample and separate cell/replicate units; original pixels not viewed."
+  },
+  "elements": [
+    {
+      "id": "base_candidates",
+      "unit": "promoter/motif-informed TF-to-target candidate links",
+      "role": "Potential direction before expression fitting; zebrafish case has no scATAC input."
+    },
+    {
+      "id": "group_specific_grn",
+      "unit": "regularized fitted coefficients per cell-state/type group",
+      "role": "Inferred predictive regulatory model, not experimentally confirmed individual causal edges."
+    },
+    {
+      "id": "computational_perturbation",
+      "unit": "specified TF expression shift propagated through inferred coefficients",
+      "role": "Target shift held fixed; exact selected-run magnitude not audited."
+    },
+    {
+      "id": "local_projection",
+      "unit": "simulated expression shifts compared with observed-neighbour expression differences",
+      "role": "Local state-direction prediction within observed atlas space."
+    },
+    {
+      "id": "noto_prediction",
+      "unit": "source-reported qualitative developmental prediction",
+      "role": "Early notochord differentiation inhibited; prechordal-plate differentiation enhanced."
+    },
+    {
+      "id": "experimental_comparisons",
+      "unit": "10 hpf embryo perturbation/control groups with scRNA-seq readouts",
+      "role": "flh/noto n1/n1 versus n1/+ and +/+ siblings; separately F0 noto versus tyr crispants."
+    },
+    {
+      "id": "phenotype_evidence",
+      "unit": "measured cell composition, annotations and density summaries",
+      "role": "Notochord depletion and prechordal-plate expansion support the selected phenotype; cells, embryo pools and biological/technical replicates remain distinct."
+    }
+  ],
+  "relations": [
+    {
+      "from": "promoter_motif_candidates_and_grouped_expression",
+      "to": "group_specific_grn",
+      "type": "candidate-constrained expression inference",
+      "source": "Publisher #Sec5, #Sec11, #Sec15"
+    },
+    {
+      "from": "group_specific_grn_and_fixed_target_shift",
+      "to": "propagated_expression_shifts",
+      "type": "computational perturbation",
+      "source": "Publisher #Sec16"
+    },
+    {
+      "from": "propagated_shifts_and_observed_neighbour_reference",
+      "to": "local_state_direction",
+      "type": "model projection",
+      "source": "Publisher #Sec16"
+    },
+    {
+      "from": "local_state_direction",
+      "to": "early_notochord_and_prechordal_plate_prediction",
+      "type": "source interpretation of selected simulation",
+      "source": "Publisher #Sec5 / Fig3 caption; lines 171, 177"
+    },
+    {
+      "from": "separate_mutant_sibling_and_noto_tyr_experiments",
+      "to": "measured_phenotypes",
+      "type": "biological perturbation/control assay evidence",
+      "source": "Publisher #Sec6 / Fig4"
+    },
+    {
+      "from": "predicted_and_measured_phenotypes",
+      "to": "scoped_concordance",
+      "type": "comparison, not training feedback or all-edge validation",
+      "source": "Publisher #Sec6 / Fig4 / #Sec8"
+    }
+  ],
+  "visual_decomposition": {
+    "layout": "Original Figure 1 has a workflow panel above mouse-haematopoiesis embeddings, differentiation/simulation fields and score summaries. The new three-panel diagram reorganizes inference, computational prediction and separate experiment comparisons for the explicitly selected zebrafish case.",
+    "meaning": "Workflow arrows represent stated data/computation/assay flow. The dashed arrow supplies a prediction to the evidence comparison; it does not validate every TF–target edge.",
+    "limits": "No original field, embedding points, heatmap, edge list, statistics or time-lapse lineage trace is recreated. Figure 1 mouse scATAC inputs are not imported into the zebrafish promoter-only application.",
+    "transfer": "Original editable text/nodes and scoped comparisons with synchronized caption/spec."
+  },
+  "transferable_rules": [
+    "Keep inferred candidate/fitted networks distinct from individually established causal regulatory effects.",
+    "State application-specific model inputs instead of copying generic multimodal cartoons into every case.",
+    "Represent computational TF shifts, observed-neighbour references and biological perturbation/control groups as distinct objects.",
+    "Preserve stage qualifiers when a source reports different responses across developmental stages.",
+    "Distinguish measured composition/annotation/density agreement from direct lineage tracking and all-edge causal validation.",
+    "Keep cells, embryo pools, biological replicates and technical replicates separate; retain incompatible source scopes until reconciled by evidence."
+  ],
+  "nontransferable": [
+    "Specific zebrafish phenotype directions or stages as universal TF effects.",
+    "Mouse scATAC inputs or same-cell paired modalities as required inputs for the zebrafish example.",
+    "Original raster artwork, inferred edge lists, vector fields, numerical run settings or quantitative results.",
+    "Qualitative phenotype concordance as proof of clinical effects, every causal edge or all-future-perturbation reliability."
+  ],
+  "known_gaps": [
+    {
+      "id": "X1",
+      "claim": "The selected noto run used a particular numeric expression shift, iteration setting or hyperparameter configuration.",
+      "reason": "Exact selected-run files and code were outside scope. The general Methods describe defaults and say zebrafish analysis used defaults, but that is not a run-level audit.",
+      "effect": "No numeric run settings should be added as independently verified."
+    },
+    {
+      "id": "X2",
+      "claim": "Approximately 25 embryos/sample and 40–50 crispants/experiment can be reconciled into one assay count.",
+      "reason": "The reviewed text does not map preparation units to individual final sequenced pools.",
+      "effect": "Keep the existing scoped ambiguity; no universal embryo count is certified."
+    },
+    {
+      "id": "X3",
+      "claim": "Readout composition change tracks lineage conversion of individual cells or validates every TF-to-target edge.",
+      "reason": "Figure 4 displays cluster composition, annotations and density projections; no corresponding lineage-tracing or edge-wise assay was inspected.",
+      "effect": "The figure correctly avoids these conclusions."
+    },
+    {
+      "id": "X4",
+      "claim": "The complete simulation and phenotype statistics reproduce from raw data.",
+      "reason": "No raw-data, implementation-code, model rerun, replicate-level statistical or rescue analysis was performed.",
+      "effect": "Report source-supported qualitative directions, not independent numerical replication."
+    },
+    {
+      "id": "X5",
+      "claim": "All source figures or experiments were comprehensively audited.",
+      "reason": "Actual pixel review covered Figure 1 and its panel-a detail, and all Figure 4 a–g. Figure 3 and Extended Data 11 were assessed through full relevant captions/results only.",
+      "effect": "No claim of paper-wide expert validation."
+    },
+    {
+      "id": "X6",
+      "claim": "The deliverable is editable and contains no reused source pixels by provenance.",
+      "reason": "Only rendered images and caption were inspected; editable/generator sources were intentionally excluded. The rendered drawing visually contains boxes and text without obvious reproduced source plots.",
+      "effect": "Visual observation does not independently certify source-file editability or production provenance."
+    }
+  ],
+  "pool_scope_ambiguity": {
+    "status": "unresolved",
+    "statements": [
+      "Extended Data Figure 11a: approximately 25 embryos per sample for mutant/crispant assays.",
+      "Embryo collection/processing Methods: 40–50 crispants per experiment.",
+      "Main mutant Results: pools of 25."
+    ],
+    "interpretation": "The reviewed material does not map preparation units to final assayed pools. These scoped statements are not one certified universal embryo count."
+  },
+  "publication_status": {
+    "checked_at": "2026-10-11",
+    "basis": "Frozen source-preparation record; no new status search performed during catalog entry.",
+    "checked_sources": [
+      "Publisher version and notices",
+      "PMC",
+      "PubMed XML",
+      "Crossref metadata",
+      "Official exact-DOI correction search"
+    ],
+    "pubmed_relationships": [
+      {
+        "type": "CommentIn",
+        "doi": "10.1038/d41586-023-00251-6",
+        "pmid": "36755144",
+        "interpretation": "Related Nature commentary, not a correction"
+      }
+    ],
+    "crossref_update_to": null,
+    "crossref_relation": {},
+    "conclusion": "No correction/retraction notice encountered in checked publisher, PMC, PubMed XML or Crossref metadata; bounded check, not an exhaustive certificate"
+  },
+  "distribution": {
+    "statement": "Publisher article is CC BY 4.0; no separate Figure 1 exception observed in inspected caption.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "policy": "Source artwork, source text/HTML/XML and cropped assets remain local-only in .inspection; no original artwork redistributed. The distributed replot uses its own spec and rendering helpers. Local .history is provenance, not a bundled source-image archive."
+  },
+  "source_probe": "tests/batches/perturbation-01/source-probe.json",
+  "parent_review": "tests/batches/perturbation-01/parent-source-review.json",
+  "provenance_reports": {
+    "source-probe.json": {
+      "path": "tests/batches/perturbation-01/source-probe.json",
+      "sha256": "7acc9ce5f7324012fe311357b93b290a65e7ddce848b0f4c536d6aa6fc9735f4"
+    },
+    "source-probe.md": {
+      "path": "tests/batches/perturbation-01/source-probe.md",
+      "sha256": "0a9b2f82e71171b1fe01e47f44deaf2887b48da232721f049f0a74b3dfffe66f"
+    },
+    "parent-source-review.json": {
+      "path": "tests/batches/perturbation-01/parent-source-review.json",
+      "sha256": "be85776297ec2d2023a91960c29127f5f17af7d569644dd30e806fea4f43bac0"
+    },
+    "supporting-source-view.json": {
+      "path": "tests/batches/perturbation-01/supporting-source-view.json",
+      "sha256": "f3874ad685fc3a3025faa451b185aa147d4c35c5f0d4223f06987437c8f47748"
+    },
+    "pre-render-clarification.md": {
+      "path": "tests/batches/perturbation-01/pre-render-clarification.md",
+      "sha256": "60f83ad580052cf1fa6c1c330fe5fc674fea025e57355a7e29aeb0d83a472ca8"
+    },
+    "independent-review.json": {
+      "path": "tests/batches/perturbation-01/independent-review.json",
+      "sha256": "dc33e0fa8f9f109b87ca3cfaa68739336a717bdb06a1e5c33a412604569ad680"
+    },
+    "independent-retest.json": {
+      "path": "tests/batches/perturbation-01/independent-retest.json",
+      "sha256": "b2b5c5308493294a8686b8e8a0b83784f18877d8f0c6d003e53428547d1e9774"
+    },
+    "early-qualifier-revision.json": {
+      "path": "tests/batches/perturbation-01/early-qualifier-revision.json",
+      "sha256": "748c495041f475f37d7112d9a9cf7aec906f2c8c6e2b0ba416f93ea0b9f6e7e8"
+    },
+    "development-checks.json": {
+      "path": "tests/batches/perturbation-01/development-checks.json",
+      "sha256": "f0737c38d81e3a6ae53721e0b3d75f8c8f442ccd21b13268748fe712aa54916c"
+    },
+    "development-review.json": {
+      "path": "tests/batches/perturbation-01/development-review.json",
+      "sha256": "97630e04257c22e02a3fb705a80ea8f721a107f42d90a52b548db743206a7186"
+    },
+    "development-failures.jsonl": {
+      "path": "tests/batches/perturbation-01/development-failures.jsonl",
+      "sha256": "82d33d6dd68464f5734f808098eae8a55ea488bbac4fb0babcfaaedaca988b9e"
+    }
+  },
+  "frozen_development_requirements": {
+    "count": 18,
+    "path": "tests/batches/perturbation-01/expected.json",
+    "sha256": "c9e7ceef86142b332f442432ee60764b4c5412671fd2c826e1d5388c97ebad1b",
+    "interpretation": "These are development requirements including retained unknowns, conflicts and scope boundaries, not 18 independently verified scientific facts. Expected and source probes remain byte-identical.",
+    "independent_auditor_read_expected": false
+  },
+  "independent_review_status": {
+    "report": "tests/batches/perturbation-01/independent-review.json",
+    "sha256": "dc33e0fa8f9f109b87ca3cfaa68739336a717bdb06a1e5c33a412604569ad680",
+    "scope": "Independent image-first baseline review by a separate model agent; not human expert certification and not a reserved-paper holdout",
+    "original_counts": {
+      "blocking_findings": 0,
+      "nonblocking_findings": 1,
+      "semantic_findings": 1,
+      "visual_findings": 0,
+      "relationship_checks": 14,
+      "retained_unknowns": 6
+    },
+    "original_finding": "F1, minor: predicted notochord inhibition omitted early-stage scope; later stages have a distinct source-described signal.",
+    "original_report_preserved": true,
+    "view_metadata_erratum": "Original audit retains its explicit erratum: historical file dimensions do not establish returned-payload or physical UI display dimensions.",
+    "targeted_retest": {
+      "report": "tests/batches/perturbation-01/independent-retest.json",
+      "sha256": "b2b5c5308493294a8686b8e8a0b83784f18877d8f0c6d003e53428547d1e9774",
+      "scope": "Targeted nonblind revision retest by the original independent model reviewer; not a new broad audit, reserved-paper holdout, human expert review or expertise certification.",
+      "counts": {
+        "targeted_original_findings": 1,
+        "resolved_original_findings": 1,
+        "unresolved_original_findings": 0,
+        "new_blocking_findings": 0,
+        "new_nonblocking_findings": 0,
+        "new_visual_defects": 0,
+        "retained_unknowns": 6
+      },
+      "finding_status": "F1 resolved",
+      "semantic_new_blocking": 0,
+      "semantic_new_nonblocking": 0,
+      "visual_new_blocking": 0,
+      "visual_new_nonblocking": 0,
+      "all_six_unknowns_retained": true,
+      "actual_views": [
+        {
+          "path": "rendered/figure.png",
+          "native_file_pixels": [
+            1984,
+            2795
+          ],
+          "returned_payload_pixels": [
+            1984,
+            2795
+          ],
+          "payload_dimensions_evidence": "Decoded the PNG width and height from the actual returned image_url payload before emission; this was not copied from the file header.",
+          "display_limit": "Not measured; payload dimensions are distinct from eventual screen presentation."
+        },
+        {
+          "path": "rendered/size-210mm-96ppi.png",
+          "native_file_pixels": [
+            794,
+            1118
+          ],
+          "returned_payload_pixels": [
+            794,
+            1118
+          ],
+          "payload_dimensions_evidence": "Decoded the PNG width and height from the actual returned image_url payload before emission; this was not copied from the file header.",
+          "display_limit": "Not measured; 210 mm/96 ppi names the supplied preview and is not a measured physical display."
+        }
+      ]
+    },
+    "not_a_reserved_holdout": true,
+    "limit": "The retest is nonblind and targeted. It does not repeat a broad paper audit or independently verify editability/source-pixel provenance, original code, numerical runs or all experiments."
+  },
+  "artifact_reproduction": {
+    "report": "tests/batches/perturbation-01/development-checks.json",
+    "report_sha256": "f0737c38d81e3a6ae53721e0b3d75f8c8f442ccd21b13268748fe712aa54916c",
+    "actor": "Author development checks; not independent review",
+    "source_free_trees": 2,
+    "exports_per_tree": 6,
+    "byte_identical_export_comparisons": 12,
+    "root_markers": [
+      "SKILL.md",
+      "SKILL.snapshot.md"
+    ],
+    "not_copied": [
+      "primary source files",
+      "source-probe",
+      "expected checklist",
+      "prepare.py",
+      "prior outputs"
+    ],
+    "all_bounded_checks_pass": true,
+    "scope_limit": "Reproduces original diagram exports, not the scientific model or experimental results; no OS access-denial test.",
+    "svg_text_objects": 55,
+    "svg_embedded_raster_images": 0,
+    "minimum_font_pt": 9.470293486041518,
+    "pdf_mm": [
+      210.00000000000665,
+      295.9090909090939
+    ],
+    "provenance_boundary": "SVG/source inspection and no-raster evidence are author development evidence. The image-only independent audit retains X6 and does not certify editable/source-pixel provenance."
+  },
+  "current_artifacts": {
+    "figure.png": {
+      "path": "tests/batches/perturbation-01/rendered/figure.png",
+      "sha256": "925f30827aef585385c6e69dffa0dcf3816d2978be2a3838dcf08b88a74c4d82"
+    },
+    "figure.svg": {
+      "path": "tests/batches/perturbation-01/rendered/figure.svg",
+      "sha256": "d24cf4b17fde5ce80ed427d0e959867cad0d5c1f13ee49626fc1f90ed0192973"
+    },
+    "figure.pdf": {
+      "path": "tests/batches/perturbation-01/rendered/figure.pdf",
+      "sha256": "07fd4ad6d0c830dfb45d8d875797ed23fc73aeb94adb6d1dd293b933de25285d"
+    },
+    "size-210mm-96ppi.png": {
+      "path": "tests/batches/perturbation-01/rendered/size-210mm-96ppi.png",
+      "sha256": "68bb545fcd398e64f292fdac56d845054719bd004dcc43db69b29dbe016d0130"
+    },
+    "caption.md": {
+      "path": "tests/batches/perturbation-01/rendered/caption.md",
+      "sha256": "6bc4b8006e792bb394c5c0a0a1c3aca7b0c9d1b8935c91927408d7535b5aaa65"
+    },
+    "figure_spec.json": {
+      "path": "tests/batches/perturbation-01/rendered/figure_spec.json",
+      "sha256": "caa8a689e618225fd485afd7b7fd9d3f77a8e6b21e54539cf6849d316dc05884"
+    }
+  },
+  "controlled_test_status": "Not assessed in this source card. Controls were running separately at catalog admission; no private material or control outcome was read or inferred.",
+  "catalog_admission": {
+    "recorded_at_utc": "2026-10-11T13:41:28.460319+00:00",
+    "whole_figure_case_added": 1,
+    "new_doi_added": 1,
+    "basis": "Recorded source reading/views, preserved original audit, early-stage revision and targeted retest, plus author reproducible artifact checks. Maintenance example, not holdout or expert certification."
+  }
+}

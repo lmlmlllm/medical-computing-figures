@@ -1,0 +1,175 @@
+{
+  "case_id": "MCF057-F1",
+  "dedup_id": "arXiv:2004.09666v2|2020-05-22|Figure1-whole",
+  "title": "Data Efficient and Weakly Supervised Computational Pathology on Whole Slide Images",
+  "source_url": "https://arxiv.org/abs/2004.09666v2",
+  "source_figure": "Whole Figure1a–d on PDFp5; Methods pages are dependencies, not additional figures.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned arXiv:2004.09666v2, 22 May2020,35 pages. Direct text pp1,4–6,18–22,24–25; whole Figure1 and dependent Methods. Related2021 DOI is not asserted equivalent; no full-paper/code/data/experiment verification.",
+    "visual": "Whole primary Figure1 on PDFp5 and dependent Methods actually viewed. Root author viewed all four canonical routes and two edits; independent ordered reader/source/spec/revision review and independent native/replay actual views retained. Root p18 visual not claimed; independent reader viewed it.",
+    "archive": "Primary PDF/text/page pixels, histology and heatmaps remain local-review-only. Clean27member ZIP contains original native SVG/PDF/PNG, specification, layout, caption, helpers and attributed licensed DejaVu font; no original paper assets."
+  },
+  "question": "How do all-patch slide prediction, selected-patch pseudo-label supervision and relative-attention display use different inputs and conditions?",
+  "elements": [
+    {
+      "id": "prediction",
+      "role": "WSI bag, fixed patch features, learned compression/shared attention backbone, class-specific attention and independent slide scoring heads."
+    },
+    {
+      "id": "normalizations",
+      "role": "Patch-axis attention normalization, class-axis softmax and display percentiles are distinct quantities."
+    },
+    {
+      "id": "selection",
+      "role": "Observed training label Y selects in-class bottom/top B, yielding pseudo0/1. B counts selected patches at each extreme."
+    },
+    {
+      "id": "clustering",
+      "role": "Selected patch identities and learned features enter clustering scores; pseudo targets enter auxiliary loss."
+    },
+    {
+      "id": "conditional_other_class",
+      "role": "Other-class top B receives pseudo0 only under mutually exclusive tissue-class assumption; otherwise skip only that supervision."
+    },
+    {
+      "id": "display",
+      "role": "Predicted class chooses raw pre-normalization attention; percentile mapping and patch locations form a relative display, not pathology truth."
+    }
+  ],
+  "relations": [
+    {
+      "from": "all patch representations + per-class weights",
+      "to": "class-specific pooled representation",
+      "type": "prediction pooling over all patches",
+      "source": "PDFpp18–19"
+    },
+    {
+      "from": "training Y + ranked class attention",
+      "to": "selected patch identities and noisy pseudo targets",
+      "type": "training selection/supervision with conditional other-class branch",
+      "source": "PDFpp19–21"
+    },
+    {
+      "from": "selected identities + learned features",
+      "to": "class-specific clustering scores",
+      "type": "feature computation distinct from target supervision",
+      "source": "PDFpp19–21"
+    },
+    {
+      "from": "cluster scores + pseudo targets",
+      "to": "auxiliary loss",
+      "type": "training supervision",
+      "source": "PDFpp19–21"
+    },
+    {
+      "from": "slide scores + observed Y",
+      "to": "slide loss and joint objective",
+      "type": "training supervision; not inference input",
+      "source": "PDFpp19–21"
+    },
+    {
+      "from": "predicted class + raw attention + patch locations",
+      "to": "relative-attention display",
+      "type": "derived display with reference-distribution conditions",
+      "source": "PDFpp21–22,24–25"
+    }
+  ],
+  "visual_design": "Original three-stage portrait drawing separates prediction, auxiliary training and display. Visible selected-identity and pseudo-target labels prevent a supervision edge from being read as the clustering feature input. Complete caption supplies display-reference conditions and unresolved source conflicts.",
+  "transferable_rules": [
+    "Separate the prediction population from auxiliary training selection; an extreme subset does not automatically truncate inference pooling.",
+    "Route selected-object identity/features separately from pseudo-target supervision.",
+    "Name the branch affected by an assumption or skip condition, and define a selection-count symbol beside its use.",
+    "Distinguish training true-class selection, predicted-class display selection and the normalization axes at every stage."
+  ],
+  "gaps": [
+    "S1 zero/one-based class indexing conflict; S2 vector-orientation conflict; S3 SVM prose/equation conflict remain unresolved. Known1024/512 feature dimensions are omitted for scope, not unknown.",
+    "U1 rank ties, fewer-than2B bags, overlapping extremes, actual code/weights/run identities and empirical validity remain unverified.",
+    "Optional I03–I05/I07–I08 and caption antecedent O09 remain unimplemented; I06 is reasonable qualitative omission. These do not become repaired or tested claims.",
+    "Same-host native/static/source-edit evidence only; no browser, general GUI editor, physical printing, target-journal or clinical validation."
+  ],
+  "license": "arXiv non-exclusive distribution license is not treated as permission to redistribute original paper/artwork. Own explanatory geometry/helpers and unmodified DejaVu font have separately retained notices.",
+  "notice_scope": "Bounded primary/related publication and notice searches recorded in source-notes; PMC CAPTCHA and other access errors retained. Not exhaustive notice clearance or formal-version equivalence.",
+  "transfer_entry": "tests/batches/clam-training-pseudolabel-01/README.md",
+  "test_limits": [
+    "FixedCL01–CL08 independent8/8 and32/32 finite checks passed after current native and replay evidence; root compared every ID/check text and verified149 distinct absolute input pins. Unknown-disclosure pass does not resolve unknown science.",
+    "23 objects,32 relations,5 claims and48 visible text payloads; scientific revisions froze before affected layouts. F01–F03,V01,I01/I02 repairs and all prior versions retained.",
+    "1520 actual canonical glyphs (1357 ink/163 spaces), minimum9pt; max baseline0.0007812500001023182, advance0.004117187500000341, size0.00000019073486257070726, vector0.000048828125045474735pt.",
+    "Separate label and panel-rule edits were actually re-exported, read back and viewed; all canonical inputs/outputs preserved. No GUI round-trip claim.",
+    "Exact27member ZIP; seven same-profile commands/five phases exited0; ten canonical outputs including environment metadata byte-exact. Before/after each136 controls include56 existing-file data-open EPERM and4 real connect EPERM after successful socket creation.",
+    "Runtime before557/after556 module records correspond to553/552 distinct backing files; aliases and differences retained. System/framework inventory is not exhaustive.",
+    "Old ENV/static failure, manifest-schema preflight, inspector-scope wording, two native audit adaptation failures and read-only filename/schema lookup failures retained. No new controlled-error pair, original experiment or held-out test in this batch.",
+    "Rule prose derived after finite acceptance, not independently behavior-regressed on another case."
+  ],
+  "evidence_pins": {
+    "protocol.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/protocol.json",
+      "bytes": 14211,
+      "sha256": "e0251d8eb712dc8f422b7f918ccb1713fa0ba2a851f4eeed9f06890e9d04599b"
+    },
+    "scientific-freeze-03.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/scientific-freeze-03.json",
+      "bytes": 3901,
+      "sha256": "e6560dc2609044c17b0abddcf296102dd9b0a31d7dd2611de6d9a577acaf6538"
+    },
+    "author/semantic-04/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/author/semantic-04/TERMINAL.json",
+      "bytes": 431,
+      "sha256": "634fcd954ff1493698e55ae3613ad635018219eab961461431a16682a2a68628"
+    },
+    "author/production-03/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/author/production-03/manifest.json",
+      "bytes": 44996,
+      "sha256": "8a5551868852e050ade1d6730b03df28a0a88c6a4913538e3ea23c17a8e8e7b9"
+    },
+    "author/production-03/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/author/production-03/TERMINAL.json",
+      "bytes": 1251,
+      "sha256": "28b6a06d2d3f329e45ab666a51d55dcca80e7f261f1554d25a168df799888a0b"
+    },
+    "review/ordered-reader-04-revised/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/review/ordered-reader-04-revised/TERMINAL.json",
+      "bytes": 1622,
+      "sha256": "813246bd8d9a172e846aabcb9d89e96a63b6ec073c32f5549afb09c87b04b881"
+    },
+    "output-audit/native-02/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/output-audit/native-02/TERMINAL.json",
+      "bytes": 720,
+      "sha256": "faf36de90a8a8fc23d515369c1cd7a5808160ca68f054f21a7f6f725f44c09d9"
+    },
+    "output-audit/replay-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/output-audit/replay-01/TERMINAL.json",
+      "bytes": 2728,
+      "sha256": "297a2a9aa6a538491dc07985f7f132166c1de929f2b8dd367c3537cb75569b44"
+    },
+    "final-assessment-01/scorecard.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/final-assessment-01/scorecard.json",
+      "bytes": 26991,
+      "sha256": "4f7717bbb27afdef59383ca08a88991ae1a34ac3b9ae9eb4f84784f7d8bd07f8"
+    },
+    "final-assessment-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/final-assessment-01/manifest.json",
+      "bytes": 878,
+      "sha256": "0a2382d1d0fc5dbdb2bce02fe70109d7f437c333e5a611770dc1df2b77e96864"
+    },
+    "final-assessment-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/final-assessment-01/TERMINAL.json",
+      "bytes": 2117,
+      "sha256": "f28c289178a97ae78af23bdd8ed8bd9af9012aee8a4326445fa3b6814d28cc3e"
+    },
+    "author/production-03/clam-training-pseudolabel-clean-01.zip": {
+      "path": "<SKILL_ROOT>/tests/batches/clam-training-pseudolabel-01/author/production-03/clam-training-pseudolabel-clean-01.zip",
+      "bytes": 1568537,
+      "sha256": "3986c2e776b3588143fa16abb7fdf4d9649d43204f9924e70559baad4af3baa1"
+    },
+    "primary_source": {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-selectivenet-01/source-read-02/clam-arxiv-2004.09666v2.pdf",
+      "bytes": 10156258,
+      "sha256": "e97d04ed466156a19f9dd3386c2c3541e08b029221a711e94693f8beb80d08c9"
+    }
+  }
+}

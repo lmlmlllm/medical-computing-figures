@@ -1,0 +1,123 @@
+{
+  "id": "MCF071-F4",
+  "paper": "DOI:10.1038/s41586-018-0823-6",
+  "version": "Nature 565(7739):361–365; online2019-01-02, issue2019-01-17. Institutional publisher-formatted PDF read2026-10-17; current publisher byte equivalence unverified.",
+  "figure": "Whole original Figure4a–b with caption viewed, one partial method-logic unit from Fig4/Methods. Original result trajectories not recreated; new diagram not an extra source figure.",
+  "domain": "medical_device_event_rejection_frequency_gating_and_human_availability",
+  "figure_types": [
+    "physical_sensing_and_actuation",
+    "event_rejection_control_logic",
+    "calibration_threshold",
+    "human_pause_and_restart"
+  ],
+  "card": "cases/MCF071-bladder-event-gated-control/MCF071-F4.json",
+  "reading": "Direct original PDF1–4,6–8 relevant text; independent image-first then source-aware reading. Controller code, full supplement/reporting summary and original animal experiment excluded.",
+  "visual": "Whole original Fig4p4/caption and Methods pages actually viewed. Final original PNG/Poppler PDF/exact-font staticSVG and180mm screen reduction viewed.296.33×414.87mm,min14pt;180mm width min8.50pt.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "SG-based preliminary events pass recent-void/movement-artefact rejection before frequency gate; two-hour illumination action differs from software availability. Three numerical source conflicts remain explicit. Battery configuration is supported Methods allocation inference.",
+  "transfer": "Fixed BC01–BC08 independently8pass/0fail/0unassessed for figure expression.5inputs independently reproduce9outputs byte-identically;48member whitelist archive bytes verified. One new development paper, not heldout/OS isolation/algorithm or animal replication.",
+  "archive": "Copyright2019 SpringerNatureLimited; no originalFig4 redistribution licence established. Institutional PDF/pages local reading only. Package contains original explanatory source/display and licensed DejaVu font, no publisher images/full text.",
+  "at_utc": "2026-10-17T09:16:06.720012+00:00",
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/30602791/",
+    "https://www.nature.com/articles/s41586-018-0823-6",
+    "https://rogersgroup.northwestern.edu/files/2019/naturebladderopto.pdf"
+  ],
+  "identifiers": {
+    "PMID": "30602791",
+    "PMCID": "PMC6336505",
+    "DOI": "10.1038/s41586-018-0823-6"
+  },
+  "question": "How do sensed bladder dimensional changes become rejected or counted candidate void events, and how does the frequency gate lead to a bounded optogenetic action while human pause/restart remains separate?",
+  "grouping_and_layout": {
+    "A": "Physical sensor/data/command/actuator chain and Arch biological target; wireless data is distinct from power.",
+    "B": "Calibration, preprocessing, preliminary event, rejection, counting and two-hour action with three local source-conflict callouts.",
+    "C": "Human pause for CYP handling and restart15min after injection; availability does not state LED state."
+  },
+  "relationship_evidence": {
+    "source_locator_map": "tests/batches/bladder-event-gated-control-01/delivery-01/figure_spec.json",
+    "visible_bindings": "tests/batches/bladder-event-gated-control-01/delivery-01/semantic-visible-map.json",
+    "elements": 22,
+    "relations": 25,
+    "drawn_scientific_arrows": 18,
+    "text_bound_relations": 7,
+    "legend_arrows": 4
+  },
+  "transferable_principles": [
+    "Separate calibration-derived thresholds from event candidates; rejection precedes event-frequency calculation when the source says so.",
+    "Distinguish control availability from actuator state, and communication from power configuration.",
+    "Attach unresolved numerical source conflicts to affected operations; qualitative explanation is not a resolved executable algorithm."
+  ],
+  "non_transferable_contents": [
+    "Specific numerical thresholds/windows and exact event bookkeeping",
+    "Rat optogenetic biological effects or clinical benefit",
+    "Battery/radio-frequency configuration applied to unrelated experiments",
+    "Original algorithm, animal results or generalizable controller performance"
+  ],
+  "limitations": [
+    "X1 main0.25Hz versus Methods4points/s from1point/s, both described as downsampling",
+    "X2 previous10points labelled2.5min inconsistent with cited sampling rates",
+    "X3 Fig4a >3/h versus prose3within1h/UI3withinpreset range",
+    "BC03 accepted/identified prior void judged qualitatively; code bookkeeping unknown",
+    "BC08 battery configuration is supported inference, not literal Fig4label",
+    "Optional in-vitro void-size filter not imported into CYP frequency experiment",
+    "Monitoring while lit, retrigger and reset unresolved",
+    "Same Rogers collaboration as MCF015; not an independent-team transfer or heldout claim",
+    "Bounded notice search found no dedicated correction/retraction; not complete historical assurance",
+    "No physical print, browser/editor, target-journal or new OS sandbox test"
+  ],
+  "evidence": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-medical-engineering-selection-01/bladder-scout-01/northwestern-original.pdf",
+      "bytes": 7078115,
+      "sha256": "f9320462964b5a58582763c56a3bc12f7da1ecbc3a6f0a0b61d93762abfe46dc"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-medical-engineering-selection-01/bladder-scout-01/figure04-whole-with-caption.png",
+      "bytes": 137127,
+      "sha256": "208eeb4994f4456780cae52fc2173c0dfb404c36afa1dde6447ae2e1ee25571f"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-medical-engineering-selection-01/bladder-scout-01/scout-report-v2.json",
+      "bytes": 10467,
+      "sha256": "ad3c5d019c6e44923707638e9057a20a70b6e241b7fa011531870a675d87c7d9"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-medical-engineering-selection-01/selection-decision-01.json",
+      "bytes": 1149,
+      "sha256": "b5f2ce73b8001b7993cdf2c251430c728fa904786c3de86a946a0212ffebf2e6"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/bladder-event-gated-control-01/protocol.json",
+      "bytes": 6782,
+      "sha256": "51b1f523dbc241b729c2243c0756fb20dabe76f9e869e39c68a04242ab325e37"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/bladder-event-gated-control-01/root-final-acceptance-01.json",
+      "bytes": 5200,
+      "sha256": "f69ca61d7d67e7172d7fa756b58ab4b5516aaa8185c4a738c61bb9bc2178d2eb"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/bladder-event-gated-control-01/package-readback-01.json",
+      "bytes": 8654,
+      "sha256": "d1021decb0f5d587b78fa5cf843a82ad7c65724ebce0a54bfe971c71b18c7fda"
+    }
+  ],
+  "source_selection": "Two new candidates compared; USoP deferred. aDBS/wearable-cardiac candidates were earlier-paper duplicates and not admitted.",
+  "delivery": {
+    "entry": "tests/batches/bladder-event-gated-control-01/README.md",
+    "archive": {
+      "path": "<SKILL_ROOT>/tests/batches/bladder-event-gated-control-01/bladder-event-gated-control-01.zip",
+      "bytes": 1809956,
+      "sha256": "acd46dc6ac2163ced6dd4d0d7cc92dc5a556dc0326d22ec0cd863800e19b3b88"
+    },
+    "manifest": {
+      "path": "<SKILL_ROOT>/tests/batches/bladder-event-gated-control-01/delivery-01/MANIFEST.json",
+      "bytes": 8412,
+      "sha256": "b5cc45b15b45df2605c46aac5935ae52661a3d05e55e4088f5a00c2cda57909b"
+    }
+  },
+  "new_rule_scope": "Conditional medical-device event-gating expression, one development example. General behavioural improvement and error-control discrimination not measured in this batch."
+}

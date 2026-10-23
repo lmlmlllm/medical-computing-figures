@@ -1,0 +1,11 @@
+series,group,value,source_location,n_questions
+CoT,MMLU-Med (n=1089),72.91,Table 6 printed p6237 PDF p5,1089
+MedRAG,MMLU-Med (n=1089),75.48,Table 6 printed p6237 PDF p5,1089
+CoT,MedQA-US (n=1273),65.04,Table 6 printed p6237 PDF p5,1273
+MedRAG,MedQA-US (n=1273),66.61,Table 6 printed p6237 PDF p5,1273
+CoT,MedMCQA (n=4183),55.25,Table 6 printed p6237 PDF p5,4183
+MedRAG,MedMCQA (n=4183),58.04,Table 6 printed p6237 PDF p5,4183
+CoT,PubMedQA* (n=500),36.00,Table 6 printed p6237 PDF p5,500
+MedRAG,PubMedQA* (n=500),67.40,Table 6 printed p6237 PDF p5,500
+CoT,BioASQ-Y/N (n=618),74.27,Table 6 printed p6237 PDF p5,618
+MedRAG,BioASQ-Y/N (n=618),90.29,Table 6 printed p6237 PDF p5,618

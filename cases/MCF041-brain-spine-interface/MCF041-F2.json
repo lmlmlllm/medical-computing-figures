@@ -1,0 +1,94 @@
+{
+  "case_id": "MCF041-F2",
+  "dedup_id": "10.1038/s41586-023-06094-5|2023-published|Figure2",
+  "title": "Walking naturally after spinal cord injury using a brain–spine interface",
+  "source_url": "https://doi.org/10.1038/s41586-023-06094-5",
+  "source_figure": "Whole Figure2a–e viewed; qualitative static-control roles and evaluation definitions transferred; ED1 caption-only dependency",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Relevant XML Sec2/4/5/15/17/18/20–24, whole Fig2 and Fig5(ED1) captions; exact scope in source-reading.md and assessment",
+    "visual": "Complete publisher Fig2a–e actually viewed by root/author/source checker/independent reader/assessor; ED1 pixels unavailable",
+    "archive": "Raw XML and sourcePNG retained locally for review; clean ZIP excludes original sources, reading caches and author/review histories"
+  },
+  "question": "How do cue-driven model updates, EMG-informed stimulation calibration, online static mixed-expert commands and separate evaluations differ?",
+  "elements": [
+    {
+      "id": "Fig2a",
+      "role": "Cortical feature mapping/calibration for intended joints"
+    },
+    {
+      "id": "Fig2b",
+      "role": "Stimulation calibration, motor-pool recruitment and EMG amplitude responses"
+    },
+    {
+      "id": "Fig2c_d",
+      "role": "Aligned cue, decoder, stimulation and observed response displays; co-occurrence is not a feedback-return path"
+    },
+    {
+      "id": "Fig2e",
+      "role": "Separate cue-based decoder and EMG-based muscle-response comparisons"
+    },
+    {
+      "id": "selected_static_model",
+      "role": "Post-assistance six-joint mixed U(t), not dynamic gate-only standing/walking"
+    }
+  ],
+  "relations": [
+    {
+      "from": "ECoG features",
+      "to": "online mixed-expert prediction",
+      "type": "observed inference input",
+      "source": "Sec17 Par60–67; Sec18 Par70"
+    },
+    {
+      "from": "paired features and cue labels",
+      "to": "permitted coefficient/transition update",
+      "type": "conditional parameter update",
+      "source": "Sec18 Par70,73–80; Fig5/ED1caption"
+    },
+    {
+      "from": "calibration EMG",
+      "to": "experimenter-defined programs/bounds",
+      "type": "calibration evidence and expert configuration",
+      "source": "Sec4 Par19/21; Sec21 Par83; Sec17 Par67; Sec20 Par82"
+    },
+    {
+      "from": "U(t)",
+      "to": "command then electrical action then measured EMG",
+      "type": "separate computation, communication, actuation and measurement",
+      "source": "Sec17 Par67; Sec5 Par24; Sec20 Par82; Fig2b–d"
+    },
+    {
+      "from": "decoded state and separate cue/EMG reference",
+      "to": "two evaluation comparisons",
+      "type": "evaluation, not automatic controller input",
+      "source": "Sec23 Par85; Sec24 Par86; Fig2e"
+    }
+  ],
+  "visual_design": "OriginalFig2 combines cortical/stimulation calibration, aligned temporal traces and two evaluation matrices. The original qualitative transfer uses one online path plus conditional update, separate calibration and evaluation panels; six relation styles have explicit legends. Repeated settings/state/parameter objects are identified across panels. No original curve, anatomy or photo is copied.",
+  "gaps": [
+    "Quantitative traces/confusion-style matrices not fully checked or reconstructed",
+    "ED1 pixels unavailable; update permission caption-only",
+    "Sec5 lying versus Fig2c seated source conflict",
+    "Sec23 state versus state-probability implementation and source-specific normalization unresolved",
+    "HMM formula/filter/latency anomalies and exact controller rules remain unknown; no torque sensor or physiological error return inferred"
+  ],
+  "license": "Article CC BY4.0 with third-party exceptions; original sources stay local and are not in clean delivery.",
+  "notice_scope": "2026-10-12 bounded official PubMed record and DOI/title notice searches found no linked notice; not exhaustive",
+  "transfer_entry": "tests/batches/brain-spine-interface-01/README.md",
+  "test_limits": [
+    "One original qualitative development drawing; not a new holdout or model/controller run",
+    "Fixed8 current criteria passed after original and reflow repairs; earlier failures retained",
+    "Original image-only then source-informed reading; compact/final revisions source-informed, access separation behavioral",
+    "13-member actualZIP OS-isolated replay;18existing-file PermissionError probes plus network denial; optional fontconfig warning",
+    "Native252x300mm,min8pt; no journal/physical print/accessibility certification; no expert/clinical/general accuracy claim"
+  ],
+  "evidence_pins": {
+    "protocol.json": "66de71c70a9061ae77817790b5c370c166217e6484a739c7425d477f84ce270a",
+    "assessment.json": "fce688eb82b1251a8b6f2ca4e8d8736472c67376885a2ea84a1da7c3afd7892e",
+    "source-reading.md": "63cd0ba5dfefb997f6a53d21a447bc7ccb3edf80b862e276532f38342f80416c",
+    "delivery/brain-spine-interface.zip": "6c65e33eceb9bf11ea73e1b45011374c35336904199af88f683f98f50eb7086c"
+  }
+}

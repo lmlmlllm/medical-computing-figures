@@ -1,0 +1,39 @@
+{
+  "id": "MCF077-F1",
+  "document_type": "partial method source case with controlled theta-state fault, actual repair and finalZIP replay",
+  "created_utc": "2026-10-18T19:15:42.674647+00:00",
+  "paper": {
+    "title": "multiDGD: A versatile deep generative model for multi-omics data",
+    "doi": "10.1038/s41467-024-53340-z",
+    "venue": "Nature Communications15,10031(2024)",
+    "official_url": "https://www.nature.com/articles/s41467-024-53340-z",
+    "source_pdf_sha256": "2c9a852a6d9c1bdaea63923d76e9d0fe5684f01f001849d54fcaa37fd6a3e76e"
+  },
+  "unit": {
+    "parent": "Figure1 plus focusedmethods",
+    "count": 1,
+    "semantic_status": "semantic_partial",
+    "excluded": "Fulloriginalfigure, exactoptimizer/selectionalgorithm, model/empirical replication"
+  },
+  "read_and_view_scope": "Independentprimary repositoryPDF reading p3,11–13,16; root/admission wholepublisherFigure1 685×604 preview. Reader suppliednotepacket, notnewprimaryread. RootcompletegeneratedPNG andactualPopplerPDF views before/afterrepair andfinalZIP replay.",
+  "question": "Which representations are optimized during ordinary new-cell inference, and why do fixed model parameters still contribute computations and representation gradients?",
+  "elements_and_relations": "18entities,15relations,33semanticbindings; basal/covariate z concat, shared/RNA/ATACdecoder, observedx/depths, mu=s*y, NBfeaturedispersionr, fittedGMMphi, objective/partialz/zupdate. R13–15state assertions distinctfromcomputededges.",
+  "source_limits": [
+    "Onepairedcellwithobservedseparatemodalitydepths and existing fittedcovariateconfiguration.",
+    "Exactmode/covariatedensityselection, optimizerownership/order and trajectories unknown.",
+    "No newcomponent,missingtargetdepth,universallabelinput or all-loss-all-parameter claim."
+  ],
+  "layout": "400×270mm,min9pt,94native text runs+69vectors; separate update/density/forwardstyles, native editabletext/lines andembeddedfont. Nojournal sizeclaim.",
+  "controlled_test": "Onecanonical theta fixed→updated mutation with ten manifestations; two correlatedreadingstages. Source-dependentpureimagefacetsNA; source detection/localization1/1,explanation2/2,proposal1/2,targetFP0of1. Oneimage-stagecompletenessoverclaim retained.",
+  "actual_repair": "Faulty input only;canonicalupdated→fixed;11payloadpaths,4texts+1state glyph. Preserved computations and synchronizedspec/caption/bindings.27source/provenance+2633nativechecks passed; rootfullPNG/Poppler viewed.",
+  "replay": "Final123memberZIP ordinary extraction;16minimum→10preparedincludingreceipt→14canonical files byteequal. Independent19package+18replaychecks;38livepackage references.",
+  "licensing": "Originalpaper/figurelink-only. RepositorymetadataandactualPDF CC BY-NC-ND4.0 notice differ; nooriginalredistribution. DejaVu license included.",
+  "transfer": "Freeze/update roles must be stage-specific and independentof forward/density/partialderivative paths. Restorecanonicalstate and derivedrenderedlabels/caption/bindings. Dashedlinejoin property explicit ratherthan assuming solidjoinsetting applies.",
+  "history": "Initialwidth/token/route issues,emptyarraycheckerfailure, originalpair16joinfailures/item and root substring-verifier mistake retained. Corrected finalexport doesnotrewriteblindimages orscores.",
+  "result_record": {
+    "file": "tests/batches/multidgd-inference-update-01/root-acceptance.json",
+    "bytes": 9618,
+    "sha256": "2fc5eb1885b450db39fb4a327b579c853b770d8674178aef6838933654bd9bc1"
+  },
+  "transfer_limits": "Oneboundeddevelopmentpartialunit; noheldout,generalaccuracy,experthuman,OSsandbox,crossplatform or empirical result."
+}

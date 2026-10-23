@@ -1,0 +1,94 @@
+{
+  "case_id": "MCF047-F1",
+  "dedup_id": "10.1001/jamainternmed.2021.2626|corrected2021|Figure1",
+  "title": "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients",
+  "source_url": "https://doi.org/10.1001/jamainternmed.2021.2626",
+  "correction_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2782514",
+  "source_figure": "Whole Figure1; selected aggregate scalars additionally depend on main Methods/Results/Tables1–2 and correction. SourceFigure2 caption is a dependency, not a second catalog unit.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Corrected main article Methods/Results/Tables1–2/footnotes/completeFig1–2captions/Discussion/limitations and formal correction DOI10.1001/jamainternmed.2021.3907 directly read. Supplementaryimplementation/rawdata/model unverified.",
+    "visual": "Whole originalFig1 actually viewed; originalaggregate figure finalPNG and independently tied PDF144/96proxies plus exact-font staticSVG144/96proxies viewed.",
+    "archive": "PrimaryHTML/JPG/source caches localreviewonly; cleanZIP excludes them, runtime and allreviewhistory."
+  },
+  "question": "How do reported threshold sensitivity, positive predictive value and potential evaluation burden differ in denominator and operational meaning?",
+  "elements": [
+    {
+      "id": "cohort",
+      "role": "27697distinctpeople and38455hospitalizations, repeatadmissions permitted"
+    },
+    {
+      "id": "sensitivity",
+      "role": "Reported33percent;2552sepsishospitalizations denominator"
+    },
+    {
+      "id": "ppv",
+      "role": "Reported12percent;6971thresholdreachinghospitalizations denominator"
+    },
+    {
+      "id": "threshold_share",
+      "role": "Reported18percent;6971of38455hospitalizations"
+    },
+    {
+      "id": "nne",
+      "role": "Corrected reportedNNE8 underfirstqualifyinghospitalization strategy; separately stated sourcepatients/hospitalizations wording"
+    }
+  ],
+  "relations": [
+    {
+      "from": "ESMscore>=6",
+      "to": "three reported percentages",
+      "type": "shared threshold, different denominators and meanings",
+      "source": "Thresholdselection/ESMPerformance/Tables1–2"
+    },
+    {
+      "from": "firstqualification during hospitalization",
+      "to": "potentialevaluation burden/NNE",
+      "type": "retrospective strategy; not actualrepeatedalerts/time",
+      "source": "Methodsbenefit/alertfatigue;Table2footnote;Results"
+    },
+    {
+      "from": "formal correction",
+      "to": "reportedNNE",
+      "type": "15replacedby8; not recomputed fromroundedPPV",
+      "source": "DOI10.1001/jamainternmed.2021.3907"
+    }
+  ],
+  "visual_design": "Three separate percent tracks show33/12/18with visible denominators and non-additivity note. NNE8 andcohortcounts use separate blocks without percentaxis; no thresholdcurves/undefinedgraybands fabricated. Originalsourceblueareas areclassification proportions, notconfidencebands.",
+  "transferable_rules": [
+    "Count a threshold event at its stated aggregation level and eligibility/firstqualification rule; it does not establish repeatedalert counts or deliveredclinical workload.",
+    "Keep a reported corrected NNE separate from percentages; do not infer an exact denominator or unroundedPPV by taking reciprocals ofrounded published values.",
+    "Pinned fontfiles alone do not establish SVGfontselection; compare actualfamily/style/weight and disclose the renderer/explicitfontbinding scope."
+  ],
+  "gaps": [
+    "Singlecenter retrospectiveadult2018–2019cohort; compositeoutcome and repeatadmissions retained",
+    "Sourcepatients/hospitalizations and exceeded6/>=6 wordingdifferences retained;formalMethods/Table2inclusive threshold used",
+    "Mainanalysis excludespostoutcome scores;at-onsetequality/maxscoreaggregation and supplementaryimplementation unresolved",
+    "Repeatedalerts,clinicalresponse/time/benefit,fullmultithreshold series/intervals andgraybands not verified",
+    "Onlyreportedaggregates displayed;no rawpatientdata/modelreexecution,confusionmatrix orcurve reconstruction"
+  ],
+  "license": "Primarysource publiclyread but no blanket redistribution permission asserted; originalplot/code/spec/attributedaggregate data and2licensedDejaVuTTFs+license distributed. No sourcepixels/textcache included.",
+  "notice_scope": "Formal correction directlyread and applied; source noticecheck bounded, not exhaustive absence certification.",
+  "transfer_entry": "tests/batches/esm-threshold-burden-01/README.md",
+  "test_limits": [
+    "Original8criteria independentfinalpass;20semanticlabels/664mappedglyphIDs,3series,8datarecords;caption-onlydetails notallvisibleclaims",
+    "FreshimagefirstStage1 thenprimaryStage2;followup01sourcefamiliar;finalassessmentnotnewblind. No newholdout/expert/clinicalvalidation",
+    "Native762glyphs/24vectors withinunchanged.25pt;212bold550regular,min8.5pt;560×560pt=197.556mm square",
+    "Safe staticCairoSVGactualstyle selects2pinnedFTfaces; native browserCSS@font-face notverified.1382actualpaintcalls for691inkglyphs plus142explicitspaceprobes for71spaces, not1524paintcalls",
+    "Exact22memberZIP existing samehost OSisolatedreplay8canonicalexports byteidentical;environmentinvocation-only difference;13existingfile/network/outsidewrite denials",
+    "MathTextattempt/native01fontweightfailure/historicalmappingnullIDs/browserpolicyrefusal preserved;currentbindingcompanionrole explicit;no browserworkaround/crossplatform/freshinstall/arbitraryeditor/journal guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "7bba7b651e7d0581ceb75b239943854d3ed1f3732700721c5c741d223a4d3bea",
+    "assessment.json": "ec2c352e711f67d277e1313573d8c438a7a4aeb7fbb16e5d8d1c66ab37444ea4",
+    "assessment-freeze-01.json": "427ff6f1d1c7ad16ff9e20e92360c2819f89cbe9d89de7fde9af93feabf24544",
+    "scientific-freeze-01.json": "716f72ab0de73e90edf26981d5dd723a0afd2e96ce47fc4f4a3c17978296cee1",
+    "package-freeze-01.json": "013a6c6f459e12d08e6c3f7dbc3dbcc5158314ba40dc15792dbb8de4d3d16b84",
+    "replay-freeze-01.json": "d04cab4f2226e75cc18ecf0eee7aca062f805c8c19453e34206bf3642dab0af9",
+    "esm-reported-aggregate-01.zip": "ee4f93f9923c0399e759466e7e36c5f7d8fa8e98ae717485b2dae02ebac682e2"
+  }
+}

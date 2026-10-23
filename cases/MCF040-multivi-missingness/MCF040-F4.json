@@ -1,0 +1,83 @@
+{
+  "case_id": "MCF040-F4",
+  "dedup_id": "10.1038/s41592-023-01909-9|2023-published|Figure4",
+  "title": "MultiVI: deep generative model for the integration of multimodal data",
+  "source_url": "https://doi.org/10.1038/s41592-023-01909-9",
+  "source_figure": "Figure4a–f; bounded semantic transfer covers raw-reference comparisons a–b with Fig1/Fig2 and methods as dependencies",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Relevant XML Sec3/4/6/13/16/22–24 and captions; exact scope in source-reading.md",
+    "visual": "Whole publisher Fig1/Fig2/Fig4 viewed; Fig1/2 are dependency views, not extra catalog units",
+    "archive": "Original XML/images and partial notebook transcription retained locally for review only; clean delivery contains self-drawn artifacts and provenance"
+  },
+  "question": "Which original-cell identities, available modalities and original-reference comparisons underlie the reported artificial-unpairing imputation experiment?",
+  "elements": [
+    {
+      "id": "Fig4a",
+      "role": "Observed versus imputed RNA entries; raw-reference Spearman0.57 is reported in Sec6/p[1], not printed on the panel"
+    },
+    {
+      "id": "Fig4b",
+      "role": "Imputed accessibility distributions conditioned on original binary0/1; reported PR area0.41 is in Sec6/p[1], not a visible PR curve"
+    },
+    {
+      "id": "complementary_records",
+      "role": "Same original cell appears RNA-only and ATAC-only after artificial unpairing; Sec4/p[1]"
+    },
+    {
+      "id": "selected_scope",
+      "role": "10X PBMC75% original-cell unpairing; not natural cross-study missingness or separate B-cell holdout"
+    }
+  ],
+  "relations": [
+    {
+      "from": "one selected original paired cell",
+      "to": "two complementary records",
+      "type": "record construction preserving biological identity",
+      "source": "Sec4/p[1]"
+    },
+    {
+      "from": "available modality",
+      "to": "missing modality estimate",
+      "type": "conditional inference",
+      "source": "Sec3/p[2–4] and Fig1"
+    },
+    {
+      "from": "estimate and original reference",
+      "to": "reported aggregate comparison",
+      "type": "evaluation; not inference input",
+      "source": "Sec6/p[1], Fig4a–b"
+    },
+    {
+      "from": "constructed input pool",
+      "to": "optimization/validation subsets",
+      "type": "allocation with unknown exact membership",
+      "source": "Sec13/p[1]"
+    }
+  ],
+  "visual_design": "Original Fig4 combines observed/imputed scatter, accessibility distributions, smoothed-reference comparisons and uncertainty panels. Raw binary references and smoothed estimates have different meanings. Transfer replaces unavailable point data with separate attributed scalar cards and preserves original-cell versus record identity in a companion panel. No source curves or images are copied.",
+  "gaps": [
+    "Exact split grouping, evaluated members, feature filtering/flattening and PR-area estimator unknown",
+    "Full training notebook bytes/evaluation code unavailable; partial manual transcription supports only localized construction",
+    "Fig4a XML log-offset anomaly and Fig4e50-dimensional versus Methods30-component smoothing discrepancy unresolved",
+    "Smoothed references, uncertainty and CD3G panels not fully semantically verified or reproduced"
+  ],
+  "license": "Paper CC BY4.0 with third-party exceptions; notebook-specific rights unverified. No original paper/image/notebook content redistributed in clean delivery.",
+  "notice_scope": "2026-10-12 bounded official PubMed record plus title/DOI notice search; no linked notice found, not exhaustive",
+  "transfer_entry": "tests/batches/multivi-missingness-01/README.md",
+  "test_limits": [
+    "One two-panel development figure, not a new holdout or original model run",
+    "Fixed8 independent final criteria passed after visual and metadata repairs",
+    "Two-stage independent model reading; first image-only, then packet sources. Reader packet lacked partial training transcription; assessor later read it with limits",
+    "17-file exact package replay on same host;10 existing forbidden reads denied; nonfatal Fontconfig warning retained",
+    "No new controlled-error denominator, general accuracy, clinical, expert or journal certification"
+  ],
+  "evidence_pins": {
+    "protocol.json": "3e7fafee18f7bf62b052a4de7472de7dae2c58bfb259902cef05699ca4b9ed21",
+    "assessment.json": "d492c57801e071bba9f664b2f332b2d950eab1fb54a9f42e87f051425924e835",
+    "source-reading.md": "243abdc1258bb7e1ce6a665657f22ab678266af4affbb7ee24a98e15d3c4d9f0",
+    "delivery/multivi-missingness.zip": "96b8fefbe326a2e01a44d0293daf6ab1d589cc67c6ec100fa094f7cc4472c3a7"
+  }
+}

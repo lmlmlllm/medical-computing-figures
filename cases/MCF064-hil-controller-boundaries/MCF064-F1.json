@@ -1,0 +1,220 @@
+{
+  "case_id": "MCF064-F1",
+  "dedup_id": "DOI:10.3389/fendo.2021.662348|publisher2021|Figure1-whole",
+  "title": "Performance Analysis of Different Embedded Systems and Open-Source Optimization Packages Towards an Impulsive MPC Artificial Pancreas",
+  "source_url": "https://doi.org/10.3389/fendo.2021.662348",
+  "pmid": "33981286",
+  "pmcid": "PMC8109177",
+  "source_figure": "Whole Figure1 on PDF/printedp6; Methods and result figures are supporting dependencies.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "admission_state": "ADMITTED_PARTIAL_WITH_AUTHOR04_SIX_DELTA_QUALIFICATION",
+  "question": "Which computations are physical, which states/observations are simulated or estimated, and which outputs feed a separate evaluation reference?",
+  "states": {
+    "reading": "All 15 extracted PDF pages across saved reads; pages14–15 recovered in bounded read after prior combined output truncation. Full Figure1 on page6 viewed again at1191x1560 pixels, original detail. Other result figures were not visually audited; their text/captions read. References listed, not independently verified. Independent reader read sourcepp2–14 and visually checked wholeFigure1, Table1 andFigure3. Subsequent control reader visually inspected sourcepp10/11; root and delta assessor actually viewed fullp11 and retained omission-prose/Fig9B CVXOPT-label conflict.",
+    "visual": "Current author04/render-02:33labels/2022glyphs/24logicalvectors. Root whole intendedPNG original1280x1410 and wholePDF raster tool-resized1504x1656; independent delta assessor separately viewed complete currentPNG/PDF. Earlier fragments and ENOSPC failure preserved.",
+    "archive": "SourcePDF/text/pixels local-review-only; ownshapes/code/DejaVu font/licenses inclean28memberZIP."
+  },
+  "semantic_spec": "tests/batches/hil-controller-boundaries-01/author-04/inputs/figure_spec.json",
+  "semantic_inventory": {
+    "elements": 16,
+    "relations": 20,
+    "claims": 4,
+    "visible_literals": 33
+  },
+  "visual_design": {
+    "A": "twoexecutiondomains + logicalmealinput + measurementfeedback",
+    "B": "reportedscenarioandconfigurationexceptions",
+    "C": "separatecomparisonandhardwareinstrumentation",
+    "layout_reason": "Execution-domain containers separate physicalcontroller fromsimulatedplant; explicitfirst-action node prevents full-horizon actuation inference; comparison shown in separatepanel"
+  },
+  "transferable_rules": [
+    "Execution-domain containers separate physicalcontroller from simulatedplant; do not let a realboard imply realpatients or realCGM sensing.",
+    "Full-state estimates, predicted states and actualselectedcontrol are distinct; onlyfirstoptimizedaction is applied in this receding-horizon explanation.",
+    "Announced meals and withheld plant-parameter changes have different information availability.",
+    "Evaluation edges need a specific variable and reference. Glucose agreement with MATLAB does not establish a matched runtime comparison.",
+    "Nominal configuration counts are not successful-run counts; solver exceptions and comparisonimplementation identity matter.",
+    "Claims that results are omitted must name the affected figure/representation and be checked against the actual figures. Preserve conflicting prose/labels without assuming successful runs."
+  ],
+  "unknowns": [
+    "Impulse-dose versus continuous-rate unit mapping is not resolved here; no dose values or units plotted.",
+    "Hardware bitness claims not independently verified.",
+    "Power/energy naming and W/min units not reproduced.",
+    "Source reference43 sensor equations not independently checked; source model is summarized, not implemented.",
+    "Detailed Kalman recursion, meal forecast and scheduling, per-subject tolerances, random seeds and raw data remain outside this diagram.",
+    "Source p11 omission prose conflicts with Fig9B CVXOPT-labeled summary bars. Label correctness, data provenance, tolerance context and successful-run counts remain unresolved; Fig8 glycemia-trajectory scope is separately identified."
+  ],
+  "license": {
+    "article": "Publisher CC BY link resolves to https://creativecommons.org/licenses/by/4.0/",
+    "figure1_images": "Caption separately attributes images to unknown author under CC BY-SA3.0. No photograph, logo or person image reused.",
+    "redistribution": "Source PDF and page raster remain local reading records, excluded from clean deliverable."
+  },
+  "notice_scope": {
+    "url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2021.662348/full",
+    "query": "\"10.3389/fendo.2021.662348\" correction retraction erratum",
+    "result": "No relevant notice in returned results. Publisher text shows Check for updates but Crossmark detail was not resolved by text tool. Not an exhaustive clean-status claim."
+  },
+  "transfer_entry": "tests/batches/hil-controller-boundaries-01/README.md",
+  "fixed_assessment": {
+    "supported": 24,
+    "failed": 0,
+    "unassessed": 0,
+    "scope": "Historical author03 fixed24. Not a repeated24check assessment for author04."
+  },
+  "test_limits": [
+    "One source whole Figure1; supporting Table1/Figure3 do not add case units.",
+    "Independent reader image-only→source-aware→same-reader followup are successive stages of one reader. Final assessor is a separate model evidence assessment, not a human expert.",
+    "Native checks are root-executed automated inspection; clean ZIP replay is root same-host execution. No new OS isolation, browser/editor/print or journal-specific test.",
+    "Earlier label reflow and fill edits are scoped to author01/02. Final comparison-scope clarification is separately reviewed; earlier edit tests are not falsely relabeled as author03 experiments.",
+    "Source code, rawdata, controller/solver execution, numerical results and clinical validation not reproduced. Separate one-wrong/one-correct developed-case control recorded in hil-reference-loop-control-01; not new heldout paper.",
+    "Optional acronym/external-equation context and meal scheduler allocation remain. CMP.role metadata now explicitly aligns with glucose-only comparison; source conflict remains unresolved.",
+    "Prior root PNG fragment/blank displays remain recorded; current whole intended and PDF views were independently obtained.",
+    "Appearance-edit actual-view record had a stale new.fill due to a mutable alias; original retained, actualinputs/exports verified, separate correction added.",
+    "Author04 input/native freeze, new export and package replay plus6delta review do not retroactively change old24check evidence or reader control repair0/1 scores."
+  ],
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/protocol.json",
+      "bytes": 3525,
+      "sha256": "6a5ef0a60ee23b8a99ea24768432f9b433e1c7866441c579bb3a02459f7d8b1b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/semantic-freeze.json",
+      "bytes": 861,
+      "sha256": "4712bbe0918148c52b5c913a6f259da499de7f1abe53e706d919ae7a32f4f82d"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/source-reading-03.json",
+      "bytes": 3271,
+      "sha256": "5c5c3a9db0a0d9e353f08f66d2be93d275b4e70ca1269637253b6e2c44e3b1f3"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-03/pre-export-freeze.json",
+      "bytes": 2542,
+      "sha256": "4e397b9a88e78a0982377f6b6c248e0d72214fbea46d1c7464f32a6c5fd89a7e"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-03/package-freeze-01.json",
+      "bytes": 4875,
+      "sha256": "e2b649157ffed6c4a83852cb159ede52ced22dc8c745c0048993ac4a5b824539"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-03/native-check/native-check.json",
+      "bytes": 1727,
+      "sha256": "dcbb4a18cdbfefe288e84c93bd9b63a51f0bd203b460b620d7206a8b83f3a213"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-03/actual-view.json",
+      "bytes": 1433,
+      "sha256": "e37385848873a2ec2d3064166b6d01aadca2447ccd3557df6d4fd6f95bc0218b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/appearance-edit-01/actual-view-and-check.json",
+      "bytes": 1506,
+      "sha256": "fc55c47e1573bc3a20a30b18e6617bad4859713d5970a4499281f203750853c5"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/appearance-edit-01/record-correction-01.json",
+      "bytes": 1735,
+      "sha256": "2a611a0c6b91be30683e247a8436b076aa59dbd13d5976c452c5da5545a8e7cc"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/replay-02/TERMINAL.json",
+      "bytes": 2505,
+      "sha256": "80712ed4ac51ba1be41c1bb9e989ed7cf5f63b6559b6023b89a9d98c5a252ef7"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/hil-reader-01/stage1/TERMINAL",
+      "bytes": 616,
+      "sha256": "89db4561eb050f061bd7205e7b88f65cbde682207190b178af11087b305ce7d3"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/hil-reader-01/stage2/TERMINAL",
+      "bytes": 1079,
+      "sha256": "bde14a161ae9ed5f0878508de22ef1d5411f2eae1f2ec7dbfb30db442a36d8e0"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/hil-reader-01/followup-author03-01/TERMINAL",
+      "bytes": 2561,
+      "sha256": "2fe198205fde161eb483ac34f315c328cdc3d3f68a9b5e621e02b9ae77a20860"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/root-final-readback.json",
+      "bytes": 5861,
+      "sha256": "5739eaa191adb3b55d532afc78a49e53ba15c45cbc17b23467683248812f1628"
+    }
+  ],
+  "current_exports": "tests/batches/hil-controller-boundaries-01/author-04/render-02",
+  "current_package": {
+    "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/hil-controller-boundaries-clean-03.zip",
+    "bytes": 1955767,
+    "sha256": "24dd37cbd59cd285cc93b4f267f2c22f95e89d51d29d17858befef49959f9ea5"
+  },
+  "delta_assessment": {
+    "version": "author04/render-02",
+    "supported": 6,
+    "failed": 0,
+    "unassessed": 0,
+    "readback": {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/root-delta-readback-04-01.json",
+      "bytes": 1580,
+      "sha256": "f83ccd01f85df0b1a2b03c2d688983625995d9ada7bdfc000a47a03ffcb4691d"
+    },
+    "scope": "6 fixed incremental checks, separately counted from historical24 and control experiment."
+  },
+  "prior_case_snapshot": {
+    "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/global-backup-author04-01/cases/MCF064-hil-controller-boundaries/MCF064-F1.json",
+    "bytes": 9477,
+    "sha256": "a9ed907bf075efe367a9afc4a2b79b1cc9859ecb5611a0ea4cf68441a884bb40"
+  },
+  "current_evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/root-delta-readback-04-01.json",
+      "bytes": 1580,
+      "sha256": "f83ccd01f85df0b1a2b03c2d688983625995d9ada7bdfc000a47a03ffcb4691d"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author04-plan.json",
+      "bytes": 3638,
+      "sha256": "2ae363aca9cc5537ef1c1e7037760b2662e23b7004faee90bd586d1568181517"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/pre-export-freeze.json",
+      "bytes": 2543,
+      "sha256": "76aabc4ef284732f299cfb2393469afe9a666339df9da168d209f36049cdb8aa"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/export-02-result.json",
+      "bytes": 838,
+      "sha256": "8625984a296ff01d6e7fd584d7fefeccd7f92fdd4926f8fc308eab0f2e980993"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/native-check-02/native-check.json",
+      "bytes": 1727,
+      "sha256": "f066fc8d3b0f0c5da126d3b4217cd783e8777c698190c5263926339a11c423a5"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/actual-view-02.json",
+      "bytes": 1382,
+      "sha256": "a131d6f8ba239463e4da0f19542d8e71bd33676c75b8569770e18cf82e04c116"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/package-freeze-01.json",
+      "bytes": 4875,
+      "sha256": "9fed1d0233cf7b856d5394c4e16a2e9ee4dcaefe017fbff579ce82f3f5f1dd54"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/replay-03/TERMINAL.json",
+      "bytes": 3680,
+      "sha256": "06000f45f8453d739db898348b11416cf183fc05137a7acea13a018e8b8655ab"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/hil-controller-boundaries-01/author-04/EXPORT_FAILED.json",
+      "bytes": 2129,
+      "sha256": "a4d36e605930252490334d0eabbdbdca8540c3e4432333d4981f6532e36906bc"
+    }
+  ]
+}

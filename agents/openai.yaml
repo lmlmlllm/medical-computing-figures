@@ -1,0 +1,6 @@
+interface:
+  display_name: "医学 × 计算机／医工交叉科研绘图"
+  short_description: "依据图文证据绘制、修改与核验医学计算方法图和真实结果图"
+  default_prompt: "用 $medical-computing-figures 读取我的材料，核对图文关系并交付可编辑科研图。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,130 @@
+{
+  "case_id": "MCF052-F1",
+  "dedup_id": "10.52202/079017-0692|NeurIPS2024final|Figure1",
+  "title": "RAGChecker: A Fine-grained Framework for Diagnosing Retrieval-Augmented Generation",
+  "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/27245589131d17368cccdfa990cbf16e-Abstract-Datasets_and_Benchmarks_Track.html",
+  "source_figure": "Whole Figure1, printed/PDF p4 of final29page paper; formal definitions and validation dependencies count as no additional figure.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Final NeurIPS2024 Figure1 and relevant §§3–4, Appendices A–D/H with validation-table exceptions; official identity/preprint/code-license records. Not whole-study, executable metric or clinical validation.",
+    "visual": "Whole source Figure1, formal-equation and validation pages actually viewed. Original whole/intended PNG, independent PDF, exact-font static SVG and replay PDF previews actually viewed.",
+    "archive": "Raw paper/artwork stay local-review-only. Clean ZIP contains original explanatory diagram, editable source, full caption, renderer and separately licensed font; no primary artwork."
+  },
+  "question": "Which population, supporting reference and condition define each RAGChecker metric, and what can these diagnostic categories establish?",
+  "elements": [
+    {
+      "id": "q_D_K_m_gt",
+      "role": "Query, corpus, retrieved chunks, generated response and evaluation reference have distinct retrieval/generation/evaluation roles."
+    },
+    {
+      "id": "M_T",
+      "role": "Response claims M and reference claims T are separately extracted populations, not one shared correct-claim intersection."
+    },
+    {
+      "id": "E",
+      "role": "Reference text entails a claim; directional support rather than symmetric identity."
+    },
+    {
+      "id": "K_rel_K_irr",
+      "role": "Chunks with at least one supported T claim versus their complement; relevant chunks can also contain misleading content."
+    },
+    {
+      "id": "overall",
+      "role": "Precision divides supported M by |M|; recall divides supported T by |T|; F1 combines them when defined."
+    },
+    {
+      "id": "retrieval",
+      "role": "Claim recall has T units; context precision has chunk units."
+    },
+    {
+      "id": "diagnostics",
+      "role": "Five response-support diagnostic rates divide by |M|; utilization divides by only retrieved-supported T."
+    }
+  ],
+  "relations": [
+    {
+      "from": "q,D,k",
+      "to": "K",
+      "type": "retrieval input/output",
+      "source": "§3.1–3.2 and Fig1"
+    },
+    {
+      "from": "K,q",
+      "to": "m",
+      "type": "generation conditioning",
+      "source": "§3.1–3.2"
+    },
+    {
+      "from": "m and gt",
+      "to": "M and T respectively",
+      "type": "separate claim extraction",
+      "source": "§3.2"
+    },
+    {
+      "from": "gt→M and m→T support",
+      "to": "precision and recall",
+      "type": "two directed evaluation counts",
+      "source": "§3.3.1/B.1"
+    },
+    {
+      "from": "K→T support",
+      "to": "retrieval recall and utilization denominator",
+      "type": "population selection",
+      "source": "§3.3.2–3.3.3/B.2–B.3"
+    },
+    {
+      "from": "gt,K_rel,K_irr support predicates on M",
+      "to": "diagnostic subsets",
+      "type": "possibly overlapping operational categories; not causal source attribution",
+      "source": "§3.3.3/B.3/H"
+    }
+  ],
+  "visual_design": "Original four-panel workflow and formula roles replace the source Venn geometry. Separate M/T counts and conditional denominators remain visible; full caption preserves source discrepancies, checker meaning and validation scope. No numeric model results or proportional areas drawn.",
+  "transferable_rules": [
+    "Declare the counted population, support direction and conditioning for every metric. Claims, reference claims and chunks cannot share a denominator merely because they appear in the same schematic.",
+    "Do not draw overlapping diagnostic subsets as an exclusive partition, equate context faithfulness with reference correctness, or promote support categories into observed causal provenance."
+  ],
+  "gaps": [
+    "Empty denominators/F1 zero cases, extraction/deduplication, executable multi-chunk checking, cross-question aggregation and experiment code revision remain unknown.",
+    "Appendix B introductory entailment wording reverses §3.2; source Fig1 combines correct claims, omits F1, groups noise and simplifies faithfulness. These source differences are retained, not official corrections.",
+    "Benchmark4162queries differs from meta-evaluation280paired instances. Assisted annotations and 90.95% within-one-label agreement do not establish exact agreement or every diagnostic metric validity. Table2/Table16 exceptions and Table1 Writing omission retained.",
+    "English text evaluation does not establish medical assurance, infallible reference truth or causal generator behavior. No RAG/checker experiment executed.",
+    "Final-artwork permission unestablished; preprint CCBY4 and repository Apache2 are distinct. No browser, arbitrary editor, cross-host, physical-print or journal-size validation."
+  ],
+  "license": "Original derivative and own renderer packaged with renamed NotoSansSC SILOFL1.1. Formal final-artwork grant unknown; primary pixels excluded.",
+  "notice_scope": "Bounded source identity/version/notice checks recorded in source orientation; no exhaustive clearance claim.",
+  "transfer_entry": "tests/batches/ragchecker-evidence-metrics-01/README.md",
+  "test_limits": [
+    "OriginalRC01–RC08: independent model final8/8,30finite checks. Requirements unchanged; source-aware final assessor distinct from image reader/author. No new held-out paper or human expert review.",
+    "49objects87relations54literal payloads.1726glyphs, min9.3999996pt, maximum measured static discrepancy0.000775pt;23logicalvectors28nativeparts plus background. Literal sequence/multiplicity checked.",
+    "40member ZIP;10canonical outputs including environment byte-exact in same-host/runtime five-phase OS replay. Before/after84controls each include32known-existing read denials and actual connectEPERM after successful socket creation/timeout.",
+    "Original Stage1 margin false positive retained and withdrawn after raw-pixel check; Stage2 Human wording corrected by additive independent-model scope erratum. Earlier layout/engineering failures retained.",
+    "Separate two-image denominator control completed: both image-only and source-aware reviews strict TP1/FN0, correct-control FP0/1; four questions and two optional observations retained. Root key-guided repair ten canonical files exact base and actually viewed. Initial scorer exposure-order failure retained, fresh scorer followed fixed order. This is outside RC01–RC08, not another paper or independent cross-case regression."
+  ],
+  "evidence_pins": {
+    "protocol.json": "818bf95e7f3625187260c6d350a7fe5d2b636521c490326cefa373beda058a79",
+    "scientific-freeze-01.json": "f45fb71def51cf6e8884c017457cf89cce83973bf3a9de047f879835a20164e9",
+    "author-output-freeze-01.json": "0ba24a003833ff15a85d0589f4f21a5aad3fd02ca9ebb4cb5876e6e717874b80",
+    "review/stage1-freeze-01.json": "f046ca690639adb36784f66b7a8cb77363c07a4e321efd036c7cf5debb3b04ea",
+    "review/stage2-freeze-01.json": "a8ad5c577a5d94626f310b989c09edff5bd281c7fce493de1a10558b64f7cfce",
+    "review/stage2-scope-erratum-01.json": "6b96e8f229e1c25dc096670950588183f849ca1ec3cf29c1b943204b643267d8",
+    "output-audit/native-freeze-01.json": "214d3dcc8657c86748b43cad90bea6f7267e61dc6a1fe7f1b36741bf2433e178",
+    "output-audit/replay-freeze-01.json": "7437267fef3622f5769f435412eb46759e3dc3af0b81a5c20150156c1a27f566",
+    "review/final-assessment-01/assessment.json": "18b12d78942687df8dec402906915eccb827aa8795cbd8e1ca3a5d4dace782c1",
+    "review/final-assessment-freeze-01.json": "223f16bcb95c8ec4b42c79b5b8f2888e3b0c6ae16bb5ad156f20febfca3660de",
+    "author/production-01/ragchecker-evidence-metrics-01-clean.zip": "e59c2895244d05dae69d1f5440c0486bf0a50655b957a38b902bd5f5ad703ca0"
+  },
+  "controlled_audit_completion": {
+    "path": "tests/batches/ragchecker-denominator-control-01/completion.json",
+    "sha256": "361e88112a3f0f0a312303a304be8dc2511c711218c956a0718c0558df902180"
+  },
+  "maintenance_note": {
+    "updated_utc": "2026-10-13T12:24:43.730390+00:00",
+    "scope": "Only completed separate control state added; original admission-time card preserved in continuation backup, scientific/source classification unchanged.",
+    "prior_case_backup": "<SKILL_ROOT>/tests/continuation-before-20261013T122443Z/cases/MCF052-ragchecker-evidence-metrics/MCF052-F1.json"
+  }
+}

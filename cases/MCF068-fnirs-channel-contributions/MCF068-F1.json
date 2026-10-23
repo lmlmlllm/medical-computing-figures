@@ -1,0 +1,95 @@
+{
+  "id": "MCF068-F1",
+  "paper": "DOI:10.1371/journal.pone.0244186",
+  "version": "PLOS ONE15(12):e0244186 publisher PDF,2020-12-23; retrieved2026-10-15. Bounded notice search, not complete version history.",
+  "figure": "Whole Figure1 A–C viewed as one partial unit; Figure2/3 and Methods dependencies, not extra catalog units.",
+  "domain": "physical_measurement_channels_and_nuisance_regression_roles",
+  "figure_types": [
+    "source_detector_pair_vs_signal",
+    "tissue_contribution_assumption",
+    "regressor_target_weighted_subtraction"
+  ],
+  "card": "cases/MCF068-fnirs-channel-contributions/MCF068-F1.json",
+  "reading": "Root relevant PDF1–9/13–14; independent source, image-first and final readers have recorded bounded scopes. No research data/code/PCA/GLM execution.",
+  "visual": "Whole original Figure1 p5 and dependencies p7/8 viewed; root full pages5/6/7/8/9/13. Current full PNG/PDF/static SVG and fill edit viewed.338.67×359.83mm,44textgroups,1421glyphs,13elements/11relations,min11pt.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "Physical pairs define8/30mm channels; derived short signals feed PCA, two PCs are covariates, regular signal is target/minuend; subtract channel-specific weighted PC contribution. Sensitivity assumptions/source conflicts remain.",
+  "transfer": "Fixed FN01–FN08 independently supported8/failed0/unassessed0. Native current185checks each; old183missed duplicate IDs, later two fail old control.21memberZIP and two9input replays regenerate8outputs same host. No newheldout/OSisolation/research reproduction.",
+  "archive": "Article CC BY4.0 recorded; third-party photo/NIRSite rights unverified. PublisherPDF/pages local review only; clean package contains self-drawn explanation/code and licensed unchanged DejaVu font, no source pixels.",
+  "at_utc": "2026-10-15T14:55:06.164081+00:00",
+  "source_urls": [
+    "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0244186"
+  ],
+  "source_record": "tests/batches/fnirs-channel-contributions-01/root-source-notes-01.json",
+  "question": "How do physical source–detector pairs become distinct short/regular signals, and how do short-channel PCs contribute to each regular-channel correction?",
+  "grouping_and_layout": "Upper panel separates qualitative physical pairing/tissue sensitivity from lower computation. Short-derived PCA chain is left; regular target, coefficients, weighted contribution and subtraction are right. A distinct y bypass preserves the minuend. Labels, not color alone, carry roles.",
+  "relationship_evidence": "Figure1 caption PDF5; preprocessing PDF6–7; Methods step8 PDF8–9; assumptions and limitations PDF3/13–14.",
+  "transferable_principles": [
+    "Separate physical sampling relations, derived signals, regression covariates, fitted targets and corrected outputs.",
+    "A covariate is not automatically the quantity to subtract; keep fitted coefficients and component combination visible.",
+    "Distances between sensors do not supply tissue depths; stated sensitivity assumptions do not establish pure-signal outputs."
+  ],
+  "non_transferable_contents": [
+    "Do not transfer8/30mm, twoPCs, filter cutoffs or assumed tissue sensitivity to other devices/methods.",
+    "No PCA/GLM numerical effects, CNR, clinical benefits or actual research implementation verified."
+  ],
+  "limitations": [
+    "Short-only extracerebral sensitivity and PC nuisance interpretation remain assumptions; correlated neural/systemic components can limit specificity.",
+    "SCI equality, other-branch filter placement, ROI-label mapping and contradictory movement wording are retained; none is silently resolved by the selected branch.",
+    "Exact detector hardware grouping, optical depth/sensitivity, retained members, PCA/GLM defaults, original research results and clinical benefit remain unverified.",
+    "Not a held-out source; preauthor checklist after initial source exposure.",
+    "Current editable SVG uses per-glyph text; full strings editable in layout JSON. Other-editor/browser and journal acceptance untested.",
+    "Source equations are explanatory notation, not literal printed equations."
+  ],
+  "evidence": {
+    "fixed_criteria": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/selection-and-preauthor-checklist.json",
+      "bytes": 4435,
+      "sha256": "5ffabee4fb90727b7f89775675ca413341b448d27fb6c1cb581db09550d00781"
+    },
+    "semantic_spec": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/author-02/inputs/figure_spec.json",
+      "bytes": 20391,
+      "sha256": "0545e131ee52885f2125ae64298009643cddd6723e213a8585c7bb7e594f7b86"
+    },
+    "source_review": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/source-review-01/evidence.json",
+      "bytes": 25241,
+      "sha256": "a33c39a2bd4d7c287aad1b1764b7e86f9ad4a05c691248b7c4d23a253193bdb4"
+    },
+    "reader": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/reader-01/seal-stage2.json",
+      "bytes": 5884,
+      "sha256": "4f6cebffbfaf00d2aee5b87f84380bd7214444e32d5b0712de9c13948285bfc0"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/native-audit-01/summary-02.json",
+      "bytes": 39715,
+      "sha256": "28ca142e19b473cba8fccfb9e827463aea69a59f31ddf05aa7264251295f92dd"
+    },
+    "final_assessment": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/final-assessment-01/report.json",
+      "bytes": 18036,
+      "sha256": "fd42cd2972c4367e28e3e08aecee87353f318defea90f4743e3e317b8e5dbb41"
+    },
+    "root_acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/root-final-readback-01.json",
+      "bytes": 1393,
+      "sha256": "94e6380009595a480d43d758508937b83cbace776acc28606580aa421456b1d5"
+    },
+    "package": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/fnirs-glm-pca2-clean-01.zip",
+      "bytes": 2327316,
+      "sha256": "f6f3a028d421dbdbb5d477356f1754ce4d70e1beac69aa6a32d07188fef2b835"
+    },
+    "replays": {
+      "path": "<SKILL_ROOT>/tests/batches/fnirs-channel-contributions-01/root-review-readback-01.json",
+      "bytes": 1774,
+      "sha256": "8738a69583c69f29e109f210d02117248d737a539b087b30254910371e974ff4"
+    }
+  },
+  "delivery": "tests/batches/fnirs-channel-contributions-01/DELIVERY.md",
+  "new_rule_scope": "Prior physical/computation/assumption rules applied; post-assessment predictor/target/subtrahend and identifier-uniqueness wording not yet validated across another case."
+}

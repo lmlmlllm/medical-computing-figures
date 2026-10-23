@@ -1,0 +1,110 @@
+{
+  "case_id": "MCF049-F2",
+  "dedup_id": "arXiv:2102.07623|v2|Figure2",
+  "title": "FedBN: Federated Learning on Non-IID Features via Local Batch Normalization",
+  "source_url": "https://arxiv.org/abs/2102.07623v2",
+  "source_figure": "Whole Figure2, source PDFp2; single-client toy error surface, not architecture. Algorithm1 p16 is methodological dependency, not another catalog figure.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Selected source PDFpp1–5,16,18,27 including whole Fig2 caption, §2–4.2, Algorithm1, training details and AppendixG; author record identity/license. Full proof, experiments and implementation code unverified.",
+    "visual": "Whole source Fig2 and Algorithm1 page actually viewed; final whole/intended PNG plus independent PDF and exact-font static SVG proxies viewed.",
+    "archive": "Primary PDF/HTML/source pixels and review histories local-review-only; clean ZIP contains original deliverables, portable renderer and licensed font/notices."
+  },
+  "question": "Which client parameter families learn locally, which participate in periodic averaging, and at which stage do those rules apply?",
+  "elements": [
+    {
+      "id": "local_client_copies",
+      "role": "Separate client-local trainable copies, including nonBN and BN families; not one permanently identical shared entity"
+    },
+    {
+      "id": "local_SGD",
+      "role": "All-layer local update including both trainable families; statistics are not gradient-trained parameters"
+    },
+    {
+      "id": "periodic_condition",
+      "role": "mod(t,E)=0 gates uniform nonBN averaging after local updates; source timing/index ambiguities remain"
+    },
+    {
+      "id": "uniform_mean_and_assignment",
+      "role": "1/K average of nonBN parameter values assigned to each client copy; not gradient/patient weighting or a transport implementation"
+    },
+    {
+      "id": "statistics_and_optimizer_state",
+      "role": "Client-computed mean/variance distinct from learned BN and unknown optimizer buffers; no invented communication/update path"
+    },
+    {
+      "id": "testing_exception",
+      "role": "AppendixG unknown-client testing may average learned BN parameters while computing new-client statistics; scoped separately from main training rule"
+    }
+  ],
+  "relations": [
+    {
+      "from": "local SGD",
+      "to": "nonBN and BN trainable copies",
+      "type": "local parameter update",
+      "source": "§4.1; Algorithm1 lines2–3"
+    },
+    {
+      "from": "updated nonBN copies and mod(t,E)=0",
+      "to": "uniform1/K mean",
+      "type": "conditional parameter aggregation",
+      "source": "Algorithm1 lines5–8"
+    },
+    {
+      "from": "common nonBN mean",
+      "to": "separate client copies",
+      "type": "assignment at synchronization; not permanent identity",
+      "source": "Algorithm1 line8 and local update loop"
+    },
+    {
+      "from": "learned BN parameters",
+      "to": "client-local continuation",
+      "type": "excluded from this training aggregation, still locally learned",
+      "source": "§4.1; Algorithm1 nonBN test"
+    },
+    {
+      "from": "unknown-client testing",
+      "to": "averaged learned BN plus newly computed statistics",
+      "type": "separate-stage exception, full caption only",
+      "source": "AppendixG p27"
+    }
+  ],
+  "visual_design": "All-K local group contains one node per parameter family. Local SGD branches to both; nonBN alone enters condition/mean/common-value/assignment chain. A separate note distinguishes statistics and points to the testing exception. Symbolic grouped clients avoid suggesting an observed cohort; source Figure2 toy surface is not reused. No false-branch or return-loop arrow is drawn; complete caption supplies scope.",
+  "transferable_rules": [
+    "Separate trainable parameter-family local updates from aggregation eligibility, synchronization assignment and copy identity. Exclusion from aggregation is not freezing; equal assigned values do not imply one parameter entity between synchronizations.",
+    "Keep learned parameters, computed statistics and optimizer state distinct. Qualify sharing/retention by stage and preserve independently supported testing exceptions. Unknown running/counter/reset/communication semantics remain unknown."
+  ],
+  "gaps": [
+    "BN running/batch estimates, momentum/counters, update order, storage and communication unknown",
+    "Optimizer state identity/persistence/reset/checkpoints and communication unknown; SGD does not establish statelessness",
+    "Algorithm1 w0/t1 bridge, reused k index and epoch/iteration/round conventions unresolved",
+    "Toy empirical-standard-deviation gamma versus theoretical learned scale; Figure2 caption range versus axes/4.48 and training/generalization wording differences retained",
+    "No model/data run, concrete client/tensor counts, partial-participation protocol, performance/privacy/clinical/general-convergence result established",
+    "Image alone omits definitions/false branch/return loop and testing exception details; secondary notes small/light. Paired complete caption supplies bounded method context."
+  ],
+  "license": "arXiv nonexclusive-distrib author deposit: raw source assets retained locally for review, not redistributed. Clean original figure/code/spec package includes renamed Noto Sans SC font with SIL OFL1.1 and notices.",
+  "notice_scope": "Bounded author arXiv revision/identity/license and available conference-record checks; OpenReview access challenge not bypassed. No exhaustive correction/retraction or conference-copy equivalence certification.",
+  "transfer_entry": "tests/batches/fedbn-parameter-ownership-01/README.md",
+  "test_limits": [
+    "Original F01–F08 denominator8 independent source-informed final pass;10objects/10relations with7main arrow relations; no new TP/FP controls or holdout",
+    "348glyphs/25vector paths,min8.8pt,page680×540pt; max native glyph0.0000297852pt/vector0.0000122071pt/static0.0095pt against fixed0.25pt",
+    "317 actual show_text paint calls distinct from317 outline-construction calls and31 no-ink space probes; actual parsed family/style/weight bound to packaged FTface",
+    "Exact27member ZIP OS-isolated same-host/runtime replay10canonical outputs byte-identical including environment JSON;16existing-file,2write-open,2network denials plus5positive reads/1cache write",
+    "Retained source guard/discovery/Cairo/native/setup failures; author outline/paint mislabel corrected only in clean copy; original replay socket-creation claim retained with same-profile additive probe proving actual connect EPERM",
+    "Glyph-level native editing; whole labels via layout/renderer. Static exact-font SVG does not establish browser/other-editor/print/cross-runtime behavior"
+  ],
+  "evidence_pins": {
+    "protocol.json": "695a14c90e5c610b126100e4a2eedfddb61d92f660cc46eeb165a5331ce12a98",
+    "review/assessment.json": "cb6395f05db396ac2eb748a2c470b5cb2d508ae656527d7e7d64f935414a1a6b",
+    "assessment-freeze-01.json": "60248b76da4a4b7213ab36470a047a6a7e5411a3b2957b045ce911e233c2aa48",
+    "scientific-freeze-01.json": "9c52e00bc343f8408aaa650c9f936f6346c8bbdb1b730c53442be358d4f6c3b7",
+    "package-freeze-01.json": "4c2cf90c591bd592933eb686cebca9bd7a1830743cbbbf264a491c8162c4794c",
+    "replay-freeze-01.json": "32118bc31769e67b33c6e5efafdbb14333d100e1ef374a598a9f8fab02ca9e6e",
+    "output-audit/network-stage-clarification-01/clarification.json": "323416312f9e0b9d30482e308a2ff242708a9b70d84c5ef9b0e2f2eb94c1620f",
+    "fedbn-parameter-ownership-01.zip": "8d676886af44b8dec8ae170f91d671f90508547e098a0e01cab6da5b5177a79f"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "MCF081-F3",
+  "document_type": "whole_figure_joint_verification_case",
+  "created_utc": "2026-10-19T04:11:07.317229+00:00",
+  "paper": {
+    "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+    "authors": "Omar Khattab and Matei Zaharia",
+    "doi": "10.1145/3397271.3401075",
+    "version": "SIGIR2020 pp39–48; arXiv2004.12832v2 / author PDF",
+    "source_archival_status": "Primary paper PDF and pixels local reading only; excluded from finalZIP"
+  },
+  "unit": {
+    "figure": "Whole Figure3 scoring architecture",
+    "full_joint_verified": true,
+    "fully_verified_case_units": 1,
+    "partial_case_units": 0,
+    "reading_scope": "Full source figure/caption and relevant query/document encoder, maxsim/scoring Eq3, parameter and offline-indexing context; not every benchmark result."
+  },
+  "question": "How do all document vectors contribute to each query-position maximum, and how do the local maxima become one query–document score?",
+  "elements_and_relations": {
+    "elements": 21,
+    "relations": 33,
+    "document_fan_ins": 12,
+    "query_anchors": 3,
+    "local_scalars": 3,
+    "complete_source_scope": "Shared BERT, independent contextual encoding, projection/m width, L2 normalization, document-only offline scope and schematic token counts; projection tying remains unknown.",
+    "authority": "/provenance/document_reduction/selected_value",
+    "correct": "maximum",
+    "controlled_fault": "arithmetic_mean",
+    "authority_leaves": 1,
+    "derived_leaves": 27,
+    "total_repair_leaves": 28
+  },
+  "layout": {
+    "canvas_pt": [
+      1000,
+      815
+    ],
+    "preview_pixels": [
+      2000,
+      1630
+    ],
+    "native_text_runs": 63,
+    "native_ids": 274,
+    "characters": 698,
+    "min_nested_math_font_pt": 6.4,
+    "editable": "Native SVG text/path and PDF vector/glyph objects; six math labels represented as48 positioned runs plus15 unchanged text records; no all-editor whole-formula editing claim."
+  },
+  "controlled_test": {
+    "contract": {
+      "file": "tests/batches/colbert-late-interaction-01/contract.json",
+      "bytes": 7007,
+      "sha256": "a02fc3f7a114d1537741a1a10c205a9fa9cae3d56625b0ff98caf89ca6d05101"
+    },
+    "score": {
+      "file": "tests/batches/colbert-late-interaction-01/assessor-02/facet-score-01.json",
+      "bytes": 97123,
+      "sha256": "7df415b5a026feca7789fb7859ddbdd7d7c9efce4b5d04627b8fa8fd0c05d8ed"
+    },
+    "root_score_readback": {
+      "file": "tests/batches/colbert-late-interaction-01/root-score-readback-01.json",
+      "bytes": 2459,
+      "sha256": "87cf7d2b338d20bf9363e6c0ace9acfed1f7dd4be1e498419fdc4d764d502f18"
+    },
+    "scores": {
+      "image_visible": "1/1",
+      "image_source_boundary": "1/1",
+      "image_tensor_logic": "2/2",
+      "source_detection": "1/1",
+      "source_localization": "1/1",
+      "source_explanation": "2/2",
+      "source_repair_proposal": "1/2",
+      "source_control_false_positives": "0/1",
+      "material_propositions": 400,
+      "supported": 326,
+      "undetermined": 40,
+      "not_an_error_claim": 34,
+      "unsupported": 0
+    },
+    "source_stage_limit": "Reader stage used two attributed notes; root and independent scientific first reading used primary paper/figure.",
+    "unit": "One fault family/control and one reader with two correlated stages; not three independent MaxSim trials."
+  },
+  "actual_repair": {
+    "authority": "/provenance/document_reduction/selected_value",
+    "from": "arithmetic_mean",
+    "to": "maximum",
+    "leaves_changed": 28,
+    "derived": 27,
+    "input_manifest": {
+      "file": "tests/batches/colbert-late-interaction-01/repair-input-manifest-01.json",
+      "bytes": 8411,
+      "sha256": "937f0b904e93a4fe2b75af1c46314c00446c07917de6ec951108272601d53572"
+    },
+    "score_readback": {
+      "file": "tests/batches/colbert-late-interaction-01/root-score-readback-01.json",
+      "bytes": 2459,
+      "sha256": "87cf7d2b338d20bf9363e6c0ace9acfed1f7dd4be1e498419fdc4d764d502f18"
+    },
+    "no_reader_score_backfill": true
+  },
+  "formal_native": {
+    "file": "tests/batches/colbert-late-interaction-01/root-typography-native-acceptance-01.json",
+    "bytes": 6735,
+    "sha256": "21a196150d89fcb1db840f918af3288b3ec08f7cf83441c684c9ec8b4f835971"
+  },
+  "replay": {
+    "file": "tests/batches/colbert-late-interaction-01/final-zip-replay-01/replay-readback.json",
+    "bytes": 18189,
+    "sha256": "a99117ad8aaa28d1899bbcf538ba0adafd38731ad7f859a78d3cda50c68a88a7"
+  },
+  "additive_typography_replay": {
+    "file": "tests/batches/colbert-late-interaction-01/final-zip-replay-01/typography-replay-readback.json",
+    "bytes": 15132,
+    "sha256": "1ecf57cb28bb61ecacc3422a48c737c8f5518f8247adbe38454a9181cba3842e"
+  },
+  "result_record": {
+    "file": "tests/batches/colbert-late-interaction-01/root-final-acceptance-01.json",
+    "bytes": 5208,
+    "sha256": "40da22d442cc3b149d3fe0e7204a6b16ac233257766dea7dc5dc0e01799e1441"
+  },
+  "delivery": {
+    "PDF": {
+      "file": "tests/batches/colbert-late-interaction-01/delivery-01/graphics-02/repaired/figure.pdf",
+      "bytes": 52385,
+      "sha256": "501b6356cb2d27c287a561a385226d2d49e8127c8b0e8d2ff14de97c765db14a"
+    },
+    "SVG": {
+      "file": "tests/batches/colbert-late-interaction-01/delivery-01/graphics-02/repaired/figure.svg",
+      "bytes": 1989014,
+      "sha256": "af5b72fa02353a542a667408a79b96c27aa14a05064ca381bfb5cb653ccdd913"
+    },
+    "PNG": {
+      "file": "tests/batches/colbert-late-interaction-01/delivery-01/graphics-02/repaired/figure.png",
+      "bytes": 186991,
+      "sha256": "535d22328f72e05d53b1d2de6a9c891b59237530c0386c3ff2280642846ce2d8"
+    },
+    "spec": {
+      "file": "tests/batches/colbert-late-interaction-01/delivery-01/graphics-02/repaired/figure_spec.json",
+      "bytes": 31231,
+      "sha256": "3f9fbcc34426c33bc64727be853476d1c505510f46dbef2638426d69a8ea13ec"
+    },
+    "README": {
+      "file": "tests/batches/colbert-late-interaction-01/delivery-01/README.md",
+      "bytes": 4342,
+      "sha256": "d0afb0bbaf826484ada56c50cc33e328babac1f392bb595b132a262289fcd7ba"
+    },
+    "ZIP": {
+      "file": "tests/batches/colbert-late-interaction-01/colbert-whole-figure3-final-01.zip",
+      "bytes": 4108094,
+      "sha256": "07285fff1b7e2f2f0e8a9348bea60fa2a049c48643e51386b342248b10eedefa"
+    }
+  },
+  "scope_limits": [
+    "Reader source stage used two attributed notes, not actual original paper; root and independent science source-first work used primary materials.",
+    "Repair proposal remains partial1/2 despite successful actual synchronized repair and exports.",
+    "Native independent audit combines source/visual review; ZIP replay proves byte identity, not a second native run.",
+    "No heldout transfer, human expert, model run, empirical benchmark, journal compliance, cross-host portability or OS sandbox claim.",
+    "Nested q/d6.4pt checked in stated whole/detail views; arbitrary downscaling not verified.",
+    "One newly catalogued whole figure; contributes one full case, not more for intermediate exports or multiple query positions. Overall M2 remains unfinished."
+  ],
+  "licensing": "Authored reconstruction/spec/code/notes/audits plus licensed DejaVu only; original article and figure media excluded. Source attribution retained.",
+  "transfer": "New catalog entry after development here, not heldout transfer."
+}

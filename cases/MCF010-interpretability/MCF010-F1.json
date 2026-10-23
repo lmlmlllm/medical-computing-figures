@@ -1,0 +1,220 @@
+{
+  "case_id": "MCF010-F1",
+  "dedup_id": "10.1148/ryai.2021200267|journal-PMC8637231|Figure1",
+  "paper": {
+    "title": "Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging",
+    "authors": "Arun et al.",
+    "journal": "Radiology: Artificial Intelligence",
+    "volume": "3",
+    "issue": "6",
+    "article": "e200267",
+    "year": 2021,
+    "online_date": "2021-10-06",
+    "collection": "2021-11",
+    "doi": "10.1148/ryai.2021200267",
+    "pmcid": "PMC8637231",
+    "pmid": "34870212",
+    "version": "Journal article in PMC; no author-manuscript substitution or preprint merging",
+    "preprint": {
+      "doi": "10.1101/2020.07.28.20163899",
+      "title_difference": "Preprint uses (Un)Trustworthiness; journal title does not",
+      "link_evidence": "Crossref relation.has-preprint",
+      "scope": "Identity relationship only; preprint full text/figures not used in selected probe"
+    }
+  },
+  "scientific_task": "Contrast localization, parameter sensitivity, same-architecture repeatability and interarchitecture reproducibility of post-hoc saliency maps; no single test proves clinical validity.",
+  "states": {
+    "metadata": "Primary PMC/PubMed/Crossref journal identity checked2026-10-11; preprint title distinguished",
+    "text": "Relevant methods, statistical-analysis overview, randomization/stability results, fullFigure1caption and limitations read; appendix inaccessible",
+    "visual": "One whole originalFigure1 and randomization detail actually viewed by source author andparent",
+    "semantic": "Key comparison units/directions and source-specific operational rules identified; unavailable implementation details retained",
+    "license": "Original RSNA artwork local-only; no broad redistribution permission established",
+    "code": "Original research implementation not run or audited",
+    "transfer": "Completed interpretability-01 baseline;17 fixed development requirements, independent model audit0 blockers/0 nonblockers, source-free replot and actual final-parent view. Controlled tests recorded separately."
+  },
+  "original_figure_count": 1,
+  "caption_only_not_counted": [
+    "Figure3",
+    "Figure4"
+  ],
+  "original_figure": {
+    "file": ".inspection/figure1-original.jpg",
+    "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a5b1/8637231/6d58a45ea760/ryai.2021200267fig1.jpg",
+    "source_figure": "Journal Figure 1, whole",
+    "pixels": [
+      800,
+      628
+    ],
+    "sha256": "4c28de301a2a32fc26b285ac304a643cf7aeacb16b81b2e31c016168506942ff",
+    "observation": "All four question quadrants and both illustrative pass/did-not-pass rows actually viewed; selected examples, not population rates."
+  },
+  "parent_detail": {
+    "file": ".inspection/figure1-randomization-detail.png",
+    "source_figure": "Journal Figure 1, upper-right crop",
+    "crop_xyxy": [
+      397,
+      0,
+      800,
+      316
+    ],
+    "pixels": [
+      403,
+      316
+    ],
+    "sha256": "8972bab8ba75e2a6349023ac286611c1ded4c79332f207af154fbf3dccf982f9",
+    "observation": "Same-example original/trained/randomized columns; changed map in passing row, persistent similar map in failing row. Source-pixel crop only, no synthetic heatmap."
+  },
+  "source_records": [
+    {
+      "file": ".inspection/pmc.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8637231/",
+      "scope": "Full journal article HTML read, not a PDF",
+      "sha256": "b549695102d35248486c4156f71166ee372748ae06ce2a4a5c62cac25b88fde8",
+      "bytes": 206169
+    },
+    {
+      "file": ".inspection/pmc-text.txt",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8637231/",
+      "scope": "Text extracted locally for method/caption/limitation reading",
+      "sha256": "f75c2e38193e2cece0539eba0d99ca5d791c6ac45a8183f95bba27e3cc487bcf",
+      "bytes": 75568
+    },
+    {
+      "file": ".inspection/pubmed.xml",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=34870212&retmode=xml",
+      "scope": "Identity/publication type and correction-relation inspection",
+      "sha256": "f0ba05ee8542cabfc5912deb59a2bb82a95d3f8c66b2fa8d88639892a721a368",
+      "bytes": 28362
+    },
+    {
+      "file": ".inspection/crossref.json",
+      "url": "https://api.crossref.org/works/10.1148/ryai.2021200267",
+      "scope": "Identity, preprint relationship and available update metadata",
+      "sha256": "366f2d61327a50c8e32e0f4de874b0c2f8319b117f08da139bd67fecfc3c1311",
+      "bytes": 6940
+    },
+    {
+      "file": ".inspection/pdf-access-response.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8637231/pdf/ryai.2021200267.pdf",
+      "scope": "Download interstitial only; not used as paper evidence",
+      "sha256": "81dab15230c816e4ce866febda10b3bcfa0fb548b507766d550047e7f4eeb522",
+      "bytes": 1817
+    }
+  ],
+  "read_locators": {
+    "sec9": "Study Design + Figure1 full caption",
+    "sec10": "Data Preparation",
+    "sec11": "Model Training",
+    "sec12": "Saliency Methods and Evaluation Criteria, all paragraphs",
+    "sec13": "Statistical Analysis",
+    "sec15": "Localization Utility, baseline/unit explanation",
+    "sec16": "Sensitivity to Trained versus Random Model Weights + Figure3 caption",
+    "s4": "Discussion and limitations"
+  },
+  "elements": [
+    {
+      "id": "localization",
+      "unit": "pixel score versus segmentation or box-interior label",
+      "role": "Operational spatial agreement with task annotation"
+    },
+    {
+      "id": "randomization",
+      "unit": "same-input original/reset model attribution-map pair",
+      "role": "Sensitivity to cascading model-weight randomization"
+    },
+    {
+      "id": "repeatability",
+      "unit": "same-input attribution maps from separatelytrainedmodels of samearchitecture",
+      "role": "Intra-architecture stability preference"
+    },
+    {
+      "id": "reproducibility",
+      "unit": "same-input attribution maps from distinctarchitecturemodels trained on same data",
+      "role": "Interarchitecture similarity preference"
+    }
+  ],
+  "relations": [
+    {
+      "from": "saliency_pixel_scores",
+      "to": "reference_ROI_membership",
+      "type": "comparison viaAUPRC",
+      "source": "PMC#sec12"
+    },
+    {
+      "from": "trained_InceptionV3_parameters",
+      "to": "successive_randomized_parameters",
+      "type": "experimentalparameterintervention",
+      "source": "PMC#sec12 and#sec16"
+    },
+    {
+      "from": "original_and_reset_maps",
+      "to": "SSIM",
+      "type": "pairwisecomparison",
+      "source": "PMC#sec12 and#sec16"
+    },
+    {
+      "from": "randomtrained_map_pairs",
+      "to": "randomizationbaseline",
+      "type": "averageSSIMover50pairs",
+      "source": "PMC#sec12 andFig3caption"
+    }
+  ],
+  "visual_decomposition": {
+    "layout": "Four quadrants each show one question with top pass and bottom did-not-pass illustrative images/maps. Localization compares source image/ROI with model map; other quadrants compare two map conditions.",
+    "meaning": "The randomization passing example changes after weight reset; same/differentarchitecture passing examples remain similar. Yellow boxes are spatial references, not causal support.",
+    "limits": "No numeric color scale or saliency-method identity for every illustrated case in inspectedcaption; selected examples are not populationrates or universal thresholds.",
+    "transfer": "Rebuild the scientific objects, interventions and comparisons as editable text/nodes without sourcepatientpixels or generatedmaps."
+  },
+  "transferable_rules": [
+    "Metric desirability depends on the actual question and intervention",
+    "Keep original/resetweights distinct from separatelytrainedreplicas",
+    "Declare unit ofmap-pair baseline; do not convert pairs into independent models/patients",
+    "Distinguish evaluationROI inputs from classifier/explainer inference dependencies",
+    "Treat source-specific pass criteria as attributedoperationalrules, not clinical-certification guarantees"
+  ],
+  "nontransferable": [
+    "Specific paper performance values, CNNchoices or numericalthresholds",
+    "Patientimages, heatmaps, masks orselectedexample rates",
+    "Source authorsinterpretive criterion as universaltruth"
+  ],
+  "known_gaps": [
+    "AppendixE1 not accessible",
+    "Exact saliency method/normalization for each Fig1 illustrative example not identified in caption",
+    "Per-image metric aggregation and full mixed-effects model specification not established from inspected main text",
+    "Raw patient overlap and split assignments not audited"
+  ],
+  "publication_status": {
+    "checked_sources": [
+      "PMC journal header/notices",
+      "PubMed XML publication types and CommentsCorrections",
+      "Crossref update/relation fields"
+    ],
+    "pubmed_types": [
+      "Journal Article"
+    ],
+    "pubmed_correction_relationships": [],
+    "crossref_update_to": null,
+    "crossref_update_policy": null,
+    "crossmark": "Tool open inaccessible; not treated as a clean status certificate",
+    "conclusion": "No correction/retraction notice encountered in these checked records; bounded status check, not exhaustive guarantee"
+  },
+  "distribution": {
+    "statement": "© RSNA2021 in PMC; no broad CC reuse licence observed in article or Crossref",
+    "policy": "All source HTML/XML/figure/crops/text local-only. Public availability does not authorize original artwork redistribution. Future output should be original text/relationship diagram without source pixels."
+  },
+  "source_probe": "tests/batches/interpretability-01/source-probe.json",
+  "parent_review": "tests/batches/interpretability-01/parent-source-review.json",
+  "independent_review_status": {
+    "report": "tests/batches/interpretability-01/independent-review.json",
+    "sha256": "ec879ca789ee3e9759f7dcd9815cdb2192763d51246aa40ecfea57b880dcfaa0",
+    "scope": "Independent model review of interpretability-01 baseline; newly introduced development example, not reserved holdout or expert acceptance. No prior inspection of this paper recalled before this task; this does not establish blinded source unfamiliarity.",
+    "blocking_count": 0,
+    "nonblocking_count": 0,
+    "unknowns_retained": [
+      "method normalization/aggregation",
+      "full statistical model and map-pair dependency",
+      "unreviewed AppendixE1"
+    ],
+    "not_a_reserved_holdout": true
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "id": "MCF025-F1",
+  "revision": "whole-reassessment-01",
+  "created_utc": "2026-10-19T04:46:24.180224+00:00",
+  "status": "complete_whole_figure_joint_verification_at_declared_abstraction",
+  "semantic_status": "full_joint_verified",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "paper": {
+    "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+    "authors": [
+      "Olaf Ronneberger",
+      "Philipp Fischer",
+      "Thomas Brox"
+    ],
+    "formal_identity": "MICCAI2015 LNCS9351 pp234–241; DOI10.1007/978-3-319-24574-4_28",
+    "publisher_first_online": "2015-11-18",
+    "author_version": "arXiv1505.04597v1,2015-05-18,8pages; sole version shown by abstract record",
+    "identity": "DOI:10.1007/978-3-319-24574-4_28",
+    "version_read": "arXiv1505.04597v1 plus author-site architecture image",
+    "url": "https://arxiv.org/pdf/1505.04597v1",
+    "code_read": false,
+    "code_execution": false
+  },
+  "deduplication_key": "DOI:10.1007/978-3-319-24574-4_28:arXiv1505.04597v1:Figure1",
+  "figure": {
+    "number": "Figure1",
+    "PDF_page_1based": 2,
+    "scope": "Whole selected arXiv1505.04597v1 Figure1, expanded into explicit state/operation interfaces; not a complete executable training/inference implementation."
+  },
+  "historical_case": {
+    "preserved_unchanged": {
+      "path": "<SKILL_ROOT>/cases/MCF025-unet/MCF025-F1.json",
+      "bytes": 5700,
+      "sha256": "a0d8fd46884d3ef561decd266c9458915e9ac7211071d4e6c2da5dc9de170ffb"
+    },
+    "scope": "Prior bounded semantic_partial card, local crop convention and known-answer OS replay stay historical. The new primary-pixel/whole-graph evidence replaces the current catalog status, not the old record or its scores.",
+    "new_case_or_paper_count": 0
+  },
+  "scientific_question": "How does the complete contracting/bottom/expansive forward graph transform spatial extent and channels, and how do crop operands and channel concatenation constrain all four receiving decoder convolutions?",
+  "whole_graph": {
+    "expanded_states": 36,
+    "main_maps": 28,
+    "copied_maps": 4,
+    "logical_joins": 4,
+    "relations": 39,
+    "source_operations": 31,
+    "implicit_operand_dependencies": 8,
+    "convolution_occurrences": 23,
+    "legend_classes": 5,
+    "crop_cues": 4
+  },
+  "source_reading": {
+    "primary": "Whole authorFigure1 and selectedPDF completep2–4/context plus relevantp6dropout; title/authors p1. Figure2context is not an extra admitted case.",
+    "version_sha256": "a3172b2124f38e260dc2c7ed968d87c31bc94dbc19a42a7ab3dcbd7534319c44",
+    "source_first_and_root_acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/root-scientific-acceptance-01.json",
+      "bytes": 7210,
+      "sha256": "8473f502e5cf4979a9a474d97300beb8b689ddb8b1f2a6122fd482a3681f53e1"
+    },
+    "neutral_reader_stages": "One new reader: image-only pair then identical primary wholeFigure1/caption/Section2 release.99originalrecords,99revisits,17new. No image-stage backfill.",
+    "independent_final_native_review": "Five authored notes/16 pointers, not a new primary-paper reread. Primary source verification is documented separately.",
+    "code_read": false,
+    "code_execution": false
+  },
+  "semantic_readback": {
+    "input": "1x572x572",
+    "output": "2x388x388 class activations; not hard-mask/instance result",
+    "encoder_spatial": "572,570,568;284,282,280;140,138,136;68,66,64;32,30,28",
+    "decoder_spatial": "56,54,52;104,102,100;200,198,196;392,390,388",
+    "copy_spatial_shallow_to_deep": "568/280/136/64 to392/200/104/56, retaining64/128/256/512channels",
+    "concat_channels_shallow_to_deep": [
+      128,
+      256,
+      512,
+      1024
+    ],
+    "receiving_conv_output_channels_shallow_to_deep": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "operation_classes": "3x3conv+ReLU,copy/crop,maxpool,upconv,1x1head;31sourceoperations+8interpretedoperanddependencies",
+    "stars": "Channel values not separately printed are marked as inferred.",
+    "full_scope_boundary": "All publishedFigure1 elements/relations retained; separately discussed softmax/dropout/loss/overlap-tile are not invented drawn nodes."
+  },
+  "actual_repair": {
+    "authority_changes": 1,
+    "derived_changes": 42,
+    "unchanged_leaves": 1018,
+    "repaired_input_files": 17,
+    "other_files_byte_unchanged": 16
+  },
+  "independent_reader_scores": {
+    "image_visible": 1,
+    "image_source_boundary": 1,
+    "image_tensor_logic": 2,
+    "source_detection": 1,
+    "source_localization": 1,
+    "source_explanation": 1,
+    "source_repair_proposal": 1,
+    "control_target_false_positives": 0,
+    "eligible_controls": 1,
+    "aggregate": null
+  },
+  "claim_classification": {
+    "image_material_units": 847,
+    "image_supported": 827,
+    "image_unsupported": 2,
+    "image_partial": 2,
+    "image_undetermined": 4,
+    "image_not_error": 12,
+    "source_explicit_units": 1397,
+    "source_supported": 1342,
+    "source_partial": 6,
+    "source_undetermined": 4,
+    "source_not_error": 45,
+    "source_unsupported": 0,
+    "inherited_image_units": 847,
+    "inventory_not_trial_denominators": true,
+    "prekey_pin": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/assessor-02/prekey-all-claims-01.json",
+      "bytes": 4889560,
+      "sha256": "57dfe1682ad84b660faef3aaf2b7968eada89975376483d61ec34755461c388f"
+    },
+    "score_pin": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/assessor-02/score-01.json",
+      "bytes": 80084,
+      "sha256": "f7fef9f91b49a894d0e4958b026e5c0114313e893f03018981eff3969458822d"
+    }
+  },
+  "native_and_visual": {
+    "checks": 22167,
+    "all_true": true,
+    "source_note_checks": 128,
+    "findings": [],
+    "independent_new_views": 4
+  },
+  "actual_zip_replay": {
+    "archive": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/unet-whole-figure1-final-01.zip",
+      "bytes": 4484432,
+      "sha256": "a94c71b7e145a9c3393261ca540172e0a5e4572d0b2206e3301d0014f90238f4"
+    },
+    "payload_files": 103,
+    "members": 104,
+    "actual_extracted_repaired_inputs_byte_equal": 17,
+    "canonical_exports_byte_equal": 8,
+    "source_records_each_spec": 5,
+    "evidence_pointers_each_spec": 16,
+    "readback": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/final-zip-replay-01/replay-readback.json",
+      "bytes": 20804,
+      "sha256": "9528b4cdca6c3439a2a5962ef7fdfa41fc39bd9315899ffc980b10803485ac0f"
+    },
+    "is_second_independent_native_audit": false,
+    "OS_sandbox": false,
+    "cross_host_portability": false
+  },
+  "delivery": {
+    "entry": "tests/batches/unet-whole-reassessment-01/delivery-01/README.md",
+    "formal_graphics": {
+      "figure.pdf": {
+        "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/delivery-01/graphics-01/repaired/figure.pdf",
+        "bytes": 64924,
+        "sha256": "9a95591aab24010e3d3469ed350ef5f6f84cf35986f23350a0d2ad59439b6ab7"
+      },
+      "figure.svg": {
+        "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/delivery-01/graphics-01/repaired/figure.svg",
+        "bytes": 2024093,
+        "sha256": "17d55580f0f47003e84c6166ea2a836fd7c1b7df5a015a2d0afc6569f0ea2f2a"
+      },
+      "figure.png": {
+        "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/delivery-01/graphics-01/repaired/figure.png",
+        "bytes": 429142,
+        "sha256": "59c5926217e30cca2a80e8dc89c86698c20341d0df1883cc954b36c71c67f11f"
+      },
+      "figure_spec.json": {
+        "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/delivery-01/graphics-01/repaired/figure_spec.json",
+        "bytes": 71313,
+        "sha256": "01c45ad70d62e51da4fc20b15012b5a88bed987e6f938c546b9b7be890266ee9"
+      }
+    },
+    "final_acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/unet-whole-reassessment-01/root-final-acceptance-01.json",
+      "bytes": 5788,
+      "sha256": "c1688bb5d619da007a7e79a3c69ede91a313445663e95d5894f52c55364da477"
+    }
+  },
+  "rights": {
+    "selected_arxiv_license": "perpetual nonexclusive distribution licence to arXiv, not CC BY",
+    "publisher_notice": "©2015 Springer International Publishing Switzerland",
+    "author_site_notice": "site copyright2011–2026 LMB University of Freiburg; not a figure-specific reuse grant",
+    "retention": "Publicly accessible PDF and author image retained only for local reading; all page rasters/text are reading derivatives. No login/paywall/access-control bypass.",
+    "distribution": "OriginalPDF, authorPNG, page rasters and extracted article text excluded unless separate rights clearance. Future distribution uses attribution and source links."
+  },
+  "source_discrepancies_and_unknowns": [
+    {
+      "id": "U1",
+      "type": "abstraction omission",
+      "locators": [
+        "Figure1p2",
+        "§3.1p6"
+      ],
+      "finding": "Text mentions dropout layers at the end of the contracting path; Figure1 has no dropout glyph.",
+      "handling": "Preserve the entire published diagram and disclose that it is not the complete executed training graph; no invented dropout location/rate."
+    },
+    {
+      "id": "U2",
+      "type": "abstraction omission/output meaning",
+      "locators": [
+        "Figure1p2",
+        "§2/§3p4"
+      ],
+      "finding": "Output is labelled segmentation map with2channels; explicit pixelwise softmax appears only in text.",
+      "handling": "Retain2-channel output interface and distinguish it from a hard-label/instance mask; do not invent a drawn softmax or argmax."
+    },
+    {
+      "id": "U3",
+      "type": "wording scope",
+      "locators": [
+        "Figure1captionp2",
+        "deepest maps32/30/28p2"
+      ],
+      "finding": "Caption says32x32 in lowest resolution while two subsequent deepest-level valid convolutions visibly produce30x30 and28x28.",
+      "handling": "Report literal sizes;32x32 is the deepest-level entry in this reading, not the global minimum map extent. This interpretation resolves level wording, not an official erratum."
+    },
+    {
+      "id": "U4",
+      "type": "stage/operator distinction",
+      "locators": [
+        "§2p4",
+        "pool arrows/mapsFigure1p2"
+      ],
+      "finding": "Text says channels double at each downsampling step; the immediate max-pool output retains the prior channel count, followed by a convolution that expands channels.",
+      "handling": "Do not assign channel doubling to max pooling itself. Preserve displayed map interfaces."
+    },
+    {
+      "id": "U5",
+      "type": "unresolved printed equation issue outside targetfigure",
+      "locators": [
+        "§3Eq1p4 actualimage",
+        "HTML§3Eq1"
+      ],
+      "finding": "Printed E=sum_x w(x)log p_label(x) has no leading minus, while surrounding prose calls the term cross-entropy penalization.",
+      "handling": "Record as source sign/objective-convention tension; no author-code or correction evidence resolves it here. Do not silently change it or add loss algebra toFigure1."
+    },
+    {
+      "id": "U6",
+      "type": "implementation unknown",
+      "locators": [
+        "Figure1grayarrows/dashedregions",
+        "§2p4"
+      ],
+      "finding": "Corresponding cropping is supported, but exact numeric crop origin/per-side offsets and overlap-tile stitch indices are not stated.",
+      "handling": "Total size reductions are auditable; centered/per-side crop offsets remain unverified."
+    },
+    {
+      "id": "U7",
+      "type": "notation inference",
+      "locators": [
+        "Figure1p2",
+        "§2p4"
+      ],
+      "finding": "Some pooled/up-convolved/repeated map channel labels are not individually printed. Values listed in inventory use adjacent combined labels, copied-map channels and preservation/halving rules.",
+      "handling": "Those derived interface values are marked; no claim that every count is separately printed."
+    },
+    {
+      "id": "U8",
+      "type": "version boundary",
+      "locators": [
+        "arXivv1",
+        "currentSpringerpage",
+        "authorPNG"
+      ],
+      "finding": "The selected preprint is accessible; publisher full-text byte equivalence and current-author-image modification history are not verified.",
+      "handling": "Use exact selected PDF hash/version; author image only corroborates visible content."
+    }
+  ],
+  "limitations": [
+    "Two overbroad blue-arrow evidence statements unsupported; not target false alarms.",
+    "Reader explanation lacks conditional local weighting distinction; proposal lacks full dependent synchronization/export checks. Later repair did not change scores.",
+    "Caption32 versus deepest32/30/28 interpreted, not officially resolved; source loss-sign tension outside drawing retained.",
+    "Exact crop origin/API/memory channel ordering and publisher-preprint byte equivalence unknown.",
+    "Same-host -I-B startup isolation, not OS sandbox or cross-host portability. Byte replay is not a second native inspection.",
+    "No model/checkpoint/experiment/clinical benefit, heldout or human expert verification claim.",
+    "103payloads and104members, four joins and thousands of checks do not create extra independent cases."
+  ],
+  "no_claims": [
+    "No new paper/case or independent four-trial count.",
+    "No heldout/expert/model/clinical validation.",
+    "No journal-dimension or universal inspector guarantee.",
+    "No retroactive replacement of old partial-case evidence or source-reader scores."
+  ]
+}

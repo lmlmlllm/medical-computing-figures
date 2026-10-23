@@ -1,0 +1,114 @@
+{
+  "case_id": "MCF050-F2",
+  "dedup_id": "10.1093/nar/gkad350|2023-publisher-PMC10320053.1|Figure2A-B",
+  "title": "PAE Viewer: a webserver for the interactive visualization of the predicted aligned error for multimer structure predictions",
+  "source_url": "https://academic.oup.com/nar/article/51/W1/W404/7151339",
+  "source_figure": "Whole Figure2A–B, one PdhA–PdhB–PdhI example and its region-overlay view; Jumper2021 supplement pp38–40 is a method dependency, not a second catalog unit.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "PAE XML front/permissions and SEC1,SEC2-1,SEC2-3/F2 caption; OUP selected matching paragraphs. AlphaFold supplement pp38–40 §§1.9.6–1.9.8, relevant equations/Algorithm29 and source rights read. Not whole-paper, original-experiment or Multimer implementation verification.",
+    "visual": "Whole source Figure2A–B and relevant supplement pages actually viewed; final whole/intended PNG, independent native PDF and exact-font static-SVG proxies, fresh replay images viewed.",
+    "archive": "Primary article/XML/HTML/PDF/JPG/page images local-review-only. Clean ZIP includes original explanatory figure, editable source, caption, renderer and licensed font/notices; no primary source artwork."
+  },
+  "question": "Which residue location is scored, which backbone frame supplies alignment, and which overlaid evidence answers a different question?",
+  "elements": [
+    {
+      "id": "scored_location",
+      "role": "Viewer x horizontal/column is the location whose expected position error is predicted."
+    },
+    {
+      "id": "aligned_frame",
+      "role": "Viewer y vertical/row backbone supplies the alignment frame; AF e_ij uses i as frame and j as scored Cα."
+    },
+    {
+      "id": "expected_error",
+      "role": "Expected positional error in Å after alignment, not observed error or within-structure physical separation."
+    },
+    {
+      "id": "one_crosslink_two_aliases",
+      "role": "One crosslink appears at mirrored display positions, without making PAE symmetric or doubling observations."
+    },
+    {
+      "id": "restraint_predicate",
+      "role": "Example-specific Cα–Cα distance ≥30 Å violates the used crosslinker restraint; source blue=satisfied, red=violated."
+    },
+    {
+      "id": "categorical_overlay",
+      "role": "Chain and ordered-chain-pair identity overlay differs from quantitative PAE scale and restraint status."
+    },
+    {
+      "id": "other_confidence_quantities",
+      "role": "Caption distinguishes dimensionless local pLDDT, distogram distance targets and expected TM-kernel/aggregate pTM."
+    }
+  ],
+  "relations": [
+    {
+      "from": "scored x and aligned y",
+      "to": "PAE(x,y)",
+      "type": "conditional expected-error definition",
+      "source": "PAE SEC2-3/F2 and AF supplement p39 §1.9.7; index-role mapping E[e_yx], no implementation transpose claimed"
+    },
+    {
+      "from": "exchange scored/aligned roles",
+      "to": "possibly different expected error",
+      "type": "potential asymmetry, not guaranteed inequality or causal direction",
+      "source": "AF supplement p39 §1.9.7"
+    },
+    {
+      "from": "one crosslink",
+      "to": "(x,y) and (y,x) markers",
+      "type": "two display aliases of one restraint",
+      "source": "PAE SEC2-3 final paragraph; complete Fig2A"
+    },
+    {
+      "from": "example Cα separation and used reagent criterion",
+      "to": "satisfied/violated category",
+      "type": "conditional comparison of physical distance, separate from PAE",
+      "source": "PAE SEC2-3; ≥30 Å boundary"
+    },
+    {
+      "from": "chain/ordered-pair identity",
+      "to": "categorical regions",
+      "type": "overlay grouping, not confidence/contact/validation",
+      "source": "PAE SEC2-3/F2B"
+    }
+  ],
+  "visual_design": "Original role diagram uses explicit scored/aligned labels with definition arrows, a common unarrowed bracket for the two aliases of one crosslink, and separate evidence/overlay notes. No recovered matrix values, protein contours or experimental markers are fabricated. Secondary quantity distinctions and complete computable-mapping limits accompany the figure in its caption.",
+  "transferable_rules": [
+    "Name the scored entity and reference frame before assigning axes or interpreting a matrix. Map notation by scientific role; do not infer an executable transpose. A duplicated symmetric overlay does not establish symmetry of its underlying quantity.",
+    "Separate expected error, physical distance, local confidence, categorical identity and experiment-specific restraint predicates. A satisfied restraint is bounded evidence, not proof of global structure correctness."
+  ],
+  "gaps": [
+    "Original numeric PAE matrix/distribution, coordinates and raw crosslinks/unique count/satisfaction rate unverified.",
+    "Complete computable residue/chain mapping unavailable in inspected material, although labels/axis segments are visible.",
+    "Exact run/checkpoint, display maximum, code array orientation and original biological validation unverified.",
+    "PAE Viewer SEC2-1 high-error reliability statement conflicts with later low-error passages and the AF error definition; retained without official correction claim.",
+    "2021 AF bin/training details cannot be assigned to the unidentified Figure2 Multimer run.",
+    "Initial image-only crosslink/reliability notes require the full caption; further-downscaled readability, browser/editor/physical-print and other-runtime equivalence not observed."
+  ],
+  "license": "PAE Viewer CC BY-NC4.0; AlphaFold supplement CC BY4.0 with third-party exceptions. Raw sources local-review-only. Original derivative package retains provenance and renamed Noto Sans SC font under SIL OFL1.1; no raw paper artwork redistributed.",
+  "notice_scope": "Pinned source versions and bounded official identity/rights read. Source wording conflict retained; no exhaustive current correction/retraction audit or official erratum established.",
+  "transfer_entry": "tests/batches/pae-reference-frame-01/README.md",
+  "test_limits": [
+    "Original P01–P08 denominator8 independent final pass; 20objects/21relations/14claims,15visible text IDs. This is development transfer, no new holdout or human-expert count.",
+    "387native glyphs,16paths,min10.5pt; max static baseline0.000775pt against fixed0.25pt. 364actual ink paints and364outline constructions plus23space probes distinct.",
+    "All15visible payloads preserve nonwhitespace sequence/multiplicity;12/15raw-identical separately in SVG/PDF,3whitespace-only differences. Native editing is glyph-level, whole labels via renderer/layout.",
+    "28member exactZIP same-host/runtime OS replay;all10outputs byte-identical including environment. Before/after50controls each,32known-existing forbidden data opens,network connect EPERM after socket/settimeout success.",
+    "N1 alleged missing surname n was a reviewer false positive: actual Elfmann unchanged; original claim and root repair-required freeze preserved with additive withdrawal. N2 only precision of complete computable mapping;4semantic leaves/3layout input hashes changed,8visual/geometry exports unchanged.",
+    "Author layout/parser/global-pin, native invocation, replay preparation/collector and assessor schema/runtime failures retained. Scientific model or original experiments not run."
+  ],
+  "evidence_pins": {
+    "protocol.json": "1872cc86fbd5b303d76ffc27dbde980617201e91dd09a9888b774bd63d5e85c4",
+    "review/final-assessment.json": "16f850ae0f7431d7ce7f6face838804a7e5a986ef36747c8e0184235426fdc09",
+    "assessment-freeze-01.json": "221e6cf9662e9a1d6178c7085c00e663a11f4663e32fc383fe3e32fdc654ca8d",
+    "scientific-freeze-01.json": "b07d4e80fd3b889ba27598e88b40b7ae0e708e241164267f32e94fffa35a796e",
+    "semantic-revision-02/revision-freeze.json": "5f88aecbfdd46e80d9ee67e21623060a6da54a19d4cae6107705430be443866e",
+    "package-freeze-02.json": "71d8a57247cbff127f9e74a48f489331fba2634c9c7f45cde139343c58306d53",
+    "output-audit/replay-freeze-01.json": "c8750e641dd8a911b25c64e690626d7889aa09619c842704de8a318d66ec5d7c",
+    "package-revision-02/pae-reference-frame-01.zip": "371c1a2b7629c969cce0adeca887b12b180c70366b696e8530b0fcbe04d48f57"
+  }
+}

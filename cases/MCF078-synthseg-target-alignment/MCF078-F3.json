@@ -1,0 +1,41 @@
+{
+  "id": "MCF078-F3",
+  "document_type": "partial method case with target-source control, actual repair and final ZIP replay",
+  "created_utc": "2026-10-18T20:25:31.543436+00:00",
+  "paper": {
+    "title": "SynthSeg: Segmentation of brain MRI scans of any contrast and resolution without retraining",
+    "doi": "10.1016/j.media.2023.102789",
+    "pmid": "36857946",
+    "venue": "Medical Image Analysis86,102789(2023)",
+    "actual_read_version": "arXiv2107.09559v4,2023-02-28",
+    "source_url": "https://arxiv.org/html/2107.09559v4",
+    "original_figure_url": "https://arxiv.org/html/2107.09559v4/generation_steps.png"
+  },
+  "unit": {
+    "parent": "Whole original Figure3 viewed plus focused3.1–3.3/Figure2 caption dependencies",
+    "count": 1,
+    "semantic_status": "semantic_partial",
+    "excluded": "Complete originalFigure3/method/publisher-version/current-code/empirical verification"
+  },
+  "question": "Why must synthetic image generation and target construction use the same spatially transformed anatomy, and why is a common grid insufficient?",
+  "read_and_view_scope": "Independent primary reading and root primary text/whole originalFigure3 view. Staged reader saw notes only. Root actual full generated PNG/Poppler PDF pair, repair and final ZIP03 replay views.",
+  "elements_and_relations": "15entities16relations,40source owners/45refs,84 native objects39text45vectors. L0→L→image intensity degradation→HR I→network→Y; T=q(L) independent categorical path; Y/T→softDice→weights. Separate grouped real-image inference.",
+  "scope_limits": [
+    "Fixed q and commonHRdomain; conditional q(L)!=q(L0),not every nonidentity transform. Identity/symmetry/remapping coincidences retained.",
+    "Synthetic optimization intensities allow upstream image-derived labelmaps and real validation/modelselection.",
+    "Equation19bias sign/form, Gaussian parameter convention, Figure2/Eq27 normalization, lesion mapping, publisher/current-implementation equivalence unresolved."
+  ],
+  "layout": "400x345mm,min9.5pt; separate target/input paths and lower inference summary, native editable text/vector outputs with licensed embedded font.",
+  "controlled_test": "One canonical target source and9manifestations; pre-key26groups/117fields classification, one score. Image source fidelityNA. Source detect/localize1/1,explain2/2,proposal1/2,targetFP0of1. K07upstream provenance unaddressed by reader.",
+  "actual_repair": "Fault-only16inputs,10payload leaf changes,3targettexts+R07shaft; specs/native bindings/caption/export synchronized. Source28/28 and native1464/1464; root actual whole views.",
+  "replay": "Final132memberZIP ordinary extraction,10prepared/15canonical byteequal. Independent29package+32replaychecks; exact45pointers40owners at delivery and replay locations.",
+  "licensing": "Originalslink-only:arXivnonexclusive and original-asset exceptions not established. Own reconstruction and complete DejaVu font notices packaged.",
+  "transfer": "Trace same transformed anatomy into image and target; distinguish shared grid from correspondence and conditional mismatch from guaranteed numerical effect. Restore one authority then regenerate dependent specs/labels/caption/bindings.",
+  "history": "Projection inheritance/preparation width/HRnote problems, earlychecker shadowing, sourcecaller missing existing adapter and package02 five locator failures retained; later repairs do not alter blind scores.",
+  "result_record": {
+    "file": "tests/batches/synthseg-target-alignment-01/root-acceptance.json",
+    "bytes": 12373,
+    "sha256": "dedd6a5d95fe3657e8a48b4cd7e45c9a9b02e298ff7c9efe6d379f0151f9b269"
+  },
+  "transfer_limits": "One partial development unit; noheldout,aggregateaccuracy,causalpromptbenefit,expert,modelrun,OSsandbox or journal acceptance."
+}

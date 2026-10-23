@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "name": "medical-computing-figures",
+  "implementation_version": "1.44.1",
+  "edition": "public-source",
+  "release_preparation_date": "2026-10-23",
+  "hash_algorithm": "SHA-256",
+  "manifest_self_excluded": true,
+  "scope": "Exact public source files; immutable private development ZIP and historical runtime records are not part of this edition. MIT applies only as delimited in LICENSE and NOTICE.md.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 109,
+      "sha256": "4e0d6514b05e406bfc1e45592a958308a3d863caced9a6f59eec9f7c7c01c4bc"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1065,
+      "sha256": "61c651e322b8f4ed855b1b6017216b8a97a7c5b4056c98ffd8297386ff2f8fa9"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 2598,
+      "sha256": "767f8f41d6665aea529c74361ae9c7f127fc87b549dd65da474c7687ac488b49"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5097,
+      "sha256": "488a46e94c6a530fda383b312839093e090cb28b0ad338836063ef6d07d265b6"
+    },
+    {
+      "path": "RELEASE.md",
+      "bytes": 2283,
+      "sha256": "953ccbeca1d864e722420574efa45905ec8a898c31d47176cac1c3b376c37b3f"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 6442,
+      "sha256": "32bfd38c1a5afeb75ed5ae7e15cc13b6261e33358189fea6203dd556c33dbc83"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 1546,
+      "sha256": "961e42fdb43099a94863939552f9a9b1962093772830381bcce2f64441256811"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 344,
+      "sha256": "5c50ca821277542c65b0de712983364ad2686840246a1e384a8f8549f5fb3248"
+    },
+    {
+      "path": "assets/style.json",
+      "bytes": 309,
+      "sha256": "22c8f9d6db2d84548760736df2fa07504faa412db5d8b84e6cd4a4e17bd7f201"
+    },
+    {
+      "path": "cases/MCF001-medsam/figure1_card.json",
+      "bytes": 4477,
+      "sha256": "2c4a9d2e78170c665bf215dfc92b18772146f5969f7ee1e1ccb5ba6c54a7d399"
+    },
+    {
+      "path": "cases/MCF001-medsam/figure2_card.json",
+      "bytes": 3824,
+      "sha256": "4a64d22282892bb32e99007b1fa41827d547f18ef9d87b640152bdb115a3b0ca"
+    },
+    {
+      "path": "cases/MCF002-medrag/MCF002-F2.json",
+      "bytes": 12693,
+      "sha256": "3aafdb1fe827fe4c1d5308f886df9262f7d76889e2ced03e5e29a6bcabbf0d09"
+    },
+    {
+      "path": "cases/MCF002-medrag/MCF002-F3.json",
+      "bytes": 6892,
+      "sha256": "aa4b7bdb81ae5a30a27c5fcce0de264121ad4a8da3b11474e1c12dd8fe04e10e"
+    },
+    {
+      "path": "cases/MCF002-medrag/table6-gpt35-accuracy.csv",
+      "bytes": 1167,
+      "sha256": "d8d0a8ed9a139afbc52b21be63e4b37dd6fe8736057b48a03af1ab9f991817c9"
+    },
+    {
+      "path": "cases/MCF003-totalvi/MCF003-F1-whole-reassessment-01.json",
+      "bytes": 16117,
+      "sha256": "a8131aa1ec782f95616a339e6583667ffeefd93ad59b09d532ad4b355b74dcc4"
+    },
+    {
+      "path": "cases/MCF003-totalvi/MCF003-F2.json",
+      "bytes": 9040,
+      "sha256": "bca0583ee5e29b599e22ef5fd210f8eebdd4d9c78e8d18a490db3c289ee24cb5"
+    },
+    {
+      "path": "cases/MCF004-multiview/MCF004-F1.json",
+      "bytes": 9769,
+      "sha256": "ef78e0a119eb2a624114c2d6594ae6c4096b598b23e0e2999a1a5b5b3d2db29e"
+    },
+    {
+      "path": "cases/MCF004-multiview/MCF004-F2.json",
+      "bytes": 8000,
+      "sha256": "b0c37bda1a6f4a7e30772e83362becebbeac01eb6903ca3a267c3e567b479401"
+    },
+    {
+      "path": "cases/MCF005-graphrag/source_card.json",
+      "bytes": 14865,
+      "sha256": "bf94e1d9df23c695050e2bf114d95f076792dc5f118678f3996dc95da0270d80"
+    },
+    {
+      "path": "cases/MCF006-scvi/source_card.json",
+      "bytes": 5162,
+      "sha256": "afbc67b5c599f63a1ebab6d5f815729d7b9bd1dcc3d094409e8f1cf7010d4dd8"
+    },
+    {
+      "path": "cases/MCF007-ecg/MCF007-ED1.json",
+      "bytes": 8227,
+      "sha256": "74d9f3c32cd79457f39ea0f8c7f2b9c1bfd2fdaf8c04efbf1fe4a15ffe3c56cd"
+    },
+    {
+      "path": "cases/MCF007-ecg/MCF007-F2.json",
+      "bytes": 7367,
+      "sha256": "6af4a45da927befc0b176e32a378233e842cfcfb25df9f9433a3cb1bfe251e15"
+    },
+    {
+      "path": "cases/MCF008-device/source_card.json",
+      "bytes": 5767,
+      "sha256": "3bba24227f57e0a712b15c80478fef21792f805b04127d2dd05342bd0ca258b7"
+    },
+    {
+      "path": "cases/MCF009-uncertainty/MCF009-F1.json",
+      "bytes": 11322,
+      "sha256": "4ed1143e7730a1376effaccd5d2f58c15d539d99e3d706561c5d29cf73416df2"
+    },
+    {
+      "path": "cases/MCF009-uncertainty/MCF009-F2.json",
+      "bytes": 17048,
+      "sha256": "a564bb74ccf7b5f49f112d365b412a1064aa2c2861edf9de1661a91c49517d2a"
+    },
+    {
+      "path": "cases/MCF010-interpretability/MCF010-F1.json",
+      "bytes": 10352,
+      "sha256": "551691c39935efd6f6fb51415e327ec699ac6212c9440ec88a4505b459da20e8"
+    },
+    {
+      "path": "cases/MCF011-perturbation/MCF011-F1.json",
+      "bytes": 28736,
+      "sha256": "8ba9dea51aa1946716fbe4053adcac229e60ff4654d0477b3e19f581e4533535"
+    },
+    {
+      "path": "cases/MCF012-graph-method/MCF012-F1.json",
+      "bytes": 44165,
+      "sha256": "0e1c52f666f37564b1edfe359912e9bcd904553a606b8533f4e60eaf54fdc74c"
+    },
+    {
+      "path": "cases/MCF013-federated/MCF013-ED9.json",
+      "bytes": 20687,
+      "sha256": "31f5d83a5a86cdbfdba63a27c88c7d2bd3ecd7ddb7afbc584de5e59f178cde2e"
+    },
+    {
+      "path": "cases/MCF014-generation/MCF014-F5.json",
+      "bytes": 25407,
+      "sha256": "a8ce29ba742fd58728582080237e6aaa54ccfe5ee699c714e95dd4ef51aea81c"
+    },
+    {
+      "path": "cases/MCF015-closed-loop/MCF015-F3.json",
+      "bytes": 28698,
+      "sha256": "f1b9a0e1a6cf53e0501ede609ca0cc0f0f2fcf118ee0c11d12b69453fa9a5526"
+    },
+    {
+      "path": "cases/MCF016-conformal/MCF016-F1.json",
+      "bytes": 13592,
+      "sha256": "8f6843f0af077ef2362ab77603fdc7cfa87c105279ee2c4f5a2904d128f8b52b"
+    },
+    {
+      "path": "cases/MCF017-medclip/MCF017-F3.json",
+      "bytes": 10516,
+      "sha256": "68e8657a9052bc452acc37d81459aaf904d8dd0089140fd19c3a9fe802d07b8b"
+    },
+    {
+      "path": "cases/MCF018-adaptive-rag/MCF018-F2.json",
+      "bytes": 11445,
+      "sha256": "0122da7875859ab0e73b4047a320db20f87b75589b09b41ac51390db28418224"
+    },
+    {
+      "path": "cases/MCF019-stagate/MCF019-F1.json",
+      "bytes": 9681,
+      "sha256": "ceff5388943c50500e66a531e68569cfd821e2e3655d9f66b903ab8de20da2b4"
+    },
+    {
+      "path": "cases/MCF020-nnunet/MCF020-F2.json",
+      "bytes": 5326,
+      "sha256": "ac281e6d6c49b0f00b8bbc6ce4226ec5c37126991e425c93425385f6456048b8"
+    },
+    {
+      "path": "cases/MCF021-segment-anything/MCF021-F1.json",
+      "bytes": 6242,
+      "sha256": "ca84b57a35bc80637dbeb8816b18a0a77fa4e0189bcdf1e4c8239ee2b5217d11"
+    },
+    {
+      "path": "cases/MCF022-mlp-mixer/MCF022-F1.json",
+      "bytes": 5441,
+      "sha256": "74d7b10fa13171817df48715559f42a7cd6ac8852b3b1a16940635ee079df91a"
+    },
+    {
+      "path": "cases/MCF023-decision-curve/MCF023-T4.json",
+      "bytes": 6298,
+      "sha256": "393208bbb867e91456046ebff240bbfdbac8d788b223ba3b75ddb2417a52c7ab"
+    },
+    {
+      "path": "cases/MCF024-attention/MCF024-F2.json",
+      "bytes": 5623,
+      "sha256": "782b3781e2116ba71e671de94b73bb1e4f2639c8aab044969af1568da80a477a"
+    },
+    {
+      "path": "cases/MCF025-unet/MCF025-F1-whole-reassessment-01.json",
+      "bytes": 13505,
+      "sha256": "3e94b6d8d3d88781c75becaf0d1173c9cdafb14156b7e496d44b1eb84332a07f"
+    },
+    {
+      "path": "cases/MCF026-recovery/MCF026-F3.json",
+      "bytes": 6402,
+      "sha256": "8b8c258a60c76b9cbb5d48c540c6c02c2a7f770d284cf7cf07f54decea5a2adb"
+    },
+    {
+      "path": "cases/MCF027-pseudobulk/MCF027-F3.json",
+      "bytes": 7383,
+      "sha256": "cb03ea618572feb57cb073165655145dcb5770a6980903f76cad20f72e97a1c2"
+    },
+    {
+      "path": "cases/MCF028-agreement/MCF028-F2.json",
+      "bytes": 7652,
+      "sha256": "5d5e91f63c876c0a06567b44d1cc526d053f7086fb513cd7236cb238b670d63f"
+    },
+    {
+      "path": "cases/MCF029-memory/MCF029-F2.json",
+      "bytes": 6431,
+      "sha256": "8e8e51f4772a10d0d47a6dd8a5f7126f9286ec7181400280b25e9e2defc73534"
+    },
+    {
+      "path": "cases/MCF030-calibration/MCF030-F2.json",
+      "bytes": 9580,
+      "sha256": "7866bde4ad0af45db37710e89a68852d9000ec2da1e4d8e347ec2ba5db8af4a1"
+    },
+    {
+      "path": "cases/MCF031-precision-recall/MCF031-F2.json",
+      "bytes": 7689,
+      "sha256": "24514661b169a0187b1c38ffeaf53c23e57c02e36e6b63a2dd1abb36a188a3f2"
+    },
+    {
+      "path": "cases/MCF032-registration/MCF032-F2.json",
+      "bytes": 7069,
+      "sha256": "7cbb2dea1fa9a482aac2d341d15ac1fa0f80842feed371028c62aa588704abd6"
+    },
+    {
+      "path": "cases/MCF033-graph-diffusion/MCF033-F2.json",
+      "bytes": 5078,
+      "sha256": "2938885d53452d63e812a4cd9d192717aef1031682891b1567c1534074832ccd"
+    },
+    {
+      "path": "cases/MCF034-velocity-phase/MCF034-F1.json",
+      "bytes": 5567,
+      "sha256": "a80095d82916e62c87fdbca230c7143c501e9ee2ba0be7b73ac3a1eed529593c"
+    },
+    {
+      "path": "cases/MCF035-beamforming-delay/MCF035-SF15.json",
+      "bytes": 5773,
+      "sha256": "f547eae13c065739e99762f305ef28269328fdbc1dec2354d8ef7fc26feaa8df"
+    },
+    {
+      "path": "cases/MCF036-competing-incidence/MCF036-F1.json",
+      "bytes": 5801,
+      "sha256": "6027852bbca412d36c92e60e53d660c9ce7a47ec3e0d37ee4e153d92287a2540"
+    },
+    {
+      "path": "cases/MCF037-integrated-gradients/MCF037-F1.json",
+      "bytes": 3745,
+      "sha256": "a2cedce4962908e52a99d66c41fc4a52314bac9e99825e0c16c31c7b74ccd533"
+    },
+    {
+      "path": "cases/MCF038-cell-fraction/MCF038-OV1.json",
+      "bytes": 4382,
+      "sha256": "0033bc9e94da7651b81ce1350057b606db2d51474d99436b8d088006ab472a6b"
+    },
+    {
+      "path": "cases/MCF039-embedding-affinity/MCF039-F1.json",
+      "bytes": 4608,
+      "sha256": "90200c6a6ff2839777fec769f864c76eadcf97b89548a97b19888472603e5cf6"
+    },
+    {
+      "path": "cases/MCF040-multivi-missingness/MCF040-F4.json",
+      "bytes": 4765,
+      "sha256": "451fcfa01ac9d100fd3d81ff4e7960695a0bd06dee0d02e57fad6e0e6d09cadf"
+    },
+    {
+      "path": "cases/MCF041-brain-spine-interface/MCF041-F2.json",
+      "bytes": 5132,
+      "sha256": "b283263988560c64cd2280acf883c5d1c2a261da81627733cde7807c4cd6ef31"
+    },
+    {
+      "path": "cases/MCF042-masai-workload/MCF042-T2.json",
+      "bytes": 4706,
+      "sha256": "87afdec5c4fcd59c4bc9c589a956252691ddf4ff6b652d37a6a82fb100d84870"
+    },
+    {
+      "path": "cases/MCF043-paste2-partial-coupling/MCF043-F1.json",
+      "bytes": 6309,
+      "sha256": "2999894fb523b9afec7da43f050c22b3d8bf9af012ae31f2355a297c4d0c1d89"
+    },
+    {
+      "path": "cases/MCF044-loupe-sampling/MCF044-F1.json",
+      "bytes": 7046,
+      "sha256": "cacc09c7b6d651faf98112abdfbcd90c98d2447c94bf252d46e3c19ae95bbc25"
+    },
+    {
+      "path": "cases/MCF045-multivers-context/MCF045-F1.json",
+      "bytes": 6103,
+      "sha256": "94993357c5abaef7b1d835d8ce1f1acc0f8e5fb6367f363ae6bcfdd59f8bd4e3"
+    },
+    {
+      "path": "cases/MCF046-tarnet-factual/MCF046-F1.json",
+      "bytes": 6037,
+      "sha256": "5e9e296f15d948b7cfa61a5d6255562eff665d8551c34c09cd8113e65b832719"
+    },
+    {
+      "path": "cases/MCF047-esm-threshold/MCF047-F1.json",
+      "bytes": 6381,
+      "sha256": "636a4ae8cf1b985b574b2ff3e1486fe8df02b1250c5cc00696a29c02cb1ab11f"
+    },
+    {
+      "path": "cases/MCF048-adbs-state-buffer/MCF048-ED2.json",
+      "bytes": 6853,
+      "sha256": "882059742811491c98783533791ddf3e65ba069080be8beb59f3a2794f0ed3f6"
+    },
+    {
+      "path": "cases/MCF049-fedbn-parameter-ownership/MCF049-F2.json",
+      "bytes": 7753,
+      "sha256": "d860ad0ca0f1c11934e4f9a5b5cf1615dea299382a51c54c8c8a43f0cbbc280c"
+    },
+    {
+      "path": "cases/MCF050-pae-reference-frame/MCF050-F2.json",
+      "bytes": 8378,
+      "sha256": "2ed4144761fcc44f3d6b4cedcdd6db8184000d23c04a954cd351d5987fcf786d"
+    },
+    {
+      "path": "cases/MCF051-surface-metric-roles/MCF051-F8.json",
+      "bytes": 8205,
+      "sha256": "9f229ff89f7aa431a7db35f1f0c074d490d19be4393f62410636858926d4f3c1"
+    },
+    {
+      "path": "cases/MCF052-ragchecker-evidence-metrics/MCF052-F1.json",
+      "bytes": 8844,
+      "sha256": "f6dd43f5055d267eb0b0374128aee096fd43f66d688023b17221a6c830debb2b"
+    },
+    {
+      "path": "cases/MCF053-velocity-mapping/MCF053-F2.json",
+      "bytes": 9056,
+      "sha256": "67fecc3ca8f09c46b3592ad9a61847434118e6c275c90ec9b1e1040d0c380cf1"
+    },
+    {
+      "path": "cases/MCF054-ultrasound-calibration/MCF054-F1.json",
+      "bytes": 8889,
+      "sha256": "72a7ff4a5b1b31e7c63c3fd81fbc998aa3edb77ad330dd2a162caef6f109f063"
+    },
+    {
+      "path": "cases/MCF055-perceiver-query-roles/MCF055-F2.json",
+      "bytes": 9079,
+      "sha256": "0696e00fb69bf2d0ec70ed84102cd1859378d269db12fb78c3afa19dc2f4211c"
+    },
+    {
+      "path": "cases/MCF056-selectivenet-evaluation/MCF056-F2.json",
+      "bytes": 10819,
+      "sha256": "cd74b7f484b4f916919a40f1c4707ac253276fbe00c31bf500a92ebfb71c505a"
+    },
+    {
+      "path": "cases/MCF057-clam-training-pseudolabel/MCF057-F1.json",
+      "bytes": 10986,
+      "sha256": "78701e2bc3dfefb74600e0947061b5f2366c558c894e4c48e43c5021b72f857e"
+    },
+    {
+      "path": "cases/MCF058-glue-feature-cell-coupling/MCF058-F1.json",
+      "bytes": 10400,
+      "sha256": "624d76e07f2961f1662ff8fd5faf3ceec03c31f17a1c0078b6091ce7b358b81e"
+    },
+    {
+      "path": "cases/MCF059-grud-missingness-decay/MCF059-F3.json",
+      "bytes": 12161,
+      "sha256": "dd9ae35aacc74b2a6e52c0b34c0a10148aeeb4ce618e513e64c9044019998b55"
+    },
+    {
+      "path": "cases/MCF060-dino-update-roles/MCF060-F2.json",
+      "bytes": 8935,
+      "sha256": "e90f39bf2d4ada78261ffe162c4e318926d4ee7a1d076f941b03ea52a29e8496"
+    },
+    {
+      "path": "cases/MCF061-uamt-uncertainty-gating/MCF061-F1.json",
+      "bytes": 12341,
+      "sha256": "e1f172e2745095607a991f7025287315f69ccfffc02f1d082bdc261ff4c8d49b"
+    },
+    {
+      "path": "cases/MCF062-rag-marginalization/MCF062-F1.json",
+      "bytes": 18308,
+      "sha256": "6b54865ba50d28b8332fd0b27b9370d12220860432ec73cbdc258d8e0e011dd1"
+    },
+    {
+      "path": "cases/MCF063-qrs-signal-state/MCF063-F1.json",
+      "bytes": 11184,
+      "sha256": "1392ed4b3ff26620c7328bd468b0d7027ade9dbbfa470745b1a4feb308528113"
+    },
+    {
+      "path": "cases/MCF064-hil-controller-boundaries/MCF064-F1.json",
+      "bytes": 12909,
+      "sha256": "60b75ee834050898a4dd6ae8eb301a5cc1d2ffc05069c8d570cbb247d6698f55"
+    },
+    {
+      "path": "cases/MCF065-endomind-reported-risk-differences/MCF065-T2.json",
+      "bytes": 7291,
+      "sha256": "e38db899369c617c1ab6510ecdae41755423743613c2e4b52c05dc8e8c1a77fb"
+    },
+    {
+      "path": "cases/MCF066-tangram-paired-spatial-transfer/MCF066-F1.json",
+      "bytes": 6327,
+      "sha256": "062ed7d6c76816980000dc6a8c92eec1a154acfebe18b37f259d764384a635e6"
+    },
+    {
+      "path": "cases/MCF067-flare-forward-sentence/MCF067-F1.json",
+      "bytes": 6546,
+      "sha256": "fde64c5a2809671a1ebc7060e7c3ae48bfdeb891018c977b509548d6e3f9bdce"
+    },
+    {
+      "path": "cases/MCF068-fnirs-channel-contributions/MCF068-F1.json",
+      "bytes": 6672,
+      "sha256": "8aac975463b84cfa796d8b98208a06a1dd3a602df24aef008827321416f9ec98"
+    },
+    {
+      "path": "cases/MCF069-access-screening-denominators/MCF069-T3.json",
+      "bytes": 5320,
+      "sha256": "c457e5550dc50f68daae4a7b969c3ce28d059f62a387bbd8686bbffb9323548c"
+    },
+    {
+      "path": "cases/MCF070-scarches-condition-adaptors/MCF070-F1.json",
+      "bytes": 7326,
+      "sha256": "471faf1c627f5b737b4833746e2d0eae02a9aa0be2f442f699c18164efc1f784"
+    },
+    {
+      "path": "cases/MCF071-bladder-event-gated-control/MCF071-F4.json",
+      "bytes": 7622,
+      "sha256": "bf277ea397f75f9567c3f87e48cdb656572403a8e8e00c811d45098540b009c6"
+    },
+    {
+      "path": "cases/MCF072-mofa-grouping/MCF072-F1.json",
+      "bytes": 6445,
+      "sha256": "dd15096e6d5fe9043c3866126b0e5cea79c338162a6cd331e4715451f4317f25"
+    },
+    {
+      "path": "cases/MCF073-open-ephys-signal-chain/MCF073-F3.json",
+      "bytes": 11561,
+      "sha256": "70aae570888f1daf0778e1255343020fe5e9db2bb0881eb13cb99eb0bc4c256d"
+    },
+    {
+      "path": "cases/MCF074-medmnist-reported-auc/MCF074-T3.json",
+      "bytes": 10439,
+      "sha256": "408df2af77af0b670cc75a1f5515d36e1ddc9dd599f5d446cfca9d358bc931e1"
+    },
+    {
+      "path": "cases/MCF075-chexpert-reported-ci/MCF075-T3.json",
+      "bytes": 4722,
+      "sha256": "e0893b069964f6ae90cdb3ec1dc5173a404ef80d4dd90837c3103c9bb2c35d7a"
+    },
+    {
+      "path": "cases/MCF076-selfrag-reflection-producer/MCF076-F1.json",
+      "bytes": 3930,
+      "sha256": "a0f8f8be9a4921a6e80707dca0917bdb24eb00abb74c8ecd960b60d851d50952"
+    },
+    {
+      "path": "cases/MCF077-multidgd-inference-update/MCF077-F1.json",
+      "bytes": 3656,
+      "sha256": "c0993a8d5a4eeb4fb3d663da5b2c8c1c1f490559e5f15a56399643921536a6fe"
+    },
+    {
+      "path": "cases/MCF078-synthseg-target-alignment/MCF078-F3.json",
+      "bytes": 3801,
+      "sha256": "73139772c0ef0d25cb6d1850d1cc5174e37a04bb01241f5e3b241a3e816da4e8"
+    },
+    {
+      "path": "cases/MCF079-calibration-percent-conversion/MCF079-T1.json",
+      "bytes": 2875,
+      "sha256": "93a297b050bab831cb2d54391981b72c1568a29b8f697955393784ee5729abb0"
+    },
+    {
+      "path": "cases/MCF080-ecg-residual-state/MCF080-F3.json",
+      "bytes": 5838,
+      "sha256": "43333764df119f11a048262b62a11f0ad9237954a8a22a82878c6151c9336b4a"
+    },
+    {
+      "path": "cases/MCF081-colbert-late-interaction/MCF081-F3.json",
+      "bytes": 7400,
+      "sha256": "414573707d80e60b58491864aa057e5196cca7bc316156fa8e50941e95ca3135"
+    },
+    {
+      "path": "cases/MCF082-cobolt/MCF082-F1.json",
+      "bytes": 20657,
+      "sha256": "853633e4bec8eb824331e0a2d2427c462807f1799207d43ebd7be6e1b1f41314"
+    },
+    {
+      "path": "cases/MCF083-scmomat/MCF083-F1.json",
+      "bytes": 21037,
+      "sha256": "cd8291923da7136a20421f84b6b2813a3e61c8819030b74042bc4d7ca9d59607"
+    },
+    {
+      "path": "examples/medsam/appearance_spec.json",
+      "bytes": 13175,
+      "sha256": "37717a6c90a0b144c517ed16f6809bd5028666eaed2cb5b393386ff48d697c52"
+    },
+    {
+      "path": "examples/medsam/baseline/caption.md",
+      "bytes": 870,
+      "sha256": "9039128243d01713445948120940bed45afb196f5cd5fa5070aaf3bafd5a58da"
+    },
+    {
+      "path": "examples/medsam/baseline/figure.png",
+      "bytes": 123633,
+      "sha256": "a3a27dd491d88785a40c922b48749e00229451b0cdf06983fb23da7a1f3cb141"
+    },
+    {
+      "path": "examples/medsam/baseline/figure.svg",
+      "bytes": 14313,
+      "sha256": "b41d6c385ab167637a50227828f4481e1065b5a4be56dfe325bbfb7d5de4733b"
+    },
+    {
+      "path": "examples/medsam/changed_spec.json",
+      "bytes": 13171,
+      "sha256": "6c949e839aa9a4d33d80941c8d52b74835e9e13cf718f47b030659930b7e63c8"
+    },
+    {
+      "path": "examples/medsam/figure_spec.json",
+      "bytes": 13110,
+      "sha256": "54545ee256016c2a5b56116b27790b8b03784747a0baaff0484ec9d7238b3972"
+    },
+    {
+      "path": "examples/results/data.csv",
+      "bytes": 689,
+      "sha256": "040851016f055460470020e711ff5cfc674326da41ec80ce27d14691de8505c1"
+    },
+    {
+      "path": "examples/results/figure_spec.json",
+      "bytes": 4512,
+      "sha256": "d29fd6d7efec820ab8d3b38785130e6cad5f26db6f70b2ab2b512ee475a69c2d"
+    },
+    {
+      "path": "examples/results/mapping.json",
+      "bytes": 2043,
+      "sha256": "588de0fd8388270589de069d05e4376f2de6b50307d3eb1d4abfadab3976fd01"
+    },
+    {
+      "path": "references/catalog.jsonl",
+      "bytes": 126374,
+      "sha256": "1de56d508027a4df5ab3ddc4aa5201f9175c22bf1486fa5079a651fce35f8045"
+    },
+    {
+      "path": "references/drawing-and-review.md",
+      "bytes": 52877,
+      "sha256": "e7466b52f908eb39d5f1ba86324f36a174a0ac1141e71c7cafb58969468e9573"
+    },
+    {
+      "path": "references/learning.md",
+      "bytes": 4084,
+      "sha256": "c9caadbc7334f7d73e972466056345e23c5188cbf91e45c6f346d62bba42f876"
+    },
+    {
+      "path": "references/reuse-map.md",
+      "bytes": 2362,
+      "sha256": "9749d6c2605ee02a72a28d3d197739d097ece984fe8d5de20e2f6fd306fb40af"
+    },
+    {
+      "path": "references/specification.md",
+      "bytes": 19548,
+      "sha256": "8a1db6fcdebe06bf672962026b3c5ceb4bfd5fc47603427648ae0475f8c5018e"
+    },
+    {
+      "path": "references/svg-repair-check.md",
+      "bytes": 8103,
+      "sha256": "d3b700feea86dc652f630767022686666589aabb3154a614c3962615a7990998"
+    },
+    {
+      "path": "references/tested-rules.md",
+      "bytes": 115061,
+      "sha256": "8dc542d16676fb74413b98d295681070b40d739d881489a620b058fd0020b845"
+    },
+    {
+      "path": "references/understanding.md",
+      "bytes": 56290,
+      "sha256": "e758522b22ecb0b50ceb1a296ec988667cf51bd3a463c5e73449dd0ed73dcd7c"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 63,
+      "sha256": "e524096729a7059f7c5a352af1b1f5b6742cf299ba0688320911f6c504d95c41"
+    },
+    {
+      "path": "scripts/check_catalog_summary.py",
+      "bytes": 5350,
+      "sha256": "92478b497b9fecfe7585b42d1466ab44f7290bd29bfb2593012b2b8e998b659f"
+    },
+    {
+      "path": "scripts/check_spec.py",
+      "bytes": 4014,
+      "sha256": "46e142490c4a602b9da6999cd1d62a628b12998ea2ed8e9c89ee4ed44250bb31"
+    },
+    {
+      "path": "scripts/check_svg_repair.py",
+      "bytes": 30705,
+      "sha256": "b5bc05e75a6052180e4b8e1bc8a5fe199c160f629e7d5991d115d52f7b277cea"
+    },
+    {
+      "path": "scripts/plot_results.py",
+      "bytes": 4092,
+      "sha256": "eb993e750d23f428176703c845b71b83d320ea743b55f8b314c61b8fa3b767c0"
+    },
+    {
+      "path": "scripts/render.py",
+      "bytes": 6313,
+      "sha256": "b5555d1a5f234373e54ed39f450d79749fccc619687cf664f2fdc244fa365c37"
+    },
+    {
+      "path": "tests/controlled/method-change-request.md",
+      "bytes": 220,
+      "sha256": "1189e236b38f7bf96c0573edb215420ffd9c9eec238da7bf3665f98a05732a3c"
+    },
+    {
+      "path": "verification/public-source-smoke.json",
+      "bytes": 8020,
+      "sha256": "357cceacbffe65454cce360ef59948ed58027470a489ac52b77e913c9fbcbaf6"
+    }
+  ]
+}

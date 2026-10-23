@@ -1,0 +1,92 @@
+{
+  "case_id": "MCF006-scvi",
+  "figure_id": "MCF006-F1",
+  "admitted_after_transfer_test": true,
+  "admitted_at_utc": "2026-10-11T11:34:25.748644+00:00",
+  "paper": {
+    "title": "Deep generative modeling for single-cell transcriptomics",
+    "authors": [
+      "Romain Lopez",
+      "Jeffrey Regier",
+      "Michael B.Cole",
+      "Michael I.Jordan",
+      "Nir Yosef"
+    ],
+    "doi": "10.1038/s41592-018-0229-2",
+    "pmid": "30504886",
+    "pmcid": "PMC6289068",
+    "type": "original journal article",
+    "journal": "Nature Methods15,1053–1058(2018)",
+    "version": "Publisher VOR2018-11-30; text accessed in PMC author manuscript available2019-05-30",
+    "url": "https://www.nature.com/articles/s41592-018-0229-2"
+  },
+  "source_figure": "Figure1 whole; critical Fig1a inspected; all panels count as one original figure",
+  "figure_task": "Link probabilistic inference/generation architecture to observed computational scaling benchmark",
+  "figure_types": [
+    "variational inference and conditional generative model",
+    "runtime-versus-size line plot with log y and broken x-axis"
+  ],
+  "read_scope": [
+    "Figure1caption",
+    "Results model-definition/preliminary-evaluation section",
+    "Online Methods scVI probabilistic model and fast inference via stochastic optimization",
+    "Discussion model normalization/batch and limits"
+  ],
+  "visual_scope": [
+    {
+      "file": "tests/holdouts/scvi/source-assets/figure1-publisher-original.png",
+      "sha256": "a79a957e0f8bf19dedbe5ccd0aa3900f0f52bfa76cd32e581ec9d45e7399d5b2",
+      "distribution": "excluded",
+      "viewed": "whole original and critical architecture crop actually viewed"
+    },
+    {
+      "file": "tests/holdouts/scvi/source-assets/figure1a-critical-detail.png",
+      "sha256": "737876a8bcaccafb2237cd5056bfc8fe4271206023948ca9997de2fe0c510e71",
+      "distribution": "excluded",
+      "viewed": "whole original and critical architecture crop actually viewed"
+    }
+  ],
+  "visual_observations": [
+    "Fig1a: posterior side has four network blocks for means/std of library factor and latent z; sample colors distinguish latent blue, observed batch green and input counts orange.",
+    "Generative side separates frequency f_w(z,s), dropout f_h(z,s), and cell-size scaling; dashed exits point to downstream tasks rather than a hypothesis legend.",
+    "Fig1b: runtime in minutes uses log-scale tick spacing; horizontal input size in thousands of cells has a gap before1M. Dashed lines connect methods; isolated early-stopping marker at1M must not be read as a full series.",
+    "Source computational arrows are schematic and omit some explicit joins; reading Methods supplies conditioning and ZINB likelihood."
+  ],
+  "elements_and_relations": "See independently editable reconstruction semantics in ../../examples/scvi/figure_spec.json (16 elements,15 directed dependencies); source Figure1b represents methods, runtime minutes, input-size cell counts, hardware context and720-gene restriction.",
+  "source_specific_boundaries": [
+    "Fig1b uses BRAIN-LARGE,720 selected genes and specified CPU/GPU/hardware; no claim of universal runtime ranking.",
+    "Cells and genes are not donor-level experimental replicates.",
+    "Batch removal is a modeling aim/benchmark result, not guaranteed conditional independence in every encoder output.",
+    "Library factor l is log-normal per Methods, despite loose Gaussian wording in Results; positive-scale distinction preserved."
+  ],
+  "rights": {
+    "paper": "PMC academic-use statement; Crossref supplies TDM license only, not general CC reuse",
+    "original_assets": "Link and local viewing only; excluded from distribution",
+    "fresh_redraw": "New vector layout/objects, no original pixels; attribution retained"
+  },
+  "integrity": {
+    "checked_date": "2026-10-11",
+    "pubmed": "CommentsCorrections entry is RefType CommentIn to PMID30504887, not erratum/retraction",
+    "crossref": "No update-to; has-preprint and has-review relations; no correction/retraction found in checked metadata",
+    "limits": "Bounded metadata/article-notice check, not exhaustive clearance"
+  },
+  "rules_transferred": [
+    "Separate inference and generative dependency direction with explicit panel tasks",
+    "Represent observed batch separately from inferred library factor",
+    "Name multiplicative scaling at a join node",
+    "Distinguish distribution parameter mean from marginal expectation",
+    "Inspect actual text fit and endpoint geometry after rendering"
+  ],
+  "not_transferable": [
+    "2018 latent-variable distributions to arbitrary later scvi-tools configurations",
+    "Runtime numbers to another hardware/gene set",
+    "Clustering or embeddings as causal biology"
+  ],
+  "transfer_test": {
+    "expected": "../../tests/holdouts/scvi/expected.json",
+    "results": "../../tests/holdouts/scvi/result.json",
+    "outcome": "12/12 declared checks pass self-review after2 visual revisions; not blinded independent scoring"
+  },
+  "scientific_status": "joint_text_figure_verified_with_declared_abstraction_and_conflict_note",
+  "archive_status": "link_plus_local_view_evidence_excluded_from_distribution"
+}

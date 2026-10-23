@@ -1,0 +1,88 @@
+{
+  "id": "MCF066-F1",
+  "paper": "DOI:10.1038/s41592-021-01264-7",
+  "version": "Publisher VOR 2021-10-28; current publisher/PMC HTML snapshots, not exact historical PDF equivalence.",
+  "figure": "Whole Figure1 a–f viewed; selected a/f paired multiomics application is one partial unit. Figure5 caption and Methods support it; Figure5 pixels not viewed or counted.",
+  "domain": "paired_multiomics_and_learned_spatial_annotation_transfer",
+  "figure_types": [
+    "source_pairing_vs_learned_alignment",
+    "RNA_fit_then_ATAC_transfer",
+    "matrix_axes_and_conditional_filter"
+  ],
+  "card": "cases/MCF066-tangram-paired-spatial-transfer/MCF066-F1.json",
+  "reading": "Root relevant Sec3/8/14–19/32, primary reviewer and source-released image reader; not whole-paper/supplement/code/model verification.",
+  "visual": "Whole original Figure1 740×1081 viewed. Current author02 baseline and appearance edit full PNG/PDF/explicit-FreeType static SVG viewed; final assessor independently rerendered current PDFs. 300×220mm,36textgroups,1000glyphs,9nodes/10relations,10.5–14pt.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "S/A paired source cells i; separate spatial j; S/G/d fit soft M; A only transferred after fitting, with conditional f. Three source tensions and specific-run unknowns retained.",
+  "transfer": "Fixed8 independent final evidence assessment supported8/failed0/unassessed0. Native151checks each and9comparison separate software evidence;21member ZIP and9input clean replay reproduce8canonical outputs on same host. No new heldout, model reproduction or OS isolation.",
+  "archive": "Article CC BY4.0 with third-party clause; no Fig1 exception found in read caption. Source HTML/JPEG remain local review files. Clean package contains original diagram/code/attributed notation and licensed DejaVu font, no source pixels.",
+  "at_utc": "2026-10-15T12:44:43.300473+00:00",
+  "source_urls": [
+    "https://www.nature.com/articles/s41592-021-01264-7",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8566243/"
+  ],
+  "source_record": "tests/batches/tangram-paired-spatial-transfer-01/SOURCE.md",
+  "question": "How can same-cell paired ATAC annotations acquire inferred spatial placement using an RNA-learned probabilistic map?",
+  "grouping_and_layout": "Top panel separates source RNA, spatial RNA and method density inputs from learned M and optional f; lower panel transfers source-aligned A. A left unheaded bracket encodes source pairing, arrows encode computation. This preserves the difference between observed modality correspondence and inferred spatial alignment.",
+  "relationship_evidence": "Source Sec8 establishes same-cell paired SHARE-seq and MERFISH spatial reference; Sec14–16 establish matrix axes, softmax/density fit and optional filter; Sec17 supports M transpose contraction with source-aligned annotation; Sec19 qualifies method density and probabilistic mapping.",
+  "transferable_principles": [
+    "Keep modality pairing and cross-dataset learned correspondence as distinct relations.",
+    "Name matrix axes and conditional multiplication before laying out a transfer diagram.",
+    "A feature used after fitting must not acquire an optimization input edge merely because it belongs to a paired modality.",
+    "Method-level optionality and run-specific unknowns must coexist without silently choosing a run branch."
+  ],
+  "non_transferable_contents": [
+    "Tangram-specific soft mapping and f formulas are not universal spatial integration rules.",
+    "Do not transfer cell counts from the separate 10Xv3 example or assume donor/ROI identity.",
+    "No direct spatial ATAC measurements, new heatmaps, performance or clinical validation."
+  ],
+  "limitations": [
+    "Sec3 Fig1e versus actual f reference conflict.",
+    "Figure1a broad Spatial data grouping of SHARE-seq versus selected application roles.",
+    "Sec19 one-to-one prose versus soft probabilistic definitions; no hard bijection inferred.",
+    "Specific run filter, donor/specimen/ROI, complete feature processing and historical code/config/weights unknown.",
+    "Whole-brain SHARE-seq lacks immune cells; reported biological precision limitation retained.",
+    "No journal, browser, arbitrary editor or cross-machine compatibility validation."
+  ],
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/protocol.json",
+      "bytes": 2385,
+      "sha256": "627cbc90b99dd34913d8b247f3c1490c6a03f9e0b895ac5abdd8e96f7711d3a6"
+    },
+    "final_assessment": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/final-assessment-01/assessment.json",
+      "bytes": 26148,
+      "sha256": "900e1ae67f421a063b37fd98dedf7b45015b7630f49c87f290c729731233eb93"
+    },
+    "final_seal": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/final-assessment-01/seal.json",
+      "bytes": 4184,
+      "sha256": "41cd92fa7654a8193fcac3638de43d4542b7e06a15c59d0cbcdd6311a74c4b82"
+    },
+    "reader": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/reader-01/seal-stage2.json",
+      "bytes": 6789,
+      "sha256": "3f17aece21725c8ee33690b3d625512f397d92daf8eb21d68e9677a79e5345bc"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/native-audit-01/manifest.json",
+      "bytes": 5952,
+      "sha256": "388fab523461c3240cb779a8a96ac9f1a7915004ecb1af44bb25cc88f7ba05bd"
+    },
+    "package": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/tangram-paired-spatial-clean-01.zip",
+      "bytes": 1828921,
+      "sha256": "20c2ac77df6d664c2b7695bed97732ce8b9648ec780cb72f0fd070bb73eeb069"
+    },
+    "replay": {
+      "path": "<SKILL_ROOT>/tests/batches/tangram-paired-spatial-transfer-01/package-replay-01/result.json",
+      "bytes": 1839,
+      "sha256": "9c5a6024567dfbea566e41640372cb048e15c7a1bf7d60aae0d93e20e49d4e24"
+    }
+  },
+  "delivery": "tests/batches/tangram-paired-spatial-transfer-01/README.md",
+  "new_rule_scope": "Existing identity/evidence/axes rules were fixed before detailed source review and applied here. Conditional transfer wording newly summarized below is not yet separately validated on another case."
+}

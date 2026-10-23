@@ -1,0 +1,195 @@
+{
+  "case_id": "MCF009-F1",
+  "dedup_id": "10.1038/s41586-019-1799-6|Cambridge-accepted-manuscript-3ffac2531ce8f2c0|Figure1",
+  "paper": {
+    "title": "International evaluation of an AI system for breast cancer screening",
+    "doi": "10.1038/s41586-019-1799-6",
+    "citation": "McKinney et al., Nature 577, 89-94 (2020)",
+    "official_url": "https://www.nature.com/articles/s41586-019-1799-6",
+    "addendum_doi": "10.1038/s41586-020-2679-9",
+    "authors": "McKinney SM, Sieniek M, Godbole V, et al.",
+    "version": "Accepted manuscript whole Figure1, linked to original/revised publisher supplements; versions explicitly distinguished",
+    "figure_location": "Accepted PDFp32; caption PDFp13 lines399–407"
+  },
+  "states": {
+    "metadata": "Verified primary record reused with dated2026-10-11 status checks",
+    "text": "Relevant caption, cohort, operating-point, reader-study and revised model methods read; exact ranges below",
+    "visual": "Complete Figure1 and outcome detail actually viewed; originalS1/S2 whole and revised supporting views separately recorded",
+    "semantic": "Source-backed study-design facts identified; arithmetic and development-provenance gaps retained",
+    "license": "No broad original-artwork redistribution established; originals local-only",
+    "code": "Research implementation not read or run; no experiment reproduced",
+    "transfer": "Completed source-bound editable study-design baseline with fixed18-point development checklist, independent model audit and parent actual-view review; controlled tests recorded separately."
+  },
+  "scientific_task": "Explain which patients and selected screening cases contribute to each retrospective evaluation, and how outcomes differ from sampling/follow-up eligibility.",
+  "original_figure_count": 1,
+  "supporting_figures_not_counted_as_new_cases": [
+    "Original supplementS1",
+    "Original supplementS2",
+    "Revised versions ofS1/S2"
+  ],
+  "source_records": [
+    {
+      "id": "main",
+      "version": "Cambridge accepted manuscript, 35 PDF pages; not version-of-record PDF",
+      "path": "cases/MCF009-uncertainty/.inspection/mckinney-accepted.pdf",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/973c43cb-96f5-43a9-882b-722a44a469da/content",
+      "read_scope": "PDF pp3-4,13,15-19,28-29; Fig1 on p32; page numbers are PDF pages, matching manuscript printed numbers",
+      "sha256": "3ffac2531ce8f2c0e51a2c52a17efe4a3466d865862b8689cce423d30e37fac9"
+    },
+    {
+      "id": "sup-original",
+      "version": "Original publisher Supplementary Information, 13 PDF pages",
+      "path": "tests/batches/research-design-01/.inspection/original-supplement.pdf",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-019-1799-6/MediaObjects/41586_2019_1799_MOESM1_ESM.pdf",
+      "read_scope": "PDF pp2-4 model methods; S1 caption/whole diagram p5 (printed4); S2 caption/whole diagram p6 (printed5)",
+      "sha256": "b8412d88034be4adb4e4368c7648de38dcd2fc84114be463922ddde1705e1486"
+    },
+    {
+      "id": "sup-revised",
+      "version": "Publisher addendum revised Supplementary Methods, 14 PDF pages; addendum 2020-10-14",
+      "path": "tests/batches/research-design-01/.inspection/addendum-revised-methods.pdf",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-020-2679-9/MediaObjects/41586_2020_2679_MOESM1_ESM.pdf",
+      "read_scope": "PDF pp2-5 (printed1-4) model methods; S1 whole diagram p6 (printed5); S2 split/final-count detail p7 (printed6)",
+      "sha256": "24303ef15f1dbc4e7328ab47d71fb3d8554386d047d25695c591d1ed6c45fa36"
+    }
+  ],
+  "actual_views": [
+    {
+      "path": "tests/batches/research-design-01/.inspection/figure1-whole.png",
+      "sha256": "7420fb4b34cdc6a87080cbb31e43fbd1cb7a49037ac142e29901021ad6cf95bb",
+      "source": "main",
+      "locator": "PDF p32",
+      "actual_view_scope": "Whole original Fig1, all three regions; full caption read p13 lines399-407"
+    },
+    {
+      "path": "tests/batches/research-design-01/.inspection/figure1-outcome-detail.png",
+      "sha256": "680193f521874a500d9fff9a4b350c28f9c88815294bd563d8791ce6b4a6e255",
+      "source": "main",
+      "locator": "PDF p32 upper right",
+      "actual_view_scope": "Outcome timeline, index exam, T+3 months and symbolic T-delta negative follow-up rule"
+    },
+    {
+      "path": "tests/batches/research-design-01/.inspection/supp-figure1-uk-whole.png",
+      "sha256": "9f7eb8191125883558e6e7241390b5d082a00e34e62451cc25d8c1c278902cf6",
+      "source": "sup-original",
+      "locator": "PDF p5 / printed4",
+      "actual_view_scope": "Whole UK STARD diagram, all train/tune/test labels and counts"
+    },
+    {
+      "path": "tests/batches/research-design-01/.inspection/supp-figure2-us-whole.png",
+      "sha256": "2c6e124cca685430d05e02c6a46c76b75679d61ad893ccf5009a2d31599b2d94",
+      "source": "sup-original",
+      "locator": "PDF p6 / printed5",
+      "actual_view_scope": "Whole US STARD diagram and caption"
+    },
+    {
+      "path": "tests/batches/research-design-01/.inspection/revised-supp-figure1-uk-whole.png",
+      "sha256": "5b717a2d11a089143ec1289dc66acdf1bc74061e658ec81c156c4b6ea53b3792",
+      "source": "sup-revised",
+      "locator": "PDF p6 / printed5",
+      "actual_view_scope": "Whole revised UK STARD diagram, compared train/tune/test labels and counts"
+    },
+    {
+      "path": "tests/batches/research-design-01/.inspection/revised-supp-figure2-us-detail.png",
+      "sha256": "d3af31384583a54eb3fe85c7383039523056b5c0c9480cc0c35e397fba5880be",
+      "source": "sup-revised",
+      "locator": "PDF p7 / printed6",
+      "actual_view_scope": "Crop covering completeness/split, test filtering, outcome and BI-RADS availability counts; not a whole revised S2 view"
+    }
+  ],
+  "elements": [
+    {
+      "id": "country_summary",
+      "role": "UK/US full evaluation cohorts, reader setting and cancer-window definitions",
+      "unit": "women with one selected test screening case each; not individual images"
+    },
+    {
+      "id": "outcome_timeline",
+      "role": "Index exam, screening intervalT, cancer-confirmation windowT+3m and conditional later negative exam",
+      "unit": "months relative to selected screening exam"
+    },
+    {
+      "id": "clinical_comparison",
+      "role": "AI versus historical human screening decisions on cases with available comparisons",
+      "unit": "analysis-specific paired case/reader observations"
+    },
+    {
+      "id": "cross_country",
+      "role": "UK-trained variant tested on the same US test cohort",
+      "unit": "distinct model variant, not new patients"
+    },
+    {
+      "id": "reader_study",
+      "role": "Six independent radiologists rate500 selected US test cases;465 retained for main reader analysis",
+      "unit": "repeated readers on shared cases, not500×6 patients"
+    }
+  ],
+  "relations": [
+    {
+      "from": "full_test_cohorts",
+      "to": "clinical_comparison",
+      "type": "subset selection and paired prediction comparison",
+      "evidence": "MethodsPDFpp16–18 and EDTable2 captionp28"
+    },
+    {
+      "from": "UK_training",
+      "to": "same_US_test",
+      "type": "separate cross-country evaluation",
+      "evidence": "Figure1/caption and mainPDFp4; exact variant validation provenance not fully specified"
+    },
+    {
+      "from": "US_test",
+      "to": "reader_sample500",
+      "type": "nested sample",
+      "evidence": "Figure1/caption and MethodsPDFp19"
+    },
+    {
+      "from": "reader_sample500",
+      "to": "reader_analysis465",
+      "type": "quality/implant exclusions",
+      "evidence": "MethodsPDFp19 and EDTable3 captionp29"
+    },
+    {
+      "from": "index_exam",
+      "to": "outcome_definition",
+      "type": "time and eligibility conditions, not clinical causal effect",
+      "evidence": "Figure1 top-right; precise rules MethodsPDFpp15–16"
+    }
+  ],
+  "visual_decomposition": {
+    "original_layout": "Two upper boxes separately summarize cohorts and outcomes; a wide lower panel places three evaluation designs side by side. Blue highlights identify AI/flow, gray text describes shared study facts; flags serve country labels, not validation evidence.",
+    "connections": "Shared case imagery branches to AI and clinician reads; bidirectional comparison joins their decisions. UK-to-US arrow denotes a model/data transfer evaluation. Case image fans out to six reader labels. None is a training-label feedback loop.",
+    "why_effective": "Separates the who/when questions from which evaluation is performed, and puts alternative experiments in parallel.",
+    "limitations": "Figure1 omits detailed split counts, reader-availability denominators and500→465 exclusions; symbolicT−delta does not explain every negative-eligibility condition. Original mammogram pixels are unnecessary for the transferred design diagram.",
+    "transfer_plan": "Retain cohort/outcome/evaluation separation; replace decorative flags and mammograms with editable labeled study units; use explicit source-backed N at each stage."
+  },
+  "known_conflicts_and_gaps": [
+    "MainUK exclusion count5990 of31766 does not reconcile with final25856; S1 implies5910. Do not assert a correction.",
+    "No exact final US train/validation patient or image counts in inspected sources.",
+    "UK-only variant checkpoint/threshold validation and auxiliaryCBIS-DDSM provenance are not fully specified.",
+    "Raw patient assignment overlap was not independently checked; source/test sites and dates overlap.",
+    "UKtune is the supplement label; do not swap counts or claim complete mapping of everytune record to every validation operation."
+  ],
+  "transferable_rules": [
+    "Attach N to stage, unit and comparator availability.",
+    "Keep patient allocation separate from within-patient case selection.",
+    "Do not convert repeated readers to independent patient counts.",
+    "Distinguish positive outcome windows from population-specific negative follow-up eligibility.",
+    "Keep source-reported test withholding distinct from a verified leakage audit.",
+    "Preserve source arithmetic conflicts without fabricating a complete balanced exclusion flow."
+  ],
+  "nontransferable": [
+    "All particular counts, fractions, dates, follow-up windows and source sites.",
+    "Any clinical benefit or prospective/temporal/site-held-out validation claim.",
+    "The full model-development pipeline, training recipe or exact variant-specific validation process."
+  ],
+  "distribution": "Original PDF/text/crops remain local-only. Distribute original redraw, source links, typed facts and analytical notes only.",
+  "inspection_evidence": "tests/batches/research-design-01/source-probe.json and parent-source-review.json",
+  "independent_review_status": {
+    "report": "tests/batches/research-design-01/independent-review.json",
+    "sha256": "ad437e52e06ccd2e70c77d47f71d69e2e59fba422a4757455e07ca4e87314ce2",
+    "result": "0 blocking, 0 nonblocking; bounded cohort/evaluation summary",
+    "prior_exposure": "Same reviewer previously inspected uncertainty case; not a fresh-paper holdout",
+    "unknowns": "UK arithmetic conflict, variant development provenance, participant-level overlap and unavailable final training counts remain unresolved."
+  }
+}

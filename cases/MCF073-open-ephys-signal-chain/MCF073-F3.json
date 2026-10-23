@@ -1,0 +1,203 @@
+{
+  "document_type": "partial reference case with actual finite development evaluation",
+  "created_at_utc": "2026-10-18T05:21:43.090052+00:00",
+  "catalog_id_assigned": true,
+  "global_catalog_or_case_write": true,
+  "paper": {
+    "title": "Open Ephys: an open-source, plugin-based platform for multichannel electrophysiology",
+    "citation": "Siegle JH, Cuevas López A, Patel YA, Abramov K, Ohayon S, Voigts J. J Neural Eng. 2017;14(4):045003.",
+    "doi": "10.1088/1741-2552/aa5eea",
+    "pmid": "28169219",
+    "version": "Historical 2017 publisher-layout article mirrored by Open Ephys; one added publisher cover plus 13 article pages. Latest publisher version is not independently confirmed."
+  },
+  "unit": {
+    "parent_figure": "Figure 3",
+    "parent_figure_count": 1,
+    "figure_locator": "Article p. 6 / zero-based PDF index 6",
+    "semantic_completeness": "semantic_partial",
+    "reason": "Full original Figure 3 visually observed, but this candidate covers only the compact acquisition–software processing–display provenance interpretation and module-replacement distinction. It does not model the full GUI, all plugin configurations, hardware circuitry or runtime behavior.",
+    "rotation": "Signal acquisition/engineering reference development after prior omics controls; no held-out or general-accuracy claim."
+  },
+  "source_access": {
+    "official_landing": "https://open-ephys.org/publications",
+    "official_pdf_link": "https://open-ephys.org/s/Siegle-2017-J-Neural-Eng.pdf",
+    "publisher_pdf": "Robots-denied; no retry/bypass. Documented official mirror used.",
+    "bounded_correction_check": "No notice identified in admission checks of PubMed, Crossref relationships, exact-DOI search and PDF text; live publisher Crossmark not verified."
+  },
+  "read_and_view_scope": {
+    "related_text": "Article pp. 1–8: introduction, Overview of the GUI (pp. 3–4), Plugin architecture (pp. 5–7), Compatible hardware (pp. 7–8), and start of closed-loop application (p. 8). All-PDF text scan limited to credits/status.",
+    "caption": "Figure 3 complete caption, article p. 6.",
+    "actual_view": "Full source Fig. 3 graphic and caption viewed through tools.view_image during admission. Includes hardware, main chain, three module-role groups, alternatives/replacement arcs, and trace inset.",
+    "visual_completeness": "full Figure 3",
+    "not_extracted": "Miniature GUI numeric settings and waveform values; no additional parent figure admitted or visually inspected."
+  },
+  "source_semantics": {
+    "question": "How can modular Sources, Filters and Sinks be substituted in an electrophysiology acquisition/display chain?",
+    "main_path": "Acquisition hardware → Rhythm FPGA software Source → Bandpass Filter → LFP Viewer visualization Sink.",
+    "grouping_and_layout": "Left-to-right dataflow makes the illustrated processing order visible. Alternative cards grouped by Source/Filter/Sink role and curved interchangeability arcs distinguish replaceable implementations from the active example chain.",
+    "boundaries": [
+      "Physical acquisition hardware is distinct from the Rhythm FPGA software Source (p. 5 Sources/Table 1; pp. 7–8 hardware).",
+      "Pre-bandpass Source output may already be filtered/amplified in the hardware; do not call it wholly raw/unprocessed (p. 7).",
+      "LFP Viewer displays continuous signals and does not imply low-frequency-only content; hardware/software filters affect displayed content (p. 4).",
+      "Record Engines/File Sources describe disk writing/loading separately; Figure 3 gives no recording branch/location (p. 6).",
+      "Interchangeability arcs do not mean feedback. Optional source threads and generic split/merge descriptions do not establish asynchronous scheduling for this displayed chain (pp. 3–6)."
+    ],
+    "omitted_or_unknown": "Exact runtime buffers/scheduling, recorder enablement/location, closed-loop feedback path for this chain, numerical filter/latency/performance consequences, and current software behavior."
+  },
+  "license": {
+    "article_and_selected_original": "CC BY 3.0; article p. 1 and Crossref version-of-record metadata agree.",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "figure_3_check": "No separate credit/exclusion found in caption/page; treated as original article content. Every embedded GUI visual element was not independently rights-researched.",
+    "separate_credit": "Figure 6(a), not admitted or viewed, explicitly credits an adaptation from reference [4] under CC BY 4.0 on article p. 10. Preserve this in the unchanged full PDF.",
+    "other_licenses": "Article p. 2 software GPL 3.0 and hardware TAPR license do not replace figure licensing. No software or hardware design files copied.",
+    "archive": "Existing original PDF plus unmodified source-page raster; all existing credits preserved.",
+    "attribution": "Siegle et al. (2017), Open Ephys: an open-source, plugin-based platform for multichannel electrophysiology. J Neural Eng 14:045003. DOI 10.1088/1741-2552/aa5eea. Figure 3. CC BY 3.0."
+  },
+  "source_pins": {
+    "admission.json": {
+      "path": "<SKILL_ROOT>/tests/batches/signal-engineering-rotation-admission-01/admission.json",
+      "bytes": 13910,
+      "sha256": "c1a37c80f6069e04ecc78ca37d15a3d6a0cb2a8944881b87544f755cc7525811"
+    },
+    "source_interpretation_addendum.json": {
+      "path": "<SKILL_ROOT>/tests/batches/signal-engineering-rotation-admission-01/source_interpretation_addendum.json",
+      "bytes": 1275,
+      "sha256": "f4e6666f011ee6750cfa92970442a5a5de4d2612168aba456210270e2e69f678"
+    },
+    "source_open_ephys_2017_original.pdf": {
+      "path": "<SKILL_ROOT>/tests/batches/signal-engineering-rotation-admission-01/source_open_ephys_2017_original.pdf",
+      "bytes": 2603848,
+      "sha256": "dd4b67650486ee62f30dd2579ede30d60c307b5e6012a3624f0b51bfd43022f6"
+    },
+    "source_fig3_article_page6.png": {
+      "path": "<SKILL_ROOT>/tests/batches/signal-engineering-rotation-admission-01/source_fig3_article_page6.png",
+      "bytes": 546389,
+      "sha256": "f5384bab2e67e00ee7032b045f920caea66ccb8da7e4b4112d4a7a1ed3ed7dd0"
+    },
+    "bounded_contract": {
+      "path": "<SKILL_ROOT>/tests/batches/open-ephys-signal-chain-01/contract.json",
+      "bytes": 9658,
+      "sha256": "4743c7459de4383fa4734674d023ff754676b140d770bbadd33816a26bc8d7bc"
+    }
+  },
+  "id": "MCF073-F3",
+  "updated_at_utc": "2026-10-18T06:34:19.924390+00:00",
+  "test_results": {
+    "batch": "tests/batches/open-ephys-signal-chain-01",
+    "test_unit": "one controlled display-input source edge error and one correct control; two correlated reading stages; reference development, not held-out/general accuracy",
+    "stage_results": [
+      {
+        "stage": "image-only",
+        "facets": [
+          {
+            "facet": "detection",
+            "value": 1,
+            "scale": "0/1"
+          },
+          {
+            "facet": "localization",
+            "value": 1,
+            "scale": "0/1"
+          },
+          {
+            "facet": "explanation",
+            "value": 2,
+            "scale": "0/1/2"
+          },
+          {
+            "facet": "repair_proposal",
+            "value": 1,
+            "scale": "0/1/2"
+          },
+          {
+            "facet": "correct_control_target_false_alarm",
+            "value": 0,
+            "scale": "0/1"
+          }
+        ]
+      },
+      {
+        "stage": "source-informed",
+        "facets": [
+          {
+            "facet": "detection",
+            "value": 1,
+            "scale": "0/1"
+          },
+          {
+            "facet": "localization",
+            "value": 1,
+            "scale": "0/1"
+          },
+          {
+            "facet": "explanation",
+            "value": 2,
+            "scale": "0/1/2"
+          },
+          {
+            "facet": "repair_proposal",
+            "value": 1,
+            "scale": "0/1/2"
+          },
+          {
+            "facet": "correct_control_target_false_alarm",
+            "value": 0,
+            "scale": "0/1"
+          }
+        ]
+      }
+    ],
+    "collateral_error": "Initial definite phantom Source bypass/merge observation in correct B, one dependent family; explicitly withdrawn on source-stage re-view. Retained even with zero definite control-target false positives. No causal attribution of change to source text or reader psychology.",
+    "actual_repair": "After raw stages, classification and score sealed, graph source edge rhythm_source→bandpass_filter restored and scene/binding route/caption regenerated. Does not increase reader proposal credit.",
+    "native": "Independent frozen native oracle checked actual saved PDF/SVG. Repaired 12-file equality permits explicit reuse of original baseline native audit; independent source/repair audit and full image viewing complete.",
+    "viewing": "Root full final 300ppi PNG plus Poppler PDF rendering; independent full repaired PNG. No observed clipping/overlap/wrong endpoint. Browser SVG unverified.",
+    "replay": "Original 21-input preparation replay:17artifacts+receipt equal; original pair export replay:24candidatefiles equal. Exact197-member ZIP ordinary extraction repair replay:27inputs→8prepared+receipt→12candidatefiles byte-identical, real edit1 marker/render exit0. Same-host -I -B, not OS sandbox.",
+    "preserved_failures": "Initial preparation str/bytes failure; initial font metric audit used an uncontracted tolerance then corrected units against unchanged0.002pt; initial reader visual misread; partial proposal scores. No retroactive all-pass claim.",
+    "limits": [
+      "Historical2017 symbolic path only; no originalsoftware/signals/recording/latency/filter effect execution.",
+      "No expert review, newheldout, general accuracy, newOSsandbox or journal/crossplatform certificate."
+    ]
+  },
+  "test_evidence": [
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/contract.json",
+      "bytes": 9658,
+      "sha256": "4743c7459de4383fa4734674d023ff754676b140d770bbadd33816a26bc8d7bc"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/native-audit-01/final-native-audit.json",
+      "bytes": 34249,
+      "sha256": "06844c118edf81497f143432e0c7b5a919bb6573a29a3e0d4d5694ed98304a69"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/claim-classification-01/semantic-score.json",
+      "bytes": 95055,
+      "sha256": "dfb8800ceccbc67317aed05c12ce385843212cf0204b329071066c88a37a9c22"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/repair-01/source-repair-readback.json",
+      "bytes": 2152,
+      "sha256": "8d170bc5b72af071a633a53eeba79a8ebbf417d313bf1de13f17b7ebcc9c39c4"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/repair-01/root-visual/review.json",
+      "bytes": 1480,
+      "sha256": "b1e257f22c13982e42785158fff8a2c1e2785bdb8193507c67319851c6f6c2a4"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/repair-audit-01/repair-native-audit.json",
+      "bytes": 34900,
+      "sha256": "d96c2a20e2e33633db43d8c05d924d363a0f577f79813a88b26b8e2f3e6ab7b2"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/delivery-01/zip-replay/replay-result.json",
+      "bytes": 4205,
+      "sha256": "438f89b1f7260f7d46ade7d3298ff44854fea81de89a4bca7f31ae46f4686c54"
+    },
+    {
+      "path": "tests/batches/open-ephys-signal-chain-01/open-ephys-signal-chain-01.zip",
+      "bytes": 8590248,
+      "sha256": "867867196fd97f3e51ba4936e2c5dec44d1afd2b63009cfeddac37c71bcb1446"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "figure_id": "MCF001-F2",
+  "source_figure": "Figure 2, panels a and b",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig2",
+  "task": "Pair dataset composition with an inference overview of box-prompted segmentation",
+  "type": "two-panel count bar chart plus dual-input model architecture",
+  "visual_status": "whole official figure viewed at 1979×471; all counts and module labels readable",
+  "semantic_status": "complete_for_key_elements_and_relations_using_caption_and_Methods",
+  "visual_observations": [
+    "Panel a sorts ten purple bars by image-mask-pair count; labels are numeric, with white text inside tall bars and dark text above short bars.",
+    "Panel b reads left to right: CT image, yellow wedge encoder, orange stacked embedding, peach mask decoder, output image.",
+    "Box prompts enter from below, with an arrow into the gray prompt encoder and another into mask decoder.",
+    "Red/green/blue boxes correspond visually to target overlays in the right-hand example; these colors encode distinct targets, not accuracy.",
+    "Embedding-to-decoder dependence has no explicit visible connecting arrow; it is established by surrounding layout and Methods.",
+    "No frozen/trainable badges, training label branch, loss, or parameter-update arrows are present in the original panel."
+  ],
+  "transfer_rules": [
+    {
+      "id": "MCF-R03",
+      "rule": "Separate high-cost image encoding from the prompt path, then explicitly join both at the decoder.",
+      "not_applicable": "Do not infer a particular fusion operator solely from converging arrows; here cross-attention comes from text."
+    },
+    {
+      "id": "MCF-R04",
+      "rule": "Add stage-specific frozen/update text when the new figure explains fine-tuning; source figure color alone does not supply that state.",
+      "not_applicable": "Do not transfer SAM or MedSAM update states to another adaptation method."
+    },
+    {
+      "id": "MCF-R05",
+      "rule": "Use input and label lanes so supervision cannot be mistaken for deployment input.",
+      "not_applicable": "Source training boxes derived from masks are allowed at training time; the corresponding label branch must disappear from inference."
+    },
+    {
+      "id": "MCF-R06",
+      "rule": "Plot published counts as counts; retain the exact aggregate unit and pool definition.",
+      "not_applicable": "These numbers are image-mask pairs for development and validation, not patient counts, effective sample size, or an exclusively training count."
+    }
+  ],
+  "boundary": "Inference overview is insufficient by itself to determine frozen modules or a training graph. Its example segmentation is illustrative, not proof of accuracy.",
+  "case_id": "MCF001-medsam",
+  "source_record": "source_card.json",
+  "checked_date": "2026-10-11",
+  "license_and_version": "See shared source_card.json rights/paper/integrity_check; source-assets excluded from distributable.",
+  "visual_evidence": [
+    {
+      "path": "source-assets/fig2-official-full.png",
+      "sha256": "8262ec5180a34208c560844f19c1c9bd8bf79b32c75cc416f3be7bf42bb172f0",
+      "bytes": 280284,
+      "distribution": "excluded_from_skill_distribution; local_reading_evidence_only",
+      "pixels": [
+        1979,
+        471
+      ]
+    },
+    {
+      "path": "source-assets/fig2-official-preview.jpg",
+      "sha256": "570d94394b7105ae8e26da401dbe4d5932feb7cbbd827485b5dff8bcc3298fdd",
+      "bytes": 43004,
+      "distribution": "excluded_from_skill_distribution; local_reading_evidence_only",
+      "pixels": [
+        791,
+        188
+      ]
+    }
+  ],
+  "viewing_method": "Actually viewed both complete preview and official full PNG using view_image; not text-only/OCR.",
+  "figure_counting": "This original whole figure counts once; its panels and previews do not add cases."
+}

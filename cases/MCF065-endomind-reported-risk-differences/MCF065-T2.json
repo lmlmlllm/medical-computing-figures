@@ -1,0 +1,126 @@
+{
+  "case_id": "MCF065-T2",
+  "dedup_id": "DOI:10.1038/s41746-026-02576-8|Publisher2026|Table2-selected-first3rows",
+  "title": "Artificial intelligence assisted colorectal lesion detection in private practices a randomized controlled study",
+  "source_url": "https://www.nature.com/articles/s41746-026-02576-8",
+  "pmid": "41922731",
+  "pmcid": "PMC13053717",
+  "source_figure": "Table2 first three detection rows, publisher PDFp3. Table1p3 and Fig1p2 support analyzed-population accounting; not separate catalog units.",
+  "original_figure_units": 0,
+  "original_table_units": 1,
+  "whole_table_semantics_verified": false,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "admission_state": "ADMITTED_SELECTED_SUMMARY_ROWS_WITH_LIMITS",
+  "question": "How do three reported detection-risk differences compare with their reported intervals while preserving source arm rates and actual analysis population?",
+  "states": {
+    "reading": "Root PDF text pages1,2,3,6,7 and relevant XML; source whole pages2/3 actually viewed. Independent transcription viewed pages1/2/3/6/7, fresh figure reader viewed sourcepages2/3 and read permitted texts. Not whole-paper scientific verification.",
+    "visual": "Baseline and PDR appearance edit: root whole PNG/PDF/explicit-FreeType staticSVG; independent reader baseline/edit wholePNG. 210x130mm,33textgroups,520nativeglyphs,8-11pt.",
+    "archive": "SourcePDF/XML/pages local reading only.22member cleanZIP has originaldisplay,code,spec,caption,attributedvalues,unchangedlicensedfont."
+  },
+  "semantic_spec": "tests/batches/endomind-reported-risk-differences-01/author-01/inputs/figure_spec.json",
+  "semantic_inventory": {
+    "elements": 5,
+    "relations": 3,
+    "display_scalars": 17,
+    "visible_text_groups": 33
+  },
+  "visual_design": "Three same-population endpoint rows; arm-rate columns, linear CAC-minus-TC percentage-point axis, equal-size dots, reported95%CI, zero line and exact numeric labels. No pooled diamond or clinical favor labels.",
+  "transferable_rules": [
+    "Preserve reported contrasts and their paired intervals; do not substitute subtraction of rounded group percentages.",
+    "Show the actual source analysis population; source-labelled ITT after exclusions is not all randomized or complete-only examinations.",
+    "Use a common axis only for compatible units; related endpoints are not independent studies or a pooled effect."
+  ],
+  "unknowns": [
+    "PDR -0.8 differs from subtraction of displayed53.8 and54.5; the cause is unestablished.",
+    "Separate detailed SDR operational definition not found in read Outcomes.",
+    "Table-specific p-value adjustment status not independently established; p values omitted.",
+    "Underlying data/code nonpublic; no patient reconstruction, trial reanalysis or interval-coverage validation."
+  ],
+  "license": {
+    "article": "CC BY4.0, repository permissions and publisher source",
+    "redistribution": "Only attributed selected summary values and originaldisplay; no sourcePDF/XML/pages/originalfigures in package.",
+    "font": "Unmodified DejaVu Sans with LICENSE_DEJAVU"
+  },
+  "notice_scope": "Selection-stage bounded DOI correction/retraction search and indexed Crossmark status; not exhaustive/direct Crossmark validation. See next-result-selection-after-text-port-01/evidence.json.",
+  "transfer_entry": "tests/batches/endomind-reported-risk-differences-01/README.md",
+  "fixed_assessment": {
+    "supported": 8,
+    "failed": 0,
+    "unassessed": 0,
+    "assessor": "Root author synthesis using separately scoped independent source/reader/native evidence; not independent final scorer or expert."
+  },
+  "test_limits": [
+    "Not untouched heldout; selection values seen before fullsource read.",
+    "No controlled wrong-value reader sample in this batch.",
+    "Software59checks perversion and3appearancechecks remain distinct from8fixedrequirements and17sourcevalues.",
+    "Same-host guarded cleanreplay andZIPreplay; no newOS sandbox or new-machine install.",
+    "No browser,graphicaleditor,physicalprint or journal acceptance validation.",
+    "First guardedfont-query and first PDFcomparison-selector failures retained; corrected replays separately recorded.",
+    "Appearance color demonstration may draw attention toPDR; no new significance/primaryendpoint meaning."
+  ],
+  "current_exports": "tests/batches/endomind-reported-risk-differences-01/author-01/render-01",
+  "current_package": {
+    "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/endomind-reported-differences-clean-01.zip",
+    "bytes": 1284125,
+    "sha256": "dc27705dba7bed5a43a4460cba20b01da6200e7d39eb391323a95249a74b8eb9"
+  },
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/protocol.json",
+      "bytes": 7251,
+      "sha256": "dc1dbb42f16cd38bf90f8b2603ac7f42fdebb2d85c1439f9c16cbd4e6c8feec7"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/author-01/semantic-freeze.json",
+      "bytes": 1206,
+      "sha256": "e3a34cfa1896c7460b178e83d5b9090963c0f803d5fdd7e3d7df8c1d32dfda40"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/author-01/pre-export-freeze.json",
+      "bytes": 1675,
+      "sha256": "34d9b98f7d8bac55ddc17cfe79ab5b1096227c424dcd3f93d83636d36dbe396a"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/root-source-reading-01.json",
+      "bytes": 2789,
+      "sha256": "870805edb6f0ccaf9e71144b712049f994f9aa7a0d4b29e0ed51dc9011eb8c43"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/independent-transcription-comparison-01.json",
+      "bytes": 3077,
+      "sha256": "175c71d11da5ad488fde0ad6042c37224c3886557bcf5650d4486cb2ba6928b9"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/independent-reader-01/seal-stage2.json",
+      "bytes": 4484,
+      "sha256": "1e0dbdfe71eaf145ed38e5b139a6d0ee6147ab381891ecc3a7a7e655012d1274"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/native-audit-01/SUMMARY.md",
+      "bytes": 2630,
+      "sha256": "e36aa3e1d2c3e4b480405bdb8da58e8115adbb2974948ff0d7290f0d4ea60ccc"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/native-audit-01/geometry-error-ledger.json",
+      "bytes": 26001,
+      "sha256": "2456645cf9a8e34198e1cd4c4ddea419a172cfaf7c49ed4e0cc3bada39fcfc4c"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/root-independent-evidence-readback.json",
+      "bytes": 1432,
+      "sha256": "bfb7a5abab9549e7d5d35b9802b46752501539c17c291623c3986f46ccef2d35"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/final-assessment-01.json",
+      "bytes": 9137,
+      "sha256": "7a4e2758ec4d602a3497e50643ae12da86feaeec362d0a6acb86597aa69ce677"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/endomind-reported-risk-differences-01/package-replay-01/result.json",
+      "bytes": 1900,
+      "sha256": "ed62b90815f1a3a09c5b050951a6a37ff3e33203445873f1e266acf1d08a9f6d"
+    }
+  ]
+}

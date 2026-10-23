@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.runtime/
+.DS_Store
+.env
+.env.*
+outputs/
+YOUR_NEW_OUTPUT/
+YOUR_NEW_PLOT/
+dist/

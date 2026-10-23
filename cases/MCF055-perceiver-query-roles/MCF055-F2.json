@@ -1,0 +1,122 @@
+{
+  "case_id": "MCF055-F2",
+  "dedup_id": "arXiv:2107.14795|v3-2022-03-15|Figure2-whole",
+  "title": "Perceiver IO: A General Architecture for Structured Inputs & Outputs",
+  "source_url": "https://arxiv.org/abs/2107.14795",
+  "source_figure": "Whole Figure2 including decoder inset, PDFp4, one original figure unit; dependent figures/equations/pages are not extra cases.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Direct bounded reading of pinned arXiv2107.14795v3 pp1,3–5,19,22–23 and relevant query-feature dependencies; whole Figure2/inset and E.1/E.2 compared. Not full experiment/code verification.",
+    "visual": "Whole primary Figure2 with decoder inset, dependent p23 equations and other method pages actually viewed. Authored whole/intended PNG, independent PDF raster and exact-font safe staticSVG viewed; staged independent reader and native/edit/replay views retained.",
+    "archive": "Primary PDF/text/source pixels local-review-only. Clean27-member ZIP contains original explanation, editable SVG/native PDF/PNG, complete caption, permitted renderer and licensed font; primary originals excluded."
+  },
+  "question": "How do encode, latent processing and decode assign Q/K/V sources and preserve or change array index/channel roles?",
+  "elements": [
+    {
+      "id": "input",
+      "role": "M input entries with C channels supply encoder K/V dependencies."
+    },
+    {
+      "id": "latent_query",
+      "role": "N latent entries with D channels supply encoder Q; initialization is not inferred."
+    },
+    {
+      "id": "latent_processing",
+      "role": "Input-conditioned latent states pass through L self-attention modules; N×D shape stays while contents update."
+    },
+    {
+      "id": "processed_latents",
+      "role": "Final latent state supplies decoder K/V."
+    },
+    {
+      "id": "output_requests",
+      "role": "Task-conditioned O queries supply decoder Q; requests differ from predictions/targets, generic feature width unspecified."
+    },
+    {
+      "id": "output",
+      "role": "O output entries with E channels follow query index count; output channel width is separately projected."
+    }
+  ],
+  "relations": [
+    {
+      "from": "latent-query array",
+      "to": "encoder Q",
+      "type": "input dependency through projection",
+      "source": "PDFp4 Figure2/inset and §3.1; p23 E.1"
+    },
+    {
+      "from": "input array",
+      "to": "encoder K/V",
+      "type": "input dependency through projection",
+      "source": "PDFp4 Figure2; p23 E.1"
+    },
+    {
+      "from": "encoded/current latent state",
+      "to": "each processing module Q/K/V",
+      "type": "self-attention state dependency",
+      "source": "PDFpp3–4; p22 Figure5"
+    },
+    {
+      "from": "processed latents",
+      "to": "decoder K/V",
+      "type": "content dependency",
+      "source": "PDFp4 Figure2/inset; p23 E.1/E.2"
+    },
+    {
+      "from": "task-conditioned output queries",
+      "to": "decoder Q",
+      "type": "request/index dependency",
+      "source": "PDFpp4–5 §3.2; p23 E.1/E.2"
+    },
+    {
+      "from": "decoder query index count O",
+      "to": "output index count O",
+      "type": "interface constraint, not equality of channel widths",
+      "source": "PDFp4 §3.1; p23 E.1"
+    }
+  ],
+  "visual_design": "Original left-to-right encoder/processor and right-side decoder layout separates latent content and lower task-conditioned request path. Explicit Q/K/V endpoint labels, M/N/O counts and C/D/E channels supplement restrained color. Complete caption carries source conflict, variant and implementation limits.",
+  "transferable_rules": [
+    "Bind Q/K/V ownership to each operation rather than a global role; arrows feeding projections do not assert equality between raw and projected arrays.",
+    "Separate index count from channel width and state shape from changing contents; same shape does not establish frozen values or universal parameter sharing.",
+    "Show task-conditioned query ingredients without turning one example into a universal recipe; a query is not its output or training target.",
+    "Inspect rendered source geometry when PDF extraction contains off-page duplicate labels; retained extraction history must not replace the visible figure."
+  ],
+  "gaps": [
+    "Values updated retains a minor latent-content versus attention-V terminology ambiguity. Solid feature path and query-example wording carry optional first-glance concerns; output element/row and L definitions benefit from complete caption. Four initial ambiguities and five optional suggestions remain preserved.",
+    "Source E.1 gives N×M attention map times M×F values; E.2 encoder second-product prose says M×N and N×F. This internal discrepancy remains; figure omits the incompatible internal product route.",
+    "p19 describes tied8blocks×6 modules for one ImageNet setting and untied16-layer JFT-pretraining setting; generic×L selects neither. Incoming latent initialization, generic query width and full code/experiment correspondence remain unknown.",
+    "Visible source×L differs from two off-page×D runs confirmed by direct native text trace. Reader02 Poppler did not reproduce those hidden runs; its scoped limitation is retained.",
+    "Pinned author-deposited v3/ICLR markings do not establish byte-equivalence with inaccessible OpenReview. Notice, rights, originality and historical-process checks remain bounded.",
+    "No original training/benchmark, clinical, statistical-independence, arbitrary-query quality, browser/editor/cross-host or physical print validation; no new holdout or human expert review."
+  ],
+  "license": "Source/artwork redistribution permission not established; primary originals excluded. Packaged DejaVu font carries full license/notices; helper reuse and external runtime disclosed.",
+  "notice_scope": "Selection records bounded identity/access/notice checks; no exhaustive current correction/retraction clearance or OpenReview byte comparison.",
+  "transfer_entry": "tests/batches/perceiver-io-query-roles-01/README.md",
+  "test_limits": [
+    "Original PI01–PI08 independent8/8 and32/32 finite checks passed; exact requirement/check strings and denominators root verified. This does not make the source case fully verified.",
+    "Scientific freeze precedes layout:11objects14relations15claims29payloads7captionparagraphs; image-only/direct-source/fullspec stages ordered. Stage2 scientific-freeze summary exposure disclosed; interrupted earlier reader retained.",
+    "Native835glyphs (728ink107spaces), minimum9pt;32bound native vector pieces. Max SVG/PDF baseline0.0000005001/0.0000170899pt, advance0/0.0051562501pt, effective size0, vector0/0.0000122071pt; static paint/probe baseline0.0007812501pt. All within fixed0.25pt contract; not journal rules.",
+    "Four canonical views and separate label-only/vector-only edits re-exported and independently checked; canonical10outputs unchanged. No accepted scientific revision occurred, so future semantic-change/refreeze behavior was not exercised.",
+    "Exact27-member ZIP in5logical stages/7same-profilecommands:10canonicaloutputs including deterministic environment byteexact. Before/after102controls each include40known-existing data-open EPERM and4actualconnect EPERM after socket/settimeout success. Same host/runtime only.",
+    "Runtime557/556module records correspond to553/552distinct backing files with4alias pairs; framework inventory not exhaustive. Historical warnings and audit/read failures retained.",
+    "Separate query-control pair is outside this admission and baseline8/32; its scores/repair are not prerequisites or implied results here. New generalized rule prose has not been independently regressed on another case."
+  ],
+  "evidence_pins": {
+    "protocol.json": "d398a4b0647068ed5ec3b99623e2416f8adf73f6904c3aa83fb69deb5befc46e",
+    "scientific-freeze-01.json": "7ad9427bcfcb7d2ffe7da1af1b4c0a502e7f00a52ff1e907666f0a917a3f0035",
+    "author-output-freeze-01.json": "c4ae4a041974d6261a70740389451b30b1d0fa733d3a532adedfb08d50a342a8",
+    "review/stage1-freeze-02.json": "862dab86e9f9df988e9b40823c162e5013f9a9d701e44b0aff48d6e455776202",
+    "review/source-first-freeze-02.json": "1b053fec2c0de5c58fd5a5081cad732d66b6268c1b79e0e1497844812f8c88d6",
+    "review/stage2-freeze-02.json": "64f4e3657cd6635375ef60630c9673303604c119cf53c6066ed244081f0bc342",
+    "output-audit/native-freeze-01.json": "c19bec33a1be35e7cf33fb9ab9763230aae5e9fa69a823d3074c37f087e2ee04",
+    "output-audit/replay-freeze-01.json": "3e02ffd077492844b20fc07b640c99357227dd096b844d8bcb981f12709bcf93",
+    "final-assessment-02/assessment-02.json": "d0fbd03e9d2c9fb6757647701c8c39ae48d84b9d055779077a9827d7c4c6a7d3",
+    "review/final-assessment-freeze-02.json": "58ec5050b2c7a1c35818a11c68e0b1169546b70bdca0a44ce379a8a9a5db7358",
+    "author/production-01/perceiver-io-query-roles-clean-01.zip": "ab9f0dd32e74b4b5fb4a777ede6bb0db3e49dbac9bd236ff64afb81022aa2ccc"
+  }
+}

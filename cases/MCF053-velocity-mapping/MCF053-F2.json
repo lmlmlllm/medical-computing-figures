@@ -1,0 +1,112 @@
+{
+  "case_id": "MCF053-F2",
+  "dedup_id": "10.1186/s13059-023-03065-x|GenomeBiology2023VOR|Figure2",
+  "title": "Pumping the brakes on RNA velocity by understanding and interpreting RNA velocity estimates",
+  "source_url": "https://link.springer.com/article/10.1186/s13059-023-03065-x",
+  "source_figure": "Whole Figure2a–d, one selected unit; Table1 and Additional file1 are dependencies, not additional cases.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Publisher identity/rights, relevant Results/Methods and whole Figure2 caption, Table1 and selected supplementary notes/figures including sign, smoothing, directional comparison and display. Bounded reading, not the entire article/supplement or implementation verification.",
+    "visual": "Whole primary Figure2 and necessary supplementary pages actually viewed; whole/intended original PNG, independent PDF and exact-font static SVG, edit and fresh replay previews actually viewed.",
+    "archive": "Primary HTML, figure and supplementary PDF/page images local-review-only. Clean25-member ZIP contains original explanation, editable native sources, complete caption, renderer and licensed font; no primary artwork."
+  },
+  "question": "How can cell inclusion alter a low-dimensional velocity mapping while the high-dimensional velocity estimates remain fixed, and how does this differ from streamline display?",
+  "elements": [
+    {
+      "id": "velocity_estimates",
+      "role": "High-dimensional per-cell RNA velocity estimates kept fixed for retained cells; not refitted after beta-cell exclusion."
+    },
+    {
+      "id": "Ms_and_expression_embedding",
+      "role": "Smoothed spliced-expression differences and expression-space UMAP have separate mapping roles; UMAP is not physical position or time."
+    },
+    {
+      "id": "cell_population",
+      "role": "Full and beta-cell-removed computational populations define different candidate relationships and recomputed transition probabilities."
+    },
+    {
+      "id": "mapped_vectors",
+      "role": "Population-dependent mapping combines embedding displacements with transition weights; it is not direct display of original physical velocity."
+    },
+    {
+      "id": "same53",
+      "role": "The same53 pre-endocrine cells supply the directional comparison across both mappings; not106 independent samples."
+    },
+    {
+      "id": "streamline_display",
+      "role": "Downstream interpolation and streamline visualization are distinct from per-cell estimates and mapped vectors."
+    }
+  ],
+  "relations": [
+    {
+      "from": "retained-cell high-dimensional estimates",
+      "to": "both computational conditions",
+      "type": "fixed-input constraint",
+      "source": "Results Transition probabilities impose directional constraints; Figure2 caption"
+    },
+    {
+      "from": "cell inclusion and expression differences",
+      "to": "transition probabilities",
+      "type": "conditional recomputation",
+      "source": "Results Mapping velocities into a low-dimensional embedding; Methods Velocity transition probability method"
+    },
+    {
+      "from": "transition weights and embedding displacements",
+      "to": "mapped cell vectors",
+      "type": "computational dependency",
+      "source": "Methods Velocity transition probability method; supplementary mapping notes"
+    },
+    {
+      "from": "both sets of mapped vectors",
+      "to": "same53 pre-endocrine directional comparison",
+      "type": "common-cell comparison",
+      "source": "Figure2; Methods Comparison of directions of cell-level vectors"
+    },
+    {
+      "from": "mapped cell vectors",
+      "to": "vector-field/streamline display",
+      "type": "downstream interpolation and display",
+      "source": "Methods Vector field visualization; supplementary S20"
+    }
+  ],
+  "visual_design": "Original qualitative staged explanation separates estimation, population-dependent mapping, same-cell comparison and display. Arrows represent computational dependencies rather than biological fate, cell motion or observed trajectories. No original vector field, angles, UMAP coordinates or numeric results reconstructed.",
+  "transferable_rules": [
+    "Separate upstream estimates, population-dependent mapping and downstream display; a fixed estimate can yield a different map after computational subset changes.",
+    "Name the shared comparison population and repeated-cell identity; do not double the sample size or generalize selected-region directions to every cell.",
+    "When printed signs, normalization or smoothing roles conflict, keep those conflicts visible and avoid introducing unsupported geometric guarantees."
+  ],
+  "gaps": [
+    "Q01: direction text placed in broad condition boxes can be read too broadly; the figure has no universal quantifier and routes to the shared53-cell comparison, while the full caption specifies the selected pre-endocrine region. V01 local qualifier is optional; no required scientific correction established. Preserve this ambiguity and use figure with complete caption.",
+    "Results sj−si versus Methods Msi−Msj, outside-neighbor probability/mask normalization, centered minus1/n weights, W symmetry/column normalization versus smoothing rows, supplementary note numbering and S20 panel labels contain source differences. No silent repair or universal convex-hull claim.",
+    "Raw cell IDs/coordinates/angles, kernel bandwidth, exact test statistic/P, pairing implementation, complete cell and biological-replicate counts, smoothing/graph revision and visualization settings remain unknown.",
+    "Source-attributed von Mises/Watson P<0.001 is not a test run here, physical speed, biological ablation, fate tracing or an independent53+53 experiment.",
+    "Bounded publication/version/rights reading does not establish exhaustive notice clearance. No original RNA velocity computation, human expert, new held-out paper, browser, arbitrary editor, cross-host or journal-size validation."
+  ],
+  "license": "Article CC BY4.0 observed with no selected-image exception identified; code MIT reported but not independently checked or executed. Primary artwork excluded from this clean distribution. Packaged original source uses unmodified DejaVuSans with full font license.",
+  "notice_scope": "Source identity/version and bounded notices checked in selection/orientation records; not exhaustive clearance.",
+  "transfer_entry": "tests/batches/velocity-mapping-stage-01/README.md",
+  "test_limits": [
+    "Original VM01–VM08 independent model final8/8,34/34 finite checks. Image-first/source-first/full-spec stages preserved; final source-aware assessor separate from author and image reader.",
+    "Frozen21objects26relations16claims23literal payloads.1048glyphs, actual minimum10.3999996pt; max baseline0.00078125pt, advance0.00393797pt, effective size0.000000763pt, vector coordinate0.000024415pt.958paint/958outline/90whitespace checked separately;47 native vector primitives represent31 logical vectors including16 arrows.",
+    "Independent label and node-color edits re-exported and actually viewed, with canonical author files unchanged. Two auditor-code failures retained with corrected checks.",
+    "Exact25-member ZIP five-stage same-host OS replay regenerated all10 canonical outputs including environment byte-exact. Before/after102controls each include41 known-existing data-open denials and4 actual connectEPERM after successful socket/timeout. Two preparation failures and557/556 module difference retained.",
+    "One wholeFigure2 semantic_partial admission; supplementary dependencies and self-drawn panels add no case units. Newly generalized rule text has not been independently regressed on another case."
+  ],
+  "evidence_pins": {
+    "protocol.json": "482175dc001ffcc9325003a35cb93254fed7758dc0a724c22e3c37918c9d2c63",
+    "scientific-freeze-01.json": "8e4e8f3168861f611d29d9fb6ac820c7c07c44ddaa88b122469a74f78f037947",
+    "author-output-freeze-01.json": "71a03574f496ff75ec36190e3281911b236961c5e8ecf58135916a6f7073662e",
+    "review/stage1-freeze-01.json": "9e0f24d518d5f8e04f0b2f403e2533aaeb78e26e2e42804e72c7cce35cea006c",
+    "review/source-first-freeze-01.json": "e954b4f41ccf5d05ecc6a25a6463d3c448621c32fa8cebd123f169ca81cad335",
+    "review/stage2-freeze-01.json": "5324921eadf9f5fb005a9d9e77cb52d9b013b24f48abee5689e94ef79d6738dc",
+    "output-audit/native-freeze-01.json": "bd3495222e50cf590c69c23e00162ef1abf5ebec1021010dd616baf2c33bb649",
+    "output-audit/replay-freeze-01.json": "585501a915c6024d6aeb47641b36e759f3353917bef773b61fb31ffe9d4d5b6c",
+    "review/final-assessment-01/assessment.json": "f14c7af9c48736dd6fb3a942c699dc7ad7decff0b7051ab6fbb667248a3640d8",
+    "review/final-assessment-freeze-01.json": "1dae343235875066e2c4ee68dd72a3401abe43a34146469d19ef8ff732c3ac8a",
+    "author/production-01/velocity-mapping-clean.zip": "1fa617980bc2381dbbfb81323726caa047baf25b97b348c2c69fab41a9137334"
+  }
+}

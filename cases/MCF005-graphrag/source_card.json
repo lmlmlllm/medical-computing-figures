@@ -1,0 +1,421 @@
+{
+  "case_id": "MCF005-F1",
+  "paper_id": "10.48550/arXiv.2404.16130",
+  "title": "From Local to Global: A GraphRAG Approach to Query-Focused Summarization",
+  "version": "arXiv2404.16130v2 2025-02-19, preprint",
+  "figure": "1",
+  "figure_types": [
+    "graph_retrieval_pipeline",
+    "index_query_stage_diagram"
+  ],
+  "role": "holdout_paper_admitted_after_transfer_test",
+  "source": {
+    "url": "https://arxiv.org/abs/2404.16130v2",
+    "pdf": "https://arxiv.org/pdf/2404.16130v2",
+    "location": "Figure1 page4; Methods3.1.1–3.1.6 pages4–6",
+    "read_scope": "Relevant full methods and caption, overview and version page; no full experimental replication"
+  },
+  "visual": {
+    "state": "full_figure_actually_viewed",
+    "tool": "view_image",
+    "file": "../../tests/holdouts/graphrag/.inspection/page4.png",
+    "scope": "Whole page includes complete Figure1; all eight original nodes, arrows, labels and stage legend readable",
+    "sha256": "d658a063f0c339f819156c009559fa8edaa791c87242374ad4071259bc8c02ba",
+    "observations": [
+      "Original is a U-shaped sequential process: left downward documents→chunks→extractions→graph, right upward communities→summaries→partial answers→global answer",
+      "Purple includes both columns through summaries; only answer stages green, so right column is not wholly query time",
+      "Original query input is implicit; Methods establishes query conditioning",
+      "Graph symbols are boxes; no explicit GNN training indicated"
+    ]
+  },
+  "semantic": {
+    "state": "key_elements_and_relations_checked",
+    "task": "Explain indexed graph/community summaries supporting global query summarization",
+    "elements": [
+      {
+        "id": "docs",
+        "label": "Documents",
+        "role": "data",
+        "stage": "indexing",
+        "source_refs": [
+          "s1"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "chunks",
+        "label": "Text chunks",
+        "role": "data",
+        "stage": "indexing",
+        "source_refs": [
+          "s1"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "extract",
+        "label": "Extract entities,\nrelations,\nclaims (optional)",
+        "role": "model",
+        "stage": "indexing",
+        "source_refs": [
+          "s2"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "graph",
+        "label": "Graph index\naggregate\nmatches",
+        "role": "model",
+        "stage": "indexing",
+        "source_refs": [
+          "s3"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "communities",
+        "label": "Hierarchical\nLeiden\ncommunities",
+        "role": "model",
+        "stage": "indexing",
+        "source_refs": [
+          "s4"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "summaries",
+        "label": "Community\nsummaries",
+        "role": "output",
+        "stage": "indexing",
+        "source_refs": [
+          "s5"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "query",
+        "label": "User query",
+        "role": "data",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "prepare",
+        "label": "Selected level:\nshuffle + chunk",
+        "role": "model",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "map",
+        "label": "Parallel map\npartial answers\n+ scores",
+        "role": "model",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "filter",
+        "label": "Remove score 0;\nsort and pack\nto token budget",
+        "role": "model",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "reduce",
+        "label": "Query-focused\nreduce",
+        "role": "model",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "answer",
+        "label": "Global\nanswer",
+        "role": "output",
+        "stage": "query",
+        "source_refs": [
+          "s6"
+        ],
+        "aliases": []
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "source": "docs",
+        "target": "chunks",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s1"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r2",
+        "source": "chunks",
+        "target": "extract",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s2"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r3",
+        "source": "extract",
+        "target": "graph",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s3"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r4",
+        "source": "graph",
+        "target": "communities",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s4"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r5",
+        "source": "communities",
+        "target": "summaries",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s5"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r6",
+        "source": "summaries",
+        "target": "prepare",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "indexing→query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r7",
+        "source": "prepare",
+        "target": "map",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r8",
+        "source": "query",
+        "target": "map",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r9",
+        "source": "map",
+        "target": "filter",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r10",
+        "source": "filter",
+        "target": "reduce",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r11",
+        "source": "reduce",
+        "target": "answer",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r12",
+        "source": "query",
+        "target": "reduce",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "query",
+        "condition": "Specified GraphRAG global-search workflow; not a causal or truth guarantee",
+        "source_refs": [
+          "s6"
+        ],
+        "status": "confirmed"
+      }
+    ],
+    "boundary": "General text sensemaking; no clinical validation, vector retrieval or GNN inferred"
+  },
+  "design": {
+    "rationale": "Original compact U path fits page but explicit phase panels and query path improve stage interpretation in redraw",
+    "omitted": "Hierarchy details and score range abstracted",
+    "rules": [
+      "Read legend stage colors, not column position",
+      "Expose query conditioning when source text supports it",
+      "Separate precomputed community summaries from query-specific answers",
+      "Graph extraction is not automatically graph neural learning"
+    ],
+    "not_transferable": "Source corpora, prompt algorithms, model-evaluated performance and graph hierarchy are not facts for another study"
+  },
+  "license": {
+    "status": "CC BY4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "verified": "version-specific arXiv links directly to license",
+    "original_asset_distribution": "excluded; only links and original analysis distributed"
+  },
+  "integrity": {
+    "checked": "arXiv v2 metadata and version marker; no withdrawal notice seen",
+    "scope": "Not comprehensive retraction registry audit; no formal peer-reviewed version established by this check"
+  },
+  "transfer": {
+    "checklist": "tests/holdouts/graphrag/expected.json",
+    "test": "examples/graphrag",
+    "independent_review": "tests/holdouts/graphrag/independent-review.json",
+    "status": "pass_for_declared_abstraction",
+    "failures": "Initial text overflow and title-crossing connector fixed; historical record retained"
+  },
+  "archive": "local inspection assets, link_only_in_distribution",
+  "current_workflow_maintenance": {
+    "date_utc": "2026-10-19T17:25:59.759901+00:00",
+    "skill_version": "1.44.1-dev",
+    "batch": "m2-rag-workflow-01",
+    "status": "accepted_with_declared_source_and_presentation_limits",
+    "scope": "Maintain the complete original Figure 1 processing chain through global answer, necessary Methods conditions, and an explicitly separate undrawn study-evaluation boundary in the current drawing-skill workflow; no new heldout claim or original-model evaluation.",
+    "acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/root-final-acceptance-01.json",
+      "bytes": 10860,
+      "sha256": "29b464f9fd14ce2e6c66654edabaf0a05f0617842c8b294e203eb31712993f26"
+    },
+    "final_artifacts": [
+      {
+        "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/formal-01/graphics-01/figure.svg",
+        "bytes": 2004116,
+        "sha256": "65b49874b884b15b21d7367f0b2afacbe9dfcf7a57534261ef7a88c835d0b484"
+      },
+      {
+        "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/formal-01/graphics-01/figure.pdf",
+        "bytes": 61786,
+        "sha256": "1bdb67ecb333668a0940054e510567473ebb44895f7f93d5006a132dde3a1d34"
+      },
+      {
+        "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/formal-01/graphics-01/figure.png",
+        "bytes": 316875,
+        "sha256": "a2a802cccb2e9985164bdec6503d8b679e56edc79a4b479fb2b19bcec23cc790"
+      },
+      {
+        "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/formal-01/graphics-01/figure_spec.json",
+        "bytes": 49562,
+        "sha256": "70dcc03cc586eb1ae4951db83eb18c6885d21dc85d11d5fa3da7bb2d54272d54"
+      },
+      {
+        "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/formal-01/graphics-01/caption.txt",
+        "bytes": 3368,
+        "sha256": "934c64249777e86dda86137ddceb3f33bceccd229c4319ced7d38ac2c7343f54"
+      }
+    ],
+    "zip": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/graphrag-current-workflow-01.zip",
+      "bytes": 2213559,
+      "sha256": "f02d09b3df202ec0127f60b3052ab01e69a9e504a7d2b212871a2c8b93ad91dd"
+    },
+    "actual_zip_replay": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/zip-replay-01/run-01/replay-report.json",
+      "bytes": 35239,
+      "sha256": "5f404a5947e3e822393bffc0f3af6dc55319de5f59ddef7c11b3fe60d67b0ca0"
+    },
+    "native_checks": 15087,
+    "independent_source_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/independent-01/source-review.json",
+      "bytes": 13884,
+      "sha256": "bd16daa2bb0972a61cff378fde478805c1ad551ad103666e41e397da034b26eb"
+    },
+    "independent_final_visual_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-rag-workflow-01/graphrag/independent-01/final-visual-review.json",
+      "bytes": 6212,
+      "sha256": "8169d36ba5879557b2f78cb19dadb9e6514732b3e00b5ac14c91d67de6f377c6"
+    },
+    "limits": [
+      "Main Methods define this workflow; Appendix E.3/E.4 prompt heading/content roles remain inconsistent and unaudited against code.",
+      "Experiment 1 reports 600-token source chunks, 100-token overlap and 8k-token summary/answer contexts. Their original-run correspondence is unaudited; no experiment-specific configuration, selected level or seed is assigned to this generic workflow.",
+      "Code implementation, original experiments, tie ordering, all-zero answers and oversize-item handling were not verified.",
+      "Method-defined counts or scores do not establish factual correctness. This paper is a general text-sensemaking preprint; medical validation is outside its tested scope here.",
+      "Source study evaluation is separate and explicitly undrawn. V2 contains sections 3.2 and 3.3 followed by section 4; there is no section 3.4. Later claim-count/cluster-count procedures are not executed or diagrammed here.",
+      "Minor reviewer presentation observations are retained; complete caption must accompany diagram. No target journal-size pass, cross-platform replay, external-editor roundtrip, original model run or clinical validation.",
+      "Native assertion counts and byte comparisons are not independent scientific trials. Replayed accepted bytes reuse original native/visual acceptance rather than create a second native trial."
+    ],
+    "counting": {
+      "known_paper_maintenance": true,
+      "new_paper_delta": 0,
+      "new_full_case_delta": 0,
+      "new_heldout_delta": 0,
+      "historical_card_status_preserved": true
+    }
+  }
+}

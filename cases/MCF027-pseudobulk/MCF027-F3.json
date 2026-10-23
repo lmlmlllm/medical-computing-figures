@@ -1,0 +1,112 @@
+{
+  "id": "MCF027-F3",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "DOI:10.1038/s41467-021-25960-2",
+    "title": "Confronting false discoveries in single-cell differential expression",
+    "authors": "Squair et al.",
+    "version_read": "2021 published author PDF; analysis repository commit167f55a5bff09f23cfd5b535763e13db2bc278b3",
+    "url": "https://michaelskinnider.com/files/Nat%20Commun%202021%20-%20Confronting%20false%20discoveries%20in%20single-cell%20differential%20expression.pdf",
+    "code_read": true,
+    "code_execution": false
+  },
+  "figure": {
+    "number": "Figure3",
+    "PDF_page_1based": 5,
+    "scope": "Whole original page Figure3a–g andcaption viewed; transfer focusa/c; onefigureonly"
+  },
+  "deduplication_key": "DOI:10.1038/s41467-021-25960-2:2021:Figure3",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "How do biological-sample membership and condition-constrained regrouping change what aggregated cell-count columns mean?",
+  "elements_and_relations": {
+    "cell_matrix": "Genes×cells, condition and original sample identities",
+    "aggregation": "Within celltype and biological replicate; counts multiplied by indicator membership",
+    "perturbation": "Drop aggregation or shuffle replicate membership within celltype/condition",
+    "provenance": "Pseudo-replicates mix original samples and do not increase biological replication",
+    "results_context": "Benchmark/variance panels contextualize article argument; not copied or reproduced"
+  },
+  "layout": {
+    "original": "Cell matrices, replicate membership bars and summarized outputs beside benchmark comparisons",
+    "transfer": "Aligned X/H cell columns, original sample strip, outputY with explicit unit label and separately labelled count scales",
+    "why": "Makes sample provenance and the changed aggregation path inspectable alongside arithmetic",
+    "omitted": "Published DE/AUCC/variance/significance outputs and author random realization"
+  },
+  "reading": {
+    "initial_feasibility": {
+      "web": "Publisher/PubMed identity and abstract; relevantResults,Figure2caption and fullFigure3caption through primary search/authorPDF. AuthorPDF abstract/introduction/ground-truth context andResults onpages1–4; methods DEanalysis p9 andDissecting pseudobulk p10; CClicense p15. Source-specific scope, not claim entire15pages deeply read.",
+      "local_PDF": "p9Methods DEtests/aggregation/concordance andp10Dissecting pseudobulk subsection read from actual bytes.",
+      "not_read_or_run": [
+        "Author code or pinned implementation",
+        "Study count matrices/source data/supplements",
+        "DESeq2/edgeR/limma model execution",
+        "All Figure1/2/4/5 original pixels"
+      ]
+    },
+    "subsequent": "CodeavailabilityPDFp13; complete pinned inner-run-DE.R andinner-write-delta-variance.R; run_DE.R full master then pinned102–235; notes/erratum supply exact scope",
+    "not_executed": "R code, DE models, published data and plotting pipeline"
+  },
+  "visual": {
+    "file": "feasibility/figure3-page5.png",
+    "scope": "Complete1191x1565 page rendered at2x from PDFpage5; wholeFigure3panelsa–g andcaption actually viewed",
+    "tool": "PyMuPDF1.28.2 rasterization then view_image",
+    "observations": [
+      "Panel a separates each cell column into a nominal replicate rather than aggregating biological replicates.",
+      "Panel c changes replicate-membership labels before aggregation, so a pseudobulk matrix alone does not preserve biological replication. Condition blocks remain visually separate; exact author shuffle algorithm still unverified.",
+      "Panel b/d compare benchmark method performance; e/f display variance changes; g shows an example across biological/pseudo-replicates. These result values will not be transferred to a new local schematic.",
+      "Colors in matrix/replicate bars have different roles; labels and grouping must preserve gene/cell/replicate/condition axes. Schematic cell count is not a sample-size declaration."
+    ]
+  },
+  "local_source_path_base": "tests/batches/pseudobulk-units-01",
+  "source_pins": {
+    "feasibility/author-paper.pdf": "465fd1842f2e07e17d55e0170dd96dd994f61a15c019655f3f1503ef37e7f22a",
+    "feasibility/code-inner-run-DE.R.json": "efc293fe1ab34269c10a0e692b23b85179bd6744370d7ef1bf7d1dc2945cbfee",
+    "feasibility/code-inner-write-delta-variance.R.json": "3bc7da8ecdcd5e7aa1ca8d9ec1bd617421dd91eaf8727b2f4b6caf3fa526c329",
+    "feasibility/code-run_DE_excerpt.json": "60fe8ca5d6357ae55ecb32c3d17f54e480a0b9f8a3db25ad986a6f98a2cfb63e",
+    "feasibility/figure3-page5.png": "10fe6661d9a2852cb355adf16bdf45285c7d7d42a1ce242a52860baf828510d3"
+  },
+  "rights": {
+    "article": "ActualPDFp15statesCCBY4.0, with third-party credit-line exceptions. Figure3caption viewed: no separate third-party creditline identified.",
+    "originals": "link_only in distribution; local original PDF/pixels excluded",
+    "code": "No redistribution license established for DE-analysis; raw responses excluded; author code not executed or incorporated",
+    "data": "Only self-authored SIMULATED_TEST fixture included; no study dataset"
+  },
+  "status_search": {
+    "query": "Exact DOI with correction/retraction; primary publisher/PubMed identity also checked",
+    "result": "No matching correction/retraction notice surfaced in bounded search; not exhaustive clearance"
+  },
+  "unresolved_and_scope": [
+    "Original Figure3g gene-label ambiguity",
+    "Pinned variance script usesrowSds but namesfieldvariance; full plotting reconciliation not done",
+    "Original random realization/seed not reproduced",
+    "Matched bulk is article operational reference, not universal groundtruth",
+    "Source-aware known-answer selftest, notheldout/independent/expert or realdata"
+  ],
+  "record_pins": {
+    "tests/batches/pseudobulk-units-01/acceptance.json": "5a9e8607335118eeca255e812ff9c038628547bc1378d675b40ef31de1a3ac5c",
+    "tests/batches/pseudobulk-units-01/source-notes.md": "acc61b3a29eec0c5ab8418dc9f5cd5abbb4905118d05c717fa4e8c6fe41c313f",
+    "tests/batches/pseudobulk-units-01/source-errata.json": "db30a7a5094429fc14d855c2e85fb30e61301c955beb313e6abcb4c25e2dd922",
+    "tests/batches/pseudobulk-units-01/expected-errata-01.json": "5248979f82455fd861d2dba6e2a9691b7b7352512e3de1f4abe3104774520bd5",
+    "tests/batches/pseudobulk-units-01/visual-review-formal-01.json": "9efb5a86d4d598025a2cba995e400f5929725363b05a91cdcb708dab7a886b4a",
+    "tests/batches/pseudobulk-units-01/control-review-01.json": "1439f3917e799d4b297967b51c1461c0274e163b1193b3f7e9bc955accc932ed",
+    "tests/batches/pseudobulk-units-01/replay-01/result.json": "2e47516babd946435549e34b7286d4d98b1592b8fe6e2a55623c1711d99188b5"
+  },
+  "transfer_evidence": {
+    "native_checks_each": 33,
+    "matrices": "X3x12,H4x12,Y3x4",
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "controlled_errors": 3,
+    "misses": 0,
+    "false_positives": 0,
+    "undecidable": 1,
+    "repairs": 3,
+    "invalid_input_rejections": 6,
+    "original_requirements": "13of14pass;1manualnumericexpectationfailed;separatecorrectionverified",
+    "OS_replay": "27+9exports;15readprobesandnetworkdenied;14inputpins",
+    "holdout": false,
+    "independent_reader": false
+  }
+}

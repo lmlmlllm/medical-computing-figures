@@ -1,0 +1,314 @@
+{
+  "case_id": "MCF062-F1",
+  "dedup_id": "NeurIPS2020:6b493230205f780e1bc26945df7481e5|formal2020|Figure1-whole",
+  "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+  "source_url": "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+  "source_figure": "Whole Figure1 on mainPDFp2, counted once; Methods and supplement are dependencies.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "admission_state": "ADMITTED_SEMANTIC_PARTIAL_AFTER_BOUNDED_RETEST",
+  "states": {
+    "reading": "Formal NeurIPS2020 main16pp and supplement3pp pinned. Root read mainpp1–8 and all supplement through official source; mainpp14–16 partial/truncated reference display, pp9–13 not read. Reader stage2 independently read mainpp1–8 and supplementpp1–3; main all16 machine-extracted only. No research code/data/weights/training.",
+    "visual": "Whole Figure1 on mainPDFp2 and relevant Methods pages actually viewed; four current original-diagram views, two scoped appearance edits and actual whole replayPDF view. SVG180dpi display resized3200x4600 to2649x3808. Same image reader: blind image-only stage1, source-aware stage2, targeted task-wording stage3; later stages not new blind samples.",
+    "archive": "Original sourcePDF/text/page pixels stay local-review-only. Own28memberZIP contains editable SVG/PDF/PNG, spec/layout/caption, portable helpers, pinned DejaVu font/licenses; source art, research code/data/weights excluded."
+  },
+  "question": "How can the same input-conditioned retrieval prior and passage-conditioned generator yield different sequence probabilities when document marginalization occurs outside versus inside token multiplication?",
+  "semantic_spec": "tests/batches/rag-marginalization-01/author/production-03/delivery/figure_spec.json",
+  "semantic_inventory": {
+    "objects": 22,
+    "relations": 33,
+    "claims": 6,
+    "visible_literals": 49
+  },
+  "pre_methods_rule_snapshot": {
+    "path": "<SKILL_ROOT>/tests/batches/next-selection-after-uamt-01/understanding-before-methods.md",
+    "bytes": 50380,
+    "sha256": "7725714f0793064b9fa73a238d08020885b18325d7cf994a8fa2625f97b2f8f6"
+  },
+  "element_groups": [
+    "Passage corpus, fixed document encoder/vector index, trainable query encoder, MIPS/top-K and input-conditioned document prior.",
+    "Original x plus one candidate passage; shared generator parameters within each fitted model, prefix condition and token likelihood.",
+    "Alternative sequence-level versus token-level document sums with explicit index sets and autoregressive prefixes.",
+    "Training pairs and marginal NLL, Adam query/generator update; independent decoding alternatives and task-specific settings."
+  ],
+  "source_relations": [
+    {
+      "location": "mainp2 Figure1/caption; mainp3 Sections2.1–2.3",
+      "meaning": "Input-conditioned retrieval and one-passage generator context; Sequence sums document after token products, Token sums within each token transition."
+    },
+    {
+      "location": "mainp4 Section2.4",
+      "meaning": "Adam trains query encoder and generator; document encoder/index fixed; fine-tuning supervision differs from DPR initialization."
+    },
+    {
+      "location": "mainp4 Section2.5; supplementp1 AppendixA",
+      "meaning": "Candidate-document Thorough/Fast scores and Token mixture decoding; open-domain QA greedy both, Open-MSMarco/Jeopardy beam4, testK task-specific."
+    },
+    {
+      "location": "mainp5 Section3.4 vs supplementp2 AppendixE; supplementpp2–3G",
+      "meaning": "FEVER implementation qualification and parameter/dimension source tension kept explicit."
+    }
+  ],
+  "visual_design": "A separates query and fixed corpus/index. B gives one candidate context and prefix/parameter ownership. C places noncommuting sums/products in side-by-side alternatives. D separates training updates from inference decoding, with shared task settings below both branches. Semantic aliases and local shorthand are defined; full caption is part of delivery.",
+  "transferable_rules": [
+    "Name each aggregation axis and conditional set before arranging operations; moving a sum across a product changes latent-variable meaning.",
+    "Different token-level latent-document contributions do not by themselves establish new query-dependent retrieval or hard document selection.",
+    "Keep document probability weight distinct from the text fed into the generator; each retrieved passage context uses within-model shared parameters.",
+    "Separate fine-tuning update ownership from supervised initialization; task-specific decoder settings qualify generic algorithm boxes."
+  ],
+  "unknowns": [
+    {
+      "id": "U01",
+      "topic": "Retrieval normalization implementation",
+      "assessment": "The source gives a proportional exponential prior, top-K truncation and approximate marginalization. It does not resolve the exact code normalization universe; no code was read or run.",
+      "primary_locator_ids": [
+        "M2_INTRO",
+        "M3_DPR",
+        "M3_MODELS"
+      ]
+    },
+    {
+      "id": "U02",
+      "topic": "Physical storage and context formatting",
+      "assessment": "Raw-text storage layout, lookup schema, tokenizer, separators, concatenation order and truncation behavior are not established by these sources. Logical input/passages and stored vectors are established.",
+      "primary_locator_ids": [
+        "M3_DPR",
+        "M3_BART",
+        "M4_CORPUS"
+      ]
+    },
+    {
+      "id": "U03",
+      "topic": "FEVER computation details",
+      "assessment": "Appendix E establishes regeneration, final-hidden-state classification and document marginalization. It does not specify every training/inference operation, loss interaction, class-token implementation or exact extraction of that hidden state in the supplied text. No reconciliation by invented code behavior is warranted.",
+      "primary_locator_ids": [
+        "M5_FEVER",
+        "S2_FEVER"
+      ]
+    },
+    {
+      "id": "U04",
+      "topic": "Parameter totals and dimensionality",
+      "assessment": "The reported 626M trainable wording conflicts with its own fixed-document-encoder qualification. The printed 728 index dimension is retained as source wording, without claiming it is correct or replacing it with another value. Omitting totals/dimensions while showing fixed/update roles is adequate.",
+      "primary_locator_ids": [
+        "M4_TRAIN",
+        "S2_PARAMS",
+        "S3_PARAMS"
+      ]
+    },
+    {
+      "id": "U05",
+      "topic": "Decoding and retrieval runtime details",
+      "assessment": "Main and appendix specify algorithmic approximations and some settings. Actual caching, retrieval-call counts, numerical implementation and unmentioned beam hyperparameters have not been verified.",
+      "primary_locator_ids": [
+        "M4_TOKEN",
+        "M4_SEQUENCE",
+        "S1_SETTINGS"
+      ]
+    },
+    {
+      "id": "U06",
+      "topic": "Factuality percentage discrepancy",
+      "assessment": "Section 4.3 prose says 17 percent for both factual whereas Table 4 says 11.7 percent for Both good. This review does not adjudicate that discrepancy; no number from it enters the method draft.",
+      "primary_locator_ids": [
+        "M6_FACT",
+        "M8_TABLE4"
+      ]
+    }
+  ],
+  "source_tensions": [
+    {
+      "id": "T1",
+      "locations": "mainp3§2.1/mainp5§3.4 vs supplementp2§E",
+      "finding": "General one-token classification framing and FEVER class-token prose coexist with claim regeneration and final-hidden-state classification implementation in appendix.",
+      "decision": "Core new figure covers sequence-generation formulations. FEVER has a separately stated implementation qualification; do not claim a complete implemented FEVER graph."
+    },
+    {
+      "id": "T2",
+      "locations": "mainp4§2.4 vs supplementpp2–3§G",
+      "finding": "Appendix calls626M trainable while explicitly including a document encoder that authors do not train; main says document encoder/indexfixed. Appendix also prints728indexdimensions.",
+      "decision": "Keep explicit fixed/update roles; omit total parameter count and index dimension instead of silently correcting to inferred values."
+    },
+    {
+      "id": "T3",
+      "locations": "mainp6§4.3 vs mainp8Table4",
+      "finding": "Prose both-factual17% versus Table4both-good11.7% observed in text.",
+      "decision": "Outside method figure; no performance numbers drawn and no adjudication claimed."
+    }
+  ],
+  "license": "No affirmative third-party reuse license established for source artwork. Current NeurIPS FAQ is not a verified historical2020 author contract. Source assets stay local-review-only; own geometry/explanation and attributed DejaVu font packaged.",
+  "notice_scope": "No correction/retraction notice observed on inspected arXiv and proceedings metadata; not exhaustive.",
+  "transfer_entry": "tests/batches/rag-marginalization-01/DELIVERY.md",
+  "test_limits": [
+    "Original fixed24:23supported0failed1unassessed for historical production03 contract bytes. New prefrozen re-export:24supported0failed0unassessed, only RG08.1 reassessed; other23 inherited by verified unchanged input/output bytes.",
+    "2268glyphs/142native runs/49labels/48logical vectors/69painted paths per format; minimum12pt, 0.25pt tolerance; independent native02 has210checks with zero failures.",
+    "Historical production03 contract hash was absent from its earlier freeze and stays unassessed. New contract-prefreeze-retest-01 pins all16inputs including existing source/layout/font-derived native contract BEFORE new export; recorded order supported, no independent trusted timestamp claimed. Ten new outputs byte-identical; prior native02 all-object evidence reused rather than newly rerun.",
+    "Same source-aware reader continued after stage1; embedded prior-review metadata exposure disclosed. Fresh final assessor is a model evidence reviewer, not human expert.",
+    "Two actual appearance edits preserve stated invariants. Route view includes scoped490x170 pixel inspection crop; no claim that differential image fragments alone were whole-image rereads.",
+    "28member ZIP10canonical outputs including environment byte-exact in author-run same-host OS replay.7commands,40before+40after controls,19denied data reads14allowed inputs2deniedwrites4actualconnect denials1allowedwrite/read each phase.",
+    "Six unknown groups, R1/R2 readability suggestions, source tensions and original construction/edit/audit/metadata/readback failures remain preserved.",
+    "Pre-method snapshot fixes general mathematical-object/axis/operation-order rule; current case is bounded developed cross-case application, not validation of all UA-MT entropy/selection rules. New RAG wording awaits another-case validation.",
+    "No model training, original experiment, general error rate, new heldout paper, clinical validation, browser/editor/print or target-journal acceptance.",
+    "Current28memberZIP and previous OSreplay remain immutable. The new contract re-export is not a new ZIP or OSreplay; proven byte identity connects existing package/replay evidence to the new artifacts."
+  ],
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/protocol.json",
+      "bytes": 5880,
+      "sha256": "317546eb27e334003b2be5b4e28fda4c56467806e4d3bf7669166ce4d8a87663"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-uamt-01/selection-before-methods.json",
+      "bytes": 3658,
+      "sha256": "931b210c3971348e0d31cfc9c578e088e88394471400499c46b018f6d78da73b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-uamt-01/source-reading-01.json",
+      "bytes": 6235,
+      "sha256": "d3636803bd2e5b2dfe76d69115d551dd0c2afc487112ea7ab006654a7bcdf6c2"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-uamt-01/RAG-NeurIPS2020-complete-01.pdf",
+      "bytes": 946122,
+      "sha256": "720f67eb41aa49995d5fcf3d24ac7efe431fbe08ce109b14b5a9fa4d4ebe2f8b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-uamt-01/RAG-NeurIPS2020-supplement-01.pdf",
+      "bytes": 378686,
+      "sha256": "897e4d2ee3cbd3d3bad4c2cbe479f50cd716415307567bb7d4f822fb0b0be845"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/science-freeze-02.json",
+      "bytes": 1461,
+      "sha256": "e4d3e9be6cf58d0b9a94105e3ca95c4c5853fdecd42978d0f7afdd421d269d54"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/review/science-01/TERMINAL.json",
+      "bytes": 1401,
+      "sha256": "3758f2f77e1126e6cfc5190db10f523f6f8d3922ec4963dd7ca8032a32efedba"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-rag-v2e9/stage1-reader-01/TERMINAL.json",
+      "bytes": 965,
+      "sha256": "2583c84de25013d114acaa5a5bd66350b123716d6fdb8d6a42e93b35c3b45cd8"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-rag-v2e9/stage2-reader-01/TERMINAL.json",
+      "bytes": 1628,
+      "sha256": "bc5e325ac7a2cf2b3f5fdaf5449dff3e4afdbe6f6584e7fe3416b12179172e3d"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-rag-v2e9/stage3-clarification-01/TERMINAL.json",
+      "bytes": 1208,
+      "sha256": "4ee9654bce0536dac40f397acc8728775b31aa651e10d55a47cb32a72458ef63"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/output-audit/independent-native-erratum-01/TERMINAL.json",
+      "bytes": 1836,
+      "sha256": "3191be6ec40da1dc3ce8cdfa7a14ace0b958de7fa3f88af6ff4e9e87fc33cd21"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/output-audit/independent-native-02/TERMINAL.json",
+      "bytes": 3256,
+      "sha256": "2a1761baf92f4a027bba72554e9ab80018b29f84bc46ae2f435e4ce980e6ffd8"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/author/production-03/TERMINAL.json",
+      "bytes": 3511,
+      "sha256": "375a5023834389f346abd0651546a09485824d7369f7851647e068ad225cd0db"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/author/edit-probes-03/TERMINAL.json",
+      "bytes": 4506,
+      "sha256": "3efb2349903707e17b3c34f07646a43f1b35ad0444abd602084531f10413f12b"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/replay-03/TERMINAL.json",
+      "bytes": 3611,
+      "sha256": "61175b8b4986c3ba92c627583ec3388d6df4c0fbd478d52d0e475832ef6677cf"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/author/production-03/rag-marginalization-clean-03.zip",
+      "bytes": 2053280,
+      "sha256": "5994e4d5c1953824c0b424bf0296e825fab2e13f398e6c2e3f8b27880a4e18a6"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/author/production-03/render-01/figure.pdf",
+      "bytes": 39531,
+      "sha256": "8abba10ce4acb7b6cafb903c17cb12728018d18b3f447cc420d417237c07d807"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/author/production-03/inputs/figure_spec.json",
+      "bytes": 69101,
+      "sha256": "32e924009c80f9c821c7b0f357fcbb6aec538f45284a2423880247bbc47fca9f"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/final-retest-01/TERMINAL.json",
+      "bytes": 2042,
+      "sha256": "4c9a360d1a3ceaa38816420fa5f1d18efa23f04073ebecb4494121cf9cf88a22"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/final-assessment-01/TERMINAL.json",
+      "bytes": 2022,
+      "sha256": "07279e4f0e703f90f8f478fc0b02e5a0e999bf7b4fb0f590bb6ede1864302e69"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/contract-prefreeze-retest-01/TERMINAL.json",
+      "bytes": 2461,
+      "sha256": "8f4712cb1ecbccf67e90b0794a7b5f34aa8211ec72a66756bb07f7d6d844ff69"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/contract-prefreeze-retest-01/pre-export-freeze.json",
+      "bytes": 5739,
+      "sha256": "3d127fd595684c2c4ee83219c94f493648d23992cc6339979fdfbeae9efec9a0"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/output-audit/prefreeze-retest-01/TERMINAL.json",
+      "bytes": 1626,
+      "sha256": "a2ecd62804156e2b1d703f86d6d8f22c0d6349d457a78e865d360552faadcb3f"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/rag-marginalization-01/contract-prefreeze-retest-01/render/figure.pdf",
+      "bytes": 39531,
+      "sha256": "8abba10ce4acb7b6cafb903c17cb12728018d18b3f447cc420d417237c07d807"
+    }
+  ],
+  "current_exports": "tests/batches/rag-marginalization-01/contract-prefreeze-retest-01/render",
+  "fixed_assessment": {
+    "original": {
+      "supported": 23,
+      "failed": 0,
+      "unassessed": 1
+    },
+    "current": {
+      "supported": 24,
+      "failed": 0,
+      "unassessed": 0
+    },
+    "only_reassessed": "RG08.1",
+    "inherited": 23,
+    "historical_gap_repaired": false
+  },
+  "separate_control_test": {
+    "record": "tests/batches/rag-mixture-operator-control-01/completion-01.json",
+    "report": "tests/batches/rag-mixture-operator-control-01/README.md",
+    "source_aware": "Detection, strict location, explanation and committed correction each 1/1; target-specific and all unsupported scientific FP each 0 on 1 correct control.",
+    "image_only": "Detection, strict location, explanation and committed correction each 1/1; target-specific and all unsupported scientific FP each 0 on 1 correct control.",
+    "repair": "16 inputs and 10 outputs exact baseline; 2 actual whole views, PDF raster displayed at reduced size.",
+    "original24unchanged": true,
+    "scope": "One pair in the same developed case, not new held-out/general accuracy/expert verification.",
+    "score": {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-f729b4/scorer-final-01/TERMINAL.json",
+      "bytes": 727,
+      "sha256": "2d19209042ee3a8a73fb8a3a36e9cb16217ed9f81e5afd3800af3ff484a03e6f"
+    },
+    "repair_seal": {
+      "path": "<SKILL_ROOT>/tests/batches/rag-mixture-operator-control-01/repair-01/TERMINAL.json",
+      "bytes": 927,
+      "sha256": "629630e8b9c0cd58f353e95aefd9ee7d2fb71ba997994a95d0ad39b6a5aacdce"
+    }
+  }
+}

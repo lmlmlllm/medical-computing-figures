@@ -1,0 +1,105 @@
+{
+  "figure_id": "MCF001-F1",
+  "source_figure": "Figure 1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig1",
+  "task": "Show scope and qualitative examples of anatomical targets and modalities",
+  "type": "qualitative modality/anatomy montage",
+  "visual_status": "whole figure actually viewed, including full resolution source",
+  "semantic_status": "complete_for_figure_task_and_caption; individual cases not reidentified against supplemental datasets",
+  "visual_observations": [
+    "Rectangular medical-image tiles sit in a dense black-backed grid; white gutters separate examples.",
+    "A large semitransparent anatomical body overlays the center, relating examples loosely to anatomy without arrows.",
+    "Magenta contours and colored filled masks coexist; caption assigns magenta to expert annotation and overlays to model predictions.",
+    "CT/MR, ultrasound, X-ray, pathology, fundus, skin and endoscopy appearances are visible; no legend maps each overlay hue to performance or evidence strength.",
+    "The body overlay occludes central image detail; attractive overview but unsuitable for per-case accuracy inspection."
+  ],
+  "elements": [
+    {
+      "id": "F1-images",
+      "role": "medical-image examples",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig1"
+    },
+    {
+      "id": "F1-anatomy",
+      "role": "anatomical orientation schematic",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig1"
+    },
+    {
+      "id": "F1-reference",
+      "role": "expert boundaries, magenta",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig1"
+    },
+    {
+      "id": "F1-prediction",
+      "role": "segmentation masks, colored overlays",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig1"
+    }
+  ],
+  "relations": [
+    {
+      "id": "F1-r1",
+      "from": "F1-reference",
+      "to": "F1-images",
+      "type": "spatial_overlay",
+      "direction": "undirected",
+      "meaning": "Expert target outline registered to the shown image; not an optimization arrow."
+    },
+    {
+      "id": "F1-r2",
+      "from": "F1-prediction",
+      "to": "F1-images",
+      "type": "spatial_overlay",
+      "direction": "undirected",
+      "meaning": "Shown model mask is aligned to the input example."
+    },
+    {
+      "id": "F1-r3",
+      "from": "F1-anatomy",
+      "to": "F1-images",
+      "type": "grouping",
+      "direction": "undirected",
+      "meaning": "Loose anatomical orientation; visual adjacency is not a measured causal or computational relationship."
+    }
+  ],
+  "transfer_rules": [
+    {
+      "id": "MCF-R01",
+      "rule": "Use a qualitative montage to communicate coverage; explicitly distinguish reference outlines from predicted fills.",
+      "not_applicable": "Cannot replace aggregate performance, uncertainty, failure analysis, or claim all cases in a modality succeed."
+    },
+    {
+      "id": "MCF-R02",
+      "rule": "Decorative anatomy must not obscure examples that the reader must evaluate; use separate scope and evidence panels.",
+      "not_applicable": "Do not copy this central body asset or fabricate segmentation overlays."
+    }
+  ],
+  "boundary": "Does not encode model architecture, tuning status, dataset splitting, denominators, or statistical comparisons. Colors are not disease severity scores.",
+  "case_id": "MCF001-medsam",
+  "source_record": "source_card.json",
+  "checked_date": "2026-10-11",
+  "license_and_version": "See shared source_card.json rights/paper/integrity_check; source-assets excluded from distributable.",
+  "visual_evidence": [
+    {
+      "path": "source-assets/fig1-official-full.png",
+      "sha256": "a1a0586aacd36952649c2dfc1b0535df3ce18f239673b6c5b9aa005fbacf2143",
+      "bytes": 2690753,
+      "distribution": "excluded_from_skill_distribution; local_reading_evidence_only",
+      "pixels": [
+        2000,
+        1458
+      ]
+    },
+    {
+      "path": "source-assets/fig1-official-preview.jpg",
+      "sha256": "781002b63b3266af620f7f419e83c2cc041acec5098f013db9fe46a8ec14f145",
+      "bytes": 199001,
+      "distribution": "excluded_from_skill_distribution; local_reading_evidence_only",
+      "pixels": [
+        800,
+        583
+      ]
+    }
+  ],
+  "viewing_method": "Actually viewed both complete preview and official full PNG using view_image; not text-only/OCR.",
+  "figure_counting": "This original whole figure counts once; its panels and previews do not add cases."
+}

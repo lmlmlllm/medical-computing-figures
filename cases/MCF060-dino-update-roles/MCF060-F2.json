@@ -1,0 +1,132 @@
+{
+  "case_id": "MCF060-F2",
+  "dedup_id": "arXiv:2104.14294|v2|Figure2-whole",
+  "title": "Emerging Properties in Self-Supervised Vision Transformers",
+  "source_url": "https://arxiv.org/abs/2104.14294v2",
+  "source_figure": "Whole Figure2 on PDFp2, counted once; Algorithm1 and Methods are dependencies.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned21-page v2 PDF; complete text pp1–5 read, whole pages2–4 viewed. Later pages machine-extracted/search snippets only. No training code/weights/experiments.",
+    "visual": "Whole source Figure2 plus method-page views. Original intended/full PNG, PDF and static SVG actually viewed; two local edit variants viewed; metadata-only derivative preview and replay PDF viewed.",
+    "archive": "Paper and page pixels local-review-only. Current cleanZIP excludes published artwork, research data/code/weights; bundled DejaVu font/license retained."
+  },
+  "question": "How can one two-view loss update student parameters by gradient, teacher parameters by averaging, and a separate center state from raw teacher outputs without conflating their roles or timing?",
+  "semantic_spec": "tests/batches/dino-update-roles-01/author/production-02/delivery/figure_spec.json",
+  "semantic_inventory": {
+    "objects": 15,
+    "relations": 23,
+    "claims": 5,
+    "visible_literals": 42
+  },
+  "element_groups": [
+    "Two augmented view identities reused by both networks; same architecture, distinct student/teacher parameters.",
+    "Per-view n-by-K raw outputs, K-axis probabilities, teacher-only current center and stopped targets.",
+    "Two opposite-view H terms, each row-mean cross-entropy, combined by average.",
+    "Current/new student and old/new teacher parameter states; gradient and teacher EMA have different ownership.",
+    "Current/new K-vector center and mean of stored raw teacher logits across 2n rows; separate running state."
+  ],
+  "source_relations": [
+    {
+      "location": "p3 Algorithm1 initialization/forward",
+      "meaning": "Teacher values copied initially; both x1/x2 pass through each network, with shared parameters within each network."
+    },
+    {
+      "location": "p3 Algorithm1 H and loss",
+      "meaning": "Teacher subtracts current C before temperature softmax; stopped teacher targets supervise opposite-view student predictions without category labels."
+    },
+    {
+      "location": "p3 Algorithm1 ordered updates; p4 Teacher network",
+      "meaning": "Student is optimized before teacher EMA combines new student and old teacher parameters."
+    },
+    {
+      "location": "p3 Algorithm1 center assignment; p4 Eq4",
+      "meaning": "Center mean uses already-computed raw teacher outputs, not updated-weight recomputation or probabilities; new center persists to next minibatch."
+    },
+    {
+      "location": "p3 Eq3; p4 Network architecture",
+      "meaning": "Full multicrop view set and pair-sum scope differ from two-view average; downstream representation is backbone f output."
+    }
+  ],
+  "visual_design": "Panel A current computation/loss; B parameter updates; C center-state update. Repeated explicit aliases avoid crossed long connections without adding networks/views. Solid data arrows, dashed gradient/parameter arrows and dotted state arrows plus color/text distinguish roles; next-iteration dependencies use explicit text.",
+  "transferable_rules": [
+    "Stop gradient does not establish permanently frozen teacher weights; name gradient, parameter averaging and running-state updates separately.",
+    "State each update input owner, mathematical object, aggregation axis and old/new iteration; confirm order from the current source.",
+    "Same architecture does not mean tied parameter state. Separate momentum parameters do not necessarily have unequal numerical values.",
+    "Preserve scope and normalization when simplifying multi-view losses; a pair sum and a two-term average cannot be silently equated."
+  ],
+  "gaps": [
+    "Algorithm1 subtract-C and page4 plus-c prose are not reconciled; no proven typo or c=-C equivalence.",
+    "SGD pseudocode annotation versus AdamW implementation; general gradient optimizer label retained.",
+    "Initial center, complete executable state, code/weights/training and exact formal/arXiv full-text equivalence unverified.",
+    "H(t,s) wrapper notation relies on the adjacent definition and caption when read in isolation; reduced-column/print readability untested.",
+    "Pre-layout unrelated-agent summary exposure and stage2 embedded prior-review metadata exposure disclosed; stage1 remains image-only.",
+    "No DINO controlled-error pair in this batch, new heldout claim, expert review, browser/GUI/print/journal certification or medical efficacy claim."
+  ],
+  "license": "arXiv v2 metadata linked CC BY4.0; source assets remain local-review-only and are excluded from the package. Original geometry/explanation with unmodified DejaVu font and bundled notices.",
+  "notice_scope": "No correction/retraction notice in inspected arXiv metadata, not an exhaustive notice check; CVF direct access403 retained.",
+  "transfer_entry": "tests/batches/dino-update-roles-01/DELIVERY.md",
+  "test_limits": [
+    "Original24 fixed checks supported,0 failed,0 unassessed; eight groups are not eight additional tests. Root verified267 unchanged assessor input pins and exact10-file final tree.",
+    "1120x1500pt explanation plate;1860 glyphs,42 text parents,45 vectors. Independent actual SVG/PDF check: no raster wrapper,minimum12pt, maximum PDF baseline error0.00004883pt below fixed0.25pt.",
+    "Label-only and relation-routing edits actual export/view/native deltas only TXT_T_C and EDGE_R11.",
+    "Metadata02 repair changes only historical figure.status plus dependent pins and README explanation; scientific/visible/geometry inputs unchanged. Eight outputs byte-identical to original, only native-bindings/environment hash metadata differ. Original package/seals untouched.",
+    "Current28-member ZIP:7 OS-profile commands and before/after40 controls each;19 denied protected reads,14 permitted package inputs,2 denied writes,4 denied socket connects,1 allowed output read/write. All10 canonical outputs including environment exact. Author executed; independent bounded verification audited bytes/receipts, not an independent rerun.",
+    "At DINO admission the new operational rule had no cross-case check. It was subsequently pinned before UA-MT full text and applied in MCF061-F1 with independent diagram/source checks; bounded developed-case application, not new heldout or general accuracy evidence."
+  ],
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/protocol.json",
+      "bytes": 5155,
+      "sha256": "e8253aca71ef65e44bde07f3ab5e45fbca808069691e3c8269e895124c59e3d7"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/final-assessment-01/TERMINAL.json",
+      "bytes": 1788,
+      "sha256": "2f5ba170e7c6560772acb9d586521639ce07f3800790302070b5098c79f224b4"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/metadata-verification-01/TERMINAL.json",
+      "bytes": 921,
+      "sha256": "bccb26b27bd5aee7a792066805095c87bbed9a2768223619eb3025793fc81f09"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/author/production-02/TERMINAL.json",
+      "bytes": 526,
+      "sha256": "a3a635026d208f7775633b2214457034af36cc083431151064a9c3f21c3afd32"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/replay-02/TERMINAL.json",
+      "bytes": 516,
+      "sha256": "aa64c8cf4239123b60cf55485f8c2880d30b6c316377dc447c0decf5ef173c65"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/author/production-02/dino-update-roles-clean-02.zip",
+      "bytes": 1963859,
+      "sha256": "ba1719d621289ed28cf4c78305fa93a07ad7fa4df2100f9000f2d844767d2118"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/author/production-02/render-01/figure.pdf",
+      "bytes": 35814,
+      "sha256": "6fff100684107b1281954c56ef0d7d8c80ab127c59d6e62dae294a18e6217309"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/author/production-02/delivery/figure_spec.json",
+      "bytes": 29882,
+      "sha256": "f9dd2becb76dcbe72ac5151c8a02e445c441ce4cc169b701776e38b3214f48fd"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/review/image-stage1-01/TERMINAL.json",
+      "bytes": 1835,
+      "sha256": "382f18de37f295c0f34e2be027267c5d6b8f7b5fe35e42c03e047b3445b23c27"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/dino-update-roles-01/review/image-stage2-01/TERMINAL.json",
+      "bytes": 1918,
+      "sha256": "54e4d1f5186f3c06570cb41b74bdf049557eb5797b9bb7e25be8d3a2be818afa"
+    }
+  ]
+}

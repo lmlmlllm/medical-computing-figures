@@ -1,0 +1,98 @@
+{
+  "case_id": "MCF048-ED2",
+  "dedup_id": "10.1038/s41591-024-03196-z|2024|ExtendedDataFigure2",
+  "title": "Chronic adaptive deep brain stimulation versus conventional stimulation in Parkinson’s disease: a blinded randomized feasibility trial",
+  "source_url": "https://www.nature.com/articles/s41591-024-03196-z",
+  "source_figure": "Whole publisher Extended Data Figure2a–e; a initial example, b final hemisphere settings, c–e artificial policy illustrations. One reference unit.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "NIHPA author manuscript PMC11826929.1/NIHMS2040504 selected methods, neural signal and online control S4/S8/S18/S28–S30 and complete F8 caption; publisher ED2 full caption and identity/rights separately read. Not full publisher typesetting or implementation verification.",
+    "visual": "Whole publisher ED2a–e actually viewed; original final PNG, intended PNG, independent PDF proxies and safe exact-font static SVG proxy actually viewed.",
+    "archive": "Primary XML/HTML/JPG and review caches local-only; clean ZIP excludes source material and audit history."
+  },
+  "question": "Does a strict middle signal band select a fixed middle stimulation amplitude, or retain a separately known preceding amplitude?",
+  "elements": [
+    {
+      "id": "processed_signal",
+      "role": "source on-state gamma LD control input, distinct from measured symptom severity and delivered stimulation"
+    },
+    {
+      "id": "thresholds",
+      "role": "strict lower/middle/upper regions using own symbols x,L,U; source equality behavior unknown"
+    },
+    {
+      "id": "three_amplitudes",
+      "role": "illustrated high/middle/low comparator; source ED2d explicitly not used in study"
+    },
+    {
+      "id": "known_prior_high_low",
+      "role": "two author-conditioned alternatives under same middle input, not sequential states or observed traces"
+    },
+    {
+      "id": "retained_amplitudes",
+      "role": "known prior high remains high and known prior low remains low; no third buffer amplitude or off default"
+    }
+  ],
+  "relations": [
+    {
+      "from": "processed signal below/above thresholds",
+      "to": "high/low selected amplitude",
+      "type": "source-specific conditional polarity",
+      "source": "S8 and ED2d/e"
+    },
+    {
+      "from": "strict middle signal condition",
+      "to": "fixed middle amplitude in three-level comparator",
+      "type": "memory-independent illustrated mapping",
+      "source": "ED2d; not used in study"
+    },
+    {
+      "from": "strict middle condition plus known prior amplitude",
+      "to": "same retained amplitude in buffer",
+      "type": "history-dependent conditional retention",
+      "source": "S30/ED2e; high/low examples author conditioning"
+    },
+    {
+      "from": "selected or retained amplitude",
+      "to": "continuous delivered amplitude",
+      "type": "physical realization not fully specified; caption-only boundary",
+      "source": "S28–S30; no extra waveform/control edges drawn"
+    }
+  ],
+  "visual_design": "Two aligned policy panels with common input conditions. Left has three amplitude outcomes; right middle-band group contains two labeled alternative known-prior paths. Seven arrow pairs denote conditional choices, not elapsed time. Explicit source-specific polarity, unused comparator, known-prior and unresolved-timing qualifiers remain visible.",
+  "transferable_rules": [
+    "For stateful conditional policies, show the same input region under separate known prior states. A middle input band need not be a middle output state; history is a required dependency.",
+    "Distinguish conditional state choice from elapsed-time traces and physical actuation. Equality/startup/unfinished-ramp behavior and contradictory timing formulas require source evidence, not schematic completion."
+  ],
+  "gaps": [
+    "Threshold equality, startup inside band, missing-input fallback and unspecified prior cases unresolved",
+    "Unfinished-ramp hold of target versus instantaneous amplitude and exact counter/update/ramp/blanking order unknown",
+    "XML S30 update-rate+1s versus ED2a ramping-time+1s blanking conflict retained; final table does not support universal update+1 rule",
+    "FFT interval, window duration, updaterate durations and onset/termination counts not converted without support",
+    "Only selected source on-state gamma control polarity; no efficacy/noise-elimination/safety/optimal-tuning, device/model/clinical validation"
+  ],
+  "license": "Source article/figures public-readable but Springer exclusive/PMC author-manuscript access is not blanket redistribution permission; primary assets remain local. Clean package includes original explanatory figure/code/spec and two licensed DejaVu fonts with notice.",
+  "notice_scope": "Bounded publisher/PMC/PubMed identity/notice inspection found no linked correction/retraction in inspected records; not exhaustive certification.",
+  "transfer_entry": "tests/batches/adbs-state-buffer-01/README.md",
+  "test_limits": [
+    "Original A01–A08 denominator8 independent final pass; 18objects(17visible),10relations(7drawn choices/3condition labels),no numerictoy/source traces",
+    "Fresh image-first Stage1 then source Stage2; final assessor source-informed; no newholdout/expert/clinical validation",
+    "945glyphs/21vectors/7arrowpairs,min8.5pt,page580×420pt; native and staticSVG errors below fixed0.25pt",
+    "Exact-font static SVG binds parsed family/style/weight to packaged FTfaces; browser @font-face behavior unverified; 828ink paint+828path observations and234space metric probes for117spaces are distinct",
+    "Exact21member ZIP same-host existing-runtime OS replay9canonical outputs byte-identical;13knownexisting file denials plus network/outsidewrite denial",
+    "Labeloverflow/style revisions, quoted-family audit falseflags,11sandboxstartup failures,optionalblockedfontlookup and34-to33pin bookkeeping correction preserved; no crossplatform/freshinstall/arbitraryeditor guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "7ddbabb2cd1298a5a0df3e0038ce2ae0d18c715adf82f43706c8ae8691305396",
+    "assessment.json": "be5b94f4d949bf6cf3ca06d1dd344fccab4b14eb257b0e499b81f0541c76378a",
+    "assessment-freeze-01.json": "5f908ba019986fc50bc2ef8527b7abb9c2330e05d1714028249e304304a2a16d",
+    "scientific-freeze-01.json": "8bd905daa04639edca7cd087cd316cfe827b9f456e8d6c21b0977e1f504b3a17",
+    "package-freeze-01.json": "ff0ea45cb2fdf739b5328711801fd6d57d2356d366e7af261093db973a99eb66",
+    "replay-freeze-01.json": "43440acfa97ac959e429b7dcd7ea9ea6f059418cde5f5886cb9aa557c5cc6be4",
+    "adbs-middle-band-01.zip": "7ac46c9745a9e2e11f0b31329337f387c6f010fbc1a5b791c54ba2799f21cd25"
+  }
+}

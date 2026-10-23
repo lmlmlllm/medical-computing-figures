@@ -1,0 +1,113 @@
+{
+  "id": "MCF023-T4",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "10.1186/1472-6947-8-53",
+    "PMID": "19036144",
+    "PMCID": "PMC2611975",
+    "title": "Extensions to decision curve analysis, a novel method for evaluating diagnostic tests, prediction models and molecular markers",
+    "authors": [
+      "Andrew J Vickers",
+      "Angel M Cronin",
+      "Elena B Elkin",
+      "Mithat Gonen"
+    ],
+    "version_read": "BMC Medical Informatics and Decision Making8:53,2008 publisher PDF17pages",
+    "url": "https://link.springer.com/article/10.1186/1472-6947-8-53"
+  },
+  "figure": {
+    "number": "Table4",
+    "PDF_page_1based": 11,
+    "scope": "all25rows,4numericcolumns; Figure2 and MSK tutorial p7 as supporting context"
+  },
+  "deduplication_key": "10.1186/1472-6947-8-53:publisher2008:Table4",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "original_reference_units": 1,
+  "batch_source_visual_units": 3,
+  "question": "How do Full-model net benefit and its paired advantages change across five reported threshold preferences, with the correct uncertainty definition?",
+  "elements_and_relations": {
+    "cohort": "740 men/192 cancers as reported, no patient rows downloaded",
+    "point": "published Point Estimate, distinct from Bootstrap Mean",
+    "interval": "95% bootstrap percentile,2000replications; source paired differences retain their own endpoints",
+    "comparators": "None=0,Full−Base and Full−All; advantage over All does not prove advantage over None",
+    "transform": "fixed p, all three paired endpoints multiplied by100(1−p)/p; utility equivalent not observed count"
+  },
+  "layout": {
+    "source": "continuous Figure2 contextual curve, Table4 grouped bythreshold/strategy",
+    "transfer": "three separate point-range axes with exact numerical labels; five categorical threshold rows, no connecting line",
+    "derived": "one-panel threshold-specific reduction equivalent, changed units and caption",
+    "omissions": "No fitted predictions,intermediate thresholds,new uncertainty or clinical-effect claim"
+  },
+  "unresolved_and_scope": [
+    "Unrounded values and bootstrap draws unavailable",
+    "Full−Base80% lower endpoint prints0.0000; unrounded sign unknown",
+    "35%/60% direct paired differences differ0.0001 from rounded marginal subtraction; original retained",
+    "Age encoding not independently restated in Table4 subsection; not invented in figure",
+    "No raw-code execution,model fitting,continuous-curve or clinical replication"
+  ],
+  "reading": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    10,
+    11
+  ],
+  "visual": [
+    "feasibility/paper-page-04-144ppi.png",
+    "feasibility/paper-page-11-144ppi.png",
+    "feasibility/tutorial-page-07-144ppi.png"
+  ],
+  "generated_not_viewed": [
+    "feasibility/paper-page-03-144ppi.png"
+  ],
+  "local_source_path_base": "tests/batches/decision-curve-01",
+  "source_pins": {
+    "feasibility/msk-r-tutorial.pdf": "876bcb762372cc4a5331fe0fe91c900ef35fa9231a20c411be3e6f46ff965b3c",
+    "feasibility/msk-tutorial-landing.html": "bfd9cc9b7103666681c9042c1fb1dadb37a938f6e5e0ea5b7ee0c80483b8d7ab",
+    "feasibility/paper-page-01.txt": "d0bec1589ccb9e21815f0b279254a9269463222f0b1c8ec1ea42ab00d794d798",
+    "feasibility/paper-page-02.txt": "dd3f2122a2edf519bf0dd98ef802b1cddd33777a991701dd32dd79a6667e475f",
+    "feasibility/paper-page-03-144ppi.png": "0d6251b109aafe9af8636bcddc8e836b64754710b7f7c8383865f35be8d01093",
+    "feasibility/paper-page-03.txt": "536ca862fe7402214534b47b50388087ce92676ad8e38ff1f61e8056017f89d7",
+    "feasibility/paper-page-04-144ppi.png": "06e82a76e7c206baa0f8082b2cf00cecd38c16093d9dd824aad7626565c31645",
+    "feasibility/paper-page-04.txt": "782f79b7d88c00e9f569f703c30bc0e37c05c5e7b5a2dcc9b8a023732662ffbb",
+    "feasibility/paper-page-09.txt": "8e5970c1a8a271316b42ccf9ddad711583f8cdaf0cd2e77918a32c2e073d3065",
+    "feasibility/paper-page-10.txt": "54bb50526113bca5e97c94e006f116291b0ae84c238538b9a11c502a774a6b51",
+    "feasibility/paper-page-11-144ppi.png": "2a1f89a78ce6a8418e27445a16b5d3c2a44330000cbdd7aea08fad4b89dbf132",
+    "feasibility/paper-page-11.txt": "eb738f437d4d58f1e306b3f424d972ac38e923d0d6d0fe2c75cd23d55e8e0957",
+    "feasibility/tutorial-page-07-144ppi.png": "6e476b020878234b2d919fe4b963ba2d12a2523fdeac84d14c1eddc5891b1090",
+    "feasibility/tutorial-page-07.txt": "dccd0550c54166ce5e0f1bce2714298662ebfe0563d94fb8dc6ace7ea27a74ca",
+    "feasibility/vickers-2008.pdf": "137fad390c99de8de74a9ebc7b6d588c510a82d2e652aa048972d22ef48d2be6"
+  },
+  "rights": {
+    "paper": "CC BY2.0 explicitly read in publisher/PDF; PDF and page pixels remain locally held and excluded",
+    "transcription": "25rows/100values, attribution and adaptation notice in data/NOTICE.md",
+    "MSK_tutorial": "formula definition cited; original redistribution not verified; link_only",
+    "research_code": "not read/run/redistributed"
+  },
+  "status_search": "bounded complete-DOI correction/retraction/erratum search on primary domains; no matching notice found,not exhaustive clearance",
+  "record_pins": {
+    "tests/batches/decision-curve-01/acceptance.json": "af5806eea1e03b60594a9c225720996bf3d3b9cec27f41c4b1c966432d469dc0",
+    "tests/batches/decision-curve-01/source-review.md": "0380922ddf7c9a1af240f966dadd82622b9983195ec1dd6cd830a97c1afbc40b",
+    "tests/batches/decision-curve-01/visual-review-final.json": "5aeb6cfe839ff7127e385b7b07f2ea9fa5b4a43f5923c7fa2f6bb78f7ff72d8b",
+    "tests/batches/decision-curve-01/controlled/result.json": "c53aef4882f8f110c0c7f107618eab5f7aa02d2ada2dea0793fe94749992e049",
+    "tests/batches/decision-curve-01/replay-01/result.json": "fc1ce5671b2102e690f3e998c31e755cadcb4332c69355ac9b5608f94ba91101"
+  },
+  "transfer_evidence": {
+    "batch": "tests/batches/decision-curve-01/README.md",
+    "native_counts": [
+      115,
+      115,
+      53
+    ],
+    "known_controls": "3 errors located/repaired,1 correct0false positives,1 insufficient; first typography and CI-disclosure deficiencies preserved",
+    "OS_replay": "24exports,10suppliedinputs,11readprobes/networkdenied",
+    "holdout": false,
+    "independent_reader": false,
+    "formal_scientific_displays": 2,
+    "appearance_variants": 1
+  }
+}

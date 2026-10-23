@@ -1,0 +1,130 @@
+{
+  "id": "MCF080-F3",
+  "document_type": "whole_figure_joint_verification_case",
+  "created_utc": "2026-10-18T22:31:16.390297+00:00",
+  "paper": {
+    "title": "Automatic diagnosis of the12-lead ECG using a deep neural network",
+    "doi": "10.1038/s41467-020-15432-4",
+    "version": "Nature Communications11:1760(2020); PMCID PMC7145824;2020-05-01 correction authornameorder only",
+    "source_file_in_local_tests": "tests/batches/next-complete-figure-admission-01/source-article.pdf",
+    "source_archival_status": "link_only_in_distribution"
+  },
+  "unit": {
+    "figure": "Whole Figure3",
+    "full_joint_verified": true,
+    "fully_verified_case_units": 1,
+    "partial_case_units": 0,
+    "reading_scope": "Relevant pp1,2,5,6,7,9 plus whole Figure3/p7 image; independent source-first and root original reading. Not all experimental results individually verified."
+  },
+  "question": "How do paired main and skip states propagate through four residual blocks, and which pre/postprocessing state supplies the next skip input?",
+  "elements_and_relations": {
+    "elements": 27,
+    "tensor_relations": 28,
+    "expansion_relations": 2,
+    "frozen_checklist": "CP01–CP12",
+    "authority": "next_skip_tap",
+    "correct": "pre_bn_residual_sum",
+    "controlled_fault": "post_dropout_main_state",
+    "repair_primitive_fields": 38,
+    "authority_fields": 1,
+    "derived_fields": 37
+  },
+  "layout": {
+    "width_pt": 1120,
+    "height_pt": 700,
+    "min_font_pt": 9.5,
+    "PNG_pixels": [
+      3360,
+      2100
+    ],
+    "editable": "Native SVG text/path objects and native PDF glyph/vector objects; regenerate whole labels from structured source. Browser/editor not tested."
+  },
+  "controlled_test": {
+    "contract": {
+      "file": "tests/batches/ecg-residual-state-01/contract.json",
+      "bytes": 8653,
+      "sha256": "e4066f41555840f9166ccefa92432a0d613d0fdba830593fc171b0e2dfdad710"
+    },
+    "score": {
+      "file": "tests/batches/ecg-residual-state-01/assessor-02/score-01.json",
+      "bytes": 101630,
+      "sha256": "f7639728a2143e4426d6c5135a853a3c24ebc06a1bb57f2d9de1e9cdcf5254ef"
+    },
+    "scores": {
+      "image": {
+        "visible": "1/1",
+        "boundary": "1/1",
+        "state_path": "2/2",
+        "source_dependent": "NA"
+      },
+      "source": {
+        "detection": "1/1",
+        "localization": "1/1",
+        "explanation": "2/2",
+        "repair_proposal": "1/2",
+        "target_control_false_positives": "0/eligible1"
+      },
+      "unsupported_clause_instances": 4,
+      "no_aggregate_or_score_backfill": true
+    },
+    "one_fault": "One shared type-level tap rule; block instances and before/after stages do not inflate trials."
+  },
+  "actual_repair": {
+    "file": "tests/batches/ecg-residual-state-01/root-repaired-input-readback-01.json",
+    "bytes": 1103,
+    "sha256": "a6f3c3bf8f7a5168b8773201db1c5068b29e2470377b47bc4f2c4141c99b901f"
+  },
+  "replay": {
+    "file": "tests/batches/ecg-residual-state-01/final-zip-replay-01/replay-readback.json",
+    "bytes": 17228,
+    "sha256": "79b44d47afa663a3bd2128a5ab9c2a35fb823b9ff58ac6f7c1365d9523ec08fa"
+  },
+  "scope_limits": [
+    "One controlled fault/control, one reader/two correlated stages; no unseen-paper or causal source-access benefit estimate.",
+    "Current-code channel progression and amplitude conversion conflicts remain unresolved; no width/dropoutrate/Flatten/threshold/rerun/clinicalclaim.",
+    "No original author code executed; no model inference or original-experiment result.",
+    "No human expert, native-editor/browser, physical-print or journal-specific acceptance.",
+    "No new host-discovery invocation test or OS old-directory denial test; -I -B is startup isolation only.",
+    "New rules supported by this bounded case; no independent cross-case behavior regression of newly appended prose."
+  ],
+  "licensing": "Own code/spec/artwork/audit and licensed DejaVu fonts only; original paperPDF/figurepixels/authorcode excluded. Source CC BY4.0 attribution and transformation notice retained.",
+  "transfer": "New to this skill catalog but already used in development here; not heldout or proof of base-model novelty.",
+  "catalog_identity": "MCF007 ECG is Hannun2019 DOI10.1038/s41591-018-0268-3, a different paper. Whole source figure counted once.",
+  "result_record": {
+    "file": "tests/batches/ecg-residual-state-01/root-final-acceptance-01.json",
+    "bytes": 7705,
+    "sha256": "c070b185ebc10f0ffdfe06aa0746a17dbffed3ac0692cf2b90fa2371ba58ae55"
+  },
+  "delivery": {
+    "ZIP": {
+      "file": "tests/batches/ecg-residual-state-01/ecg-residual-state-final-01.zip",
+      "bytes": 3481099,
+      "sha256": "b66b9ba12848405121bfe4deb995e76b4f4f58d9ccf432d6983ba20f39ea325c"
+    },
+    "preview": {
+      "file": "tests/batches/ecg-residual-state-01/delivery-01/graphics-01/repaired/figure.png",
+      "bytes": 259858,
+      "sha256": "4e892dd52325a61718520ba374cf5e75321746ce97f6e095dd5efad32b31d43f"
+    },
+    "SVG": {
+      "file": "tests/batches/ecg-residual-state-01/delivery-01/graphics-01/repaired/figure.svg",
+      "bytes": 1994771,
+      "sha256": "69af9c78e583afdba9555078aaf14f33f2f458c0ef11db7455b57f8e341b9420"
+    },
+    "PDF": {
+      "file": "tests/batches/ecg-residual-state-01/delivery-01/graphics-01/repaired/figure.pdf",
+      "bytes": 57735,
+      "sha256": "223a44e8aadbe60abbdb28f42d3c7885a29485a2dfcd945048c663cca0dbcfb1"
+    },
+    "spec": {
+      "file": "tests/batches/ecg-residual-state-01/delivery-01/graphics-01/repaired/figure_spec.json",
+      "bytes": 56963,
+      "sha256": "300373489ce14460ca3d9aaa60ca3878bca8aee3d0ac6393e4862223fe748934"
+    },
+    "README": {
+      "file": "tests/batches/ecg-residual-state-01/delivery-01/README.md",
+      "bytes": 6283,
+      "sha256": "44b977c5e75a1f5cfa703837c9a82f2e7d9765f549fe475edcd9a7b4cbb33563"
+    }
+  }
+}

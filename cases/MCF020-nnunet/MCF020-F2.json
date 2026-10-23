@@ -1,0 +1,108 @@
+{
+  "id": "MCF020-F2",
+  "status": "admitted as source-bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "10.1038/s41592-020-01008-z",
+    "PMID": "33288961",
+    "version_read": "arXiv1904.08128v2,2020-04-02",
+    "title_read": "Automated Design of Deep Learning Methods for Biomedical Image Segmentation",
+    "url": "https://arxiv.org/abs/1904.08128v2",
+    "journal_metadata_title": "nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation",
+    "formal_fulltext_verified": false
+  },
+  "figure": {
+    "number": "Figure2",
+    "scope": "wholeA/Boriginalviewed; transfer focusesautomatedconfigurationlogic",
+    "PDF_page_1based": 5
+  },
+  "deduplication_key": "arxiv:1904.08128v2:Figure2",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "How do fixeddesign, dataset/hardwareinferredconfiguration, empiricalCVchoice andunseenimageinference differ?",
+  "elements_and_relations": {
+    "planning": "trainingcases→fingerprint→inferredchoices,heuristics/hardwareandblueprintcomplementtheplan",
+    "fitting": "eligiblefamilyplans andtrainingcases→fivefoldfit→foldmodelsandOOFpredictions",
+    "selection": "OOFevidence→singleorpairchoice pluspostprocessing;SQexplicitinterpretationnotcodeverified",
+    "inference": "unseenimage→savedpreprocessing→selectedfoldmodels→selectedpostprocessing;no test-to-selectionpath"
+  },
+  "layout": {
+    "original": "manual/automaticpanels verticallycompared;graygrouping/greenautomationicons",
+    "transfer": "three horizontal stages; settings dashed with explicitlegend; learnedweights andvalidationevidence separate",
+    "size_mm": [
+      240,
+      176.57142857142858
+    ],
+    "plan_note": "frozenfigure-planheight176.47wasatypo; actualspecandPDF176.5714",
+    "omitted": "originalpatientexamples/performance, detailedtopologyheuristics/slidingwindow/mirroring; notwholepaperreconstruction"
+  },
+  "conflicts_and_scope": [
+    "authorpreprint versus journal/currentsoftware notmerged",
+    "loss sum/average wording retained",
+    "low-resolutionstop >25% versus >=1/4 outsidefigure",
+    "SQ is source-aware interpretation flaggedinference",
+    "no researchcode import/training/performance replication"
+  ],
+  "reading_and_viewing": {
+    "complete_targeted_pages_1based": [
+      2,
+      3,
+      5,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      24,
+      25,
+      26,
+      34
+    ],
+    "partial": "page1 title/abstract/version; web PDF excerpts pages6–early10; not full55page reading",
+    "figure2_full": "view_image original-page5-150ppi.png, fullpage with bothpanels/caption",
+    "figure2b_detail": "view_image original-fig2b-detail-220ppi.png, page5clip[95,224,525,353]pt",
+    "supplement_E1": "caption text only, no image view claimed"
+  },
+  "source_pins": {
+    "feasibility/nnunet-arxiv-current.pdf": "7bc25fa4aa786c3052ec174e4b564905d54a0a508348370b927649d9aae44ad1",
+    "feasibility/original-page5-150ppi.png": "96e8827195bf54d8b6545e9864f6ce13235f86d9a005f786d61c8b281d17dfc7",
+    "feasibility/original-fig2b-detail-220ppi.png": "323123ae335b0b52012be8686e1d596ef2117aceba0c1b3499208b553ae7a00a"
+  },
+  "local_source_path_base": "tests/batches/configuration-planning-01",
+  "rights": {
+    "paper": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html",
+    "finding": "nonexclusive license granted to arXiv; permission for redistribution here not established",
+    "distribution": "link_only; exclude local PDF,text/pagepixels and rawresearchcode from release"
+  },
+  "status_search": {
+    "url": "https://crossmark.crossref.org/dialog/?doi=10.1038/s41592-020-01008-z",
+    "observed": "Document is current; no listed updates",
+    "query": "\"nnU-Net\" \"10.1038/s41592-020-01008-z\" correction retraction",
+    "scope": "bounded PubMed/Crossmark/web check, not proof of no future update; unrelated AJNR erratum excluded"
+  },
+  "access_limits": "not accessed; Nature page failed/redirected; no bypass",
+  "record_pins": {
+    "tests/batches/configuration-planning-01/acceptance.json": "2472fe6f883188c1ad2d2ee408713d11eb8e69687093e3e305234c407f2b6d9d",
+    "tests/batches/configuration-planning-01/source-review.md": "52a25a38c5eceb0ad313088ebebe1efc248ade2c22ad128d6bcc0e5bea286840",
+    "tests/batches/configuration-planning-01/visual-review-final.json": "d36058dc9e6e2a09e4b60718d009570de05906736ac6f7c83faaaea6d5efa3e1",
+    "tests/batches/configuration-planning-01/controlled/result.json": "0bd4b253550f56d8075d0e52ba066777e775782c43922a1f339dce780c4c1a32",
+    "tests/batches/configuration-planning-01/replay-01/result.json": "a9d710299ffa2ac2edbbbd83b9292ae9e54dac0402820930b04a0bdfd353dfe7"
+  },
+  "transfer_evidence": {
+    "batch": "tests/batches/configuration-planning-01/README.md",
+    "native_counts": [
+      207,
+      188,
+      207
+    ],
+    "known_controls": "3errors,1correct,1insufficient;zero targetedfalsepositive/miss;3repairs;known-answerdeveloperscope",
+    "OS_replay": "21exports,11suppliedinputs,7readprobes/networkdenied",
+    "holdout": false,
+    "independent_reader": false,
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "case_count": "oneoriginalfigure;variants/controlsnotadditionalcases"
+  }
+}

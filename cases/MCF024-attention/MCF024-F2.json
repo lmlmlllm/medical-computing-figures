@@ -1,0 +1,109 @@
+{
+  "id": "MCF024-F2",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "NeurIPS2017:3f5ee243547dee91fbd053c1c4a845aa",
+    "title": "Attention Is All You Need",
+    "authors": [
+      "Ashish Vaswani",
+      "Noam Shazeer",
+      "Niki Parmar",
+      "Jakob Uszkoreit",
+      "Llion Jones",
+      "Aidan N. Gomez",
+      "Łukasz Kaiser",
+      "Illia Polosukhin"
+    ],
+    "version_read": "Official NIPS2017 proceedings PDF,11pages",
+    "url": "https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf",
+    "code_read": false,
+    "code_execution": false
+  },
+  "figure": {
+    "number": "Figure2",
+    "PDF_page_1based": 4,
+    "scope": "Both panels viewed; Figure1 whole context page also viewed, not another catalog unit"
+  },
+  "deduplication_key": "NeurIPS2017:3f5ee243547dee91fbd053c1c4a845aa:Figure2",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "How do scale, normalization axis and mask placement change the weights and value output?",
+  "elements_and_relations": {
+    "left": "Q/K score → scale → optional logit mask → softmax → weighted V; V bypasses scoring",
+    "right": "Learned per-head projections → parallel kernels → concatenation → output projection",
+    "mask": "Decoder rule includes own position; full autoregressive construction also shifts inputs"
+  },
+  "layout": {
+    "original": "Bottom-to-top two-panel operator diagram; stacked heads denote parallel composition",
+    "transfer": "Horizontal explicit operator chain, supplied arrays, computed matrices and numeric keys",
+    "omitted": "Multi-head implementation, trained projections, full encoder-decoder, performance"
+  },
+  "reading": "Overview and dependent text; officialPDF pp3–5 §3.1–3.2.3, neighboring interface text; source notes distinguish Figure1 dependencies",
+  "visual": {
+    "utc": "2026-10-12T02:22:26.751846+00:00",
+    "tool": "view_image",
+    "actual_viewed_images": {
+      "feasibility/page-3.png": "fc79969cbc9fa51de2150940375128b2d2ff8dcc2a290aa96dac50058a00e865",
+      "feasibility/page-4.png": "776085b50fde49e817e48a44c21a503df8345055ca9fe8b327191b621c47c522",
+      "feasibility/page-5.png": "1e5f261b8c66dd83110c2412d4215f99ff67548666953196ca9f6102aaeb0146",
+      "feasibility/figure-2-detail.png": "a4f02e374bc6b2d74b76b12b14c06c58342d07e8dc671e1d6e21b95e0a9c26d6"
+    },
+    "scope": "Three complete pages; Figures 1 and 2 fully visible; Figure 2 detail is a crop of that same figure, not another candidate",
+    "observations": [
+      "Figure2 V bypass goes to final MatMul",
+      "Optional mask is before softmax",
+      "Right panel projects Q/K/V per head and concatenates before final projection",
+      "Figure1 marks shifted decoder outputs and masked first decoder attention"
+    ],
+    "source_PDF_sha256": "d87d482d5ae7960e2e43d7dd6d21377e60e73e8fce1bf2a01aff7aca8a08c537",
+    "permission": "link_only; raw source files excluded from release",
+    "reviewer": "Same executor source-aware self-review"
+  },
+  "local_source_path_base": "tests/batches/attention-core-01",
+  "source_pins": {
+    "feasibility/paper.pdf": "d87d482d5ae7960e2e43d7dd6d21377e60e73e8fce1bf2a01aff7aca8a08c537",
+    "feasibility/page-3.png": "fc79969cbc9fa51de2150940375128b2d2ff8dcc2a290aa96dac50058a00e865",
+    "feasibility/page-5.png": "1e5f261b8c66dd83110c2412d4215f99ff67548666953196ca9f6102aaeb0146",
+    "feasibility/page-4.png": "776085b50fde49e817e48a44c21a503df8345055ca9fe8b327191b621c47c522",
+    "feasibility/figure-2-detail.png": "a4f02e374bc6b2d74b76b12b14c06c58342d07e8dc671e1d6e21b95e0a9c26d6",
+    "feasibility/landing.html": "dc95eb2d83d2019425a4f4886eb47f467eb56fe1facc65d14cf6b7e3f7065312",
+    "feasibility/source-access.json": "82e2414a6d6a7e748a727ab05e78ba8dcf53d8cbf4284f24ef06f6a1836b6175"
+  },
+  "rights": {
+    "original_assets": "link_only; third-party redistribution not established",
+    "code": "No author code copied or run"
+  },
+  "unresolved_and_scope": [
+    "Only single-head operator arithmetic verified; learned multi-head/full model behavior not executed",
+    "Proceedings landing abstract performance numbers differ from PDF; retained and unused",
+    "Limited correction/erratum search did not return a notice, not exhaustive clearance",
+    "Simulated arbitrary arrays; no medical data adaptation, heldout or expert test"
+  ],
+  "record_pins": {
+    "tests/batches/attention-core-01/acceptance.json": "5af0162278938d6a5fc846b9ee0c351f5e9cfd6a31ea57cc984a7f5cb4ff8a4a",
+    "tests/batches/attention-core-01/source-review.md": "c6cb4b194ab64829cc2df35c69178927824482a22654b769373a973e320a90c2",
+    "tests/batches/attention-core-01/visual-review-final.json": "3635b659a366a117505f613b523f74a6221c91304cc4959052ce75d09042c549",
+    "tests/batches/attention-core-01/controlled/result.json": "1e206cd942bd89c2f8655e96a0c57c7f53df6a68771e7c0405a58fcf7766c13e",
+    "tests/batches/attention-core-01/replay-01/result.json": "dca9dfaebe8301941228ef1c4c3f866d6a9dbe4d12340de762f75fab43ef61dc"
+  },
+  "transfer_evidence": {
+    "native_checks": 31,
+    "main_array_cells": 42,
+    "controls": {
+      "errors": 3,
+      "located": 3,
+      "missed": 0,
+      "correct_controls": 1,
+      "false_positives": 0,
+      "insufficient": 1,
+      "repaired": 3
+    },
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "OS_replay": "27exports+9from-delivered-spec;12denied reads and network;9input pins",
+    "holdout": false,
+    "independent_reader": false
+  }
+}

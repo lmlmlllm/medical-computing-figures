@@ -1,0 +1,405 @@
+{
+  "schema": "medical_computing_figure_case_v1",
+  "admission": {
+    "status": "admitted_source_familiar_maintenance_case",
+    "baseline_state": "targeted independent retest accepted for the bounded methods illustration",
+    "targeted_retest": "passed: F1 closed; 8/8 bounded checks; no new/current findings; 9 unknown topics retained",
+    "initial_independent_review": "One medium F1 finding; original audit and archived initial artifact preserved",
+    "catalog_admission_claimed": true,
+    "global_catalog_or_cases_written": true,
+    "admitted_at_utc": "2026-10-11T14:44:52.651979+00:00",
+    "basis": "Whole original ED9 and relevant text jointly checked; reconstructed method baseline repaired, actual-viewed and accepted by bounded independent retest; control outcomes not used for admission."
+  },
+  "counting_scope": {
+    "candidate_source_unit": "one whole original Extended Data Figure 9, panels a–c",
+    "planned_case_units": 1,
+    "accepted_case_units": 1,
+    "same_paper_other_figure": "Figure 1 was whole-viewed during the source probe for context; not separately admitted or counted here",
+    "panels_crops_reviews_rerenders": "Do not create extra source cases or independent controls",
+    "holdout": false,
+    "source_familiar_development": true
+  },
+  "paper": {
+    "title": "Federated learning for predicting clinical outcomes in patients with COVID-19",
+    "authors": "Ittai Dayan, Holger R. Roth, Aoxiao Zhong et al.",
+    "journal": "Nature Medicine",
+    "year": 2021,
+    "volume": "27",
+    "issue": "10",
+    "pages": "1735–1743",
+    "doi": "10.1038/s41591-021-01506-3",
+    "pmid": "34526699",
+    "pmcid": "PMC9157510"
+  },
+  "version_and_identity": {
+    "publisher_version_of_record": "2021-09-15",
+    "publisher_url": "https://www.nature.com/articles/s41591-021-01506-3",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34526699/",
+    "pmc_version": "Author manuscript available 2022-06-01; corroboration, not silently substituted for publisher record",
+    "preprint": "Identified but not opened or mixed into evidence",
+    "notice_check": "Source probe on 2026-10-11 found no correction/retraction in its bounded check; Crossmark reported current. Not an exhaustive guarantee."
+  },
+  "license_and_rights": {
+    "article_notice": "2021 The Author(s), under exclusive licence to Springer Nature America, Inc.",
+    "open_reuse_license_confirmed": false,
+    "reference_distribution": "link_only",
+    "original_files": "Entire .inspection is local inspection only, excluded from distribution",
+    "separate_asset_rights": "ED9 clinical image, attention image and clip-art rights not independently cleared; Fig1 map contains third-party credits",
+    "code_models_data": "Licenses not inspected; no rights inferred from article access",
+    "redraw": "Original editable geometry/text; no source pixels embedded"
+  },
+  "original_figure": {
+    "label": "Extended Data Figure 9 — Description of the EXAM Federated Learning study",
+    "url": "https://www.nature.com/articles/s41591-021-01506-3/figures/13",
+    "inspection_file": ".inspection/original-ed9.jpg",
+    "sha256": "4ed16ccaca3bb41aa1521e5c529bc177f90a7671352b5852055bf6b197f3e000",
+    "native_pixels": [
+      2118,
+      741
+    ],
+    "actual_whole_view": {
+      "scope": "a–c all visible; current case-draft preparation re-viewed whole image",
+      "presented_pixels": [
+        2048,
+        717
+      ],
+      "size_evidence": "Explicit tool resize notice",
+      "physical_print_measured": false
+    },
+    "caption_locator": "publisher-text.txt lines 864–865; publisher ED9 caption; PMC F13/P70"
+  },
+  "scientific_scope": {
+    "question": "How can hospital-held ED predictors support federated EXAM training and research evaluation while patient records remain local?",
+    "original_a": "Previously developed CDS/CORISK architecture: CXR extractor, CXR/EHR feature fusion and score; not a complete EXAM federation algorithm.",
+    "original_b": "CORISK histogram and illustrative triage thresholds A/B; not a prospective EXAM intervention or reconstructed result in the redraw.",
+    "original_c": "Generic client–server federation topology; locks and bidirectional arrows do not specify privacy protocol, payloads, selection or order.",
+    "redraw_scope": "Original relationship reconstruction of ED9c plus EXAM Methods and Supplemental Note 1; hospital preparation, round mechanics and post-training evaluation.",
+    "stage": "Research only at publication; current approval/deployment status not investigated. Oxygen treatment is an imperfect proxy for need."
+  },
+  "text_evidence": [
+    {
+      "scope": "first ED predictors and outcome references",
+      "locator": "publisher-text lines 200–205, 255–266"
+    },
+    {
+      "scope": "per-window models and repeated random splits",
+      "locator": "Methods line 260; 24-h and 72-h prediction models; independently generated splits for repeated local/FL experiments"
+    },
+    {
+      "scope": "local-training MissForest versus MGB fallback/scaling",
+      "locator": "Methods lines 267–268"
+    },
+    {
+      "scope": "round count, iterations, models, selection and local tests",
+      "locator": "FL details lines 271–276; especially 272–273"
+    },
+    {
+      "scope": "algorithm order and outputs",
+      "locator": "Supplemental Note 1, PDF p4 / printed p3, lines 1–21; actual rendered whole-page view recorded"
+    },
+    {
+      "scope": "independent sites and partial checkpoint resolution",
+      "locator": "Results lines 221–225; no retraining; Fig4 title identifies CDH best global; MVH/NCH exact checkpoint unspecified"
+    },
+    {
+      "scope": "local custody and publication-time research limit",
+      "locator": "Data availability line 285; EXAM development line 263"
+    }
+  ],
+  "original_elements": [
+    {
+      "id": "orig-a-cxr",
+      "type": "image_input",
+      "panel": "a",
+      "visible_label": "CXR Image; AP or PA Portable Chest X-ray"
+    },
+    {
+      "id": "orig-a-extractor",
+      "type": "pretrained_model",
+      "panel": "a",
+      "visible_label": "Pretrained ResNet-34 with Spatial Attention"
+    },
+    {
+      "id": "orig-a-cxr-features",
+      "type": "image_feature_representation",
+      "panel": "a",
+      "visible_label": "CXR Features"
+    },
+    {
+      "id": "orig-a-ehr-features",
+      "type": "record_feature_representation",
+      "panel": "a",
+      "visible_label": "EHR Features",
+      "alias_note": "Article uses EMR; preserve this figure/text terminology distinction."
+    },
+    {
+      "id": "orig-a-fusion",
+      "type": "fusion_model",
+      "panel": "a",
+      "visible_label": "Deep & Cross Network"
+    },
+    {
+      "id": "orig-a-score",
+      "type": "score_and_outcome_scale",
+      "panel": "a",
+      "visible_label": "CORISK Score; 0–1; room air through death"
+    },
+    {
+      "id": "orig-b-histogram",
+      "type": "original_result_display",
+      "panel": "b",
+      "visible_label": "Patients versus CORISK24 Score; Stable/Deteriorated",
+      "handling": "Observed, not digitized or reproduced"
+    },
+    {
+      "id": "orig-b-markers",
+      "type": "illustrative_threshold_annotation",
+      "panel": "b",
+      "visible_label": "A and B; dashed vertical guides",
+      "handling": "Caption attributes illustrative discharge/ICU triage use; not adopted as EXAM clinical decisions"
+    },
+    {
+      "id": "orig-c-server",
+      "type": "server_and_global_model",
+      "panel": "c",
+      "visible_label": "Federated Server; Global model"
+    },
+    {
+      "id": "orig-c-clients",
+      "type": "parallel_client_examples",
+      "panel": "c",
+      "visible_label": "Hospital icons, three illustrated examples plus ellipsis",
+      "handling": "Does not establish three participating sites"
+    },
+    {
+      "id": "orig-c-local-data",
+      "type": "client_contained_data",
+      "panel": "c",
+      "visible_label": "Local Data; clients training on private data"
+    },
+    {
+      "id": "orig-c-locks",
+      "type": "visual_privacy_cue_only",
+      "panel": "c",
+      "visible_label": "Lock icons",
+      "handling": "No implemented protocol or formal guarantee inferred"
+    }
+  ],
+  "original_relations": [
+    {
+      "id": "orig-a-r1",
+      "from": "orig-a-cxr",
+      "to": "orig-a-extractor",
+      "type": "data_input",
+      "support": "visible arrow + caption/Methods"
+    },
+    {
+      "id": "orig-a-r2",
+      "from": "orig-a-extractor",
+      "to": "orig-a-cxr-features",
+      "type": "feature_computation",
+      "support": "visible arrow + Methods"
+    },
+    {
+      "id": "orig-a-r3",
+      "from": "orig-a-cxr-features",
+      "to": "orig-a-fusion",
+      "type": "fusion_input",
+      "support": "visible joined route + Methods"
+    },
+    {
+      "id": "orig-a-r4",
+      "from": "orig-a-ehr-features",
+      "to": "orig-a-fusion",
+      "type": "fusion_input",
+      "support": "visible joined route + Methods"
+    },
+    {
+      "id": "orig-a-r5",
+      "from": "orig-a-fusion",
+      "to": "orig-a-score",
+      "type": "score_computation",
+      "support": "visible arrow + caption"
+    },
+    {
+      "id": "orig-b-r1",
+      "from": "orig-b-markers",
+      "to": "orig-b-histogram",
+      "type": "illustrative_threshold_annotation",
+      "support": "visible markers + ED9 caption; not causal or prospective evaluation"
+    },
+    {
+      "id": "orig-c-r1",
+      "from": "orig-c-clients",
+      "to": "orig-c-local-data",
+      "type": "containment",
+      "support": "visible grouping; patient custody separately established by Methods/data availability"
+    },
+    {
+      "id": "orig-c-r2",
+      "from": "orig-c-server",
+      "to": "orig-c-clients",
+      "type": "bidirectional_communication",
+      "support": "visible arrowheads; exact payload unspecified by original pixels; Methods supplies parameter exchange",
+      "multiplicity": "Repeated illustrative client links, not an inferred fixed site count"
+    }
+  ],
+  "visual_decomposition": {
+    "layout": "Three side-by-side panels separated by black vertical rules; a bottom-to-top architecture, b histogram, c server-to-client fan-out.",
+    "hierarchy": "Large panel letters; model/extractor blocks; feature boxes; score scale; central server cloud and repeated client/data groups.",
+    "encoding": "Blue extractor/feature borders, orange fusion/EHR border, outcome color scale; gray/red histogram and green threshold markers; blue federation links and black locks.",
+    "readability": "Whole source was viewed at 2048×717 payload; key labels, branch junctions and arrowheads resolved. No source vector editability or physical-size claim.",
+    "reuse_boundary": "Transfer relational grouping and explicit direction only; do not copy patient/attention pixels, hospital clip-art, map assets, numeric results or privacy icon claims."
+  },
+  "redraw_mapping": [
+    {
+      "original": "panel c server/client/local-data topology",
+      "redraw": "Panel B current/updated globals, representative client and distinct parameter/score routes",
+      "new_evidence_needed": "Methods and Note1 provide 200 rounds, one epoch, iteration weighting, validation/selection order and final/best distinctions."
+    },
+    {
+      "original": "panel a extractor/fusion architecture",
+      "redraw": "Selected-setting annotation and caption only",
+      "new_evidence_needed": "Methods supports fixed extractor parameters and trained fusion; BN state remains unaudited."
+    },
+    {
+      "original": "panel b CORISK/triage display",
+      "redraw": "Excluded",
+      "reason": "No numerical reconstruction, threshold reuse or EXAM clinical benefit inference."
+    },
+    {
+      "original": "No equivalent complete preparation/evaluation panels",
+      "redraw": "Panel A local preparation; panel C post-training research evaluation",
+      "new_evidence_needed": "Methods and independent-site section, not original panel a/c positions. Redraw panel C is not original panel c."
+    }
+  ],
+  "transferable_candidates": [
+    {
+      "rule": "Separate site containment from cross-boundary payload arrows.",
+      "condition": "Methods establish custody and message types; icons alone do not.",
+      "evidence": "Original c + Methods/data availability; current redraw B"
+    },
+    {
+      "rule": "Use different labelled styles for parameters, validation scores, supervision and execution order.",
+      "condition": "Each relationship type is source-supported; a temporal guide does not carry model parameters.",
+      "evidence": "Note1 + initial independent F1 and submitted explicit training-label repair"
+    },
+    {
+      "rule": "Name received-model reuse explicitly when training follows a validation-only parameter endpoint.",
+      "condition": "The model actually initializes local training; no invented edge or second validation pass.",
+      "evidence": "Independent F1; revised local_training label"
+    },
+    {
+      "rule": "Separate training loops from after-training tests and clarify per-target model scope.",
+      "condition": "Source stage and target-window design are known; no test feedback or assumed shared output head.",
+      "evidence": "Methods260/273 and revised A–C scope"
+    },
+    {
+      "rule": "Retain known source details while narrowing unresolved claims.",
+      "condition": "Do not turn partial uncertainty into wholesale unknown; CDH best-global is known while MVH/NCH exact checkpoints remain unresolved.",
+      "evidence": "Results222/225; revision report"
+    }
+  ],
+  "nontransferable_or_unresolved": [
+    "200 rounds, one local epoch, up to20 clients and n_k iteration weighting are this reported experiment, not generic FL defaults.",
+    "No normalized aggregation equation or validation-mean weighting is supplied.",
+    "MGB fit subset and summary-statistics transport remain unspecified; no leakage-free assertion.",
+    "EMR dimension conflict remains: Results19 plusCXR versus Methods21.",
+    "Best-local candidate/score pairing, reevaluation timing and exact client/dropout policy remain unspecified.",
+    "Fixed parameters by zero learning rate do not prove all BN state frozen.",
+    "CDH best global is supported; MVH/NCH exact checkpoint unknown.",
+    "Original a0–1 scale versus b displayed score scale is not normalized or reconstructed here.",
+    "Local custody, SSL and investigated partial updates do not establish formal DP, secure aggregation or homomorphic encryption."
+  ],
+  "evidence_record_refs": {
+    "source-probe.json": "b5f80d0e8c70f3411c1046bb9811b456f6eb22e5b04e31915e7fd4ca7a40465f",
+    "source-probe.md": "2edca019401d1f45c298c9fdfc08142c81a895d45586d03305114160f6973b42",
+    "pre-render-verification.json": "dd59c8931a164d52a978958c94d8b832463065d6681a96c222b995a7ef9daa20",
+    "parent-source-review.json": "078a88ca23d41d88f9a4c756b19f83efa63fd690bee85723c8c8de817520ded2",
+    "expected.json": "4d544d16cb35cec958e0f4c95e737bcd3fe3c16e40efb50f389c4a5a75ace08b",
+    "panel-plan.md": "bfaeecc04911de58dec7ff9067a0c6ad9a0e6b1971cc1154da9433d511aa4c83",
+    "independent-review-initial.json": "664571642feaf503951941d9f43a5cadfa978700f8ea11b880a6f4ac6c19739e",
+    "independent-review.json": "7b9634726573f5c12e4521bb588d09c872367d85ecbc83d2a688027eca119112",
+    "revision-report.json": "753b1818eea6fc90003585136541abc77ea26e5891132627b6be5a2d02d315a9",
+    "revision-field-diff.json": "03b92845d39320749a29bccccaa1ca6f6e81871fb2c79f19ed7d8b4ccd59cdd2",
+    "author-review.json": "ee16b1646a899b9c3a4fe2aa9201bf1d5b4e17cf61d6e850c5611a8b9e7b68e1",
+    "development-checks.json": "d36bebf8813dccd18bfe71ca43cafd58bc36f56740fbe3b6fec8132b5b383982",
+    "rendered/render_manifest.json": "1cac3b4e31d28905c28b4d5fae75ae2dd3dcee049e4c4b3ce3ea5c6da64baafe",
+    "READY.sha256": "4e0749d480493222784489d2394768ed4f23ed0824aa4f4a552bc9535cb6e52f",
+    "independent-retest.json": "58453020f7378bf37afb21ee18ee6bcc48060a68cbb03fcb1274304f11babb26",
+    "independent-retest-initial.json": "94340bbd551b0cfacf549dc4bdab90049b27b3a0fd23a1cf792cc262eb0535b6"
+  },
+  "revised_six_export_refs": {
+    "rendered/figure.svg": "15f9dd666c114843184eeb3b89ea21c37ac1132cd8ab18ee5b3934cc4efcedbd",
+    "rendered/figure.pdf": "3a811fb0993ee172c99df18c83f5f030cfbc6e197b66c0f5503e9e0baba04a82",
+    "rendered/figure.png": "7e123549e541bff6cd0710ed58d12ed9ad9f8a4c0dc7b40e36f808e0ee11548d",
+    "rendered/size-210mm-96ppi.png": "4b25eefec96f530c32677e1efbb329b5fbe8d6a1c3334fac08fa73f6c42296bd",
+    "rendered/caption.md": "3a75ca768ed0490acb647dea8e0a65ff99ddf667f1058e6d68711cec1cbee737",
+    "rendered/figure_spec.json": "07872ca109e4be51903c9123f6121a77c9a3c39d0bf587563aaf62f87cc28493"
+  },
+  "archive_refs": {
+    "reviewed_baseline": ".history/pre-targeted-revision/",
+    "first_author_render_defect": ".history/author-v1/",
+    "source_free_replay": ".verification/targeted-revision-01/",
+    "exact_changes": "revision-field-diff.json"
+  },
+  "case_draft_boundaries": {
+    "created_files": [
+      "case-draft.json"
+    ],
+    "baseline_or_renderer_changed": false,
+    "control_key_or_control_outcomes_read": false,
+    "independent_retest_result_read": true,
+    "all_scientific_unknowns_resolved": false,
+    "tested_general_rule_or_expert_acceptance_claim": false,
+    "next_gate": "Root-only catalog admission/case review; bounded baseline retest already accepted. No global admission or general error-free claim is made here."
+  },
+  "review_sequence": {
+    "initial": "independent-review.json: one medium missing-explicit-dependency finding; revision required",
+    "revision": "revision-report.json: explicit training dependency and parent-requested scientific/editorial clarifications",
+    "targeted_retest": "independent-retest.json: F1 closed; 8 bounded checks passed; 0 new findings; 9 unknown topics retained",
+    "counting": "8/8 applies only to the later source-familiar targeted retest, not retrospectively to the initial audit or the frozen20-item author checklist. It is not a new blind audit or control result."
+  },
+  "draft_history": {
+    "previous_pending_draft_sha256": "1c84509da9803ad665f71d1a9e4c4769550e4d75c6aee9cb8aa92c7e900ba54c",
+    "update": "Added authorized independent targeted-retest result and path/hash only; catalog admission remains pending. Initial F1 history is retained."
+  },
+  "case_id": "MCF013-ED9",
+  "dedup_id": "10.1038/s41591-021-01506-3|publisher-VOR-2021-09-15|ExtendedDataFigure9",
+  "local_source_path_base": "tests/batches/federated-01",
+  "original_b_quantitative_scope": {
+    "axes": "Horizontal CORISK24 score (visible roughly40–100); vertical patient count; stable and deteriorated distributions overlaid. No digitization or plot reconstruction.",
+    "threshold_A_caption": "Illustrative safe-discharge threshold: reported99.5%NPV; model positive is LFO or above (risk>=0.25); reference negative is discharge without readmission, reference positive is readmission for treatment.",
+    "threshold_B_caption": "Illustrative ICU-admission threshold: reported50.3%PPV; model positive is MV or above (risk>=0.75); reference positive is MV requirement or death, reference negative is survival without MV.",
+    "interpretation_limit": "Two predictive-value calculations use different reference definitions. Source caption proposes analogous EXAM use but does not establish a prospective intervention benefit. The displayed b score scale and a0–1 scale are not independently reconciled; no silent normalization or threshold transfer."
+  },
+  "parent_admission_validation": {
+    "draft_sha256": "4412bf35b49a9cef293c808daa6fadff2a3aca341f74062258b7700b6141a495",
+    "all_referenced_hashes_match": true,
+    "original_whole_view_this_phase": {
+      "file": ".inspection/original-ed9.jpg",
+      "native_pixels": [
+        2118,
+        741
+      ],
+      "actual_payload_pixels": [
+        2048,
+        717
+      ],
+      "resize_notice": true,
+      "tool": "view_image original",
+      "physical_size_measured": false
+    },
+    "primary_text_this_phase": [
+      "publisher-text lines864–865 full ED9 caption",
+      "publisher-text lines270–276 complete fusion/FL details; earlier parent-reviewed260,222–225 andNote1 retained"
+    ],
+    "parent_revised_view_record": "parent-revision-review.json",
+    "previous_catalog_sha256": "5be7b3ab924e3ba21bd6fa9cffcaf726ab8b0f40c3af60cc6ff6ecd10e4e7b5c",
+    "previous_lines_preserved": 17,
+    "catalog_cases_after": 18,
+    "distinct_papers_after": 13,
+    "current_status_authority": "This admission plus independent-retest.json; earlier pending fields in frozen plans/author records are historical states, not current acceptance.",
+    "control_outcomes_consulted": false
+  }
+}

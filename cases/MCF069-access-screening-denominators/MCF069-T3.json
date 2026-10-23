@@ -1,0 +1,89 @@
+{
+  "id": "MCF069-T3",
+  "paper": "DOI:10.1038/s41467-023-44676-z",
+  "version": "Nature Communications15:421,2024-01-11 publisherPDF retrieved2026-10-15; boundednoticessearch, notcompletecorrectionhistory.",
+  "figure": "Table3 firstN/completionrow andfootnotea, onepartialnumericunit; Fig1/Results/Methods dependencies notextraunits.",
+  "domain": "reported_screening_and_conditional_followthrough_populations",
+  "figure_types": [
+    "allocation_analysis_flow",
+    "reported_proportion_confidence_interval",
+    "conditional_followthrough_subset"
+  ],
+  "card": "cases/MCF069-access-screening-denominators/MCF069-T3.json",
+  "reading": "Relevant originalmaintext, Results, Methods/Outcomes andfootnotes; independenttranscription/stagedreader/finalassessment. Supplements/registry/rawtrialdata unread.",
+  "visual": "Whole originalFig1p2/Resultsp3/Table3p4/licensep9 viewed. Current/fill-editfullPNG/PDF/staticSVG viewed.331.61x336.90mm,50textgroups/1312glyphs,min11pt.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "164randomized,163analyzed; primary81/81 and18/82 distinguishcaresteps/timewindows; conditionalAIpositive16/25 separatefromall81. Oneexclusion differsfrom3unreachable retainedcontrols.",
+  "transfer": "FixedAX01-AX08 independent8supported/0failed/0unassessed. Native222each;22memberZIP andtwo10input/8output samehostbyteequalreplays. Nonewheldout/OSisolation/trialreplication.",
+  "archive": "ArticleCCBY4.0p9; novisibleTable3/Fig1exception. PublisherPDF/pageslocalreviewonly; cleanpackage selfdrawnsource/display andunchangedlicensedDejaVufont, nopublisherpixels/individualdata.",
+  "at_utc": "2026-10-15T15:46:08.761780+00:00",
+  "source_urls": [
+    "https://www.nature.com/articles/s41467-023-44676-z"
+  ],
+  "question": "How do allocation, all-analysis screening completion and result-selected follow-through differ in population and care step?",
+  "grouping_and_layout": "A allocation/analysis/exclusion. B all-analysis primary proportions. C separate labeled axis for25of81AI-positive subset. Counts/path/window labels carry meaning beyondcolor.",
+  "relationship_evidence": "Fig1p2; Resultsp3; Table3p4/footnotea; Methods/Outcomesp5-6.",
+  "transferable_principles": [
+    "Bind each fraction to outcome, eligible population, pathway andwindow.",
+    "Shared percentage scale doesnot establishcommonestimand.",
+    "Onecareevent can satisfy multipleoutcomedefinitions."
+  ],
+  "non_transferable_contents": [
+    "ACCESS counts/rates/CIs donottransfer toanotherstudy.",
+    "Noindividualresults,CIconstruction,diagnosticaccuracy orcausalpositivesubgroupbenefit inferred."
+  ],
+  "limitations": [
+    "Resultsintegerprecisionretained; abstractfinerCIprecisionrecorded.",
+    "CIconstruction, separatelypreciseAIfollowthroughclock andexclusionprespecification unknown.",
+    "Layoutbegan concurrentlywithprelayoutreview; PR01captioncorrectedafterfirstlayout.",
+    "PythonhooksnotOSisolation; staticSVGnotbrowser/editorcheck.",
+    "v1grayfalsefailure/v2commentfalsepass/failedfontenumerationreplayretained;v3helperbounded.",
+    "Noheldout,expertreview orjournalacceptance."
+  ],
+  "evidence": {
+    "criteria": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/selection-and-preauthor-checklist.json",
+      "bytes": 4778,
+      "sha256": "a2ee6e64cf23ff8f0a30ff6f6cc1795558e45f63a1fbcc99a80a03796b778523"
+    },
+    "spec": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/author-02/inputs/figure_spec.json",
+      "bytes": 10555,
+      "sha256": "4ec801078e8ff188dcfc0e3e151f1c8b307da56eeecae618ac3fd431ff89b4b5"
+    },
+    "source": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/root-source-notes-01.json",
+      "bytes": 2197,
+      "sha256": "e84e8ab3810dce5cddc34780927ef488a26078a6c9870293d0304bce4d2fba49"
+    },
+    "reader": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/reader-01/seal-stage2.json",
+      "bytes": 1721,
+      "sha256": "27edc27a57ac4f4a267228ea3233cfd8668c947308efe33e276afb6a63f81026"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/native-audit-01/baseline-03/result.json",
+      "bytes": 231773,
+      "sha256": "e68b7ecef62a0bec72017e22eab55666378dd0ea63a615b348646fc3896e11cc"
+    },
+    "final": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/final-assessment-01/report.json",
+      "bytes": 19467,
+      "sha256": "6ffa6025cd245b43b786bcac4046f58dc2018952c2edcf85f2bd8f56a59072fa"
+    },
+    "root": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/root-final-readback-01.json",
+      "bytes": 1470,
+      "sha256": "62064cb17527ba256a143da67921745d31d697c87f45e11f42e3ff4d64afc52f"
+    },
+    "package": {
+      "path": "<SKILL_ROOT>/tests/batches/access-screening-denominators-01/access-screening-clean-01.zip",
+      "bytes": 2164870,
+      "sha256": "6140104608edcfee96fc6606db04a7109bc4478c5c3e7e60dda2fc2f86a30352"
+    }
+  },
+  "delivery": "tests/batches/access-screening-denominators-01/DELIVERY.md",
+  "new_rule_scope": "Existingdenominator/time/subsetrulesapplied; narrowsharedcareeventwording addedafterassessment, notseparatelycrosscasevalidated."
+}

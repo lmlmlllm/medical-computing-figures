@@ -1,0 +1,157 @@
+{
+  "case_id": "MCF007-F2",
+  "dedup_id": "10.1038/s41591-018-0268-3|PMC-NIHMS1051795-corrected|Figure2",
+  "paper": {
+    "title": "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network",
+    "authors": "Hannun AY, Rajpurkar P, Haghpanahi M, Tison GH, Bourn C, Turakhia MP, Ng AY",
+    "doi": "10.1038/s41591-018-0268-3",
+    "pmid": "30617320",
+    "pmcid": "PMC6784839",
+    "journal": "Nature Medicine 25:65–69 (2019)",
+    "identity": "First four shared first authors; Awni Hannun Stanford Computer Science, not another Hannun; final journal study, not 2017 arXiv predecessor.",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6784839/",
+    "version": "PMC author manuscript NIHMS1051795 available 9 October 2019, linked to 2019 version of record."
+  },
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "source_figure": "Figure2, panelsa/b; corrected cardiologist x-axis",
+  "source_url": "https://www.nature.com/articles/s41591-018-0268-3",
+  "figure_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9167/6784839/e78b60a37e1a/nihms-1051795-f0002.jpg",
+  "correction": {
+    "doi": "10.1038/s41591-019-0359-9",
+    "date": "2019-01-24",
+    "read_scope": "Primary search correction text and publisher identity/date preview; downloaded figure actually has corrected Average cardiologist label axis; no new exhaustive retraction audit"
+  },
+  "states": {
+    "metadata": "verified against existing paper and current publisher/source-data link",
+    "text": "Targeted Methods evaluation, annotation committee, sequence/set distinction, grid, Figure2caption and Table1 read",
+    "visual": "Complete555×1050official JPG actually viewed; no values digitized",
+    "semantic": "Partial: source unit wording and exact original plotting normalization not fully resolved",
+    "license": "Article/image/XLSX broad redistribution terms unestablished",
+    "archive": "link_only; no original, extracted study table or derived study graphics in release",
+    "data": "288absolute count cells and both axis orders independently matched by artifact-tool and OOXML; local only",
+    "code": "Own arithmetic/rendering/importer executed; author plotting/training code not run",
+    "transfer": "Source-aware local developer test, not new held-out/independent/expert review"
+  },
+  "question": "How the DNN and pooled cardiologist assigned-label distributions differ by reference or assigned class at the aligned sequence level.",
+  "cannot_conclude": [
+    "independent patient observations from repeated intervals/annotations",
+    "mean individual-reader F1 or reader variance",
+    "majority-vote classifications",
+    "original normalization implementation or experiment reproduction",
+    "clinical benefit or statistical significance"
+  ],
+  "elements": [
+    {
+      "id": "truth_axis",
+      "object": "Committee consensus classes",
+      "role": "rows; 12ordered categories",
+      "source": "Figure2y-axis and Sheet1rowlabels"
+    },
+    {
+      "id": "model_axis",
+      "object": "DNN predicted classes",
+      "role": "panelacolumns",
+      "source": "Figure2a and Sheet1C2:N2"
+    },
+    {
+      "id": "reader_axis",
+      "object": "Individual cardiologist assigned classes",
+      "role": "panelbpooled annotations; corrected source axis says average cardiologist label",
+      "source": "Methods, correction and Sheet1C17:N17"
+    },
+    {
+      "id": "model_counts",
+      "object": "Model absolute confusion counts",
+      "role": "sequence output intervals",
+      "source": "Sheet1C3:N14"
+    },
+    {
+      "id": "reader_counts",
+      "object": "Pooled cardiologist absolute counts",
+      "role": "repeated annotations per interval",
+      "source": "Sheet1C18:N29"
+    },
+    {
+      "id": "conditional_values",
+      "object": "Declared row/column fractions",
+      "role": "own adapted display; original exact code unknown",
+      "source": "Local task-definition and input counts"
+    }
+  ],
+  "relations": [
+    {
+      "from": "truth_axis",
+      "to": "model_counts",
+      "type": "row_grouping",
+      "evidence": "source table/figure"
+    },
+    {
+      "from": "truth_axis",
+      "to": "reader_counts",
+      "type": "row_grouping",
+      "evidence": "source table/figure"
+    },
+    {
+      "from": "model_axis",
+      "to": "model_counts",
+      "type": "column_grouping",
+      "evidence": "source table/figure"
+    },
+    {
+      "from": "reader_axis",
+      "to": "reader_counts",
+      "type": "column_grouping",
+      "evidence": "source table/figure/correction"
+    },
+    {
+      "from": [
+        "model_counts",
+        "reader_counts"
+      ],
+      "to": "conditional_values",
+      "type": "explicit_conditional_normalization",
+      "evidence": "local transformation; not proof of original plotting implementation"
+    }
+  ],
+  "visual_design": "Original stacked matrices share ordered classes and0–1blue domains. Local adaptation uses parallel editable heatmaps, explicit counting units/conditional formulas, a common domain and one-decimal percent text with separate zero/tiny-positive states.",
+  "gaps": [
+    "Figure2caption record wording conflicts with sequence-level Methods",
+    "3committees×112 versus328test records remains unresolved",
+    "Exact author plotting normalization/code and reader-specific matrices not established",
+    "Original artwork/data and derived-study graphics distribution rights unresolved"
+  ],
+  "transferable_rules": [
+    "Trace orientation and corrections before choosing denominator",
+    "Changing row/column conditional target updates dependent legend/formula/caption",
+    "Repeated annotations are not independent patients or mean reader metrics",
+    "Remove genuinely missing input values and withhold their dependent panel",
+    "Inspect SVG/PDFvalues and native geometry, not merely arrays"
+  ],
+  "transfer_evidence": {
+    "batch": "tests/batches/confusion-matrix-01",
+    "delivery": "tests/batches/confusion-matrix-01/DELIVERY.md",
+    "local_requirements": 16,
+    "valid_native_checks": 208,
+    "known_errors": 3,
+    "repairs": 3,
+    "correct_control_false_positives": 0,
+    "initial_missing_checker_false_positive": 1,
+    "original_isolated_exports": 55,
+    "delivered_spec_exports": 11,
+    "portable_local_exports": 121,
+    "package_test_scope": "7data-free simulated numerical/guard checks; no published-data replay claimed",
+    "heldout": false,
+    "independent_reviewer": false,
+    "expert_review": false
+  },
+  "record_pins": {
+    "tests/batches/confusion-matrix-01/source-notes.md": "dfac2daec066387da50e409ddc43005399360d7cdbd0ce7525505101e4f6541d",
+    "tests/batches/confusion-matrix-01/source-view-01.json": "8723b44c9cfa4012e32e2eb74e32d7c4f032a4e30968e2b4c038b6aa12a9d1f1",
+    "tests/batches/confusion-matrix-01/source-data-probe-01.json": "1687fd0fe8f6a2dc821e4b67e68b4016b3c4d93450a5e3d9f6947edb59626bcb",
+    "tests/batches/confusion-matrix-01/acceptance.json": "b136dc802e5670ab9ad39483f7c1732bf4e2d16627454e0a1ac1cbc5bc92c8d4",
+    "tests/batches/confusion-matrix-01/portable-verification.json": "c12a9a25ec0b9d0fc0172f43ab0a8eb47b10c8a83065d8b60fca2e9e09336467",
+    "tests/batches/confusion-matrix-01/visual-review-02.json": "99b1b177f697ddb32bfd9801f8eb3c2a7476a892397b569bb4ca2f514e8041c5"
+  }
+}

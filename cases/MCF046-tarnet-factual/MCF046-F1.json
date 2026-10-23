@@ -1,0 +1,98 @@
+{
+  "case_id": "MCF046-F1",
+  "dedup_id": "PMLRv70:shalit17a|ICML2017|Figure1",
+  "title": "Estimating individual treatment effect: generalization bounds and algorithms",
+  "source_url": "https://proceedings.mlr.press/v70/shalit17a.html",
+  "source_figure": "Whole Figure1, official ICML2017 PDFp2; training architecture. Separate fitted prediction is original synthesis of definitions.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Source PDFpp1–7; Fig1/caption, formal definitions, identification conditions, objective/Algorithm1, theorem scope and log-loss caveat. Supplement, full experiments and implementation unverified.",
+    "visual": "Whole source Figure1 and source pages2/4/5/6 actually viewed; final original PNG, independent PDF proxy/detail and exact-font SVG proxy viewed.",
+    "archive": "PrimaryPDF/pixels/text and review history local-review-only; clean ZIP contains original artifacts/code and licensed fonts/notices."
+  },
+  "question": "How does observed-treatment selection supervise one factual path while fitted conditional-mean heads provide a same-query treatment1-minus-treatment0 contrast?",
+  "elements": [
+    {
+      "id": "observed_tuple",
+      "role": "Covariates x, actual treatment t and observed y=Yt; unobserved potential outcome not supplied"
+    },
+    {
+      "id": "shared_phi",
+      "role": "Shared covariate representation; different h0/h1 parameter sets"
+    },
+    {
+      "id": "factual_selection",
+      "role": "t selects h_t for this sample factual loss; observed y supervises this selected prediction"
+    },
+    {
+      "id": "fitted_contrast",
+      "role": "Same query and fixed fitted parameters produce two conditional-mean estimates and signed1−0 contrast"
+    },
+    {
+      "id": "balancing_and_conditions",
+      "role": "Optional CFR IPM compares treatment-group representations; assumptions and theorem conditions are not optimization outputs"
+    }
+  ],
+  "relations": [
+    {
+      "from": "x",
+      "to": "Phi then distinct heads",
+      "type": "forward computation",
+      "source": "Fig1;§4p6"
+    },
+    {
+      "from": "t",
+      "to": "selected factual head and representation grouping",
+      "type": "selection and group membership, not Phi feature input",
+      "source": "Fig1/caption;Eq3/Algorithm1p6"
+    },
+    {
+      "from": "observed y",
+      "to": "sample-specific factual loss",
+      "type": "supervision with shared-Phi and selected-head contribution; global regularizer scope separate",
+      "source": "Fig1/caption;Algorithm1p6"
+    },
+    {
+      "from": "two fitted heads on same x",
+      "to": "effect estimate",
+      "type": "conditional-mean prediction contrast treatment1−treatment0",
+      "source": "p2target/footnote2;p4Definition5"
+    }
+  ],
+  "visual_design": "Original3panels separate observed training, fitted prediction and assumptions. Explicit yhat_i=h_{t_i}(Phi(x_i)) resolves a former converging-arrow selection ambiguity. Assumptions have no inference arrows from low loss or balance.",
+  "transferable_rules": [
+    "When alternative heads converge on one output, label the selector/operator explicitly; adjacency and arrows alone can imply blending.",
+    "Qualify a sample-specific loss gradient separately from the complete optimizer step and indirect changes through shared parameters.",
+    "Separate fitted conditional-mean contrasts from realized individual potential-outcome differences and causal-identification assumptions."
+  ],
+  "gaps": [
+    "p2Related-work reversed independence formula versus formal definitions retained",
+    "h-domain notation mismatch and population/sample u reuse retained",
+    "single-head-update abstraction versus global regularized step retained",
+    "No source implementation, empty-group behavior, invertibility enforcement, proof constants or causal cohort validation",
+    "Whole-paper/supplement semantics remain unverified"
+  ],
+  "license": "Source PMLR general policy checked in selection; article-specific signed rights agreement unknown. No primary assets distributed. Original code/artifacts and licensed Noto-derived/DejaVu/STIX fonts with notices only.",
+  "notice_scope": "Bounded official-source identity/notice checks; not exhaustive absence certification.",
+  "transfer_entry": "tests/batches/tarnet-factual-counterfactual-01/README.md",
+  "test_limits": [
+    "Fixed original8criteria pass in combined figure/caption/spec/process scope;46elements62relations; no new holdout/error-control/expert test",
+    "Fresh image-first then source review plus same-reader source-informed repair review; all failure histories retained",
+    "Native1025glyphs63paths meet unchanged0.25pt; minimum8.4pt, selected formula script8.82pt; size355.6×381mm",
+    "Eight hats U0302→U02C6 use exact-font visible-ink translation proof; rawUnicode/outline identity false;42SVGspaces have empty outlines but baseline checks retained; glyph-level editing",
+    "Exact32memberZIP same-host OS-isolated replay:9exports byte-identical;1033font_file-only path normalizations for layout, all other fields and font hashes exact; rawlayout bytes differ",
+    "16existing-file read denials plus network/outsidewrite denial; existing runtime only, not freshinstall/crosshost/arbitrary-editor/physical-print/journal guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "a75ef936060a05442faedd6631fb7b15f7a7765f79eba31d574c3f046e789e4b",
+    "assessment.json": "9f3f76bb0ee245fa0aacb7086bfa991e027246f4cb060ee07ef235be802bb46e",
+    "assessment-freeze-01.json": "08eb67b61962a2156b427932370d201af193bbfd1e6dddf30ffe977a416006dd",
+    "package-freeze-01.json": "7c7cb4939fe3b77801492f262130d3085e402456ff9452e97b0d12c67f2c6cbe",
+    "replay-freeze-01.json": "0fc46be53fd8f5601809502db697d05f1058d26e3e611fd6a6b5c1936cd7e236",
+    "tarnet-original-figure-01.zip": "6b8d33d8a95bffb4bd942176d98cd96d5e0e00fa629eb46b032507259187e996"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "case_id": "MCF002-F3",
+  "paper_id": "10.18653/v1/2024.findings-acl.372",
+  "dedup_key": "10.18653/v1/2024.findings-acl.372|ACL-Findings-2024-final|Figure 3",
+  "batch_id": "M2-development-batch-1",
+  "role": "development_reference",
+  "date": "2026-10-11",
+  "title": "Benchmarking Retrieval-Augmented Generation for Medicine",
+  "version": "ACL-Findings-2024-final",
+  "figure": "3",
+  "figure_types": [
+    "sensitivity_small_multiples",
+    "real_published_results"
+  ],
+  "source": {
+    "primary_url": "https://aclanthology.org/2024.findings-acl.372/",
+    "doi": "10.18653/v1/2024.findings-acl.372",
+    "locators": [
+      "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition",
+      "Table 6 (printed p6237) gives corresponding CoT baselines; figure curves not digitized"
+    ],
+    "source_material_role": "reference expression and semantic study, not facts for another current manuscript",
+    "correction_retraction_check": "No correction or retraction notice seen on inspected primary record; not a comprehensive registry search"
+  },
+  "states": {
+    "bibliography": "primary_verified",
+    "reading": "relevant_fulltext_and_caption_read",
+    "visual": "complete_figure_and_needed_detail_viewed",
+    "semantic": "key_elements_and_relations_checked_against_sources",
+    "license": "CC-BY-4.0 per ACL post-2016 policy",
+    "archive": "local_inspection_only; link_only_for_distribution",
+    "code": "not_read_not_run",
+    "results": "published_results_inspected_not_reproduced",
+    "transfer_test": "not_executed_for_this_individual_reference",
+    "review": "executor_model_review; no human expert review"
+  },
+  "visual_evidence": {
+    "tool": "functions tools.view_image",
+    "inspection_date": "2026-10-11",
+    "files": [
+      {
+        "path": ".inspection/page7.png",
+        "scope": "full PDF page with all five panels",
+        "dimensions": "1697x2400"
+      },
+      {
+        "path": ".inspection/figure3-detail.png",
+        "scope": "five curves, axes and caption enlarged"
+      }
+    ],
+    "hash_manifest": "inspection-manifest.json",
+    "actual_observations": [
+      "Five adjacent panels share blue square-marked lines and red dashed horizontal CoT baselines.",
+      "Y-ranges differ substantially: PubMedQA spans roughly 30–70 whereas MedQA-US spans 61–67.",
+      "X ticks visibly read 2e1, 2e3, 2e5; the text defines k as powers of two from 1 to 64.",
+      "Several curves fall at their final point; PubMedQA declines as context grows overall."
+    ],
+    "scope": "Complete original figure, including all panels; crops are children, never counted as additional cases"
+  },
+  "scientific_task": {
+    "question": "How does the number of retrieved snippets change benchmark accuracy under a fixed system?",
+    "supported_claim": "Snippet-count sensitivity differs across five QA tasks for GPT-3.5 with RRF-4 and MedCorp.",
+    "cannot_conclude": [
+      "Not a universal monotonic scaling law or guaranteed benefit from more retrieval.",
+      "Curves do not measure retrieval recall, answer citation correctness or clinical benefit."
+    ]
+  },
+  "elements": [
+    {
+      "id": "k",
+      "name": "Retrieved snippet count",
+      "role": "controlled input; k=1,2,4,8,16,32,64",
+      "panel": "all",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition"
+    },
+    {
+      "id": "acc",
+      "name": "Accuracy",
+      "role": "correct-answer proportion, percent",
+      "panel": "all",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition"
+    },
+    {
+      "id": "cot",
+      "name": "CoT reference",
+      "role": "non-RAG comparator",
+      "panel": "all",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition"
+    },
+    {
+      "id": "tasks",
+      "name": "Five QA datasets",
+      "role": "stratification; different denominators",
+      "panel": "all",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "source": "k",
+      "target": "acc",
+      "type": "measured_sensitivity",
+      "direction": "directed",
+      "condition": "GPT-3.5; RRF-4; MedCorp",
+      "stage": "evaluation",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition",
+      "status": "source_supported"
+    },
+    {
+      "id": "r2",
+      "source": "cot",
+      "target": "acc",
+      "type": "comparison",
+      "direction": "noncausal",
+      "condition": "within dataset only",
+      "stage": "evaluation",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition",
+      "status": "source_supported"
+    },
+    {
+      "id": "r3",
+      "source": "tasks",
+      "target": "acc",
+      "type": "grouping",
+      "direction": "noncausal",
+      "condition": "one panel per task",
+      "stage": "evaluation",
+      "evidence": "Figure 3, printed p6239 (PDF p7); Section 6.1; Section 3.2 evaluation definition",
+      "status": "source_supported"
+    }
+  ],
+  "design_analysis": {
+    "layout": "Small multiples preserve task-specific trends without forcing incompatible ranges onto a shared axis. Line-plus-marker separates observations from the horizontal baseline.",
+    "axes": "Horizontal arrangement supports shape comparison, but different y scales prevent visual slope magnitude comparison.",
+    "uncertainty": "No error bars or bands shown; do not invent them."
+  },
+  "transferable_rules": [
+    "Use actual k labels such as 1, 2, 4, 8, 16, 32, 64 rather than ambiguous exponential formatting.",
+    "Keep a comparator in every panel and disclose differing y limits.",
+    "Use the publication for design learning; reconstruct results only from authorized numerical input, not approximate pixel reading presented as exact data."
+  ],
+  "nontransferable_content": [
+    "Do not transfer peak k, numeric accuracy, or blue curve shape to another RAG system.",
+    "Do not convert plotted aggregates to individual predictions, confidence intervals or ROC curves."
+  ],
+  "limitations_and_ambiguities": [
+    "Figure omits a shared y-axis title; caption and evaluation section resolve accuracy.",
+    "Numeric curve values were not transcribed; this case is source interpretation, not experimental reproduction."
+  ],
+  "license": {
+    "status": "CC-BY-4.0 per ACL post-2016 policy",
+    "evidence_url": "https://aclanthology.org/faq/#what-is-the-copyright-for-materials-in-the-acl-anthology",
+    "copyright": "Association for Computational Linguistics 2024",
+    "third_party_assets": "No independent third-party asset permission audit",
+    "distribution": "Originals and crops excluded from skill distribution; source links and original analytical notes retained"
+  }
+}

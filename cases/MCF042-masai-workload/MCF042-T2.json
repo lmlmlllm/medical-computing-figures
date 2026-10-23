@@ -1,0 +1,79 @@
+{
+  "case_id": "MCF042-T2",
+  "dedup_id": "10.1016/S1470-2045(23)00298-X|2023-safety-analysis|Table2",
+  "title": "Artificial intelligence-supported screen reading versus standard double reading in the Mammography Screening with Artificial Intelligence trial (MASAI): a clinical safety analysis of a randomised, controlled, non-inferiority, single-blinded, screening accuracy study",
+  "source_url": "https://doi.org/10.1016/S1470-2045(23)00298-X",
+  "source_figure": "Accepted manuscript p21 Table2 selected summary rows; whole Fig2p24 supplies analyzed-arm membership, not an extra catalog unit",
+  "original_figure_units": 0,
+  "original_table_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "AcceptedPDF pp8–11/p21/p24, identityp1; complete institutional published abstract. Table1p21 and Table3p22 incidental; no whole-trial verification.",
+    "visual": "Whole1556×2200p21Table2 andp24Fig2 actually viewed by root/source checker/author/reader/assessor; accepted version, not publisher typesetting.",
+    "archive": "OriginalPDF/HTML/pages/selectedtext localreviewonly; clean9fileZIP includes only originaldisplay/spec/code/caption and attributed13valueinput."
+  },
+  "question": "How do reported reading-operation totals and cancer detection summaries differ by allocated mITT arm without mixing their units or claims?",
+  "elements": [
+    {
+      "id": "table2_groups",
+      "role": "Allocated AI/standard mITT populations39996/40024; not randomized counts or uniform actual exposure"
+    },
+    {
+      "id": "workload",
+      "role": "Total46345/83231screen readings, including consensus readings"
+    },
+    {
+      "id": "detection",
+      "role": "244/203cancers;6.1/5.1per1000participants;reported95%Clopper–Pearsonintervals5.4–6.9/4.4–5.8"
+    },
+    {
+      "id": "workload_reduction",
+      "role": "Reported44.3%reduction relative to standard; operations only"
+    }
+  ],
+  "relations": [
+    {
+      "from": "allocated mITT arm",
+      "to": "operation total and detection numerator/denominator",
+      "type": "group/data mapping",
+      "source": "PDFp9treatmentpolicy,p21Table2headers,p24Fig2"
+    },
+    {
+      "from": "standard operation total",
+      "to": "reported44.3%workload reduction",
+      "type": "comparison reference",
+      "source": "PDFp11Results;publishedabstractFindings"
+    },
+    {
+      "from": "reported rate",
+      "to": "arm-specific95%CI",
+      "type": "estimate/interval pairing",
+      "source": "PDFp10Statisticalanalysis,p21Table2"
+    }
+  ],
+  "visual_design": "SourceTable2 groups heterogeneous performance/workload measures under common arm headers. Original transfer separates zero-origin operation bars from ratepoint/intervals, keeps arm order/colors/direct labels, and places cancer/participant counts by their own rates. No stacked operation reconstruction or dual-axis overlay.",
+  "gaps": [
+    "Only13selectedsummaryscalars; otherTable2outcomes and fulltrialresults not reanalysed",
+    "SourceTable2mixes per1000withpercent; Methods/Results/abstract establishdisplayedper1000unit",
+    "Exactreadingcomposition/time/staff/cost weighting unavailable",
+    "Accepted/publishertypeset equality and current/later trialstatus unverified"
+  ],
+  "license": "Elsevier rights and lawful institutional/accepted-manuscript access; public facts attributed. Raw originalPDF/pages/HTML remain local, excluded from distribution.",
+  "notice_scope": "SavedEuropePMCidentity and boundedDOI/title noticequery: twoCommentinlinks, no noticehit; not exhaustive and not a currenttrialstatuscheck.",
+  "transfer_entry": "tests/batches/masai-workload-01/README.md",
+  "test_limits": [
+    "One original2panel13value publicsource development drawing; no newholdout, controlled-error accuracy or trial/model run",
+    "Independent8criterionfinalpass with original visual/audit/bootstrap failures retained",
+    "Image-onlythenprimarysource review; behavioral separation, not OSreaderaccessaudit",
+    "Exact9fileZIP samehostOS replay byteidentical;7existingfiledenies plus network/outsidewrite denial; fontconfigwarning retained",
+    "Native205×140mm,min8pt; no GUIeditroundtrip, crosshost, physicalprint, journal/expert guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "c2460685cdac905aeab26c51276e6b207b63cb9c260590e3eda886d17f7fe82f",
+    "assessment.json": "9f239f995f07d803bf67da926f05eebbe8ea24d23d9ca1c2b24d6d7ca659689f",
+    "delivery/masai-workload.zip": "ae728fa16db6dac93ab653260bdcb7e888898c4212146d8414860621fe5a9517",
+    "output-audit/delivery-terminal.json": "e38f343cdffe807420c163d99c63e2b5cd7625a13b607c2820f6571a99c4c1e4"
+  }
+}

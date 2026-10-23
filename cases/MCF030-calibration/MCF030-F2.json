@@ -1,0 +1,140 @@
+{
+  "id": "MCF030-F2",
+  "status": "admitted bounded source-aware developer reference",
+  "semantic_status": "full_joint_verified",
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "paper": {
+    "identity": "doi:10.1073/pnas.2016191118",
+    "title": "Stable reliability diagrams for probabilistic classifiers",
+    "authors": [
+      "Timo Dimitriadis",
+      "Tilmann Gneiting",
+      "Alexander I. Jordan"
+    ],
+    "version": "PNAS118(8)e2016191118; online2021-02-17, issue2021-02-23",
+    "publication_type": "journal methods research",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.2016191118",
+    "PMID": "33597296"
+  },
+  "figure": {
+    "number": "Figure2",
+    "scope": "Whole four-panel 960x960 author-repository rendering actually viewed; published image transfer failed, no pixel identity claim",
+    "original_figure_units": 1
+  },
+  "deduplication_key": "doi:10.1073/pnas.2016191118:Figure2",
+  "question": "How do fixed-bin and monotone reliability estimates differ for unchanged forecasts, and what do support, target-specific pointwise bands and empirical Brier terms actually establish?",
+  "reading": {
+    "paper": "Selected publisher sections on binning, CORP/PAV introduction, uncertainty bands, Brier score and data availability; Fig1/2 captions. KIT PDF text limited to early pages, local PDF unavailable.",
+    "code": "Binning scripts and selected reliabilitydiag0.1.1 numeric closure read; selected unmodified constructor/coercion/extraction/region/utils/summary functions actually executed in current R. Plotting code read, full package not installed.",
+    "input": "92 CSV and packaged RDA cases/dates/outcomes agree exactly; four forecast columns within predeclared1e-14 tolerance. Current Python PAV and bands checked against executed R core and exact rational fixtures."
+  },
+  "elements_and_relations": {
+    "units": "92 dated daily 24h-ahead forecasts/precipitation outcomes at Niamey; not patients",
+    "grouping": "Equal-width 9/10/11 bins with right-closed intervals and zero included in first bin",
+    "coordinates": "Mean EMOS forecast and observed events/bin n; adjacent points connected descriptively",
+    "support": "Each displayed point maps to original dated rows; empty bins have no estimate",
+    "original_panelD": "Monotone PAV maximal blocks, linear connectors within observed forecast support,90% pointwise consistency band, and MCB/DSC/UNC. New exports additionally distinguish estimate-centred confidence bands and signed S=MCB-DSC+UNC terms; same-sample quantities."
+  },
+  "layout": {
+    "original": "2x2 common-range reliability plots with small bottom histograms",
+    "transfer": "Existing three binning panels plus separate two-panel CORP adaptation: PAV/pointwise band with explicitly separate count axis, and signed score decomposition.",
+    "why": "Separates probability from support counts and makes target changes and the negative DSC contribution visible.",
+    "omitted": "Original journal pixels, full package plot theme, current fit external validation and theoretical coverage proof."
+  },
+  "source_conflicts": [
+    "Helper point.x name suggests a choice, but implemented line and point both use bin.avg.x; no supported midpoint switch inferred."
+  ],
+  "unknown": [
+    "Original2021 runtime/RNG and exact published-pixel identity",
+    "Empirical coverage and daily forecast independence; supplement proof not fully reviewed",
+    "No clinical calibration or external-performance validation"
+  ],
+  "source_pins": {
+    "source/upstream/LICENSE.note": "9dfad19cf0c3f8c6ec5f82de244a5b265e3f3985cf11cad9010bee130f0201e5",
+    "source/upstream/README.md": "d3418d7e79f49cf0ed62d588c1367f4ea2c3177266312c0a289f82f7cb5d634f",
+    "source/upstream/replication_paper/Fig2_instability.R": "d912305968928831d9483aaf2578793c397169d4b1f4ba4bcbae641db9ddbab8",
+    "source/upstream/replication_supplement/rel_diag_classic.R": "161577755bb0416d919bad3b2cf244f5956c17c836bd323851d8808c6ee70b00",
+    "source/upstream/data/precip_Niamey_2016.csv": "df81be2693c4f21948665efbbf1f1abdd0585aa8e6ebdb5b910110bf9c8d1fa3",
+    "source/upstream/data-raw/data_precipitation/README.md": "22850eea974e98f705e1792d58ccd9903de8bee1767dd5eb82fdc1c7c5c6cb3f",
+    "source/upstream/replication_paper/README_files/figure-gfm/Fig2-1.png": "218a6e4fb33ee5542f9f611f931bcf63f537987546dd60d3987d8ebc72ac4501"
+  },
+  "raw_hash_exclusion_exceptions": {
+    "source/upstream/LICENSE.note": {
+      "sha256": "9dfad19cf0c3f8c6ec5f82de244a5b265e3f3985cf11cad9010bee130f0201e5",
+      "reason": "Exact separately attributed copy intentionally included in PUBLIC_FORECAST_DATA under upstream notices."
+    },
+    "source/upstream/data-raw/data_precipitation/README.md": {
+      "sha256": "22850eea974e98f705e1792d58ccd9903de8bee1767dd5eb82fdc1c7c5c6cb3f",
+      "reason": "Exact separately attributed copy intentionally included in PUBLIC_FORECAST_DATA under upstream notices."
+    },
+    "source/upstream/data/precip_Niamey_2016.csv": {
+      "sha256": "df81be2693c4f21948665efbbf1f1abdd0585aa8e6ebdb5b910110bf9c8d1fa3",
+      "reason": "Exact separately attributed copy intentionally included in PUBLIC_FORECAST_DATA under upstream notices."
+    }
+  },
+  "code_commit": "193cf2fd986544c42abd01a1c94de17f4fc04a0a",
+  "rights": {
+    "article": "CC BY4.0; reference original image excluded",
+    "repo": "GPL3 whole replication package; data README separately attributes modified ECMWF products CC BY4.0",
+    "inputs": "Exact author CSV plus explicitly adapted missing-obs test, upstream notices and GPL text included",
+    "own_assets": "Local mathematical renderer/checker and editable figures"
+  },
+  "source_status_search": "Bounded exact-title correction/retraction and DOI search surfaced no matching notice; not exhaustive; see source-notes.",
+  "record_pins": {
+    "tests/batches/calibration-binning-01/acceptance.json": "01f479016dd13476c58f403c31e1263bd13a4deaee3014ee31f0c39a0a3776ed",
+    "tests/batches/calibration-binning-01/source-notes.md": "87faa9a272fc13e6aca01f7ce198e829f18456859c7e0d5cfa1609900aa7f1ad",
+    "tests/batches/calibration-binning-01/visual-review.json": "38becdec19f6f64857dbaf60f3ab8fe88837c8b02d9484a24d0905eeeeb93994",
+    "tests/batches/calibration-binning-01/protocol-freeze.json": "ec35c37e269ef746777186b3590ea927218258c7618854dd335d7931f5d1a19f",
+    "tests/batches/calibration-binning-01/validation-03/result.json": "f1691289cc608339b1f284bfea9e5273947b9eec47f7287089a4c10268cfaa4c",
+    "tests/batches/calibration-binning-01/replay-01/result.json": "f9309b44f6b91d298810d8d1adb3ffd0e62449787f2912b6d82907cfb6258828",
+    "tests/batches/calibration-binning-01/.history/initial-visual-failure.json": "6bb26f829574818445159b9cc56cc0271bc76841ed8607837a12519a2385fc8d",
+    "tests/batches/calibration-isotonic-01/acceptance.json": "e5678be559ecd4f3d547b24c35c916957803fe075459c13e31a33b5b1ad2215f",
+    "tests/batches/calibration-isotonic-01/evidence-field-patch-acceptance.json": "4b264c4a00660a2146ed394d99278e1034c5a5f383fb6b68b96b9e7823275afd",
+    "tests/batches/calibration-isotonic-01/source-notes.md": "4d89197dc766340ec8485c63a083d5c7941682cafddac074a46fa73d20773e02",
+    "tests/batches/calibration-isotonic-01/protocol.json": "3a3a42d608f70fc792d94423e765fb36bcad5f3aecfc0b74657e8ef5c28b8efa",
+    "tests/batches/calibration-isotonic-01/numeric-check-03.json": "7ad6a9c569925a1f206bf314bbad26260de12975f31ad278b127b0cc09adba1f",
+    "tests/batches/calibration-isotonic-01/visual-review-final.json": "ba04d1f70160f0ade9dbab69a9a32b9d31dfb7365de30977223a2c4a8a431210",
+    "tests/batches/calibration-isotonic-01/replay-04/result.json": "3b3bf5f09a410fb6b926fb4650bff05eb70a17ae779cde8b45497adfd5d19bdc",
+    "tests/batches/calibration-isotonic-01/feasibility/data-equivalence.json": "8b2f8360a0c994edb47143f07aa124b28d761925c5e2e8b15395995a2ad46c0a"
+  },
+  "semantic_scope": "2026-10-12 continuation completes bounded joint understanding of whole author Figure2 and its numeric construction. full_joint_verified is a source/figure/implementation scope, not validation of inferential guarantees or clinical use. Original1.32 partial record remains frozen in its package and batch acceptance.",
+  "transfer_evidence_prior_binning": {
+    "requirements": 15,
+    "valid_exports": 8,
+    "valid_native_checks": 200,
+    "known_bad_exports": 3,
+    "known_bad_expected_failed_checks": 11,
+    "known_errors_detected": 3,
+    "misses": 0,
+    "correct_control_false_positives": 0,
+    "repairs": 3,
+    "invalid_inputs_rejected": 7,
+    "current_equivalent_views": 15,
+    "isolation": "36+9 byte-identical exports;10reads/network denied; confined writes;16copied input pins unchanged",
+    "original_missing_header_failure": "24/25 retained; repaired25/25",
+    "holdout": false,
+    "independent_reader": false,
+    "expert_review": false
+  },
+  "transfer_evidence": {
+    "requirements": 18,
+    "numeric_checks": 78,
+    "valid_exports": 8,
+    "valid_native_checks": 221,
+    "known_bad_exports": 3,
+    "known_bad_expected_failed_checks": 7,
+    "known_errors_detected": 3,
+    "misses": 0,
+    "correct_control_false_positives": 0,
+    "repairs": 3,
+    "invalid_inputs_rejected": 9,
+    "current_equivalent_views": 13,
+    "enriched_specifications": 11,
+    "scientific_visual_exports_unchanged_by_field_patch": 77,
+    "isolation": "54 byte-identical exports;12original/old reads plus4outcome-bearing packet reads,network and outside writes denied;19main+6packet pins unchanged",
+    "holdout": false,
+    "independent_reader": false,
+    "expert_review": false
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "case_id": "MCF031-F2",
+  "dedup_id": "doi:10.1371/journal.pone.0118432|published2015|Figure2",
+  "paper": {
+    "title": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets",
+    "authors": [
+      "Takaya Saito",
+      "Marc Rehmsmeier"
+    ],
+    "year": 2015,
+    "journal": "PLOS ONE10(3):e0118432",
+    "doi": "10.1371/journal.pone.0118432",
+    "pmid": "25738806",
+    "pmcid": "PMC4349800",
+    "type": "Published research article with theoretical, simulated and reanalysis components"
+  },
+  "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432",
+  "figure_url": "https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0118432.g002",
+  "source_figure": "Figure2 A/B; S1 TableA supports illustrative values",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Targeted caption/definitions/interpolation/ties/baseline and relevant Methods, plus S1 TableA and footnotes",
+    "visual": {
+      "utc": "2026-10-12T10:12:45.650269+00:00",
+      "file": "source-assets/figure2.png",
+      "sha256": "1689a6358d779eefcba1eb27054a9ea707ab9d7112b8c951166177ef6b73b1fb",
+      "native_pixels": [
+        2300,
+        4310
+      ],
+      "viewed_pixels": [
+        1093,
+        2048
+      ],
+      "scope": "Actual complete image viewed via view_image; full native figure downscaled, no cropped-only view or source vector inspection",
+      "visible": {
+        "A": "Upper ROC; horizontal 1-specificity/FPR, vertical sensitivity/TPR. Black grouped path, green/yellow lower/upper tie bounds, blue convex hull, magenta default-value tail, grey diagonal and early-retrieval region. Point labels include 0,1,2,3,6,8,10,12,13,15,20.",
+        "B": "Lower PRC; horizontal recall, vertical precision/PPV. Corresponding ranked points, curved mixed-group transitions, horizontal baselines 0.5 and about0.09, prevalence formula. Source assigns a plotting endpoint at recall0 precision1.",
+        "layout": "Stacked equally wide square coordinate spaces facilitate matched-point comparison; color is supplemented by rank numbers and in-panel notes. Dense legends and ties make original complex for a two-rule teaching figure."
+      },
+      "limitations": [
+        "Source rank labels on the tie path are interpolation positions, not all attainable deterministic thresholds",
+        "PR zero-selected precision is undefined; source plotted1 is an endpoint convention",
+        "Convex-hull image label 2-6-15 differs from body 0-2-6-13-15-20; do not silently choose one as exact source algorithm"
+      ],
+      "next": "Own focused native reconstruction; preserve source conflicts and call inputs published illustrative, not clinical observations"
+    },
+    "license": "CC BY4.0 article attribution; credited table transcription deliberately included, raw original sources excluded",
+    "code": "Original author code neither read nor run; own exact arithmetic/render/check code executed",
+    "status_notice": "Publisher article and bounded PubMed/publisher notice search found no linked notice; not exhaustive"
+  },
+  "question": "How do the same class-labelled scores become ROC/PR points, and why are tied-group interpolation and class prevalence consequential?",
+  "cannot_conclude": [
+    "Clinical model performance",
+    "Universal superiority of one metric",
+    "Transport to a different population",
+    "Exact original-author plot pipeline",
+    "Resolved convex hull"
+  ],
+  "elements": [
+    {
+      "id": "scores",
+      "role": "20illustrative assigned scores; larger means positive",
+      "evidence": "S1 TableA No./Obs/Score"
+    },
+    {
+      "id": "ROC",
+      "role": "PanelA FP/N versus TP/P",
+      "evidence": "Original full figure and model-wide Methods"
+    },
+    {
+      "id": "PR",
+      "role": "PanelB TP/P versus TP/(TP+FP)",
+      "evidence": "Original full figure and definitions"
+    },
+    {
+      "id": "ties14",
+      "role": "Six equal-score rows:2P/4N; fractional intermediate counts",
+      "evidence": "TableA rows7–12 and tie/interpolation paragraphs"
+    },
+    {
+      "id": "default5",
+      "role": "Five rows share an assigned missing-prediction default,1P/4N",
+      "evidence": "TableA rows16–20; default-score paragraph"
+    },
+    {
+      "id": "baseline",
+      "role": "ROC diagonal; PR references depend on P/(P+N), with different hypothetical balances shown",
+      "evidence": "Figure2B and baseline paragraph"
+    },
+    {
+      "id": "hull",
+      "role": "Blue source hull path; body/image listed nodes conflict",
+      "evidence": "Source image label versus convex-hull paragraph"
+    }
+  ],
+  "relations": [
+    {
+      "source": "scores",
+      "target": "ROC",
+      "type": "threshold aggregation",
+      "condition": "Whole equal-score group enters with >= cutoff",
+      "status": "supported"
+    },
+    {
+      "source": "scores",
+      "target": "PR",
+      "type": "threshold aggregation",
+      "condition": "Same group counts, different denominators",
+      "status": "supported"
+    },
+    {
+      "source": "ties14",
+      "target": "PR",
+      "type": "interpolation",
+      "condition": "Linear TP/FP mixture followed by nonlinear coordinate transform; fractional positions are not distinct thresholds",
+      "status": "supported"
+    },
+    {
+      "source": "default5",
+      "target": "ROC",
+      "type": "grouping",
+      "condition": "Source example assigns equal missing-score default; not an imputed observed probability",
+      "status": "supported"
+    },
+    {
+      "source": "baseline",
+      "target": "PR",
+      "type": "reference comparison",
+      "condition": "Requires known class prevalence/weights; source0.09line is a different hypothetical balance",
+      "status": "supported"
+    },
+    {
+      "source": "hull",
+      "target": "ROC",
+      "type": "derived envelope",
+      "condition": "Listed node sequences differ; omitted from own focused reconstruction",
+      "status": "conflict"
+    }
+  ],
+  "visual_design": {
+    "layout": "Vertically aligned coordinate panels pair ranked positions across different denominators",
+    "symbols": "Colored paths plus rank labels distinguish source tie bounds, hull and default-value segment; own plot simplifies to whole-cutoff circles and a labelled fractional diamond",
+    "limitations": "Dense in-panel annotations can obscure which score point is targeted; explicit leaders were tested in own reconstruction"
+  },
+  "gaps": [
+    "TableA says Figure4; main Figure2caption references TableA; matching identities support a documented inference",
+    "Body hull0-2-6-13-15-20 versus image legend2-6-15 unresolved",
+    "Source plots no-selectedPR(0,1); own display omits undefined endpoint with explicit caption",
+    "Source Figshare API metadata HTTP403; no bypass or original code execution"
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/precision-recall-01/DELIVERY.md",
+    "acceptance_sha256": "df2633e31606d5f329dfca5d10323fb9226dab7b7a032a8778003cb5fdd9cac5",
+    "scope": "Same-developer tests; published illustrative data and explicit weighted simulation, not clinical validation"
+  },
+  "record_pins": {
+    "source-view-01.json": "ff88199818d4d323b51ffa4fe592bb92bdc951e0ee757f239e753cdaa3515819",
+    "source-notes.md": "362fc0a8c197fafef027d8e7d569dfe17389e9a65d1e14fbf277f11b6ca699b1",
+    "inputs/provenance.json": "deb0acd822c0412fc8b3fec5bc00967a227a692316318741d84c98c7304c8b21",
+    "acceptance.json": "df2633e31606d5f329dfca5d10323fb9226dab7b7a032a8778003cb5fdd9cac5"
+  }
+}

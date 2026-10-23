@@ -1,0 +1,159 @@
+{
+  "case_id": "MCF032-F2",
+  "dedup_id": "doi:10.1109/TMI.2019.2897538|arxiv1809.05231v3|Figure2",
+  "paper": {
+    "title": "VoxelMorph: A Learning Framework for Deformable Medical Image Registration",
+    "authors": [
+      "Guha Balakrishnan",
+      "Amy Zhao",
+      "Mert R. Sabuncu",
+      "John Guttag",
+      "Adrian V. Dalca"
+    ],
+    "year": 2019,
+    "journal": "IEEE Transactions on Medical Imaging38(8):1788–1800",
+    "doi": "10.1109/TMI.2019.2897538",
+    "pmid": "30716034",
+    "read_version": "arXiv1809.05231v3,2019-09-01; linked author version, not publisher bytes"
+  },
+  "source_url": "https://arxiv.org/html/1809.05231v3",
+  "figure_url": "https://arxiv.org/html/1809.05231v3/overview_with_auxiliary_inputs.png",
+  "source_figure": "Whole Figure2",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Overview/background,Figure2caption,Methods IV–IV-D,implementation and regularity paragraphs in HTML",
+    "visual": {
+      "utc": "2026-10-12T10:53:30.290488+00:00",
+      "source": "https://arxiv.org/html/1809.05231v3/overview_with_auxiliary_inputs.png",
+      "figure": "Figure2, whole overview",
+      "path": "source-assets/figure2-v3.png",
+      "sha256": "d96c796f9f9abd041b81e3b2467acb4352fbdc1dd349d2f010c0a6c1ca4af412",
+      "pixels": [
+        937,
+        744
+      ],
+      "actual_view_tool": "view_image via functions.exec; result displayed immediately before this record",
+      "scope": "Full image, legible labels/arrows; no original PDF page viewed",
+      "observations": [
+        "Two input MR thumbnails feed g_theta; moving image also bypasses network to upper spatial transform",
+        "Field is shared with lower optional segmentation transform via dashed blue connection",
+        "Orange associations link image or segmentation pairs to loss labels; they do not denote ordinary forward data flow",
+        "No pixel values, deformation coordinates or boundary behavior can be recovered from the schematic"
+      ],
+      "original_figure_units": 1,
+      "crop_units": 0,
+      "reviewer": "same executor",
+      "limitations": [
+        "HTML-rendered original figure; PDF endpoints unavailable",
+        "Original MRI and field values not reproduced"
+      ]
+    },
+    "license": "Original arXiv assets local reference-only; no redistribution. MIT accepted manuscript license does not establish rights to these arXiv bytes. Own vectors and simulated inputs only.",
+    "code": "Current author README read for version context; implementation not read or run. Own numeric/render/check code executed.",
+    "status_notice": "Bounded PubMed/publisher DOI/title search found no linked notice; not exhaustive"
+  },
+  "question": "How does a fixed-grid point gather moving-image intensities, and which optional segmentation dependencies exist only during training?",
+  "cannot_conclude": [
+    "Clinical registration accuracy",
+    "Original MRI or learned deformation reproduced",
+    "Training or affine preprocessing executed",
+    "Smoothness guarantees invertibility",
+    "Current repository equivalent to2019 implementation",
+    "Original3D boundary behavior validated"
+  ],
+  "elements": [
+    {
+      "id": "image-pair",
+      "role": "Affinely aligned fixed/moving inputs to learned function",
+      "evidence": "Methods IV; Figure2"
+    },
+    {
+      "id": "u",
+      "role": "Displacement relative to identity coordinates",
+      "evidence": "Methods IV and IV-B"
+    },
+    {
+      "id": "phi",
+      "role": "Fixed-to-moving map Id+u",
+      "evidence": "Methods IV-B Eq3"
+    },
+    {
+      "id": "sampler",
+      "role": "Evaluate moving image at phi(p); original3D trilinear, own2D bilinear adaptation",
+      "evidence": "Methods IV-B Eq3"
+    },
+    {
+      "id": "auxiliary-masks",
+      "role": "Training-only masks and per-channel sampled masks",
+      "evidence": "Methods IV-C2; Figure2 shaded region"
+    },
+    {
+      "id": "losses",
+      "role": "Image similarity, displacement smoothness and optional segmentation losses",
+      "evidence": "Methods IV-C; Figure2 orange associations"
+    }
+  ],
+  "relations": [
+    {
+      "source": "image-pair",
+      "target": "u",
+      "type": "learned function dependency",
+      "condition": "Affinely aligned pair; schematic, model not executed",
+      "evidence": "Methods IV; Figure2"
+    },
+    {
+      "source": "u",
+      "target": "phi",
+      "type": "identity addition",
+      "condition": "Displacement and coordinates use declared domain/order/units",
+      "evidence": "Methods IV-B Eq3"
+    },
+    {
+      "source": "phi",
+      "target": "sampler",
+      "type": "sampling coordinates",
+      "condition": "Moving intensities sampled at fixed-to-moving coordinates, not forward object motion",
+      "evidence": "Methods IV-B Eq3"
+    },
+    {
+      "source": "phi",
+      "target": "auxiliary-masks",
+      "type": "shared sampling map",
+      "condition": "Segmentation branch present only during auxiliary training",
+      "evidence": "Methods IV-C2; Figure2"
+    },
+    {
+      "source": "auxiliary-masks",
+      "target": "losses",
+      "type": "supervision",
+      "condition": "No mask-to-image-pair-network edge; no inference mask requirement",
+      "evidence": "Methods IV-C2; Figure2"
+    }
+  ],
+  "visual_design": {
+    "layout": "Source top image branch and lower optional segmentation branch reuse a field; own full-width upper method diagram with lower-left scalar grid and lower-right arithmetic localizes the sampling direction.",
+    "symbols": "Source orange loss associations differ from forward data flow; own typed arrows and training region retain the distinction. Labelled same-input aliases replace a long crossing wire.",
+    "limits": "Original MRI thumbnails/field do not supply pixel values or boundary rules; own simulation has no source pixels."
+  },
+  "gaps": [
+    "Publisher PDF unavailable; HTML author version and whole PNG only",
+    "Original image/field values and learned model unvalidated",
+    "Own row/column2D reject-outside policy not attributed to original code",
+    "One-hot mask interpolation and3D regularity behavior unimplemented"
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/registration-warp-01/DELIVERY.md",
+    "acceptance_sha256": "54ac67e6e36283ccd2c55cc40f6b050ed25a970c8ac19460709ccfddef282844",
+    "scope": "Source-aware same-executor development; all numbers simulated, no new independent or expert review"
+  },
+  "record_pins_base": "tests/batches/registration-warp-01/",
+  "record_pins": {
+    "source-view-01.json": "2f3f7c4e81aa11ffa19565b0d75ad0d0b8d1081577be37ef2fe7c53aeacc3458",
+    "source-notes.md": "8cdc9db7740b756b76431f61eb53da2cb9b6c8aa67b52cdaea40612453bbc806",
+    "protocol.json": "de70aaff802ead268611681a810cac97d98b26e39074cc6543cb3900c690a4b0",
+    "acceptance.json": "54ac67e6e36283ccd2c55cc40f6b050ed25a970c8ac19460709ccfddef282844",
+    "visual-review-final.json": "7fa285b7c2d5e4bbdc987587550b714589cc4fea1bb27ae88a34df05e01a2aa5"
+  }
+}

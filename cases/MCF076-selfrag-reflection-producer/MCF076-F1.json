@@ -1,0 +1,40 @@
+{
+  "id": "MCF076-F1",
+  "document_type": "partial method source case with actual bounded development repair and final ZIP replay",
+  "created_utc": "2026-10-18T18:10:12.762292+00:00",
+  "paper": {
+    "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "venue": "ICLR2024",
+    "official_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html",
+    "source_pdf_sha256": "b1b57b5d9c1e71ebbebc2a18b625889c467e3f6bced88d049b6ee29067666e7e"
+  },
+  "unit": {
+    "parent": "Figure1 plus focused methods",
+    "count": 1,
+    "semantic_status": "semantic_partial",
+    "excluded": "Full original Figure1, complete decoder or empirical replication"
+  },
+  "read_and_view_scope": "Admission viewed complete original Fig1 plus caption at100/150% and relevant methods; independent primary reader viewed wholePDFp2 and focusedp3–6,16–19,27. Official30-pagePDF pinned. Root read sealed source records, not a new primary-paper pixel view. Generated wholePNGs and independent PopplerPDF pages personally viewed by root and independent readers.",
+  "question": "Which model produces evidence-related reflection tokens at inference, and how does that differ from offline critic annotation and reflection-derived decoding scores?",
+  "elements_and_relations": "15 entities,20 ordinary relations,3 invocation roles,40 semantic mappings. M task/decision/reflection roles share model identity; R separate; Yesnew/Continuequalifiedreuse/Nonoexternalevidence; ISREL(x,d) and ISSUP(x,d,y) dependencies; likelihood plus available preferences; own-prefix retention/continuation; offlineC provenance.",
+  "source_limits": [
+    "Continue full transition/cache mechanics not established",
+    "ISUSE intermediate versus output-end timing unresolved",
+    "Score/threshold notation conflicts retained; exact formulas omitted",
+    "No fixedK/B,mandatoryprefilter,retry-until-correct or truth guarantee",
+    "No model/code run or clinical/performance claim"
+  ],
+  "layout": "270×298mm,min9pt; white restrained two-panel inference roles;99nativeobjects=51text+48vectors. Nonchronologicalassessmentgroup, condition-onlyNo cue distinguished from actual M→candidate edge; every retained prefix remains separate.",
+  "controlled_test": "One producer selector M→separate_C, one correct control and two correlated stages. All material claims classified before key. Image1/1,1/1,2/2;hiddenfacetsNA. Source1/1,1/1,2/2,proposal1/2;targetFP0of1. No aggregateaccuracy or causal source benefit.",
+  "actual_repair": "Fault-only selector separate_C→M, unchanged derive/render/layout; all bound labels/caption/exports regenerated.13source,14provenance,1683native,7visual checks passed.",
+  "replay": "Exact184-memberfinalZIP ordinaryextraction;15inputs→9preparedincludingreceipt→10canonicalfiles byteequal.Independent18package+12replaychecks;117live references. Samehost-I-B,notOSsandbox.",
+  "licensing": "SourcePDF/pixels link-only; arXivauthorversionlicense not transferred to proceedings; fixedDejaVu font and notices included.",
+  "transfer": "Stage-specific model identity versus decoding quantity; selected attribution propagates into labels/caption/native bindings without changing unrelated routes. Condition-cue paths must not impersonate full relation edges. Fixedfont subset expectations validated preexport on new fl/fi/ffl text.",
+  "history": "Scientific proposal refinements,LP01/LP02 and root comparison/readback assumptions preserved; no native-oracle postexport correction in this batch.",
+  "result_record": {
+    "file": "tests/batches/selfrag-reflection-producer-01/root-acceptance.json",
+    "bytes": 14072,
+    "sha256": "829a3c72ed7701ab161b8f5a88b7ac6ea004f265aee8fcaf06b7068f7c188056"
+  },
+  "transfer_limits": "One development partial unit, not heldout/fullfigure/expert/generalaccuracy/crossfont-platform evidence."
+}

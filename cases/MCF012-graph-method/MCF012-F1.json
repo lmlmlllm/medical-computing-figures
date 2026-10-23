@@ -1,0 +1,1108 @@
+{
+  "case_id": "MCF012-F1",
+  "dedup_id": "10.1093/bioinformatics/btaa921|journal-VOR|Figure1",
+  "paper": {
+    "title": "GraphDTA: predicting drug–target binding affinity with graph neural networks",
+    "authors": [
+      "Thin Nguyen",
+      "Hang Le",
+      "Thomas P. Quinn",
+      "Tri Nguyen",
+      "Thuc Duy Le",
+      "Svetha Venkatesh"
+    ],
+    "doi": "10.1093/bioinformatics/btaa921",
+    "pmid": "33119053",
+    "journal": "Bioinformatics",
+    "volume": 37,
+    "issue": 8,
+    "pages": "1140–1147",
+    "online_date": "2020-10-24",
+    "accepted_date": "2020-10-15",
+    "publisher_issue_label": "March2021",
+    "pubmed_and_crossref_print_date": "2021-05-23",
+    "version_used": "Publisher journal version of record HTML and Figure1, not preprint",
+    "date_note": "Online date, nominal issue month and indexed print date are distinct; preserved rather than silently reconciled."
+  },
+  "scientific_task": "Whole original Figure 1: alternative molecular GNN encoders and a protein sequence encoder whose representations combine to estimate pair affinity.",
+  "transfer_task": "Original editable forward architecture selecting only the journal GCN variant, separating per-node aggregation, node-axis graph readout, sequence encoding and pairwise concatenation.",
+  "states": {
+    "metadata": "PubMed, publisher and Crossref identity/version/status checked; online and print/issue dates retained separately.",
+    "text": "Journal §§2.1–2.6, Table1; relevant Discussion passage about missing stereochemistry. Figure1 caption read in full.",
+    "visual": "Whole original Figure 1 actually viewed by source preparation, parent and original independent reviewer. Figure2–4 captions are not image reviews. The case admission author also viewed the same complete original Figure 1; this repeat view adds no source case.",
+    "semantic": "Seventeen frozen development requirements mapped by author, with bounded unknowns retained. Original independent image-first audit remains 0 blocking / 0 nonblocking across 14 relationship checks and 9 retained unknown IDs. A parent-discovered source-level stereochemistry clarification was accepted by a targeted source-familiar follow-up: 4 targeted checks, 0 current blocking / 0 current nonblocking findings. GU2 is narrowed but remains partly unverified.",
+    "license": "PubMed XML and publisher article state ©TheAuthor(s)2020, OUP, all rights reserved. No broad CreativeCommons license verified for journal text/figure.",
+    "code": "No GraphDTA code/commit/run, raw molecular data, benchmark or clinical experiment audited or executed."
+  },
+  "example_role": {
+    "kind": "Maintenance development case",
+    "not_a_reserved_holdout": true,
+    "not_human_expert_certification": true,
+    "source_familiarity": "Source read in development; follow-up review knows the stereochemistry issue."
+  },
+  "original_figure_count": 1,
+  "source_whole_figures_actually_viewed_count": 1,
+  "counting_boundary": "Whole original Figure1 is one case. New architecture, controls, PNG previews and rejected cover PDF are not extra source cases.",
+  "caption_only_not_counted": [
+    "Figure2",
+    "Figure3",
+    "Figure4"
+  ],
+  "local_source_path_base": "tests/batches/graph-method-01",
+  "original_figure": {
+    "file": ".inspection/figure1-original.jpg",
+    "pixels": [
+      1950,
+      1454
+    ],
+    "sha256": "d4b3ef7cc5e62d2b2ce6ce461cfa2ea6799184af586e14802ae77d3586c74aca",
+    "scope": "Whole four-alternative architecture, molecular cartoon and protein branch. Generic A1–A5 nodes do not establish exact chemistry of printed SMILES.",
+    "view_scope": "See source-probe and independent-review actual_views; file/payload dimensions are not measured physical display size."
+  },
+  "source_records": [
+    {
+      "role": "PubMed discovery, then authoritative XML metadata",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33119053/",
+      "local": ".inspection/pubmed.xml",
+      "retrieval_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=33119053&retmode=xml"
+    },
+    {
+      "role": "Primary journal identity, Methods, Figure1 caption and public image links",
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "retrieval_url": "https://oup.silverchair-cdn.com/article-minimal/5942970",
+      "local": ".inspection/publisher-minimal.html",
+      "readable_local": ".inspection/publisher-text.txt",
+      "access": "Normal verified-TLS GET of the publisher public endpoint exposed by the web tool; no login, challenge solving, disabled verification or proxy workaround."
+    },
+    {
+      "role": "Publisher-deposited version/license/relation metadata",
+      "url": "https://api.crossref.org/works/10.1093/bioinformatics/btaa921",
+      "local": ".inspection/crossref-metadata.json"
+    },
+    {
+      "role": "Whole original Figure1",
+      "local": ".inspection/figure1-original.jpg",
+      "link_source": "Original-size image URL in publisher HTML download-slide link, retained in access-log.json; not an image reconstructed from caption."
+    }
+  ],
+  "read_locators": [
+    "Methods §§2.1–2.6",
+    "Table1 GCN layers and hyperparameters",
+    "Whole original Figure1 and full caption",
+    "Discussion §3.4, publisher-text line379"
+  ],
+  "elements": [
+    {
+      "id": "drug_input_smiles",
+      "label": "Drug SMILES",
+      "role": "input",
+      "stage": "drug input",
+      "source_refs": [
+        "J2.2"
+      ]
+    },
+    {
+      "id": "drug_graph",
+      "label": "RDKit\nMolecular graph",
+      "role": "processing",
+      "stage": "drug input",
+      "source_refs": [
+        "J2.2"
+      ]
+    },
+    {
+      "id": "atom_features_x",
+      "label": "Atom feature matrix X\nN atoms × C features",
+      "role": "data",
+      "stage": "atom-level input",
+      "source_refs": [
+        "J2.2",
+        "J2.4.1"
+      ]
+    },
+    {
+      "id": "adjacency_a",
+      "label": "Adjacency A\nMolecular connectivity",
+      "role": "data",
+      "stage": "graph topology",
+      "source_refs": [
+        "J2.4.1"
+      ]
+    },
+    {
+      "id": "gcn_1",
+      "label": "GCN 1\n+ ReLU",
+      "role": "model",
+      "stage": "graph message aggregation",
+      "source_refs": [
+        "J2.4.1",
+        "TABLE1"
+      ]
+    },
+    {
+      "id": "gcn_2",
+      "label": "GCN 2\n+ ReLU",
+      "role": "model",
+      "stage": "graph message aggregation",
+      "source_refs": [
+        "J2.4.1",
+        "TABLE1"
+      ]
+    },
+    {
+      "id": "gcn_3",
+      "label": "GCN 3\n+ ReLU",
+      "role": "model",
+      "stage": "graph message aggregation",
+      "source_refs": [
+        "J2.4.1",
+        "TABLE1"
+      ]
+    },
+    {
+      "id": "node_repr_h3",
+      "label": "Per-node embeddings Z\nN atoms × F features",
+      "role": "data",
+      "stage": "atom-level output",
+      "source_refs": [
+        "J2.4.1"
+      ]
+    },
+    {
+      "id": "global_max_readout",
+      "label": "Global max pooling\nAcross atom nodes",
+      "role": "processing",
+      "stage": "node-to-graph readout",
+      "source_refs": [
+        "J2.4.1",
+        "FIG1"
+      ]
+    },
+    {
+      "id": "drug_graph_vector",
+      "label": "Drug graph vector\nOne vector per molecule",
+      "role": "data",
+      "stage": "graph-level representation",
+      "source_refs": [
+        "J2.4.1"
+      ]
+    },
+    {
+      "id": "protein_sequence",
+      "label": "Protein sequence",
+      "role": "input",
+      "stage": "protein input",
+      "source_refs": [
+        "J2.3"
+      ]
+    },
+    {
+      "id": "protein_encoding",
+      "label": "Categorical encoding\nCut / zero-pad to 1,000 residues",
+      "role": "processing",
+      "stage": "protein input",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_embedding",
+      "label": "Per-residue embedding\n128 dimensions per position",
+      "role": "processing",
+      "stage": "protein embedding",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_conv_1",
+      "label": "1D CNN 1",
+      "role": "model",
+      "stage": "protein convolution",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_conv_2",
+      "label": "1D CNN 2",
+      "role": "model",
+      "stage": "protein convolution",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_conv_3",
+      "label": "1D CNN 3",
+      "role": "model",
+      "stage": "protein convolution",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_max_pool",
+      "label": "Max pooling",
+      "role": "processing",
+      "stage": "sequence readout",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "protein_sequence_vector",
+      "label": "Protein sequence vector\nOne vector per protein",
+      "role": "data",
+      "stage": "sequence-level representation",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ]
+    },
+    {
+      "id": "concat",
+      "label": "Concatenate",
+      "role": "processing",
+      "stage": "pair representation",
+      "source_refs": [
+        "FIG1"
+      ]
+    },
+    {
+      "id": "regression_head",
+      "label": "FC regression head",
+      "role": "model",
+      "stage": "affinity regression",
+      "source_refs": [
+        "FIG1"
+      ]
+    },
+    {
+      "id": "affinity_estimate",
+      "label": "Continuous\naffinity estimate",
+      "role": "output",
+      "stage": "pair-level output",
+      "source_refs": [
+        "J2.1",
+        "FIG1"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "smiles_to_graph",
+      "source": "drug_input_smiles",
+      "target": "drug_graph",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.2"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "graph_to_x",
+      "source": "drug_graph",
+      "target": "atom_features_x",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.2",
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "graph_to_a",
+      "source": "drug_graph",
+      "target": "adjacency_a",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "x_to_gcn1",
+      "source": "atom_features_x",
+      "target": "gcn_1",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "a_to_gcn1",
+      "source": "adjacency_a",
+      "target": "gcn_1",
+      "type": "computation",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "a_to_gcn2",
+      "source": "adjacency_a",
+      "target": "gcn_2",
+      "type": "computation",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "a_to_gcn3",
+      "source": "adjacency_a",
+      "target": "gcn_3",
+      "type": "computation",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "gcn1_to_gcn2",
+      "source": "gcn_1",
+      "target": "gcn_2",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "gcn2_to_gcn3",
+      "source": "gcn_2",
+      "target": "gcn_3",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "gcn3_to_nodes",
+      "source": "gcn_3",
+      "target": "node_repr_h3",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "nodes_to_graph_pool",
+      "source": "node_repr_h3",
+      "target": "global_max_readout",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "pool_to_drug_vector",
+      "source": "global_max_readout",
+      "target": "drug_graph_vector",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.4.1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "sequence_to_encoding",
+      "source": "protein_sequence",
+      "target": "protein_encoding",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "encoding_to_embedding",
+      "source": "protein_encoding",
+      "target": "protein_embedding",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "embedding_to_cnn1",
+      "source": "protein_embedding",
+      "target": "protein_conv_1",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cnn1_to_cnn2",
+      "source": "protein_conv_1",
+      "target": "protein_conv_2",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cnn2_to_cnn3",
+      "source": "protein_conv_2",
+      "target": "protein_conv_3",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cnn3_to_sequence_pool",
+      "source": "protein_conv_3",
+      "target": "protein_max_pool",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "pool_to_protein_vector",
+      "source": "protein_max_pool",
+      "target": "protein_sequence_vector",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "J2.3",
+        "J2.4"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "drug_vector_to_concat",
+      "source": "drug_graph_vector",
+      "target": "concat",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "FIG1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "protein_vector_to_concat",
+      "source": "protein_sequence_vector",
+      "target": "concat",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "FIG1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "concat_to_fc",
+      "source": "concat",
+      "target": "regression_head",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "FIG1"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "fc_to_affinity",
+      "source": "regression_head",
+      "target": "affinity_estimate",
+      "type": "data_flow",
+      "direction": "directed",
+      "stage": "forward inference",
+      "condition": "Selected GCN variant; one drug–protein pair",
+      "source_refs": [
+        "FIG1",
+        "J2.1"
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "visual_decomposition": {
+    "original": "Four GNN alternatives left, protein pathway right, graph/sequence representations join before affinity regression.",
+    "transfer": "Panels a/b distinguish molecular/sequence inputs; c joins two vectors. Shared adjacency is blue with labeled connectivity, not parameter sharing. No new molecule or numerical panel.",
+    "source_tensions": [
+      {
+        "variant": "GCN",
+        "text": "3GCN+ReLU→globalmaxpool",
+        "actual_figure": "GCN layers separated by ellipsis, then globalmaxpool",
+        "assessment": "Enough to support a clearly labeled GCN-only architecture abstraction."
+      },
+      {
+        "variant": "GAT",
+        "text": "2GAT layers, ReLU, first layer10heads, second output128, then globalmaxpool",
+        "actual_figure": "2graph-attention boxes→globalmaxpool",
+        "assessment": "Paper-specific variant known, but operator implementation/edge handling not audited."
+      },
+      {
+        "variant": "GIN",
+        "text": "5GIN layers, each followed by batch normalization, then globalmaxpool",
+        "actual_figure": "GIN boxes with ellipsis and a top Batch normalization box; global pooling is not drawn",
+        "assessment": "Figure is incomplete for precise readout. Do not copy the drawn omission into a full computation claim."
+      },
+      {
+        "variant": "GAT-GCN",
+        "text": "GAT→GCN with ReLU; concatenate globalmax and globalmean pools of GCN output",
+        "actual_figure": "GAT→GCN→Globalmaxpool only",
+        "assessment": "Visible diagram simplification differs from prose readout; disclose and use explicit prose-specific scope if this variant is later drawn."
+      }
+    ]
+  },
+  "transferable_rules": [
+    "Distinguish node-level neighbor aggregation from global readout over nodes.",
+    "Specify input/output object granularity; per-position embedding dimension is not final-vector width.",
+    "Fix the selected model variant before taking its layers/readout from figures and Methods.",
+    "Resolve drawn ellipses through detailed source; disclose remaining encoding/readout differences.",
+    "Retain source-stated limitations separately from details not independently implementation-audited."
+  ],
+  "nontransferable": [
+    "1000 residues and128 dimensions per position are source-specific.",
+    "ThreeGCN layers, atomic feature list and pooling choice are not universalGNN defaults.",
+    "No claim about exact edge tensor, affinity units, split independence, benchmark reproducibility, treatment efficacy or clinical safety."
+  ],
+  "known_limitations": [
+    {
+      "id": "source_stated_stereochemistry_omission",
+      "statement": "The authors state that their 2D molecular-graph model neglects molecular stereochemistry.",
+      "source_refs": [
+        "J3.4"
+      ],
+      "evidence_status": "Source-stated limitation; not independently verified against implementation"
+    }
+  ],
+  "known_gaps": [
+    "Atomic feature dimension and category/API coding, including precise implicit-value field",
+    "Exact edge/bond-feature coding and molecular standardization procedures",
+    "Unspecified layer/kernel/head widths, activations/dropout; exact runnable normalization/code version",
+    "Dataset splits, model selection, run reproduction",
+    "Affinity units and label transformation"
+  ],
+  "publication_status": {
+    "journal_rights": "PubMed XML and publisher article state ©TheAuthor(s)2020, OUP, all rights reserved. No broad CreativeCommons license verified for journal text/figure.",
+    "crossref_license_url": "https://academic.oup.com/journals/pages/open_access/funder_policies/chorus/standard_publication_model",
+    "reuse_boundary": "Original journal material remains local inspection evidence. Do not bundle the source HTML/image or treat public access as a reuse license. A future figure should use an original editable layout with source attribution and no copied source pixels.",
+    "correction_status": "No GraphDTA correction/retraction notice found in inspected PubMed XML, publisher article, Crossref metadata or targeted DOI/title searches; absence of a located notice is not proof none exists.",
+    "pubmed_comments_corrections_count": 0,
+    "pubmed_publication_types": [
+      "Journal Article"
+    ],
+    "crossref_updates_present": {
+      "update-to": null,
+      "updated-by": null
+    },
+    "search_query": "\"btaa921\" correction erratum retraction; primary domains academic.oup.com and pubmed.ncbi.nlm.nih.gov",
+    "unrelated_notice": "Issue37/8 erratum refers to DeepGOPlus btaa763, not GraphDTA; auxiliary metadata review checked the primary erratum https://academic.oup.com/bioinformatics/article/37/8/1187/6262032.",
+    "preprint_separate": "Crossref explicitly links preprint10.1101/684662. Indexed bioRxivv3 has earlier title/three authors and CC BY4.0; its full text/figure was not used here, and its license is not transferred to the journal version.",
+    "status_check_recorded_utc": "2026-10-11T13:27:24.554360+00:00",
+    "status_check_evidence": "Bounded source-preparation check documented in source-probe.json; case admission verified stored PubMed/Crossref/publisher evidence and does not claim an additional current search."
+  },
+  "distribution": {
+    "originals_bundled": false,
+    "source_attribution_only": true,
+    "original_source_pixels_in_new_svg": false,
+    "provenance_evidence": "Author renderer/spec and bounded SVG inspection:41 text objects,0 raster image elements; independent image audit withheld source and retained GU9.",
+    "license_scope": "Journal all-rights-reserved; distinct preprint license not transferred. Original layout and editable exports only."
+  },
+  "source_probe": {
+    "path": "tests/batches/graph-method-01/source-probe.json",
+    "sha256": "bc318c329281d989ddec9e4da6861db38d1ba9bddb32f6587afaf2f882aeb68b"
+  },
+  "provenance_reports": {
+    "parent-source-review.json": "a0958c1fd7fe807686675b497878880e988b5f910192f0d6cafeb586da8bff9e",
+    "parent-visual-review.json": "08e02f62d117b92a60e3e91fd07ffd7cfbb328271391606ff30b8d47cc0c5954",
+    "parent-stereochemistry-review.json": "9e859582214e288a83a4d807d6ad601b8d53f25359c27cef735f9c0888913607",
+    "stereochemistry-revision.json": "95d2d2846882dd20e5a586d0580871c784c13f77cda532507e1178c1fd4bb886",
+    "author-review.json": "6999374bcdb3e8597009105d2b7294e3f90527880e03b79a3774534d50652e10",
+    "development-checks.json": "50ccd0bc66c49ede5d5db319ea438a328c9b5410a914f1342e07fbca7c08179c",
+    "independent-review.json": "1cec46b00ccc7adee0c466942c2c892050cf2d0d791554aea9b83d300a3911df",
+    "independent-retest.json": "efc77e34a838ab820cc3c35945ec9688a2044cfb87ae79967092bbf790af0ef4",
+    "independent-retest-initial.json": "758d814bf87708f4ff2d5f6baa17cdc8d83387c6af5912806fed90012868a799"
+  },
+  "frozen_development_requirements": {
+    "path": "tests/batches/graph-method-01/expected.json",
+    "sha256": "98ee8e5200fa99fa2dde95e422833b6c4c1b002eaa083afe72bb3aa6c92d3316",
+    "counts": {
+      "scientific": 13,
+      "visual": 3,
+      "reproduction": 1
+    },
+    "status": "Author mapped all17; source-scoped unknowns retained, not17 independent scientific certifications.",
+    "global_freeze_limit": "Paper/source/checklist/plan hashes preserved; root added general graph-understanding guidance after development. Global skill rules were not absolutely frozen."
+  },
+  "independent_review_status": {
+    "original": {
+      "path": "tests/batches/graph-method-01/independent-review.json",
+      "sha256": "1cec46b00ccc7adee0c466942c2c892050cf2d0d791554aea9b83d300a3911df",
+      "counts": {
+        "blocking_findings": 0,
+        "nonblocking_findings": 0,
+        "semantic_findings": 0,
+        "visual_findings": 0,
+        "relationship_checks": 14,
+        "retained_unknowns": 9
+      },
+      "historical_unknowns": [
+        {
+          "id": "GU1",
+          "scope": "Atom feature coding",
+          "unknown": "The precise API interpretation of the source's implicit value, category vocabulary and numeric input dimension C.",
+          "effect": "Caption attribution is supportable; an exact atomic-feature implementation is not independently judged."
+        },
+        {
+          "id": "GU2",
+          "scope": "Molecular edges/chemistry",
+          "unknown": "Edge/bond-feature coding, stereochemistry and exact molecule standardization.",
+          "effect": "No claim about these implementation choices should be inferred from the simple A label."
+        },
+        {
+          "id": "GU3",
+          "scope": "GCN preprocessing",
+          "unknown": "Exact runnable self-loop insertion and adjacency normalization.",
+          "effect": "The source equation supports conceptual self/neighbor aggregation, but its code-level execution has not been checked."
+        },
+        {
+          "id": "GU4",
+          "scope": "Encoder shapes/operators",
+          "unknown": "Intermediate channel widths, CNN kernels/strides, pooling-axis implementation, post-pooling projections and final vector dimensions.",
+          "effect": "The verified 1,000-position input and per-position 128-dimensional embedding do not determine all other dimensions."
+        },
+        {
+          "id": "GU5",
+          "scope": "Regression implementation",
+          "unknown": "Full FC head widths/count/activations, dropout and exact output layer implementation.",
+          "effect": "The grouped regression head is an architectural abstraction, not a runnable specification."
+        },
+        {
+          "id": "GU6",
+          "scope": "Paper/implementation agreement",
+          "unknown": "Exact code/commit/run version and whether every paper-described stage is implemented identically in a release.",
+          "effect": "No code inspection or model run was performed; paper agreement must not be labelled implementation verification."
+        },
+        {
+          "id": "GU7",
+          "scope": "Affinity labels",
+          "unknown": "The unit and transformation to use for a specific dataset or prediction.",
+          "effect": "The abstract continuous estimate is supported; no Kd unit, transformed scale or clinical threshold is certified."
+        },
+        {
+          "id": "GU8",
+          "scope": "Training/evaluation",
+          "unknown": "Actual split handling, model-selection execution, leakage controls and performance reproducibility.",
+          "effect": "These are outside the forward schematic's verified scope; absence from this diagram is not treated as proof of their implementation."
+        },
+        {
+          "id": "GU9",
+          "scope": "Artifact provenance",
+          "unknown": "Editable source fidelity and whether production reused any journal pixels.",
+          "effect": "The viewed schematic contains text/boxes/connectors, but the withheld editable/generation source prevents provenance certification."
+        }
+      ]
+    },
+    "targeted_retest": {
+      "path": "tests/batches/graph-method-01/independent-retest.json",
+      "sha256": "efc77e34a838ab820cc3c35945ec9688a2044cfb87ae79967092bbf790af0ef4",
+      "status": "completed",
+      "review_type": "targeted_source_familiar_known_issue_follow_up",
+      "checked_at_utc": "2026-10-11T14:01:31.149442+00:00",
+      "scope": "Revised caption attribution of source-stated stereochemistry omission, distinction from unverified implementation and remaining edge/bond coding and molecule standardization. This is not a new blind audit, a new full architecture audit, a code audit, or a resolution of all prior unknowns.",
+      "readiness": {
+        "verdict": "ready_within_targeted_caption_source_scope",
+        "blocking_findings": 0,
+        "nonblocking_findings": 0,
+        "statement": "The revised caption accurately reflects the journal statement and explicitly withholds implementation verification. No further caption or image edit is required for this targeted issue."
+      },
+      "counts": {
+        "targeted_checks": 4,
+        "current_findings": 0,
+        "blocking_findings": 0,
+        "nonblocking_findings": 0,
+        "retained_unknown_groups": 4
+      },
+      "initial_image_record": {
+        "path": "independent-retest-initial.json",
+        "sha256": "758d814bf87708f4ff2d5f6baa17cdc8d83387c6af5912806fed90012868a799",
+        "preserved": true,
+        "frozen_before": "caption, source text, source-probe metadata and prior independent review"
+      },
+      "checks": [
+        {
+          "id": "RT1",
+          "location": "rendered/caption.md:11",
+          "verdict": "supported_by_direct_primary_text"
+        },
+        {
+          "id": "RT2",
+          "location": "rendered/caption.md:11, immediately following the stereochemistry statement",
+          "verdict": "appropriate_evidence_boundary"
+        },
+        {
+          "id": "RT3",
+          "location": "rendered/caption.md:11 and panel a Adjacency A / Molecular connectivity",
+          "verdict": "correctly_retained_as_separate_unknowns"
+        },
+        {
+          "id": "RT4",
+          "location": "independent-review.json retained_unknowns[id=GU2]",
+          "verdict": "historical_evidence_classification_corrected_in_follow_up_only"
+        }
+      ],
+      "remaining_unknowns": [
+        {
+          "id": "RT-U1",
+          "item": "Implementation behavior for stereochemistry",
+          "status": "unverified",
+          "boundary": "Paper-level omission is explicit, but released code, preprocessing behavior, commit and executed tensors were not checked."
+        },
+        {
+          "id": "RT-U2",
+          "item": "Exact edge/bond-feature coding",
+          "status": "unverified",
+          "boundary": "Bond types, feature tensors, weights and direction expansion are not established by the source omission sentence or the molecular-connectivity label."
+        },
+        {
+          "id": "RT-U3",
+          "item": "Molecular standardization",
+          "status": "unverified",
+          "boundary": "No normalization or standardization pipeline was inspected; a source statement about stereochemistry is not a preprocessing audit."
+        },
+        {
+          "id": "RT-U4",
+          "item": "Other previously retained implementation, data and provenance details",
+          "status": "outside_this_targeted_retest",
+          "boundary": "Atom category coding and normalization; implicit-value API field and C; runnable GCN normalization/self-loops; intermediate widths, kernels and pooling axes; FC and activation/dropout details; code/run version; split/model selection; affinity units/transformation; editable-source provenance. These were not newly verified, and the original report retains their detailed inventory."
+        }
+      ],
+      "image_and_display_evidence": {
+        "actual_views_completed": true,
+        "full_image_native_pixels": [
+          1984,
+          1944
+        ],
+        "full_image_returned_payload_pixels": [
+          1600,
+          1567
+        ],
+        "preview_native_pixels": [
+          794,
+          778
+        ],
+        "preview_returned_payload_pixels": [
+          794,
+          778
+        ],
+        "full_image_file_bytes": 236633,
+        "preview_file_bytes": 178326,
+        "visual_observation": "Labels and relevant panel-a X/A relationships are legible in both returned payloads; no stereochemistry representation claim is printed in the image. The chemistry qualification is conveyed by the accompanying caption.",
+        "physical_ui_display_size_known": false,
+        "limit": "File/payload pixel dimensions, byte sizes and DPI metadata are not physical UI display measurements. Neither an actual 210 mm display nor intended print-size readability was established."
+      },
+      "final_integrity_check": {
+        "all_recorded_hashes_match": true,
+        "inputs": [
+          {
+            "path": "rendered/caption.md",
+            "sha256": "43d8aff58ea5fd70781a66f9dc3a66322575c16ecab953e065794998d14d7e4b",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": "rendered/figure.png",
+            "sha256": "28ce3dea723c86eadae78495093d4a522c954c28e061d33872d6fb9650178d9d",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": "rendered/size-210mm-96ppi.png",
+            "sha256": "8f5da3a4f43b385ee15aeecb777ec41349ae92f1bdc2a4cf5f830d56893e074a",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": ".inspection/publisher-text.txt",
+            "sha256": "351ba0ce5feff29d03874c0449ade5523d4290fa371536f34b86aa99d0eb87b4",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": "source-probe.json",
+            "sha256": "bc318c329281d989ddec9e4da6861db38d1ba9bddb32f6587afaf2f882aeb68b",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": "independent-review.json",
+            "sha256": "1cec46b00ccc7adee0c466942c2c892050cf2d0d791554aea9b83d300a3911df",
+            "matches_recorded_expected_hash": true
+          },
+          {
+            "path": "independent-retest-initial.json",
+            "sha256": "758d814bf87708f4ff2d5f6baa17cdc8d83387c6af5912806fed90012868a799",
+            "matches_recorded_expected_hash": true
+          }
+        ],
+        "original_review_preserved": true,
+        "images_caption_and_sources_edited": false
+      },
+      "original_report_preserved_sha256": "1cec46b00ccc7adee0c466942c2c892050cf2d0d791554aea9b83d300a3911df",
+      "initial_credit_boundary": "The original 0/0 result is historical and unchanged. The parent-discovered clarification is not retroactively credited to the initial independent reviewer. The follow-up is source-familiar and targeted, not a new blind or whole-architecture audit."
+    },
+    "limits": "Original 0/0 verdict and its nine unknown IDs are preserved. Parent-driven stereochemistry refinement is credited only to the later refinement and targeted retest. Paper-level omission is known; implementation behavior, edge/bond coding and standardization remain unverified. Human expert certification and code execution are not claimed.",
+    "unknown_narrowing": {
+      "id": "GU2",
+      "historical_wording": "Edge/bond-feature coding, stereochemistry and exact molecule standardization.",
+      "source_level_known_limitation": "The journal explicitly states that its 2D molecular-graph model neglects molecular stereochemistry (§3.4, publisher-text.txt line 379).",
+      "remaining_unknowns": [
+        "Actual implementation behavior for stereochemistry",
+        "Exact edge/bond-feature coding, including bond types, tensors, weights and direction expansion",
+        "Molecular standardization procedures"
+      ],
+      "fully_resolved": false,
+      "other_historical_unknown_ids": [
+        "GU1",
+        "GU3",
+        "GU4",
+        "GU5",
+        "GU6",
+        "GU7",
+        "GU8",
+        "GU9"
+      ],
+      "historical_unknown_id_count_retained": 9,
+      "counting_note": "Nine historical unknown IDs remain; the four groups in the targeted retest are a scoped regrouping, not a reduction of the full inventory from nine to four."
+    }
+  },
+  "artifact_reproduction": {
+    "scope": "Development geometry/export and local fresh-directory source-free replot only; not independent scientific/visual review or an OS access-denial test.",
+    "svg_text_objects": 41,
+    "svg_raster_images": 0,
+    "minimum_font_pt": 8.631496062992127,
+    "pdf_size_mm": [
+      210.00000000000665,
+      205.80000000001502
+    ],
+    "source_free_replot": {
+      "copied_files": [
+        "tests/batches/graph-method-01/figure_spec.json",
+        "tests/batches/graph-method-01/render_figure.py",
+        "scripts/check_spec.py",
+        "scripts/render.py"
+      ],
+      "not_copied": [
+        "primary sources or original images",
+        "expected or panel-plan",
+        "source probe",
+        "author review",
+        "prior output"
+      ],
+      "fresh_directory": true,
+      "subprocess_exit": 0,
+      "byte_identical_six_exports": {
+        "figure.svg": true,
+        "figure.pdf": true,
+        "figure.png": true,
+        "size-210mm-96ppi.png": true,
+        "caption.md": true,
+        "figure_spec.json": true
+      }
+    },
+    "all_bounded_technical_checks_pass": true
+  },
+  "current_artifacts": {
+    "figure.png": {
+      "path": "tests/batches/graph-method-01/rendered/figure.png",
+      "sha256": "28ce3dea723c86eadae78495093d4a522c954c28e061d33872d6fb9650178d9d"
+    },
+    "figure.svg": {
+      "path": "tests/batches/graph-method-01/rendered/figure.svg",
+      "sha256": "a588809cf421d87f9b897e2cd93f68ea7ddf8a54a4da2959b9b613b359b53631"
+    },
+    "figure.pdf": {
+      "path": "tests/batches/graph-method-01/rendered/figure.pdf",
+      "sha256": "709219ca5eda9d85f4c60599fde2b37abbcdcdb98a830d19eb86d9fa86f92a95"
+    },
+    "size-210mm-96ppi.png": {
+      "path": "tests/batches/graph-method-01/rendered/size-210mm-96ppi.png",
+      "sha256": "8f5da3a4f43b385ee15aeecb777ec41349ae92f1bdc2a4cf5f830d56893e074a"
+    },
+    "caption.md": {
+      "path": "tests/batches/graph-method-01/rendered/caption.md",
+      "sha256": "43d8aff58ea5fd70781a66f9dc3a66322575c16ecab953e065794998d14d7e4b"
+    },
+    "figure_spec.json": {
+      "path": "tests/batches/graph-method-01/rendered/figure_spec.json",
+      "sha256": "fce03cadb256c9193957fc54b90b60b4dbdc00df73a3e5f9a33757610c4b3c96"
+    }
+  },
+  "controlled_test_status": "Separate process; controlled/private materials and control outcomes were not read or inferred during this case admission.",
+  "catalog_admission": {
+    "status": "admitted_maintenance_case",
+    "admitted_at_utc": "2026-10-11T14:05:03.163661+00:00",
+    "basis": "Whole source Figure 1 and relevant primary text reviewed; selected GCN forward schematic has preserved initial independent review and accepted targeted caption refinement, with explicit unknowns and six-export source-free development reproduction.",
+    "one_original_whole_figure": true,
+    "one_new_doi": true,
+    "source_whole_figures_counted": 1,
+    "case_role": "maintenance development, not a reserved holdout",
+    "initial_independent_counts_preserved": {
+      "blocking": 0,
+      "nonblocking": 0,
+      "relationship_checks": 14,
+      "retained_unknown_ids": 9
+    },
+    "targeted_follow_up_counts": {
+      "blocking": 0,
+      "nonblocking": 0,
+      "targeted_checks": 4
+    },
+    "parent_discovered_refinement_retroactively_credited_to_initial_review": false,
+    "old_catalog_prefix_sha256": "0cc40b69684193b69effd8cc4f36e384a43e0063d20e347c20a02a0abf6553ea",
+    "old_catalog_lines_preserved": 16,
+    "catalog_cases_after": 17,
+    "distinct_dois_after": 12,
+    "third_party_original_assets_in_distribution": false,
+    "human_expert_certification": false
+  },
+  "sources": {
+    "J2.1": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "Journal version of record, §2.1; publisher-text.txt lines 93–95"
+    },
+    "J2.2": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "§2.2; publisher-text.txt lines 96–98"
+    },
+    "J2.3": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "§2.3; publisher-text.txt lines 99–102"
+    },
+    "J2.4": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "§2.4; publisher-text.txt lines 103–105"
+    },
+    "J2.4.1": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "§2.4.1, equations (1–2) and closing paragraph; publisher-text.txt lines 109–119"
+    },
+    "FIG1": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "Original whole Figure 1 and caption (actually viewed in source preparation); caption lines 106–107"
+    },
+    "TABLE1": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "Table 1; publisher-text.txt lines 148–154"
+    },
+    "J3.4": {
+      "url": "https://academic.oup.com/bioinformatics/article/37/8/1140/5942970",
+      "location": "§3.4, molecular stereochemistry limitation; publisher-text.txt line 379",
+      "read_scope": "Source statement read directly; implementation not independently audited"
+    }
+  },
+  "status_authority": "Current admission and targeted review status are recorded here and in independent-retest.json. Inherited pending labels in historical source preparation, figure.scope, author records or the bounded development checker are not current status authorities.",
+  "case_admission_validation": {
+    "validated_at_utc": "2026-10-11T14:05:03.163661+00:00",
+    "paper_identity_metadata": "Draft identity equals source-probe identity; stored PubMed XML and Crossref metadata inspected for DOI, title, dates, journal and rights.",
+    "direct_primary_text_read": [
+      "publisher-text.txt lines 93–134: input objects, selected GCN stack/readout, protein encoding/embedding, Figure 1 caption and GAT/GIN descriptions",
+      "publisher-text.txt lines 134–154: GIN/GAT-GCN differences, benchmark boundary and Table 1 layers",
+      "publisher-text.txt lines 377–379: explicit stereochemistry limitation"
+    ],
+    "actual_original_figure_view": {
+      "file": ".inspection/figure1-original.jpg",
+      "sha256": "d4b3ef7cc5e62d2b2ce6ce461cfa2ea6799184af586e14802ae77d3586c74aca",
+      "tool": "functions.view_image",
+      "requested_and_returned_detail": "original",
+      "native_pixels": [
+        1950,
+        1454
+      ],
+      "observed": "Four graph-encoder alternatives feed the molecular representation. Protein encoding, embedding, three convolutional stages and max pooling form the separate sequence representation. Combined representation feeds two drawn FC layers and y. GIN pooling is omitted in the drawing; GAT-GCN shows max pooling without the mean pooling described in prose.",
+      "physical_ui_display_size_measured": false
+    },
+    "all_draft_provenance_and_artifact_hashes_match": true,
+    "draft_elements_relations_match_final_spec": true,
+    "source_refs_resolve": true,
+    "no_original_model_code_audit_or_run": true,
+    "controlled_outcomes_consulted": false
+  }
+}

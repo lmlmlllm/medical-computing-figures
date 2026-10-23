@@ -1,0 +1,183 @@
+{
+  "case_id": "MCF007-ED1",
+  "dedup_id": "10.1038/s41591-018-0268-3|PMC-NIHMS1051795-2019-10-09|ExtendedDataFigure1",
+  "paper": {
+    "title": "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network",
+    "authors": "Hannun AY, Rajpurkar P, Haghpanahi M, Tison GH, Bourn C, Turakhia MP, Ng AY",
+    "doi": "10.1038/s41591-018-0268-3",
+    "pmid": "30617320",
+    "pmcid": "PMC6784839",
+    "journal": "Nature Medicine 25:65–69 (2019)",
+    "identity": "First four shared first authors; Awni Hannun Stanford Computer Science, not another Hannun; final journal study, not 2017 arXiv predecessor.",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6784839/?trk=public_post_reshare-text",
+    "figure_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9167/6784839/fbcaaa79c650/nihms-1051795-f0003.jpg",
+    "version": "PMC author manuscript NIHMS1051795 available 9 October 2019, linked to 2019 version of record."
+  },
+  "publication_status": {
+    "checked": "2026-10-11",
+    "sources": [
+      "https://crossmark.crossref.org/dialog/?doi=10.1038/s41591-018-0268-3",
+      "https://www.nature.com/articles/s41591-019-0359-9",
+      "https://pubmed.ncbi.nlm.nih.gov/30679787/"
+    ],
+    "correction": "24 January 2019 publisher correction: Fig1a x-axis is 1−Specificity; Fig2b horizontal label is Average cardiologist label. Does not list Extended Data Fig1.",
+    "retraction": "No retraction notice encountered in checked Crossmark/publisher/PubMed records; bounded status check, not universal absence guarantee."
+  },
+  "states": {
+    "metadata": "verified",
+    "text": "Methods sampling/annotation/development/evaluation plus discussion limitations and full ED1 caption read",
+    "visual": "Full ED1 actually viewed, plus residual-block/skip-path detail crop; not inferred from caption alone",
+    "semantic": "complete for ED1 structure and declared source-bounded abstraction; implementation/code not verified",
+    "license": "No broad CC license found; Crossref gives text-and-data-mining terms only",
+    "archive": "local-only inspection files; link metadata for distribution",
+    "code": "not_read_or_run",
+    "results": "not_reproduced",
+    "transfer": "tests/batches/signal-01; checklist fixed before new diagram"
+  },
+  "question": "How raw single-lead ECG becomes a time-ordered sequence of rhythm probabilities through a residual convolutional network.",
+  "cannot_conclude": [
+    "No prospective clinical benefit or autonomous intervention.",
+    "No 12-lead or device-independent performance.",
+    "No claim that every output sees only its 256-sample interval."
+  ],
+  "elements": [
+    {
+      "id": "raw",
+      "object": "single-lead sampled ECG",
+      "level": "one record",
+      "unit": "200 samples/s; voltage unit not reported here"
+    },
+    {
+      "id": "stem",
+      "object": "initial convolution / BatchNorm / ReLU",
+      "level": "model operation"
+    },
+    {
+      "id": "first_block",
+      "object": "two-convolution special first residual block and bypass",
+      "level": "model operation"
+    },
+    {
+      "id": "repeat",
+      "object": "15 subsequent residual blocks; preactivation and dropout",
+      "level": "model operation"
+    },
+    {
+      "id": "skip",
+      "object": "shortcut with pooling when downsampling",
+      "level": "feature alignment, not physical feedback"
+    },
+    {
+      "id": "head",
+      "object": "BatchNorm/ReLU/linear/softmax",
+      "level": "model operation"
+    },
+    {
+      "id": "sequence",
+      "object": "time-indexed class probabilities / selected rhythm",
+      "level": "output interval within record"
+    }
+  ],
+  "relations": [
+    {
+      "from": "raw",
+      "to": "stem",
+      "type": "sampled-signal input",
+      "direction": "forward"
+    },
+    {
+      "from": "stem",
+      "to": "first_block",
+      "type": "feature transformation",
+      "direction": "forward"
+    },
+    {
+      "from": "first_block",
+      "to": "repeat",
+      "type": "sequential processing",
+      "direction": "forward"
+    },
+    {
+      "from": "skip",
+      "to": "block_output",
+      "type": "residual shortcut",
+      "direction": "forward bypass; not bidirectional control"
+    },
+    {
+      "from": "repeat",
+      "to": "head",
+      "type": "feature-to-class mapping",
+      "direction": "forward"
+    },
+    {
+      "from": "head",
+      "to": "sequence",
+      "type": "time-indexed output",
+      "direction": "forward"
+    }
+  ],
+  "observations": {
+    "whole": "Tall signal-to-label composition. One ECG strip at top; small colored operator rectangles; shortcut paths on right; repeated body grouped by dashed enclosure and ×15; output labels along bottom.",
+    "critical_detail": "First block begins with convolution; repeated body begins BatchNorm/ReLU. Right bypass rejoins after second convolution. Max-pool is drawn in schematic branches, but Methods says only alternating blocks subsample; do not interpret every repeated block as another factor-2 reduction.",
+    "graphic_limits": "Waveform lacks time/amplitude axis. Crop is detail of ED1, not a second case. Original strip is not transferred or reconstructed as patient data."
+  },
+  "source_conflicts": [
+    {
+      "item": "Patient total",
+      "detail": "Abstract 53,877 versus explicit training 53,549 and separate test328. Do not label training53549 as all-study total or silently replace figures. New diagram only uses main-test counts."
+    },
+    {
+      "item": "Committee count prose",
+      "detail": "Methods mentions three groups of112 (336) while final test repeatedly reported328; no reconstruction of exclusions from this inconsistency. New figure uses reported primary test328 and omits per-committee subgroup counts."
+    }
+  ],
+  "layout_rules": [
+    {
+      "rule": "Pair each temporal number with its own level: sample spacing, record duration, output interval.",
+      "condition": "When a time-domain model reports both sample rate and prediction stride."
+    },
+    {
+      "rule": "Show patient→record→interval hierarchy and denominator before evaluation branches.",
+      "condition": "Repeated windows or interval predictions per person."
+    },
+    {
+      "rule": "Keep reference annotation arrows in the evaluation stage, separate from the inference path.",
+      "condition": "Clinician annotations are ground truth only."
+    },
+    {
+      "rule": "Keep time-aligned comparison separate from unique-set aggregation.",
+      "condition": "Both interval-level and record-level metrics exist."
+    },
+    {
+      "rule": "Read repetition marks with Methods before converting architecture into a resampling ratio.",
+      "condition": "Repeated residual bodies contain schematic pooling icons."
+    }
+  ],
+  "nontransferable": [
+    "200 Hz,30 s,256 samples,23 outputs,12 classes, network depth and all study counts belong to this exact study.",
+    "Noise class and selected rhythm grouping require the study label taxonomy.",
+    "Reported accuracy is not a property of this diagram or any newly proposed device."
+  ],
+  "source_locators": {
+    "acquisition": "Main text paragraph beginning In this study (PMC HTML P8, including device acquisition); Methods Study participants and sampling procedures (P21–P22)",
+    "architecture": "Methods Algorithm Development; Extended Data Figure 1 and caption (PMC F3/P33)",
+    "evaluation": "Methods Algorithm Evaluation, first two paragraphs; Table1 footnotes; Figure1 caption",
+    "annotation": "Methods Annotation Procedures",
+    "limits": "Discussion limitations and paragraph beginning Finally, we also note; Methods PhysioNet subsection"
+  },
+  "inspection_files": [
+    {
+      "file": ".inspection/pmc.html",
+      "sha256": "8c4ad8aefa570e28df4c0ca22a0b58fa54e1837e5960ad40302c1139cbba4290"
+    },
+    {
+      "file": ".inspection/extended-data-figure1.jpg",
+      "sha256": "9550d798ab8430e8a55abf6a5aeaa3d663e35bf0fded02ae30a0984f0ae114d5"
+    },
+    {
+      "file": ".inspection/residual-detail.png",
+      "sha256": "168c70a54c59f8e0255731870c6ddd9f2770e6689a0498430643bc9e7670ee58"
+    }
+  ],
+  "expected_sha256": "173efcc2a89f8955658f6b328a608303953f6994817bfda99ea498ad3bfb7e82"
+}

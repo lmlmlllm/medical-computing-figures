@@ -1,0 +1,545 @@
+{
+  "figure": {
+    "id": "MCF-M1-MEDSAM",
+    "version": "1.0",
+    "material_version": "Nature Communications final 2024; accessed 2026-10-11",
+    "purpose": "Explain box-prompted MedSAM and separate training supervision from inference inputs",
+    "excluded_inferences": [
+      "No clinical deployment or benefit is established by this architecture",
+      "No performance reproduced; no synthetic patient image used",
+      "Not all curated pairs are training observations"
+    ],
+    "use": "180 mm generic editable method schematic, journal unspecified"
+  },
+  "sources": {
+    "paper": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/",
+      "location": "Ma et al. Nature Communications 15, 654 (2024), DOI10.1038/s41467-024-44824-z; Fig2b; Network architecture #Par22–23; Training #Par24–25",
+      "read_scope": "Relevant results, Figure2 caption, network and training methods; original viewed by source agent"
+    },
+    "arch": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Par23",
+      "location": "Network architecture, image and prompt embeddings and mask decoder"
+    },
+    "train": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Par25",
+      "location": "Training protocol: frozen prompt encoder, updated image encoder+decoder, box perturbation and unweighted Dice+cross entropy"
+    },
+    "infer": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803759/#Fig2",
+      "location": "Figure2b/caption; Results promptable 2D segmentation; user bounding box identifies target"
+    }
+  },
+  "semantics": {
+    "elements": [
+      {
+        "id": "image",
+        "label": "2D image",
+        "aliases": [],
+        "role": "data",
+        "stage": "training",
+        "source_refs": [
+          "arch"
+        ]
+      },
+      {
+        "id": "encoder",
+        "label": "Image encoder\nUPDATED",
+        "aliases": [],
+        "role": "model",
+        "stage": "training",
+        "source_refs": [
+          "arch"
+        ],
+        "parameter_status": "updated"
+      },
+      {
+        "id": "box",
+        "label": "Derived box\n0–20 px jitter",
+        "aliases": [],
+        "role": "data",
+        "stage": "training",
+        "source_refs": [
+          "train"
+        ]
+      },
+      {
+        "id": "prompt",
+        "label": "Prompt encoder\nFROZEN",
+        "aliases": [],
+        "role": "model",
+        "stage": "training",
+        "source_refs": [
+          "train"
+        ],
+        "parameter_status": "frozen"
+      },
+      {
+        "id": "decoder",
+        "label": "Mask decoder\nUPDATED",
+        "aliases": [],
+        "role": "model",
+        "stage": "training",
+        "source_refs": [
+          "train"
+        ],
+        "parameter_status": "updated"
+      },
+      {
+        "id": "mask",
+        "label": "Predicted\nmask",
+        "aliases": [],
+        "role": "output",
+        "stage": "training",
+        "source_refs": [
+          "arch"
+        ]
+      },
+      {
+        "id": "truth",
+        "label": "Expert mask",
+        "aliases": [],
+        "role": "training",
+        "stage": "training",
+        "source_refs": [
+          "train"
+        ]
+      },
+      {
+        "id": "loss",
+        "label": "Dice + BCE\nloss",
+        "aliases": [],
+        "role": "training",
+        "stage": "training",
+        "source_refs": [
+          "train"
+        ]
+      },
+      {
+        "id": "i-image",
+        "label": "2D image",
+        "aliases": [],
+        "role": "data",
+        "stage": "inference",
+        "source_refs": [
+          "infer"
+        ]
+      },
+      {
+        "id": "i-box",
+        "label": "User box",
+        "aliases": [],
+        "role": "data",
+        "stage": "inference",
+        "source_refs": [
+          "infer"
+        ]
+      },
+      {
+        "id": "i-network",
+        "label": "Trained MedSAM\nimage + prompt → mask",
+        "aliases": [],
+        "role": "model",
+        "stage": "inference",
+        "source_refs": [
+          "infer"
+        ]
+      },
+      {
+        "id": "i-mask",
+        "label": "Segmentation\nmask",
+        "aliases": [],
+        "role": "output",
+        "stage": "inference",
+        "source_refs": [
+          "infer"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "source": "image",
+        "target": "encoder",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "arch"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r2",
+        "source": "encoder",
+        "target": "decoder",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "arch"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r3",
+        "source": "box",
+        "target": "prompt",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "arch"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r4",
+        "source": "prompt",
+        "target": "decoder",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "arch"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r5",
+        "source": "decoder",
+        "target": "mask",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "arch"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r6",
+        "source": "truth",
+        "target": "box",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "train"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r7",
+        "source": "truth",
+        "target": "loss",
+        "type": "supervision",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "train"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r8",
+        "source": "mask",
+        "target": "loss",
+        "type": "computation",
+        "direction": "directed",
+        "stage": "training",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "train"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r9",
+        "source": "i-image",
+        "target": "i-network",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "inference",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "infer"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r10",
+        "source": "i-box",
+        "target": "i-network",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "inference",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "infer"
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "r11",
+        "source": "i-network",
+        "target": "i-mask",
+        "type": "data_flow",
+        "direction": "directed",
+        "stage": "inference",
+        "condition": "Within stated stage; not a causal clinical claim",
+        "source_refs": [
+          "infer"
+        ],
+        "status": "confirmed"
+      }
+    ],
+    "claims": [
+      "Prompt encoder frozen; image encoder and mask decoder updated during MedSAM training",
+      "Training boxes derive from expert annotations; inference uses user boxes",
+      "Loss is unweighted Dice plus binary cross entropy; ground truth not an inference input"
+    ],
+    "results": {
+      "scope": "No numerical performance or study rerun"
+    }
+  },
+  "visual": {
+    "canvas": [
+      1200,
+      855
+    ],
+    "width_mm": 180,
+    "nodes": {
+      "image": {
+        "box": [
+          45,
+          120,
+          160,
+          60
+        ],
+        "fontsize": 19
+      },
+      "encoder": {
+        "box": [
+          300,
+          120,
+          180,
+          60
+        ],
+        "fontsize": 19
+      },
+      "box": {
+        "box": [
+          45,
+          250,
+          160,
+          70
+        ],
+        "fontsize": 19
+      },
+      "prompt": {
+        "box": [
+          300,
+          250,
+          180,
+          70
+        ],
+        "fontsize": 19
+      },
+      "decoder": {
+        "box": [
+          620,
+          175,
+          180,
+          70
+        ],
+        "fontsize": 19
+      },
+      "mask": {
+        "box": [
+          965,
+          175,
+          160,
+          70
+        ],
+        "fontsize": 19
+      },
+      "truth": {
+        "box": [
+          45,
+          390,
+          160,
+          60
+        ],
+        "fontsize": 19
+      },
+      "loss": {
+        "box": [
+          965,
+          390,
+          160,
+          60
+        ],
+        "fontsize": 19
+      },
+      "i-image": {
+        "box": [
+          45,
+          605,
+          160,
+          60
+        ],
+        "fontsize": 19
+      },
+      "i-box": {
+        "box": [
+          45,
+          705,
+          160,
+          60
+        ],
+        "fontsize": 19
+      },
+      "i-network": {
+        "box": [
+          455,
+          640,
+          310,
+          85
+        ],
+        "fontsize": 19
+      },
+      "i-mask": {
+        "box": [
+          965,
+          650,
+          160,
+          70
+        ],
+        "fontsize": 19
+      }
+    },
+    "edges": {
+      "r1": {},
+      "r2": {
+        "via": [
+          [
+            550,
+            150
+          ],
+          [
+            550,
+            197
+          ]
+        ],
+        "to": "left"
+      },
+      "r3": {},
+      "r4": {
+        "via": [
+          [
+            565,
+            285
+          ],
+          [
+            565,
+            225
+          ]
+        ],
+        "to": "left"
+      },
+      "r5": {},
+      "r6": {
+        "from": "top",
+        "to": "bottom"
+      },
+      "r7": {
+        "label": "training target",
+        "label_at": [
+          570,
+          405
+        ]
+      },
+      "r8": {
+        "from": "bottom",
+        "to": "top"
+      },
+      "r9": {
+        "via": [
+          [
+            330,
+            635
+          ],
+          [
+            330,
+            665
+          ]
+        ],
+        "to": "left"
+      },
+      "r10": {
+        "via": [
+          [
+            355,
+            735
+          ],
+          [
+            355,
+            700
+          ]
+        ],
+        "to": "left"
+      },
+      "r11": {}
+    },
+    "panels": [
+      {
+        "id": "panel-a",
+        "box": [
+          20,
+          55,
+          1160,
+          465
+        ],
+        "label": "a  Training — MedSAM adaptation of SAM"
+      },
+      {
+        "id": "panel-b",
+        "box": [
+          20,
+          550,
+          1160,
+          245
+        ],
+        "label": "b  Inference — user-specified target"
+      }
+    ],
+    "annotations": [
+      {
+        "id": "opt-note",
+        "x": 300,
+        "y": 480,
+        "text": "AdamW: update image encoder + mask decoder; prompt encoder fixed.",
+        "size": 19
+      },
+      {
+        "id": "legend",
+        "x": 40,
+        "y": 830,
+        "text": "Solid: computation / prompt construction. Dashed: supervision (training only).",
+        "size": 19
+      }
+    ]
+  },
+  "caption": "Original editable explanatory redraw of MedSAM (Ma et al., 2024; DOI 10.1038/s41467-024-44824-z), based on Figure 2b and Methods, not a reproduction of patient images. (a) Training uses 2D images and boxes derived from expert masks with 0–20 pixel perturbation. The image encoder and mask decoder are updated; the prompt encoder stays frozen. Expert masks supervise the unweighted Dice + binary cross-entropy (BCE) loss. The AdamW update is summarized in text, not drawn as a data-flow arrow. (b) Inference uses a user box and image, without an expert target mask. Solid arrows indicate computation/prompt derivation and dashed arrows supervision, not causal clinical effects. The lower network box abstracts the same trained components. No performance data, clinical benefit or new training is claimed. Generic 180 mm export; target-journal requirements not checked.",
+  "review": {
+    "source_note": "Training paragraph says cross-entropy; Loss function Methods gives BCE. Three-dimensional scans handled as 2D slices; details omitted deliberately."
+  }
+}

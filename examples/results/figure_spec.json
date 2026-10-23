@@ -1,0 +1,79 @@
+{
+  "figure": {
+    "id": "MCF-RESULTS-MEDRAG",
+    "version": "1.0",
+    "purpose": "Compare source-reported aggregate accuracies in one fixed backbone configuration",
+    "material_version": "ACL Findings2024 Table6",
+    "excluded_inferences": [
+      "No statistical significance from missing paired predictions",
+      "No clinical benefit",
+      "No raw experimental reproduction"
+    ]
+  },
+  "sources": {
+    "table6": {
+      "url": "https://aclanthology.org/2024.findings-acl.372.pdf",
+      "location": "Table6 GPT-3.5-16k-0613 rows, PDF page5; Table2 question counts PDF page3; evaluation Section3.2",
+      "raw_csv": "../../cases/MCF002-medrag/table6-gpt35-accuracy.csv",
+      "raw_sha256": "d8d0a8ed9a139afbc52b21be63e4b37dd6fe8736057b48a03af1ab9f991817c9"
+    }
+  },
+  "semantics": {
+    "elements": [
+      {
+        "id": "series-cot",
+        "role": "comparison",
+        "label": "CoT",
+        "stage": "evaluation",
+        "source_refs": [
+          "table6"
+        ],
+        "aliases": []
+      },
+      {
+        "id": "series-medrag",
+        "role": "comparison",
+        "label": "MedRAG",
+        "stage": "evaluation",
+        "source_refs": [
+          "table6"
+        ],
+        "aliases": []
+      }
+    ],
+    "results": {
+      "source": {
+        "url": "https://aclanthology.org/2024.findings-acl.372.pdf",
+        "location": "Table6 GPT-3.5-16k-0613 rows, PDF page5; Table2 question counts PDF page3; evaluation Section3.2",
+        "raw_csv": "../../cases/MCF002-medrag/table6-gpt35-accuracy.csv",
+        "raw_sha256": "d8d0a8ed9a139afbc52b21be63e4b37dd6fe8736057b48a03af1ab9f991817c9"
+      },
+      "title": "Medical QA: published GPT-3.5 aggregate accuracies",
+      "measure": "Accuracy",
+      "unit": "percent",
+      "analysis_unit": "Question within each benchmark, not patient or training run",
+      "denominator": {
+        "MMLU-Med": 1089,
+        "MedQA-US": 1273,
+        "MedMCQA": 4183,
+        "PubMedQA*": 500,
+        "BioASQ-Y/N": 618
+      },
+      "aggregation": "Proportion correct for each task; no pooling across datasets",
+      "error_definition": "No bars plotted; source reports plus/minus as standard deviation of proportion, not CI or across-seed SD; retained in raw CSV only",
+      "scope": "Real public aggregate table replot; original models and experiments were not rerun",
+      "caption": "Replot of real published aggregate accuracies from Xiong et al., Benchmarking Retrieval-Augmented Generation for Medicine, ACL Findings 2024, DOI10.18653/v1/2024.findings-acl.372, Table6 GPT-3.5-16k-0613 rows. CoT is the no-retrieval baseline; MedRAG uses MedCorp, RRF-4 and 32 retrieved snippets. Each row is a different question benchmark, with question denominators from Table2 shown in labels. Values are percent correctly answered; a common 0\u2013100 range is used (padding for markers and labels). No uncertainty bars or significance tests are added. The source plus/minus column is retained in the raw CSV, not reinterpreted as a confidence interval. PubMedQA* follows the paper's modified setting. No patient-level outcome, pooled accuracy or original experiment reproduction is claimed. Original table transcription was visually checked; this artifact validates real aggregate-data adaptation and reproducible rendering.",
+      "series_ids": {
+        "CoT": "series-cot",
+        "MedRAG": "series-medrag"
+      }
+    },
+    "relations": []
+  },
+  "visual": {
+    "type": "aggregate_dotplot",
+    "size_mm": 180,
+    "common_axis": "0\u2013100 percent plus label margin"
+  },
+  "caption": "Replot of real published aggregate accuracies from Xiong et al., Benchmarking Retrieval-Augmented Generation for Medicine, ACL Findings 2024, DOI10.18653/v1/2024.findings-acl.372, Table6 GPT-3.5-16k-0613 rows. CoT is the no-retrieval baseline; MedRAG uses MedCorp, RRF-4 and 32 retrieved snippets. Each row is a different question benchmark, with question denominators from Table2 shown in labels. Values are percent correctly answered; a common 0\u2013100 range is used (padding for markers and labels). No uncertainty bars or significance tests are added. The source plus/minus column is retained in the raw CSV, not reinterpreted as a confidence interval. PubMedQA* follows the paper's modified setting. No patient-level outcome, pooled accuracy or original experiment reproduction is claimed. Original table transcription was visually checked; this artifact validates real aggregate-data adaptation and reproducible rendering."
+}

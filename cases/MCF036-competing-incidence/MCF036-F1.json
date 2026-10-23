@@ -1,0 +1,119 @@
+{
+  "case_id": "MCF036-F1",
+  "dedup_id": "doi:10.37737/ace.3.4_97|publisher2021|Fig1",
+  "paper": {
+    "title": "Introduction to Survival Analysis in the Presence of Competing Risks",
+    "author": "Kojiro Morita",
+    "doi": "10.37737/ace.3.4_97",
+    "PMID": "38505470",
+    "genre": "Seminar/tutorial",
+    "publication": "Annals of Clinical Epidemiology3(4):97-100(2021)"
+  },
+  "source_url": "https://www.jstage.jst.go.jp/article/ace/3/4/3_97/_html/-char/en",
+  "figure_url": "https://www.jstage.jst.go.jp/article/ace/3/4/3_97/_pdf",
+  "source_figure": "Fig1 onPDFpage2",
+  "original_figure_units": 1,
+  "supporting_technical_figures_viewed": 4,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "All4Morita pages; survival vignettepp1-9 and first-event Rnw code, mgus2 help/DESCRIPTION/COPYRIGHTS",
+    "visual": "Whole MoritaFig1 and contextualTable1; technicalFig1p2,Fig2p4,curvesp7,comparisonp9;5figure units+1table",
+    "archive": "link_only paper/vignette originals; own code/figures/evidence plus LGPL-noticed public data",
+    "license": "MoritaCC BY-NC-ND4.0; originals excluded. survival public data under packageLGPL>=2, distributed withLGPL2.1 andNOTICE. Vignette images not redistributed.",
+    "notice_check": "Bounded publisher/PubMed notice search recorded; not exhaustive"
+  },
+  "question": "How do competing first events differ from censoring and from a separately computed1-KM quantity?",
+  "cannot_conclude": [
+    "Dashed hypothetical post-death timelines are observed second events",
+    "Cause-specific1-KM is unconditional PCM CIF",
+    "Rounded same-month coding establishes true temporal order",
+    "Absorbing PCM implies no later death",
+    "Clinical sex effects or censoring assumptions established by drawing"
+  ],
+  "elements": [
+    {
+      "id": "timeline",
+      "role": "Four illustrative subject follow-ups with two death types and study-end censoring",
+      "source": "MoritaFig1"
+    },
+    {
+      "id": "post-death",
+      "role": "Dashed continuation/open parenthesised endpoint is not observed second death",
+      "source": "MoritaFig1 and body"
+    },
+    {
+      "id": "first-state-model",
+      "role": "Entry to PCM first or death before PCM; later death not counted again",
+      "source": "Therneau/Crowson/Atkinson competeFig2p4/Rnw306-308"
+    },
+    {
+      "id": "CIF",
+      "role": "Unconditional first-event probability under estimator assumptions",
+      "source": "technical vignetteEq1-3/pp6-9"
+    },
+    {
+      "id": "KM-comparator",
+      "role": "1−KM when competing deaths censored; distinct from CIF",
+      "source": "technical vignettep9/Rnw373-378"
+    }
+  ],
+  "relations": [
+    {
+      "source": "first-state-model",
+      "target": "CIF",
+      "type": "estimand and transition constraints",
+      "condition": "One first event per subject; no delayed entry or weights",
+      "source_locator": "vignetteFig2, pp6-9"
+    },
+    {
+      "source": "CIF",
+      "target": "KM-comparator",
+      "type": "comparison, not equality",
+      "condition": "Other event types handled differently",
+      "source_locator": "vignettep9"
+    }
+  ],
+  "visual_design": {
+    "source": "Individual horizontal timelines use marker shapes for competing endpoints; hypothetical continuation must be read using caption/body. Technical transition diagrams distinguish model choices before plotting.",
+    "own": "State model above, two same-scale endpoint panels with aligned risk rows, separate labelled comparator panel; same month data mapping retained.",
+    "missing": "Exit-time risk sets shown while event counts/curves remain unknown; no dummy line swatches.",
+    "limitations": "D uses line type for estimator rather than sex, explicitly explained; no journal-specific sizing or CI."
+  },
+  "gaps": [
+    "MoritaSection3.2 conditional CIF population wording versus technical unconditional definition",
+    "Table1 cumulative-incidence label for1−KM",
+    "Dataset help1341/1384 and10/11 inconsistencies; actual object1384×11",
+    "Nine same-month PCM/death records follow author coding, not known within-month order",
+    "Original2002 cohort paper not read/reproduced; no clinical/causal/expert validation"
+  ],
+  "technical_sources": [
+    {
+      "title": "Multi-state models and competing risks",
+      "authors": "Therneau,Crowson,Atkinson",
+      "date": "2026-09-09",
+      "url": "https://cran.r-project.org/web/packages/survival/vignettes/compete.pdf",
+      "read_scope": "pp1-9 of29 plus relevant first-event code"
+    },
+    {
+      "data": "mgus2",
+      "version": "survival3.8-12",
+      "url": "https://cran.r-project.org/src/contrib/survival_3.8-12.tar.gz",
+      "oracle": "R4.5.1 with installedsurvival3.8-3; data identical to downloaded object"
+    }
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/competing-incidence-01/DELIVERY.md",
+    "acceptance_sha256": "eb038b8e56d15f1a9b77a2239b8444ebf411c7f3f2d25d9b177c6db2a1646481",
+    "scope": "Same-executor public data reproduction plus separate simulated fault fixtures; original expectation failure preserved"
+  },
+  "record_pins_base": "tests/batches/competing-incidence-01/",
+  "record_pins": {
+    "task-definition.json": "23f450d9fb79d2e2d512f3b87abfdcd19ea42cb655aa1d35abe0c65d9bb669ac",
+    "source-notes-02.md": "d9609245c0f826bfcad457d7421cd71c88312c2084e12b8f32234891abb0ee48",
+    "source-view-02.json": "3b4bb4cb5ec7c57aab2373ac21d3db69808ba33dc8eba6cf8163afd2e72d693f",
+    "acceptance.json": "eb038b8e56d15f1a9b77a2239b8444ebf411c7f3f2d25d9b177c6db2a1646481",
+    "visual-review-04.json": "2be9d3367f2a6732efad5846da424dd7b3df4dbfedcc3f9ca9ae37f103aaed91",
+    "expectation-reconciliation-01.json": "c78e3b86c688e67dbb943d92d4cf9fe86b1e8fcd091dcc32993a0999dbc5ffcc"
+  }
+}

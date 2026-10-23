@@ -1,0 +1,171 @@
+{
+  "case_id": "MCF056-F2",
+  "dedup_id": "PMLR:v97:geifman19a|ICML2019-officialPDF|Figure2-whole",
+  "title": "SelectiveNet: A Deep Neural Network with an Integrated Reject Option",
+  "source_url": "https://proceedings.mlr.press/v97/geifman19a.html",
+  "source_figure": "WholeFigure2a–b onPDFp7; one originalfigure. CompleteTable6 is one explicit same-paper table dependency, notanotherfigure/paper.",
+  "original_figure_units": 1,
+  "original_table_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned official PMLR ICML2019 paper; bounded direct reading of pp1–7, §2,4,5,7.1,8.1, completeFigure2a–b andTable6. Not full code/model/experiment or all-results validation.",
+    "visual": "Whole primaryFigure2/caption, completeTable6 anddependent method/formula pages actually viewed. Author androot four outputviews, independent orderedimage/source/spec reading, native canonical/twoedit views andfresh replay views retained.",
+    "archive": "Original PDF/text/pixels/fulltranscript local-review-only. Clean30memberZIP includes original stage explanation, exact25cell numeric projection, nativeSVG/PDF/PNG, caption, portable helpers and licensed font; original artwork excluded."
+  },
+  "question": "How do training andpost-training calibration targets differ, and why is classification risk conditional on the accepted set?",
+  "elements": [
+    {
+      "id": "targets",
+      "role": "Rows are separate training-target configurations; columns are post-training calibration targets. Neither equals realized evaluation coverage."
+    },
+    {
+      "id": "calibration",
+      "role": "Source-described independent unlabeledV provides trainedselection scores and a100(1-c_cal)percentile threshold."
+    },
+    {
+      "id": "acceptance",
+      "role": "Binary g(x)≥tau gate differs from softselection in training. Evaluation truth is used only for accepted errors."
+    },
+    {
+      "id": "counts",
+      "role": "N evaluated objects,A accepted objects,E errors among accepted; coverageA/N andrisk100E/A withA>0. A0undefined."
+    },
+    {
+      "id": "matrix",
+      "role": "Complete5×5 Table6 risk-percent mean±reportedquantity, keyed trainingrow/calibrationcolumn. Preserve50decimalstrings/25±/10headers."
+    }
+  ],
+  "relations": [
+    {
+      "from": "trainedselection andunlabeledV",
+      "to": "tau",
+      "type": "post-trainingcalibration",
+      "source": "PDFp4§5"
+    },
+    {
+      "from": "evaluationinput andtrainedf/g",
+      "to": "binaryacceptance",
+      "type": "evaluationconditionaldecision",
+      "source": "PDFp2§2,p4§5"
+    },
+    {
+      "from": "evaluationtruth andacceptedpredictions",
+      "to": "E",
+      "type": "acceptederrorcount,notthresholdchoice",
+      "source": "PDFp2§2"
+    },
+    {
+      "from": "N,A,E",
+      "to": "coverageandconditionalrisk",
+      "type": "defineddenominators,notrecoveredoriginalcounts",
+      "source": "PDFp2§2;Table6percentunits"
+    },
+    {
+      "from": "trainingtargetmodel",
+      "to": "eachcalibrationtarget",
+      "type": "source-describedmodel-levelcalibrationreuse",
+      "source": "PDFpp6–7§8.1; per-runpairing/checkpointsnotseparatelyreported"
+    }
+  ],
+  "visual_design": "Original A stage diagram and B plain complete matrix. Visible targetlabels, inclusivegate, truth-for-errors, denominators andunknownnotes preserve scientific roles. No recreated sourcecurve or near-optimality highlight. Completecaption is partofdelivery.",
+  "transferable_rules": [
+    "Separate trainingtarget,calibrationtarget andrealizedcoverage; knownmodel-levelreuse isnot erased by unknownper-runidentity.",
+    "Define the evaluation population andacceptanceset before drawingrisk; accepted-only improvement doesnot establish populationperformance orclinicalutility.",
+    "Bind every mean/reportedquantity pair to both axis keys, preserving precision andliteral±; sortedvalues ordiagonalchecks miss transposition.",
+    "Source-context uncertainty language andprinted0.00 do not supply a knownestimator, exactzerovariability orsignificance."
+  ],
+  "gaps": [
+    "Source ± estimator/formula,runpairing/checkpoints,samplememberships,auditedindependence,finitepercentile/tieimplementation remainunknown.",
+    "Source explicitly describes calibrating eachtrainedmodel to eachtarget. Unknownrunrecords do not mean columnsnecessarily retrain oruse differentweights. Currentcaption hasoptionalprecisionimprovementO1; keepthispositivefact whenreusing.",
+    "Positive-exponent probabilitybound versus epsiloninversion conflict retained/excluded; Figure2b/Table4 exactmapping unresolved. No curvereconstruction orAURC.",
+    "O1cross-columnwording,O2trainedf/gtrace andO3small-sizecomfort remainoptional,notimplemented. No requiredscientificrepair identified byorderedreview.",
+    "Nativefont/staticroute/sourceediting only; physicalprint,GUI/browser/editor/crosshost notverified. No originalexperiment,clinicalvalidity,expertreview ornewholdout."
+  ],
+  "license": "Current general PMLR agreement inspected, notthepaper2019signedagreement; originalartworknotredistributed. BundledDejaVufontlicense/notices andhelperprovenance checked separately.",
+  "notice_scope": "Officiallandingpage,arXivversionrecord,officialPDFpathcommithistory andboundedcorrection/erratum/retractionsearches showed no notice within that scope; not exhaustiveclearance.",
+  "transfer_entry": "tests/batches/selectivenet-evaluation-01/README.md",
+  "test_limits": [
+    "FixedSE01–SE08 independent8/8 and36/36 finitechecks passed; rootcompared everycriterion/checktext andfixeddenominator. Disclosurepass doesnotvalidate unknownsourcefacts.",
+    "21objects25relations7claims62visiblepayloads and9sciencefields frozenbeforelayout. Semantic01issues retained; threeindependentfindings plusrootbinaryacceptanceclarification corrected insemantic02 beforeproduction.",
+    "1239actualglyphs:1118ink/121spaces,min9.199999809pt. Separate maxbaseline0.000781250,advance0.004218750,effectivesize0.000000191,vector0.000024414pt; allfixed0.25pt boundsmet.",
+    "Two separate source-copyedits: trainingdata rolelabel andoneheaderliney485→483; independentactualnative/pixel localizations, original25values/caption/canonicalunchanged. No GUIroundtrip.",
+    "Exact30memberZIP;7sameprofilecommands/5phasesexit0.10canonicalfiles includingenvironmentbyteexact. Before/after116controls eachcontain45known-existingdataopenEPERM and4actualconnectEPERM withsocket/settimeoutsuccess. Samehost/runtime only.",
+    "Runtime557/556modulerecords,553/552distinctfiles and4aliases retained; fullsystemframeworkinventorynotexhaustive.",
+    "Author interpreterimportfailure,nativetwoinspectorassertions,replayoldschemapreflight andfinalassessorvectorclosureassertion corrected/preserved. Rootwrongmanifestfilename read andwideoutputtruncations also retained incontinuationhistory.",
+    "No new controlled-error pair ornewholdoutinthisbatch; existingcontrolcoverage notadded to8/36. Newruleprose derivedafterfinalassessment,notcrosscasebehaviorregressed."
+  ],
+  "evidence_pins": {
+    "protocol.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/protocol.json",
+      "bytes": 22970,
+      "sha256": "03ef9bbba8a782c063b58d3f17e36eef657b195f4c0bb51d344a26d046e0aeb8"
+    },
+    "scientific-freeze-01.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/scientific-freeze-01.json",
+      "bytes": 9945,
+      "sha256": "f3db96672a151a5eec9c0ab1624eb268173b09728b053a9f8ee136a20234a88a"
+    },
+    "author/production-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/author/production-01/manifest.json",
+      "bytes": 28003,
+      "sha256": "6171b8bd904060866341f4ec0f02240fcfff9326550298301b6744304b631d46"
+    },
+    "author/production-01/TERMINAL": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/author/production-01/TERMINAL",
+      "bytes": 1252,
+      "sha256": "cb22a3d451057f6d1de34a1e024864a141dcb92602c39bb7a983f8cbc948ddbf"
+    },
+    "review/ordered-reader-01/stage3-manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/review/ordered-reader-01/stage3-manifest.json",
+      "bytes": 5796,
+      "sha256": "1a07558c826586ab4d288bf9b5554bc0550ee7d17300950bf3e6516e0142c1b8"
+    },
+    "review/ordered-reader-01/TERMINAL": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/review/ordered-reader-01/TERMINAL",
+      "bytes": 695,
+      "sha256": "29aa811193b73ea1ef2ddcccbd14b79ea8c92ebbc984c08b72351f0a2d96d989"
+    },
+    "output-audit/independent-native-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/output-audit/independent-native-01/manifest.json",
+      "bytes": 9779,
+      "sha256": "9a7841a38e4f4397ca739970cdb74b74576328fe766c647d1847a20db7283de3"
+    },
+    "output-audit/independent-native-01/TERMINAL": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/output-audit/independent-native-01/TERMINAL",
+      "bytes": 1031,
+      "sha256": "5986d04b4a6880700052682794669d050478d002385a4f566f19b462bc7dcdc7"
+    },
+    "output-audit/replay-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/output-audit/replay-01/manifest.json",
+      "bytes": 19943,
+      "sha256": "0adf065cb8608d753e73bc72dbeae580c1e04a8b0a677565bfd707beb3aabf09"
+    },
+    "output-audit/replay-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/output-audit/replay-01/TERMINAL.json",
+      "bytes": 3263,
+      "sha256": "e194859f357204897effcaecb7401c96e2408ef8ebda6fea35e7c726fbed782e"
+    },
+    "final-assessment-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/final-assessment-01/manifest.json",
+      "bytes": 1631,
+      "sha256": "fdb09846496816eb8ddea0754dccff353e011b60d7db21a07c4aaf72e4230fd9"
+    },
+    "final-assessment-01/scorecard.json": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/final-assessment-01/scorecard.json",
+      "bytes": 68078,
+      "sha256": "c37e052c0b109684a81df16290c58f8064a7307046aee0b89285367999e21bba"
+    },
+    "final-assessment-01/TERMINAL": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/final-assessment-01/TERMINAL",
+      "bytes": 1176,
+      "sha256": "9cf40bae2c4e7d0e9929066d44fe9f7bd6f84abf5c49826198ae0cb65e67b3e8"
+    },
+    "author/production-01/selectivenet-evaluation-clean-01.zip": {
+      "path": "<SKILL_ROOT>/tests/batches/selectivenet-evaluation-01/author/production-01/selectivenet-evaluation-clean-01.zip",
+      "bytes": 1398013,
+      "sha256": "62804562bacb8d6abed9000ff5eec5a25ba37b298c89d13e65f41a3c71df6d91"
+    }
+  }
+}

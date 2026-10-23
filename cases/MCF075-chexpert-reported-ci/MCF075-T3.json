@@ -1,0 +1,89 @@
+{
+  "id": "MCF075-T3",
+  "document_type": "partial source-table case with actual bounded development repair and delivery",
+  "created_utc": "2026-10-18T16:47:53.209009+00:00",
+  "paper": {
+    "title": "CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison",
+    "doi": "10.1609/aaai.v33i01.3301590",
+    "journal": "AAAI33(01):590–597,2019",
+    "source_version": "arXiv1901.07031v1 and matched publisher Table3 text; not whole-document byte identity"
+  },
+  "unit": {
+    "parent": "Table3",
+    "count": 1,
+    "selected": "Consolidation validation column,5methods×AUROC/low/high",
+    "semantic_status": "semantic_partial"
+  },
+  "read_and_view_scope": "Admission actually viewed full primary HTML Table3 at1280×720 and read selected methods/Analysis/test-choice passages; publisherPDF text75fields matched, blank screenshot not counted. Independent source-first text75fields matched; that process did not view originalPDF/table pixels. Root read sealed evidence; no new root originalPDF visual claim.",
+  "question": "Which reported validation ensemble AUROCs and DeLong bounds belong to each uncertainty-label approach, and what uncertainty do the intervals represent?",
+  "mapping": [
+    {
+      "id": "u_ignore",
+      "method": "U-Ignore",
+      "AUROC": "0.938",
+      "low": "0.905",
+      "high": "0.970",
+      "task": "Consolidation",
+      "split": "validation",
+      "interval_type": "95% two-sided nonparametric DeLong CI"
+    },
+    {
+      "id": "u_zeros",
+      "method": "U-Zeros",
+      "AUROC": "0.932",
+      "low": "0.898",
+      "high": "0.966",
+      "task": "Consolidation",
+      "split": "validation",
+      "interval_type": "95% two-sided nonparametric DeLong CI"
+    },
+    {
+      "id": "u_ones",
+      "method": "U-Ones",
+      "AUROC": "0.899",
+      "low": "0.854",
+      "high": "0.944",
+      "task": "Consolidation",
+      "split": "validation",
+      "interval_type": "95% two-sided nonparametric DeLong CI"
+    },
+    {
+      "id": "u_selftrained",
+      "method": "U-SelfTrained",
+      "AUROC": "0.939",
+      "low": "0.908",
+      "high": "0.971",
+      "task": "Consolidation",
+      "split": "validation",
+      "interval_type": "95% two-sided nonparametric DeLong CI"
+    },
+    {
+      "id": "u_multiclass",
+      "method": "U-MultiClass",
+      "AUROC": "0.937",
+      "low": "0.905",
+      "high": "0.969",
+      "task": "Consolidation",
+      "split": "validation",
+      "interval_type": "95% two-sided nonparametric DeLong CI"
+    }
+  ],
+  "statistics": "200studies/200patients,study-level.3runs×10selectedcheckpoints produce30-model arithmetic probability ensemble beforeAUROC, not mean30AUROCs or30independenttrials. Two-sided95%nonparametricDeLongCI, not across-runSD. Checkpoint selection and Table3 reuse validation.",
+  "source_conflict": "Analysis U-Zeros best conflicts with Table3 U-SelfTrained0.939>U-Zeros0.932 and later test selection U-SelfTrained. Preserve source conflict; no author-intent repair or superiority inference. Source best/worst nonsignificance does not establish all-pair equivalence.",
+  "unknowns": [
+    "Exactseeds/checkpoints/predictions and independently recomputed CI",
+    "Exact view-max/model-mean composition order",
+    "Full training/selection uncertainty propagation and selection-effect magnitude",
+    "Unobserved corrections or complete version equivalence"
+  ],
+  "layout": "210×155mm,min9pt; five unconnected horizontal point/interval rows,sourceorder,one restrained color,direct three-decimal lower/AUROC/upper columns,explicit0.84–0.98display range. Printed asymmetric rounding retained, no endpoint symmetrization.",
+  "editable_and_visual": "40nativeSVGtexts plus independent vector point/interval/cap objects; PDF embedded fixedTTF subsets/nativevectors. RootPNG+PopplerPDF and independentPNG actually viewed including exactZIP replay. No external editor/browser/print verification.",
+  "licensing": "OriginalsourcePDF/images link-only; factualCSV and own figure/notes. DejaVu/Matplotlib/fontTools fulllicenses supplied. No clinical images/models.",
+  "transfer": "Separate source uncertainty meaning from faithful numeric rendering; bind analysis units and ensemble levels; repair semantic selector and all derivatives without modifying source values. Font-file identity does not determine PDF subset resource count.",
+  "result_record": {
+    "file": "tests/batches/chexpert-reported-ci-01/root-acceptance.json",
+    "bytes": 4807,
+    "sha256": "6bd185ed328e340f3ea4453d2b557466e9023de65b5b2e9377c24b7953f23848"
+  },
+  "transfer_limits": "Finite development unit, not heldout or universal accuracy. New rule wording still requires independent cross-case validation."
+}

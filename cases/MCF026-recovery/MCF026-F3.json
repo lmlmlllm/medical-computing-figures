@@ -1,0 +1,109 @@
+{
+  "id": "MCF026-F3",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "DOI:10.1056/NEJMoa2021436",
+    "title": "Dexamethasone in Hospitalized Patients with Covid-19 — Preliminary Report",
+    "authors": "RECOVERY Collaborative Group",
+    "version_read": "Actual preliminary-report body17July2020, not final-publication institutional wrapper",
+    "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/159610504/nejmoa2021436.pdf",
+    "code_read": false,
+    "code_execution": false
+  },
+  "figure": {
+    "number": "Figure3",
+    "PDF_page_1based": 9,
+    "article_page": 8,
+    "scope": "Complete original page with Figure3 and caption actually viewed; only this figure counts"
+  },
+  "deduplication_key": "DOI:10.1056/NEJMoa2021436:preliminary-2020-07-17:Figure3",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "How do age-adjusted28-day mortality estimates differ across baseline respiratory-support groups, and how does comparator inversion affect their display?",
+  "elements_and_relations": {
+    "estimates": "Four published age-adjusted Cox mortality rate estimates and95%CIs",
+    "counts": "Raw events/participants and percentages remain attached to randomized arms",
+    "membership": "Three nonoverlapping baseline support strata partition the overlapping overall total",
+    "display": "Positive log ratio scale with null1; comparator and favor labels agree; precise source statistical-information weights unavailable"
+  },
+  "layout": {
+    "original": "Forest plot beside raw event columns; rows grouped by respiratory support; overall and uncertainty annotated",
+    "transfer": "Separate overall with explicit overlap label; equal-size stratum squares disclosed; use native paths and text",
+    "why": "Allows readers to compare model estimates while retaining arm denominators and membership",
+    "omitted": "Source information weighting, overallP and trend statistic; no new statistics substituted"
+  },
+  "reading": {
+    "institutional_PDF": "12PDFpages including institutional cover. Abstract/overview andMethods atPDF2–5;Table1 atPDF6;primaryResults/Figure1caption atPDF7;Figure2caption/context atPDF8;Figure3+relevantResults/Discussion atPDF9. Some intro read via web; no claim every paper section read.",
+    "PMC": "Initial page readable through Statistical Analysis opening; subsequent request returned reCAPTCHA and that surface was stopped.",
+    "publisher": "Search-returned current journal abstract/history/supplement links read; final PDF not downloaded or visually checked.",
+    "code_read": false,
+    "code_run": false,
+    "individual_data_obtained": false,
+    "supplement_or_SAP_read": false
+  },
+  "visual": {
+    "file": "feasibility/figure3-page9.png",
+    "sha256": "a77efcd0abeed0f628976d63ef21517db8f70e4352c3def60c008df4cf28edea",
+    "tool": "view_image",
+    "scope": "WholePDFpage9 (articlepage8),1134×1512pixels,including completeFigure3 and caption; rendered locally at2x viaPyMuPDF. No crop and no separateFigure1/2 pixel viewing.",
+    "observations": [
+      "Four rows: three respiratory-support strata plus overlapping all-patient total; total is not a fourth independent stratum.",
+      "Event/total and percentages in two treatment columns; rate-ratio point and95%CI in another column.",
+      "Positive ratio axis with logarithmic spacing andnull1; favor directions explicitly labelled.",
+      "Three square sizes encode statistical information according to caption; precise information weights are not supplied. Overall estimate is a diamond, not evidence of a meta-analysis."
+    ]
+  },
+  "local_source_path_base": "tests/batches/effect-estimates-01",
+  "source_pins": {
+    "feasibility/institutional-preliminary-report.pdf": "291d52ceef35b66730bddb184439efe425145314cd3a9e1b5463783b96c311f1",
+    "feasibility/figure3-page9.png": "a77efcd0abeed0f628976d63ef21517db8f70e4352c3def60c008df4cf28edea"
+  },
+  "rights": {
+    "institutional_PDF": "Copyright retained; PDF footer restricts to personal use. No original image/PDF redistribution planned.",
+    "PMC_initial_page": "PMC states reuse with source acknowledgment excluding commercial resale, while retaining copyright protections; do not transfer that statement to every source asset.",
+    "distribution_candidate": "link_only originals; self-authored notes and bounded factual transcription with attribution, subject to next-batch selection review"
+  },
+  "status_search": {
+    "query": "ExactDOI plus correction/erratum/retraction",
+    "result": "No matching notice in bounded results; currentfinal andpreliminaryversionsbothappear. Not exhaustive clearance."
+  },
+  "unresolved_and_scope": [
+    "Exact information weights unavailable",
+    "Original model/code and individual observations not obtained",
+    "Final-report equivalence not established; actual preliminary body pinned",
+    "Unplotted4.2vs4.1percentage-point text discrepancy retained",
+    "Known-answer executor self-test, not held-out, independent or expert"
+  ],
+  "record_pins": {
+    "tests/batches/effect-estimates-01/acceptance.json": "a198682fe784c9b289ceb6671a1b62f951c8cd19d14b7e02f047194ef7bce84a",
+    "tests/batches/effect-estimates-01/source-notes.md": "f467112ac17bac0d1d5a33808fb1b786210b3ddc8c1e6903dfae59c65bbfb1f6",
+    "tests/batches/effect-estimates-01/visual-review-round2.json": "a74339dd864c15969197eb06dcda056fe59b5b9b48aaf7f693fb63af11d244da",
+    "tests/batches/effect-estimates-01/controlled/result.json": "c38e36f0a4e117b7c248457d82338ffe84df213a62c61d5cc8768f88597289d1",
+    "tests/batches/effect-estimates-01/replay-01/result.json": "5a7291d9832fe9942eb21e6c77c0650db2c98e211c1b30e33952ec0dc5b4a687"
+  },
+  "transfer_evidence": {
+    "native_checks_each": 34,
+    "rows": 4,
+    "native_lines": 21,
+    "markers": 4,
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "controls": {
+      "controlled_errors": 3,
+      "located": 3,
+      "misses": 0,
+      "correct_controls": 1,
+      "false_positives": 0,
+      "insufficient_packets": 1,
+      "undecidable": 1,
+      "repairs": 3,
+      "repairs_viewed": 3
+    },
+    "invalid_input_rejections": 5,
+    "OS_replay": "27exports+9from-delivered-spec;12denied reads and network;9input pins",
+    "holdout": false,
+    "independent_reader": false
+  }
+}

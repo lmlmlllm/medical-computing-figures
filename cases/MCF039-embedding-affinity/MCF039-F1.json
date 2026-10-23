@@ -1,0 +1,103 @@
+{
+  "case_id": "MCF039-F1",
+  "dedup_id": "vandermaaten08a|2008|Figure1|paper-sha256:f05922e427639a08cb5214cc4ef314689ecf2d87333cb5050003323d7631017f",
+  "title": "Visualizing Data using t-SNE",
+  "source_url": "https://www.jmlr.org/papers/v9/vandermaaten08a.html",
+  "source_figure": "Figure1a-c, PDFp8/printed2586",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Relevant §§2-3,discussion and AppendixA final formula; exact page scope in batch source notes",
+    "visual": "WholeFigure1page8 and Algorithm1page9 actually viewed",
+    "archive": "link_only originals; original local test code, inputs, vector figures and selected evidence"
+  },
+  "question": "How does the low-dimensional similarity kernel change gradient behavior across high/low-dimensional distance combinations?",
+  "elements": [
+    {
+      "id": "SNE",
+      "role": "First distance/gradient heatmap",
+      "source": "Figure1a"
+    },
+    {
+      "id": "UNI-SNE",
+      "role": "Comparison heatmap with its own scale",
+      "source": "Figure1b"
+    },
+    {
+      "id": "t-SNE",
+      "role": "Student-kernel gradient behavior",
+      "source": "Figure1c"
+    },
+    {
+      "id": "axes",
+      "role": "High-dimensional and low-dimensional distances, not patient/cell locations",
+      "source": "WholeFigure1 axes and caption"
+    },
+    {
+      "id": "colorbars",
+      "role": "Scalar values with distinct numeric scales across panels",
+      "source": "WholeFigure1"
+    }
+  ],
+  "relations": [
+    {
+      "from": "distance pair",
+      "to": "gradient scalar",
+      "type": "operator response",
+      "condition": "method-specific distribution assumptions; color scales differ",
+      "source": "Figure1 and surrounding text"
+    },
+    {
+      "from": "conditional probabilities",
+      "to": "symmetric P",
+      "type": "symmetrization and normalization",
+      "condition": "zero self-probability and declared population n",
+      "source": "§3.1"
+    },
+    {
+      "from": "all map pairs",
+      "to": "Q denominator",
+      "type": "global computational coupling",
+      "condition": "Student kernel, nonself ordered pairs",
+      "source": "§3.3 and Equation4"
+    },
+    {
+      "from": "P−Q and map vectors",
+      "to": "G",
+      "type": "weighted vector sum",
+      "condition": "symmetric P/Q final cost derivative",
+      "source": "Equation5 and AppendixA; own finite differences"
+    },
+    {
+      "from": "G",
+      "to": "updated coordinates",
+      "type": "optimization",
+      "condition": "negative-gradient local step; printed Algorithm1 plus sign conflict retained",
+      "source": "Algorithm1p9, read author snapshot and local numeric tests"
+    }
+  ],
+  "visual_design": "The original aligns three method panels on corresponding distance axes and uses color for scalar response. Method comparison requires reading each distinct colorbar. Local transfer shows C/P/Q and signed mismatch side by side, then equal-scale vector displacement and sampled cost below. This translates dependencies without copying source heatmap values.",
+  "gaps": [
+    "No full Figure1 numerical domain/reconstruction recipe established",
+    "Printed Algorithm1 sign conflicts with declared descent using final Equation5",
+    "Unversioned author snapshot not established as original2008 implementation",
+    "Full iterative optimizer and empirical figures not reproduced"
+  ],
+  "license": "Article, original images and author code/data remain local reference only; no source asset redistributed",
+  "notice_scope": "Bounded publisher/author-domain title-correction search, no linked notice returned; not exhaustive",
+  "test_limits": [
+    "Supplied conditional affinities and fixed map; one negative-gradient step",
+    "3to8point numeric cases;4point visual layouts",
+    "Executor-authored tests, not held-out or expert verification",
+    "No perplexity fitting, momentum, exaggeration, adaptive gains, biological or clinical inference"
+  ],
+  "transfer_entry": "tests/batches/embedding-affinity-01/DELIVERY.md",
+  "evidence_pins": {
+    "checkpoint-source-03.json": "bf63ddeee15845a921579ed18d7e1b8f303373c2ed70486ad334acd3999d898f",
+    "source-notes-01.md": "8a2b579c67b6c4a3830f93379b4928a5277b951ed4a0a8de3b0be88a5bf6b5f4",
+    "task-definition.json": "26bf612134095b37b176c233f8b703efbe13aed57731b68341628e20f5164db5",
+    "acceptance.json": "009528eff526f12a80a7ccf6969797e994494c88a4e82215366147181edfcd66",
+    "visual-review-04.json": "b259a24aad8e78213d876a3a9e242788688fca9ca3120c6d9182a6537fdf3384"
+  }
+}

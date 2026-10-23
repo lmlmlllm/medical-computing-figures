@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-23T16:06:57.221003+00:00",
+  "checks": [
+    {
+      "check": "all_commands_exit_zero",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "candidate_inputs_unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "raw_table_source_path_closed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "raw_table_source_hash_matches",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "ten_rows_in_actual_table_plot_and_mapping",
+      "pass": true,
+      "detail": {
+        "raw_rows": 10,
+        "plot_rows": 10,
+        "mapping_rows": 10,
+        "clarification": "The task said nine rows; actual candidate has ten rows, five benchmarks times two methods."
+      }
+    },
+    {
+      "check": "row_MMLU-Med_CoT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_MMLU-Med_MedRAG",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_MedQA-US_CoT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_MedQA-US_MedRAG",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_MedMCQA_CoT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_MedMCQA_MedRAG",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_PubMedQA*_CoT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_PubMedQA*_MedRAG",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_BioASQ-Y/N_CoT",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "row_BioASQ-Y/N_MedRAG",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "original_plus_minus_column_preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "no_added_uncertainty_bars_claimed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "plot_maps_actual_input_hashes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "medsam_editable_svg_text",
+      "pass": true,
+      "detail": {
+        "native_text_elements": 25,
+        "embedded_raster_elements": 0
+      }
+    },
+    {
+      "check": "medsam_no_embedded_raster_replacement",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "medsam_semantic_svg_ids_preserved",
+      "pass": true,
+      "detail": {
+        "expected_ids": 23
+      }
+    },
+    {
+      "check": "medsam_single_pdf_page",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "medsam_native_pdf_text_and_vectors",
+      "pass": true,
+      "detail": {
+        "spans": 25,
+        "vector_paths": 37,
+        "fonts": [
+          [
+            15,
+            "ttf",
+            "Type0",
+            "GATUGR+DejaVuSans-Bold",
+            "F1",
+            "Identity-H"
+          ],
+          [
+            22,
+            "ttf",
+            "Type0",
+            "ECSKOG+DejaVuSans-Bold",
+            "F2",
+            "Identity-H"
+          ],
+          [
+            29,
+            "ttf",
+            "Type0",
+            "HDCQEG+DejaVuSans",
+            "F3",
+            "Identity-H"
+          ],
+          [
+            36,
+            "ttf",
+            "Type0",
+            "DFDRWX+DejaVuSans",
+            "F4",
+            "Identity-H"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "medsam_pdf_text_within_page",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "medsam_pdf_no_raster_replacement",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "medsam_stage_and_parameter_labels_in_pdf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "results_editable_svg_text",
+      "pass": true,
+      "detail": {
+        "native_text_elements": 25,
+        "embedded_raster_elements": 0
+      }
+    },
+    {
+      "check": "results_no_embedded_raster_replacement",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "results_series_svg_ids_preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "results_single_pdf_page",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "results_native_pdf_text_and_vectors",
+      "pass": true,
+      "detail": {
+        "spans": 25,
+        "vector_paths": 32,
+        "fonts": [
+          [
+            17,
+            "ttf",
+            "Type0",
+            "CMNLBZ+DejaVuSans",
+            "F1",
+            "Identity-H"
+          ]
+        ]
+      }
+    },
+    {
+      "check": "results_pdf_text_within_page",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "results_pdf_no_raster_replacement",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all_ten_numeric_values_in_pdf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "local_runtime_imports_from_public_candidate",
+      "pass": true,
+      "detail": {
+        "check_spec": "<PUBLIC_SOURCE>/scripts/check_spec.py",
+        "render": "<PUBLIC_SOURCE>/scripts/render.py",
+        "plot_results": "<PUBLIC_SOURCE>/scripts/plot_results.py"
+      }
+    },
+    {
+      "check": "no_absolute_local_skill_dependency_in_runtime_sources",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "visual_views_completed_without_findings",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "native": {
+    "medsam": {
+      "svg_text_elements": 25,
+      "svg_image_elements": 0,
+      "pdf_pages": 1,
+      "pdf_text_spans": 25,
+      "pdf_vector_paths": 37,
+      "pdf_fonts": [
+        [
+          15,
+          "ttf",
+          "Type0",
+          "GATUGR+DejaVuSans-Bold",
+          "F1",
+          "Identity-H"
+        ],
+        [
+          22,
+          "ttf",
+          "Type0",
+          "ECSKOG+DejaVuSans-Bold",
+          "F2",
+          "Identity-H"
+        ],
+        [
+          29,
+          "ttf",
+          "Type0",
+          "HDCQEG+DejaVuSans",
+          "F3",
+          "Identity-H"
+        ],
+        [
+          36,
+          "ttf",
+          "Type0",
+          "DFDRWX+DejaVuSans",
+          "F4",
+          "Identity-H"
+        ]
+      ],
+      "pdf_images": 0
+    },
+    "results": {
+      "svg_text_elements": 25,
+      "svg_image_elements": 0,
+      "pdf_pages": 1,
+      "pdf_text_spans": 25,
+      "pdf_vector_paths": 32,
+      "pdf_fonts": [
+        [
+          17,
+          "ttf",
+          "Type0",
+          "CMNLBZ+DejaVuSans",
+          "F1",
+          "Identity-H"
+        ]
+      ],
+      "pdf_images": 0
+    }
+  },
+  "warnings": {
+    "medsam-render.stderr": "Matplotlib is building the font cache; this may take a moment.\n",
+    "results-plot.stderr": "Matplotlib is building the font cache; this may take a moment.\n"
+  },
+  "failures": [],
+  "scope": "Public source distribution smoke test on the original macOS/Python host. Includes command execution, data mapping, native SVG/PDF checks and actual model visual inspection. Not a fresh full host regression, OS access-denial test, expert review or cross-platform validation.",
+  "source_record_sha256": "ae5da75469dd981992b63c88593cb1e4fd6900a34bb2811994782dd40b31d5b4",
+  "visual": {
+    "method": "Actual view_image of two new PNG exports and two Poppler PDF page rasters in this agent turn.",
+    "findings": [],
+    "observations": [
+      "MedSAM training and inference panels are distinct; updated/frozen labels, box source and training-only supervision are legible; no clipping or arrow-label overlap seen at reviewed size.",
+      "Results show all five benchmark rows, two marker shapes, ten visible numeric labels, question denominators and common 0–100 tick scale; no overlapping labels, clipped text or added error bars seen."
+    ],
+    "scope": "Local publication smoke test only; no new science validation, target-journal-size audit or cross-platform claim."
+  },
+  "runtime": {
+    "python": "3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "pymupdf": "1.28.2"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "case_id": "MCF043-F1",
+  "dedup_id": "10.1101/gr.277670.123|2023-final|Figure1",
+  "title": "Partial alignment of multislice spatially resolved transcriptomics data",
+  "source_url": "https://doi.org/10.1101/gr.277670.123",
+  "source_figure": "Published Figure 1 whole low-resolution thumbnail; separate pinned author overview is a visual dependency, not an extra reference unit or verified high-resolution publication copy",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Final XML Methods s1 intro/s1a–d, Eqs 1–5, whole Figure 1 caption and relevant Discussion; complete pinned author README. S1–S5 not read; not whole-study verification.",
+    "visual": "Whole published 166×80 thumbnail and separate 2095×1008 author overview actually viewed. Fine details of the published figure and source-image version equivalence remain unknown.",
+    "archive": "Original XML, source images, README, metadata and incomplete source archive stay local-review-only. Delivery excludes raw sources, runtime, caches and review history."
+  },
+  "question": "How does a partial spot-to-spot mass coupling support later coordinate projection without becoming a hard assignment, confidence map or coordinate transform itself?",
+  "elements": [
+    {"id": "slice_inputs", "role": "Distinct spot sets, common genes, expression matrices, 2D coordinates and within-slice distances; spots are not automatically single cells"},
+    {"id": "coupling", "role": "Nonnegative mass with two marginal capacity upper bounds and specified total transported mass s"},
+    {"id": "objective", "role": "Expression and within-slice geometry costs mixed by alpha; optional histology enters a separately scoped cost construction"},
+    {"id": "projection", "role": "Partial weighted Procrustes projection uses the coupling; adjacent same-tissue slice projection and optional assigned z display are separate stages"}
+  ],
+  "relations": [
+    {"from": "coupling and capacities", "to": "transported and unused mass", "type": "constraints", "source": "Final Methods partial-alignment constraint Eq 3; full-mass comparator Eq 2"},
+    {"from": "expression and within-slice distances", "to": "coupling objective", "type": "cost construction", "source": "Final Methods s1a–c, Eqs 1, 4 and 5"},
+    {"from": "coupling and slice coordinates", "to": "common-coordinate projection", "type": "downstream computational dependency", "source": "Final Methods s1d; pinned author README line 13, with unread S5 implementation"}
+  ],
+  "visual_design": "The source overview groups pairwise partial alignment and downstream stacking. The original four-panel transfer separates input identities, capacity/mass constraints, the cost objective and later projection. A symbolic coupling matrix conveys permitted mass allocation without inventing numerical results. Repeated aliases retain six shared identities; optional histology and z branches are explicitly distinguished.",
+  "transferable_rules": [
+    "Record transported mass, capacity inequalities and total mass separately from confidence or required one-to-one assignment; separate cost mixing alpha from overlap s.",
+    "Coupling feasibility does not establish every downstream geometric operation; retain unknown endpoint applicability and separately sourced display-axis assignment.",
+    "Check actual editable equation glyphs and rules across final SVG/PDF with pinned fonts; a shared mathematical layout still needs visibility and whole-figure review."
+  ],
+  "gaps": [
+    "Final Figure 1 high-resolution image and exact author-overview equivalence not established",
+    "S1–S5 unread: overlap selection, full preprocessing/cost, solver and projection formulas remain partial",
+    "s=0 is formally feasible; inspected text does not establish its downstream projection rule",
+    "Physical z assignment and original study-execution commit unknown; 2025 README is separately attributed",
+    "Caption alone omits the same-tissue condition that is explicit in panel D; combined-artifact assessment retains this limitation",
+    "No real numerical coupling, solver, original model, biological or clinical validation"
+  ],
+  "license": "Article declares six-month exclusivity followed by CC BY-NC 4.0. Repository software BSD-3-Clause does not independently clear source image patches/icons. Only the original schematic and necessary licensed font bytes are delivered; raw sources remain local.",
+  "notice_scope": "Saved official Europe PMC MED/37553263 core record at 2026-10-12 UTC linked the preprint but no erratum/retraction. Publisher page returned 403; no exhaustive current notice or Crossmark audit.",
+  "transfer_entry": "tests/batches/paste2-partial-coupling-01/README.md",
+  "test_limits": [
+    "One original development figure with 36 elements, 49 relations and six repeated identities; final fixed eight requirements pass in combined figure/caption/spec/process scope",
+    "Independent image-only then source-assisted reading and later source-informed followups; no newly controlled-error accuracy or new held-out paper",
+    "Native math-coordinate failure and subsequent hidden-group failure preserved; final glyph/rule/vector geometry met original 0.25 pt tolerance",
+    "Exact 17-file ZIP same-host OS-isolated replay reproduced six exports byte-for-byte; five existing-file read denials plus network and outside-write denial",
+    "280×284 mm and minimum 8.4 pt; SVG requires exact packaged fonts; no arbitrary-editor roundtrip, cross-host, physical-print, journal or expert guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "6263e0c9c07fffc4d5c86b87ce33b88e5da7b5c2890971a7c535e15e3c8ad412",
+    "assessment.json": "d7ca59b9b3c85830dca2fa8b74003814bfb73cd69306e0cea511fa19519475fb",
+    "assessment-freeze-01.json": "d1dba3ff42403d514975075805435d11321cc560fbef8223a406b94ab9258b76",
+    "paste2-original-figure-01.zip": "3d8475d0514d850a952ba754551562039110ef369180b8c46bf70189bd99f411",
+    "replay-freeze-01.json": "bc26ed86170a491ea0f04dc63ffd2ec9617bba90b94548a13ce8117584a60b85",
+    "rule-snapshot-at-assessment-01/manifest.json": "0e4068019b9ebde7156fa72749dced3ed7f39f08c134609c98fa7ada51f80431"
+  }
+}

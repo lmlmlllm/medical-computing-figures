@@ -1,0 +1,100 @@
+{
+  "id": "MCF022-F1",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "arXiv:2105.01601",
+    "title": "MLP-Mixer: An all-MLP Architecture for Vision",
+    "version_read": "NeurIPS2021 formal main and supplement",
+    "url": "https://proceedings.neurips.cc/paper/2021/hash/cba0a4ee5ccd02fda0fe3f9a3e7b89fe-Abstract.html",
+    "arxiv_metadata_only": "v4 2021-06-11; revision notes read, PDF not compared",
+    "current_code_commit": "64801f1b3b367b3611cc27a3d45cc22870a36fb3",
+    "code_execution": false
+  },
+  "figure": {
+    "number": "Figure1",
+    "scope": "whole page and complete architecture detail",
+    "PDF_page_1based": 2
+  },
+  "deduplication_key": "NeurIPS2021:cba0a4ee5ccd02fda0fe3f9a3e7b89fe:Figure1",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "Which axis does each MLP mix, where are parameters shared, and which inputs bypass transformations?",
+  "elements_and_relations": {
+    "embedding": "shared per-patch projection to X[S,C]",
+    "token": "channel normalization, transpose, S→DS→S MLP shared across C, transpose back, add original X",
+    "channel": "channel normalization, C→DC→C MLP shared across S, add original U",
+    "head": "distinct block instances, pre-head LayerNorm, mean across S, linear K outputs",
+    "sharing_scope": "within a block; MLP suboperation independence does not extend to normalization statistics"
+  },
+  "layout": {
+    "original": "bottom-to-top overview and left-to-right expanded Mixer; dashed group is composition, not hypothesis; bands track transposition",
+    "transfer": "overview, expanded two-row block and axis/sharing contracts; two separate residual Add inputs",
+    "size_mm": [
+      280,
+      229.25
+    ],
+    "omitted": "exact widths, complete training regularization, performance and clinical claims"
+  },
+  "unresolved_and_scope": [
+    "Figure caption mentions dropout; compact supplement/current source does not implement all training machinery",
+    "Current 2026 commit is not an authenticated 2021 training snapshot",
+    "No source-code execution, performance replication, exact parameter counting or expert validation"
+  ],
+  "reading": "MAIN pp1–3; SUPP pp1,5 and additional returned web text; current models_mixer.py entire file read; remaining paper figures not viewed",
+  "visual": {
+    "actual_viewed": [
+      "original-page2-144ppi.png",
+      "original-F1-detail-216ppi.png"
+    ],
+    "generated_not_viewed": [
+      "original-page1-144ppi.png"
+    ],
+    "full_page_ppi": 144,
+    "detail_ppi": 216
+  },
+  "local_source_path_base": "tests/batches/axis-mixing-01",
+  "source_pins": {
+    "feasibility/mlp-mixer-neurips2021-supplement.pdf": "8515b449682aadd240188ef047b90af928d8bdfd1ffc7c8491de497ac9bff505",
+    "feasibility/seed-recheck.json": "1cc242b7418bf847b587757c69d19bcc2d0d4cce583c5b6ab05a8d2801012549",
+    "feasibility/original-page2-144ppi.png": "4628795b94bdce63f3e41a791540ec406d56dffcad65743d9e4447dd21c153f8",
+    "feasibility/github-vit-jax-tree.json": "b6097f55bcaf5539211e0b4a3b4f594a22ad1c08aeff39088d66c386d712a80d",
+    "feasibility/original-F1-detail-216ppi.png": "4ea1f338bfe2b3ed1cc05cb3ba7c785bc6f01e919d45a6c7f517ba234f4213a7",
+    "feasibility/models_mixer.py": "07a0d6d8fef59d29718ddab074c6a72cf3cb455bc7a35812c085dfe5c69073b5",
+    "feasibility/original-page1-144ppi.png": "337888ad92e472fda72ff8b484f693afdb67158486ecb6a35f799e97b6eabb0f",
+    "feasibility/vision-transformer-LICENSE": "4bebd04f269afe8437d003b4254204bd841dcb8106b96cb72158803ff9d711c2",
+    "feasibility/mlp-mixer-neurips2021.pdf": "6d70c6305115727e3bff4fa74532834fddbf860dfa2dcb1f817c15ca61a80838",
+    "feasibility/github-main-commit.json": "220f6c3b6d5afb99337869c5bcf9784b9d795d1dd81a0ec921cbd57365e148d4"
+  },
+  "rights": {
+    "paper_pixels": "publicly readable; redistribution not verified; originals link_only",
+    "code": "Apache2.0 read locally, source not redistributed by this batch"
+  },
+  "status_search": {
+    "query": "\"MLP-Mixer: An all-MLP Architecture for Vision\" correction OR erratum OR retraction",
+    "scope": "bounded search; revision notes found; no exhaustive clearance",
+    "arxiv_revision_notes_read": true
+  },
+  "record_pins": {
+    "tests/batches/axis-mixing-01/acceptance.json": "92c0259fe1155871d53511d037d130d6dbc67bc8d571641f43ade28d1956ef5f",
+    "tests/batches/axis-mixing-01/source-review.md": "b49b33b36a08cb3198cfe8346ef31ebf572cf85b8f9bdc59e2981366b7925936",
+    "tests/batches/axis-mixing-01/visual-review-final.json": "a848200e620575806dd5b00380a51823798befd26b0f0505320850e912acda65",
+    "tests/batches/axis-mixing-01/controlled/result.json": "9077ccf3479bd8b1f2d4fb3bb91fabcb1eb933d268811822753a16c5ab05a0b9",
+    "tests/batches/axis-mixing-01/replay-01/result.json": "574c53a6a345a9618cd625de566ced61bef15492450a1f7de88354eb181c6b03"
+  },
+  "transfer_evidence": {
+    "batch": "tests/batches/axis-mixing-01/README.md",
+    "native_counts": [
+      217,
+      217,
+      217
+    ],
+    "known_controls": "3 errors detected and repaired,1 correct0 false positive,1 insufficient not counted correct; initial212/217 layout failures retained",
+    "OS_replay": "21exports,11 supplied inputs,9 denied reads and network",
+    "holdout": false,
+    "independent_reader": false,
+    "formal_drawings": 2,
+    "appearance_variants": 1
+  }
+}

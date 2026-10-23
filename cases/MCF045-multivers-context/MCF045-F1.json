@@ -1,0 +1,87 @@
+{
+  "case_id": "MCF045-F1",
+  "dedup_id": "10.18653/v1/2022.findings-naacl.6|official2022|Figure1",
+  "title": "MultiVerS: Improving scientific claim verification with weak supervision and full-document context",
+  "source_url": "https://aclanthology.org/2022.findings-naacl.6/",
+  "source_figure": "Whole Figure1, printed p61 / PDFp1; HealthVer motivation, not architecture or executed model trace",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Official MultiVerS Fig1/caption, §§2.1/3.1/7.1 and AppendixA.3; final assessor directly read PDFpp2–4,7–8,12. SciFact2020 §2 is a separate definition dependency, not an additional reference figure. Full experiments/code unverified.",
+    "visual": "Whole original first page and full Figure1/caption actually viewed; methods page viewed. Final original PNG/PDF and exact-font SVG separately inspected.",
+    "archive": "Primary PDFs/HTML and source pixels retained local-review-only; excluded from clean delivery."
+  },
+  "question": "How do a shared claim–abstract encoding and two distinct heads produce a label-conditioned returned rationale set without confusing input context, head inputs and decoding?",
+  "elements": [
+    {
+      "id": "pair_context",
+      "role": "One given claim plus title and all n≥1 abstract sentences; only abstract sentences are rationale candidates"
+    },
+    {
+      "id": "shared_encoding",
+      "role": "One Longformer; global attention on <s>, all claim tokens and all </s> tokens"
+    },
+    {
+      "id": "distinct_heads",
+      "role": "Contextual <s> to three-way label head; each sentence-final </s> to two-layer binary head and per-sentence two-way softmax"
+    },
+    {
+      "id": "returned_set",
+      "role": "Predicted NEI empty; otherwise all scores strictly >0.5, or sole highest-scoring sentence only when that set is empty"
+    }
+  ],
+  "relations": [
+    {
+      "from": "full pair context",
+      "to": "both distinct heads",
+      "type": "shared contextual encoding and distinct readout attachments",
+      "source": "§3.1 printedpp63–64"
+    },
+    {
+      "from": "predicted label",
+      "to": "returned rationale set",
+      "type": "logical decoding condition, not sentence-head input or computation schedule",
+      "source": "§3.1 Inference,p64"
+    },
+    {
+      "from": "per-sentence positive score",
+      "to": "non-NEI threshold/fallback set",
+      "type": "strict threshold and conditional sole fallback",
+      "source": "§3.1 Inference,p64"
+    }
+  ],
+  "visual_design": "Source Fig1 motivates context beyond highlighted evidence. Original A–C panels instead synthesize Methods: input identity, shared encoding with separate readouts, and explicit three-case decoding. Repeated symbols preserve pair/sentence identities; no source clinical text or fabricated scores.",
+  "transferable_rules": [
+    "Identify what a condition changes: network input, loss, returned object or execution schedule. Do not convert output gating into a head-to-head feature edge.",
+    "Keep encoded context distinct from selected output membership. A fallback belongs to its full branch condition; preserve strict inequalities, all-versus-one cardinality and unresolved ties.",
+    "Native text proofs must cover ordinary spacing as well as formulas; font-derived visible-ink equivalence does not establish raw Unicode/contour identity."
+  ],
+  "gaps": [
+    "Figure1 motivation and Methods architecture are different source roles; whole-paper semantic completeness not claimed",
+    "MultiVerS simplified rationale definition versus original SciFact context-dependent minimal collection retained",
+    "Tie handling, empty/overlength input, exact segmentation/tokenization, implementation/head details and execution scheduling unverified",
+    "No retrieval/training/weak-supervision/performance reproduction; no causal faithfulness, isolated sufficiency, minimality or clinical guarantee"
+  ],
+  "license": "ACL post2016 CC BY4 policy checked; third-party clinical-text rights unverified. Deliver original symbolic figure/code/caption/spec and four licensed DejaVu fonts with notices; no primary source pixels/text/PDFs.",
+  "notice_scope": "Official identity and bounded notice checks retained in next-selection-after-loupe-01; no exhaustive absence certification.",
+  "transfer_entry": "tests/batches/multivers-context-decoding-01/README.md",
+  "test_limits": [
+    "One original3panel explanation;22elements (21visible plus1internal),23relations;fixed8criteria finalpass in combined figure/caption/spec/process scope",
+    "Fresh image-first then source review and same-reader source-informed followups; final assessor directly checked primary; no new heldout/error-control/expert test",
+    "Native01 hat/space failure retained; Native02 all1674glyphs/34vectors/8arrows meet unchanged0.25pt;350×292.25mm,min8.085pt",
+    "Seven hats display font-proven U+02C6 for source U+0302; raw Unicode/contours differ, one zero-extent source contour excluded only for ink comparison; glyph-level editing",
+    "Exact19member ZIP same-host OS-isolated replay7canonicalexports byte-identical;7known-existing forbidden-file probes plus network/outsidewrite denial",
+    "Run-specific render-environment paths excluded from byte identity; no arbitrary-editor, physical-print, crosshost or journal compliance guarantee"
+  ],
+  "evidence_pins": {
+    "protocol.json": "a20fc54f8186034ab2ba4f8bfe436325282ab4ab498b643b9d6fc06204ac99c2",
+    "assessment.json": "88e202eee15c006ca9a36ddd33b53807a3336352b16e64daa0634543a606b573",
+    "assessment-freeze-01.json": "238816fcaa31109f7aad79f349b9cb6f1ba3c2eb93e64d1a7ae4e394f66ade2c",
+    "multivers-original-figure-01.zip": "f9ab6be3790b1f8ddb74ab189dede4833413ed54c545af62f7ec2da2e2439b1d",
+    "output-audit/native-02-freeze.json": "a3161554c0a98d1eb3152ff2516c739b61201da48a9dc259ae3cf0f99c20a735",
+    "replay-freeze-01.json": "327717c47ec1c7302be9d0ece814d7f7b192ac9246480c1beb7d1d2e0428ab2a"
+  }
+}

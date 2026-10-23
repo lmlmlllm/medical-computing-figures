@@ -1,0 +1,118 @@
+{
+  "case_id": "MCF034-F1",
+  "dedup_id": "doi:10.1038/s41592-023-01994-w|publisher2024|Figure1",
+  "paper": {
+    "title": "Deep generative modeling of transcriptional dynamics for RNA velocity analysis in single cells",
+    "authors": "Gayoso, Weiler et al.",
+    "doi": "10.1038/s41592-023-01994-w",
+    "publication": "Nature Methods21:50-59(2024)",
+    "first_online": "2023-09-21",
+    "read_version": "Nature Methods21:50-59(2024), first online2023-09-21; official26-page publisher PDF"
+  },
+  "source_url": "https://www.nature.com/articles/s41592-023-01994-w",
+  "figure_url": "https://www.nature.com/articles/s41592-023-01994-w/figures/1",
+  "source_figure": "Whole Figure1 on PDF page3",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "metadata": "Primary publisher HTML/PDF read with normal TLS",
+    "reading": "Abstract/introduction, Results overview and Figure1caption, Discussion, Methods model/states/generative process/inference/RNA velocity/uncertainty and Eq33",
+    "visual": "Whole Figure1 on PDF page3 actually viewed; Methods page11 viewed for source notation conflicts; misleading page02 filename is body text, not another figure unit",
+    "license": "Article CC BY4.0 with credited third-party exceptions; original files retained locally, not distributed",
+    "archive": "link_only originals;183selected own runtime/export/evidence files",
+    "notice_check": "Bounded publisher/PubMed notice search found no linked correction/retraction, not exhaustive"
+  },
+  "question": "How do gene/cell abundances, state/time/rate dependencies and posterior samples support velocity and uncertainty estimates?",
+  "cannot_conclude": [
+    "Exact future cell fates",
+    "Observed longitudinal motion",
+    "Calibrated physical hours",
+    "Original VAE/posterior run reproduced",
+    "An implementation defect inferred from typeset notation discrepancies"
+  ],
+  "elements": [
+    {
+      "id": "inputs",
+      "role": "Preprocessed spliced/unspliced matrices, genes as rows and cells as columns",
+      "source": "Figure1a"
+    },
+    {
+      "id": "latent",
+      "role": "Encoder-derived representation and state assignment; decoded gene/cell/state time",
+      "source": "Figure1a; Methods model/generative process"
+    },
+    {
+      "id": "likelihood",
+      "role": "Rates, time and state determine modeled abundances",
+      "source": "Figure1a; Methods"
+    },
+    {
+      "id": "velocity",
+      "role": "Spliced derivative beta*u-gamma*s; phase x=s,y=u",
+      "source": "Methods RNA velocity/Eq33; Figure1a"
+    },
+    {
+      "id": "uncertainty",
+      "role": "Posterior velocity direction variation versus neighbor-extrapolation variation",
+      "source": "Figure1b; Methods intrinsic/extrinsic uncertainty"
+    }
+  ],
+  "relations": [
+    {
+      "source": "inputs",
+      "target": "latent",
+      "type": "inference dependency",
+      "condition": "Original probabilistic model, not executed here",
+      "source_locator": "Figure1a; Methods"
+    },
+    {
+      "source": "latent",
+      "target": "likelihood",
+      "type": "decoded state/time dependence",
+      "condition": "Gene- and cell-specific latent variables",
+      "source_locator": "Methods generative process"
+    },
+    {
+      "source": "likelihood",
+      "target": "velocity",
+      "type": "posterior-derived local derivative",
+      "condition": "Fitted abundances and rate/state averaging in source",
+      "source_locator": "Methods RNA velocity"
+    },
+    {
+      "source": "velocity",
+      "target": "uncertainty",
+      "type": "sample/extrapolation variability",
+      "condition": "Intrinsic and extrinsic constructions are distinct",
+      "source_locator": "Figure1b; Methods uncertainty"
+    }
+  ],
+  "visual_design": {
+    "source": "Dependency blocks above phase portraits distinguish inputs, latent model and kinetic outputs; separate uncertainty panels prevent equating velocity variation with extrapolated uncertainty",
+    "own": "Rate-dependency panel, isotropic phase plane and numeric table place equations, geometry and arithmetic side by side",
+    "counterexample": "ds=0 alone does not imply stationarity; Z has ds0,du4. Transcription-off preserves instantaneous ds at fixed states",
+    "limit": "Own diagram omits unexecuted inference rather than borrowing source model outputs"
+  },
+  "gaps": [
+    "Eq5/6/9/10 state/time notation conflicts",
+    "Source author code not read or run",
+    "No latent-time fitting, posterior sampling or neighbor extrapolation",
+    "No original data or benchmark reproduced",
+    "Finite four-state viewport fixture only"
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/velocity-phase-01/DELIVERY.md",
+    "acceptance_sha256": "58530124afca2ee5e8a14e8478f39d154b1135c529ee881b979a104038bf1e17",
+    "scope": "Same-executor development, simulated local derivatives"
+  },
+  "record_pins_base": "tests/batches/velocity-phase-01/",
+  "record_pins": {
+    "protocol.json": "49a731495417307de5ab897da1d481cf9c79bab059b62feed98188a9b126646a",
+    "source-notes.md": "3924be21933b344f9a808b653c6afce54ef9614884f19dfa991457e2765d41e5",
+    "source-view-01.json": "f71f59de0e11d949e76aba827caf5d7088d352c9a39c4f06eae1ec0589d03ecd",
+    "acceptance.json": "58530124afca2ee5e8a14e8478f39d154b1135c529ee881b979a104038bf1e17",
+    "visual-review-04.json": "cca25703a3e3e2d9ac9f45c119d988d1f00e4a22bdfa4124f15dde60b5b7a561",
+    "semantic-review-01.json": "42cef07a7d8ad2015d0f78b32ade9ab2a91f3948364da6245ab72d4719a9220d"
+  }
+}

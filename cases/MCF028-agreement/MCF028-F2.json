@@ -1,0 +1,116 @@
+{
+  "id": "MCF028-F2",
+  "status": "admitted as bounded source-aware developer reference",
+  "semantic_status": "full_joint_verified",
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "paper": {
+    "identity": "DOI:10.1016/S0140-6736(86)90837-8",
+    "title": "Statistical methods for assessing agreement between two methods of clinical measurement",
+    "authors": "Bland JM; Altman DG",
+    "version_read": "Author-hosted HTML, lastupdated5June2009, and9pageauthorPDF; includes declared historical log-number andnotation corrections; not original Lancet typesetting",
+    "url": "https://www-users.york.ac.uk/~mb55/meas/ba.pdf",
+    "code_read": false,
+    "code_execution": false
+  },
+  "figure": {
+    "number": "Figure 2",
+    "PDF_page_1based": 4,
+    "scope": "Whole original Figure2 and caption/equations viewed; Table1 and Figure1 on page2 are dependencies, not extra cases"
+  },
+  "deduplication_key": "DOI:10.1016/S0140-6736(86)90837-8:author-corrected2009:Figure2",
+  "original_figure_units": 1,
+  "question": "How do paired measurement differences vary over their paired means, and what do the mean and two-SD reference limits describe?",
+  "elements_and_relations": {
+    "inputs": "17 source subjects, one first reading from each meter; second readings retained but not pooled",
+    "coordinates": "x=(large+mini)/2, y=large−mini, paired by subject ID",
+    "reference_lines": "Mean difference and mean±2 sample SD, denominator n−1; not mean confidence intervals",
+    "provenance": "Explicit raw L/min and display L/min or L/s; all coordinate/statistic/axis changes synchronized",
+    "scope": "Descriptive method demonstration, not representative-population inference or device validity"
+  },
+  "layout": {
+    "original": "Open scatter markers, mean x-axis, signed difference y-axis, three dashed reference lines and right-side labels",
+    "transfer": "Native open circles on fixed axes; solid mean, dashed limits and separately defined dotted zero; right-side numeric summaries",
+    "why": "Displays magnitude-dependent differences without replacing agreement by correlation; separates observations from population-limit estimates",
+    "omitted": "Repeatability, transformed/log models, estimated-limit CIs and clinical tolerance conclusions"
+  },
+  "reading": {
+    "initial_feasibility_snapshot": {
+      "web": "AuthorHTML full returned185lines:identity/version, introduction/sample design, Table1, plotting/correlation distinction, agreement/precision, transformed/repeated measurement context, explicit correction footnotes; publisher/PubMed identity/abstract. This is reference learning, not acceptance of every historical generalization.",
+      "local_PDF": "Actual9pagePDF; text ofpages3–4 read, and page2Table1/wholeFigure1pluscaption and page4wholeFigure2pluscaption/nearbyMethods actually viewed. Other figures not visually inspected.",
+      "not_done": [
+        "No author code found/read/run",
+        "No numerical input transcription or local mean/SD/LoA recomputation",
+        "No new distribution assessment, CI, hypothesis test or device-validity conclusion"
+      ]
+    },
+    "subsequent_verified_work": "PDF page1 SAMPLE DATA read; table and full Figure2 viewed again before input freeze; every table fact transcribed and all coordinate/statistic mappings independently checked"
+  },
+  "visual": [
+    {
+      "file": "feasibility/table1-page2.png",
+      "scope": "Entire1190x1684PDFpage2 rendered2x; all17Table1rows/fourmeasurements per subject andwholeFigure1withidentityline actually viewed",
+      "tool": "PyMuPDF1.28.2 thenview_image",
+      "observations": [
+        "Table separates first/second readings forlargeWright andminiWright; subject is the pairing key.",
+        "Figure1identityline differs conceptually from correlation/regression; chart viewed as dependencyonly."
+      ]
+    },
+    {
+      "file": "feasibility/figure2-page4.png",
+      "scope": "Entire1190x1684PDFpage4 rendered2x; wholeFigure2,caption andsurroundingtext/equations actuallyviewed",
+      "tool": "PyMuPDF1.28.2 thenview_image",
+      "observations": [
+        "Horizontal axis is averagePEFR of the two meters inL/min; vertical axis large-minus-mini difference inL/min.",
+        "Three dashed horizontal lines are mean±2SD andmean; these are notconfidenceintervals for the mean.",
+        "Upper plottedline ispositive about+75L/min, whereas the visiblePDFupperformula endswith−75.5; this is visiblepixels, not solely PDFtext extraction.",
+        "All pairedpointmarkers visible; exact table-to-point validation notyetperformed."
+      ]
+    }
+  ],
+  "local_source_path_base": "tests/batches/measurement-agreement-01",
+  "source_pins": {
+    "feasibility/author-corrected-paper.pdf": "79695cfcf1468719845c7aa89d6ab04c82135d104c24f4fbd44645fe4f1d4286",
+    "feasibility/table1-page2.png": "c38b3e1d561c3717d9469da41df86168b667170c3ba30b5c56b1d5eef6ee701a",
+    "feasibility/figure2-page4.png": "5d96f56e9b36be5b76631237d7ee1b08c6de14bf8b9eb2e1e4800b32719f76ff"
+  },
+  "rights": {
+    "page_statement": "Reproduced bykindpermissionofLancet; noCCorunrestrictedreusegrantidentified",
+    "original_assets": "localreadingonly, link_only distribution plan; no originalPDF/pixelsselected",
+    "future_input": "Potential minimal factual Table1 transcription withattribution; no sourceprose/figures/code redistribution andno claim newlicensedresearchdataset"
+  },
+  "status_search": {
+    "query": "ExactDOI with correction/retraction; second bounded author-page75.5/below query",
+    "result": "No matching retraction notice surfaced. Search returned a later HbA1c paper erratum that cites BlandAltman; it is not a correction to this target and is excluded. AuthorHTML explicitly declares historical numerical andnotation corrections. Not exhaustive clearance."
+  },
+  "source_conflicts": [
+    "Actual PDF upper-limit final minus sign contradicts algebra, plotted positive upper line and HTML.",
+    "Mini below/above prose direction conflicts with large-minus-mini convention; executor-identified, not claimed publisher erratum."
+  ],
+  "resolution_scope": "Replot follows explicit paired subtraction and independently recomputed mean/SD/limits; original conflicts and rounding path are disclosed. No new inferential or clinical assessment.",
+  "record_pins": {
+    "tests/batches/measurement-agreement-01/acceptance.json": "499ba08bdc457395b5951f290e87cd1ecb96f580c71fa403ade787efce12717a",
+    "tests/batches/measurement-agreement-01/source-notes.md": "2a2a5e61828b59a5817e14e3ad3ecdb0507a3109f4cab1cf76ea22de022fbe58",
+    "tests/batches/measurement-agreement-01/visual-review-01.json": "d34539cd4bd07dd9583f2466084229e3d4869cefb177554814832a3b3d88d952",
+    "tests/batches/measurement-agreement-01/validation/result.json": "58c8978b2f945233a421ff8cfc9f2317463c646e95b218e6b82d654ae7ad7b44",
+    "tests/batches/measurement-agreement-01/replay-01/result.json": "3846a9fd2ada3a904d2a1960586da017edd2c26236ec498d092c642e66e392fe",
+    "tests/batches/measurement-agreement-01/pre-compute.json": "072bc4bf328c65fa83c4b4fe792024236bfb921045b2dff6c312a9bc6da58505"
+  },
+  "transfer_evidence": {
+    "frozen_requirements": 15,
+    "native_checks_each": 21,
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "controlled_errors": 3,
+    "misses": 0,
+    "false_positives": 0,
+    "undecidable": 1,
+    "repairs": 3,
+    "invalid_input_rejections": 6,
+    "actual_authored_image_views": 14,
+    "OS_replay": "27+9 byte-identical exports;13 file probes and network denied;13 supplied inputs unchanged",
+    "holdout": false,
+    "independent_reader": false,
+    "expert_review": false
+  }
+}

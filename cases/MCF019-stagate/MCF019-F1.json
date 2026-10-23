@@ -1,0 +1,165 @@
+{
+  "id": "MCF019-F1",
+  "status": "Admitted semantic_partial after finite developer drawing and evidence-field tests",
+  "paper": {
+    "title": "Deciphering spatial domains from spatially resolved transcriptomics with an adaptive graph attention auto-encoder",
+    "doi": "10.1038/s41467-022-29439-6",
+    "pmid": "35365632",
+    "official_url": "https://www.nature.com/articles/s41467-022-29439-6",
+    "publication": "Nature Communications 13,1739 (2022);published2022-04-01",
+    "authors": [
+      "Kangning Dong",
+      "Shihua Zhang"
+    ]
+  },
+  "figure": "Figure1 whole;PDFpage3",
+  "deduplication_key": "10.1038/s41467-022-29439-6|Nature Communications 2022|Figure1",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "eligibility": "Development reading preceded these tests; not a held-out paper. Own diagrams/controls/repairs do not add original cases.",
+  "question": "How do spatial support, expression features, optional preclustering, learned attention and reconstruction connect without conflating spatial adjacency with directed aggregation?",
+  "elements_and_relations": [
+    {
+      "visible": "Left construction stage connects physical spot positions to a spatial neighbour graph; the optional cell-type-aware construction is grouped by a dashed blue box.",
+      "meaning": "Radius support is undirected; expression-derived prelabels prune cross-label edges in the optional branch, retaining spots. Prelabels are not verified cell types.",
+      "evidence": "Figure1/caption and Methods Construction of SNN/cell type-aware SNN; source-review S01/S02"
+    },
+    {
+      "visible": "Central encoder/decoder links input gene expression, embedding and reconstructed expression; attention operates on graph neighbours.",
+      "meaning": "Fixed TensorFlow forward distinguishes shared M, two attention parameter sets, mixed T, transposed weights and reused T. These details rely on code/methods rather than icon appearance alone.",
+      "evidence": "Methods Eq1–7; fixed model.py encoder/decoder; S03/S04"
+    },
+    {
+      "visible": "Right side groups applications including domains, denoising and 3D.",
+      "meaning": "Downstream domain clustering is different from preclustering. 3D needs aligned slices and cross-slice graph support. The new drawing is explicitly single-slice.",
+      "evidence": "Figure1/caption; Methods; S05/S06"
+    }
+  ],
+  "layout": {
+    "grouping": "Three stages: graph construction, representation/reconstruction, downstream uses; optional branch enclosure separates conditions.",
+    "transfer": "Separate support/features/learned weights, explicit optional conditions, direction for aggregation, labels for tied/reused objects.",
+    "omissions": "Overview does not expose all forward activations, exact loss or publication run configuration.",
+    "not_transferred": "Original tissue or result images, learned attention magnitudes, biological conclusions, performance or 3D success."
+  },
+  "conflicts_and_scope": {
+    "source_status": "semantic_partial",
+    "unresolved": [
+      "paper Eq6 repeated-index notation",
+      "paper sum-of-per-spot-L2 versus fixed-code global residual norm",
+      "last-layer activation and weight-decay-loop differences",
+      "entry defaults are not actual published-run evidence"
+    ],
+    "visual_history": "first support/node layering and two label placements repaired; exports03 viewed; this revision adds evidence fields only",
+    "reviewer": "ROOT source-aware developer self-review; no new blind or expert assessment",
+    "revision_reason": "Original specs lacked per-edge source/phase fields and contained a non-resolving relative source_record; original artifacts remain unchanged"
+  },
+  "reading_and_viewing": {
+    "reading": {
+      "full_PDF_text_pages": [
+        1,
+        2,
+        3,
+        10,
+        11
+      ],
+      "partial_PDF_text": "page6 first paragraph and following attention introduction only; extracted remaining pages not claimed read",
+      "HTML": "Methods, Figure1 caption, article metadata and rights; selected overview and discussion passages",
+      "code_complete": [
+        "README.md",
+        "STAGATE/model.py",
+        "STAGATE/STAGATE.py",
+        "STAGATE/Train_STAGATE.py"
+      ],
+      "code_partial": "utils.py lines1–61, Cal_Spatial_Net; remaining function names only",
+      "license": "MIT full bytes downloaded; first14lines read; no code reuse planned"
+    },
+    "visual": [
+      {
+        "file": "feasibility/figure1-full.png",
+        "scope": "whole Figure1, readable supplied full image actually viewed; no other original figures viewed"
+      },
+      {
+        "file": "feasibility/figure1-page3.png",
+        "scope": "entirepage3 with Figure1 andcaption actuallyviewed;140dpi"
+      },
+      {
+        "file": "feasibility/page02-text.png",
+        "scope": "entirepage2 actuallyviewed, nofigure; initial filename figure1-page2 was corrected before pins"
+      }
+    ],
+    "integration_scope": "No new original view or source-code read claimed at integration.",
+    "reviewer_type": "ROOT source-aware self-review; known-key developer tests; no new independent blind reading or human expert."
+  },
+  "source_pins": {
+    "feasibility/paper.pdf": "fee9f47f5e24c984ba4f50f50296cf54f38a9c81d3feb9db6532b96139af86e9",
+    "feasibility/figure1-full.png": "961a6d49ad32604b93b2253c1694e2041e902b15d6d4b96ae6b87aa20357d023",
+    "feasibility/publisher.html": "08b42f1c629915fcd62d421701ed98197b761c499cb150bc9f620a86c16f2e19",
+    "feasibility/repository/README.md": "3b86d2d814284561e4db9039c852a5f72664f168cf15f8e42448230ede673446",
+    "feasibility/repository/LICENSE": "0a0fbef1b92f11f291f43e6b14ab4cc8aea26537a9c96972a9567f0b22f916ad",
+    "feasibility/repository/STAGATE/model.py": "6b55f87d78f287f962837f77cfb1590dfa6519fa9d744724064721afd800d888",
+    "feasibility/repository/STAGATE/STAGATE.py": "e47a633b4331c57132c393ca04d8ec11304f77eb5ed85e773d9c69dfede98250",
+    "feasibility/repository/STAGATE/Train_STAGATE.py": "9f413a2ef6e383a94fee3bc1327892bfa725b03ca119d164794395ceb2b2412f",
+    "feasibility/repository/STAGATE/utils.py": "f2dfbe0c5f73ed95eef7a9125a9dd2352c533087e6d342a5dbe41a814f865aa0"
+  },
+  "local_source_path_base": "tests/batches/spatial-graph-01",
+  "repository": {
+    "url": "https://github.com/zhanglabtools/STAGATE",
+    "commit": "d6dd9f4747ff4f0356347ee9f662d9404bd68143",
+    "commit_date": "2022-03-05T11:53:40Z",
+    "branch_scope": "Original TensorFlow implementation; README points to PyG repository, not read/executed",
+    "execution": "No original code imported/run; no dataset downloaded or model training"
+  },
+  "rights": {
+    "paper": "Publisher CC BY4.0, third-party exceptions; no figure-specific excluded credit seen in Figure1/caption",
+    "code": "Repository LICENSE is MIT; source code not imported into drawing tool or distributed",
+    "raw_release": "Original PDF, tissue/application pixels, research code and HTML stay outside proposed release"
+  },
+  "status_search": {
+    "queries": [
+      "\"STAGATE\" \"correction\"",
+      "\"STAGATE\" \"retraction\"",
+      "\"s41467-022-29439-6\" correction retraction"
+    ],
+    "finding": "No paper-specific correction/retraction notice identified in this bounded search; other papers on batch correction do not count as notices; not proof no notice exists"
+  },
+  "access_limits": [
+    "PubMed indexed record found by search; direct HTML returned browser challenge, not bypassed",
+    "Publisher HTML/PDF/figure accessible with standard TLS curl",
+    "Early attempt to read publisher-text before extraction finished returned missing file; later successful read shown separately"
+  ],
+  "record_pins": {
+    "source-review.md": "2d323c241002611f5a7eaf60acbceb38923f7dbe7171a83adc80670f29e082b2",
+    "figure-plan.md": "5b4df1d06b006091a49281cefe66add39341a5993baca19cddccdf2180390032",
+    "expected.json": "7b2e0e0399902943cee255c167702dd98d6dee5c6f4baef7f1f3c6c1256a8b14",
+    "verification/acceptance.json": "790aabb5cd5dbd5bb61a1bdac163df3f121c0ded3de90e3ff67af3caed9088d4",
+    "verification/delivery-acceptance.json": "5f0309853c52bbdea8b1b875e04b73735bfbf4805ab6951fb413defc77c7dca6",
+    "verification/visual-review.json": "da5eb45be391b630e0531b958fa7ba71b4473a487d329c5a2d83dad2ddd9108c",
+    "controls/scores-first.json": "ce528af2cc4439f3a3b9260a25d4796dee83a384f844bbe5b1917b5b7e803408",
+    "replay-delivery-01/result.json": "4f8df707ef240a357ba72d66fd58d9a5459a4947ae1751ddb091115c15f6b2b0"
+  },
+  "transfer_evidence": {
+    "report": "tests/batches/spatial-graph-01/README.md",
+    "frozen_requirements": 17,
+    "formal_diagrams": 2,
+    "appearance_variants": 1,
+    "native_checks": [
+      100,
+      78,
+      100
+    ],
+    "evidence_field_checks": [
+      141,
+      115,
+      141
+    ],
+    "metadata_negative_variants": 9,
+    "controls": "3 known-key targeted errors detected; correct0findings;1missing-publication-run packet undecidable",
+    "repairs": "21exports equal original exports-03 baselines; previews actually viewed",
+    "source_denied_replay": "21current exports byte-identical; authored source notes/plan copies supplied",
+    "views": "18actual generated-image views; full-resolution tool displays downsampled as recorded in ledger",
+    "first_failures": "Node occlusion then P/Q label-line overlap; first checker case-sensitive mismatch; original spec evidence/path gap. Histories retained.",
+    "not_established": "Original experiments, learned attention, independent reader accuracy, biological/clinical validity, exact publication run or complete source agreement"
+  }
+}

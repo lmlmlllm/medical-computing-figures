@@ -1,0 +1,119 @@
+{
+  "case_id": "MCF051-F8",
+  "dedup_id": "10.2196/26151|JMIR2021-07-12|Figure8a-b",
+  "title": "Clinically Applicable Segmentation of Head and Neck Anatomy for Radiotherapy: Deep Learning Algorithm Development and Validation Study",
+  "source_url": "https://www.jmir.org/2021/7/e26151/",
+  "source_figure": "Whole Figure8(a,b), one reference unit; Figures5/6 and eight equation images are dependencies, not extra selected units.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Official publisher identity/rights, annotation, complete relevant Performance Metrics/Implementation, Fig8 caption, tolerance and discussion; whole Fig5/6 and eight equations as dependencies. Later code commit1f805cea446805e559badc80dd27f34175e4173d statically read, not sourcePDF, entire study, supplement or metric execution.",
+    "visual": "Whole Figure8(a,b), whole Fig5/6 and eight equation images actually viewed; final whole/intended PNG, independent PDF, exact-font staticSVG and fresh replay images viewed.",
+    "archive": "Raw primary images/code and reading evidence local-review-only; cleanZIP includes original editable explanation, complete caption, renderer and licensed font/notices, no primary artwork."
+  },
+  "question": "How do volume overlap and tolerance-conditioned bilateral surface agreement differ in counted quantity, direction, weighting and interpretation?",
+  "elements": [
+    {
+      "id": "masks",
+      "role": "Reference R and prediction P masks have volumes; their boundaries supply surface elements."
+    },
+    {
+      "id": "volumetric_dsc",
+      "role": "Twice intersection volume divided by sum of full R and P volumes, dimensionless."
+    },
+    {
+      "id": "directed_distances",
+      "role": "Two nearest-boundary distance lists in mm; lists may differ when roles reverse."
+    },
+    {
+      "id": "accepted_surface_measure",
+      "role": "Each distance≤τ admits its originating element with its own area; 3D area in mm², 2D analogue uses length."
+    },
+    {
+      "id": "surface_dsc",
+      "role": "Sum of accepted areas on both sides over combined total area; no extra2 or generic unweighted fraction mean."
+    },
+    {
+      "id": "tolerance",
+      "role": "Organ-specific distanceτ derived from three-observer variation on TCIA validation; estimator and values not established."
+    },
+    {
+      "id": "cutoff",
+      "role": "Paper-selected unitless surfaceDSC0.95 differs from distanceτ and is not universal clinical acceptance."
+    },
+    {
+      "id": "reference",
+      "role": "Clinically reviewed annotation protocol, not infallible anatomy or biological truth."
+    }
+  ],
+  "relations": [
+    {
+      "from": "R,P masks",
+      "to": "volume intersection and full-volume sum",
+      "type": "measure inputs",
+      "source": "Publisher Performance Metrics; volumeDSC equation"
+    },
+    {
+      "from": "each originating boundary",
+      "to": "opposite-boundary nearest distances",
+      "type": "two directed geometric comparisons",
+      "source": "Fig5/8 and overlap/band equations; later static metrics.py"
+    },
+    {
+      "from": "distance≤τ and own-element areas",
+      "to": "accepted-area sums",
+      "type": "conditional weighted measure",
+      "source": "inclusive band equation; metrics.py396–423"
+    },
+    {
+      "from": "bilateral accepted/total area sums",
+      "to": "symmetric surface score",
+      "type": "ratio, not equality of directed lists",
+      "source": "surfaceDSC and overlap equations"
+    },
+    {
+      "from": "annotated region L_p per patient",
+      "to": "sparse volume terms summed before division",
+      "type": "annotation support and aggregation",
+      "source": "sparse volumetricDSC equation"
+    }
+  ],
+  "visual_design": "Original three-panel role diagram separates volume fraction, two directed boundary lists with bilateral area ratio, and tolerance/reference/score-cutoff interpretation. Only two dependency arrows; no copied masks, source contours or generated numeric results. Complete caption supplies originating-element weights, sparse aggregation and the specific score-cutoff referent.",
+  "transferable_rules": [
+    "Separate the quantity being measured, its directional sampling support and its aggregation. A symmetric final ratio need not arise from identical directed lists; distance acceptance must preserve the measure of each originating element.",
+    "Name a distance tolerance and a score cutoff with their distinct units, derivation and decision role. Reference annotations and missing annotation support do not establish ground truth, empty anatomy or universal clinical acceptability."
+  ],
+  "gaps": [
+    "Exact tolerance values, estimator/quantile/pooling, observer membership and underlying masks are not established.",
+    "Later2025code is not verified as the2021implementation; caller rounding/ties and empty-case runtime output unknown.",
+    "Fig8caption gives≤ for both accepted and unacceptable parts; strict complement inference is not official correction. Paper grid rounding differs from later direct tolerance use; surface empty-range docstring and predicted-area sorting prose conflict with code.",
+    "No numerical metric/model, lookup-table internals, patient topology, clinical benefit or correction-time experiment run.",
+    "Image-only area-weight and cutoff-referent shortcuts remain; full caption required. DSC expansion remains optional.",
+    "No sourcePDF/supplement/whole-study audit or browser/editor/physical-print/cross-runtime verification."
+  ],
+  "license": "ArticleCCBY4.0, later sourcecodeApache2.0 and packaged renamed NotoSansSC SILOFL1.1 are distinct. Primary artwork not included in derivativeZIP.",
+  "notice_scope": "Bounded publisher/PubMed/DOI-title notice checks; none encountered, not exhaustive clearance. Four source/code conflicts retained.",
+  "transfer_entry": "tests/batches/surface-metric-roles-01/README.md",
+  "test_limits": [
+    "OriginalS01–S08 denominator8 independent final pass for image with complete caption;21objects33relations10claims27visible payloads. Development transfer only; no new holdout or expert count.",
+    "889nativeglyphs18paths,min9.5pt;maxstatic0.000750000000494pt against fixed0.25pt.757actual ink/757outline/132space probes distinct.27literalpayloads25rawexact2whitespace-only; sequence/multiplicity preserved.",
+    "28member exactZIP same-host/runtime OS replay;10outputs byte-exact inclenvironment;before/after76controls each with29known-existing denied opens,positive package/write and connectEPERM after socket/settimeout success.",
+    "Three Stage1 records preserved; first two caption-resolved, third optional. All four sourceconflicts, unknowns, machinery failures and initial assessor XML-indentation false failure retained.",
+    "775corrected assessor checks460pins;root506pinrecords470paths verified. Native/replay evidence was reviewed without another experiment. New generalized rule text has not been independently regressed on another case."
+  ],
+  "evidence_pins": {
+    "protocol.json": "1986c7c65530814106d570fe4d7939d75583055fe54cdda2f3945c2b32a24de8",
+    "scientific-freeze-01.json": "24827f32fe0fd458e0235855aed734dc2433c84f9678c5d18366a9c08d2245ba",
+    "review/stage1-freeze.json": "6d0274735303af807e7d008e55f8d15aabc4688a280ff10cb0d33b0f4dfd998d",
+    "review/stage2-freeze.json": "a193111056ae6c6481028f69f323b124777c2aaee92dd5d00eb31ffca3d690c5",
+    "output-audit/native-freeze-01.json": "019a8a03c1b1f4f1b3ef966cf1c7d06c38abc1e490ceddd3951b5c79a2788c3d",
+    "package-freeze-01.json": "f08f6ffa849a6e4146e888702467084c37fd1bb701ab6644427957ecee794c28",
+    "output-audit/replay-freeze-01.json": "ef1e6a5f274b67c3a03f7536b520798a519b27bd5c05660a1e2d7e30326ccb30",
+    "review/final-assessment.json": "bafb6fec44483b391301202c53fcbb15216f11f2122f7551b699c5471a8c52f6",
+    "assessment-freeze-01.json": "72f53fbe754b01f8710f329e44a735db034d70bf6be9d1ac66dce4a13fa0ce67",
+    "author/production-01/surface-metric-roles-01.zip": "5415bc5d9f575a79c66e3eaec91c78e4f2ee83f7925e134ced011e61471e4b61"
+  }
+}

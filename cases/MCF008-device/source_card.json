@@ -1,0 +1,99 @@
+{
+  "id": "MCF008-device",
+  "batch": "engineering-01",
+  "status": "source_read_and_single_original_figure_inspected",
+  "title": "Fully implantable and bioresorbable cardiac pacemakers without leads or batteries",
+  "authors": "Choi YS, Yin RT, Pfenniger A, Koo J, et al.",
+  "doi": "10.1038/s41587-021-00948-x",
+  "pmid": "34183859",
+  "pmcid": "PMC9270064",
+  "journal": "Nature Biotechnology",
+  "volume": 39,
+  "pages": "1228–1238",
+  "published_online": "2021-06-28",
+  "issue": "2021-10",
+  "access_date": "2026-10-11",
+  "version": {
+    "primary_read": "Publisher-formatted article with Methods and Extended Data in author-hosted PDF; PDF file also includes a cover page. Article pages 1228–1238 are PDF pages 2–12.",
+    "comparison": "Nature publisher index and Crossref identify VOR 2021-06-28; PMC identifies author manuscript publicly available 2022-07-08. We read the author-hosted publisher-formatted PDF, not the PMC author manuscript.",
+    "file": "source-assets/natbiopacemaker.pdf",
+    "sha256": "3cebc19196f1432c876ce862a17a46144fa91687c703805688edc951328146e6"
+  },
+  "access": {
+    "success": "https://rogersgroup.northwestern.edu/files/2021/natbiopacemaker.pdf",
+    "publisher": "https://www.nature.com/articles/s41587-021-00948-x",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270064/",
+    "crossref": "https://api.crossref.org/works/10.1038/s41587-021-00948-x",
+    "limitations": [
+      "Direct Nature request redirected to inaccessible identity service; PMC direct request showed browser verification. Used openly reachable university author-hosted PDF, without bypassing either gate.",
+      "Crossref web tool failed; Python urllib certificate chain failed; system curl normal certificate validation succeeded."
+    ]
+  },
+  "correction_retraction_check": {
+    "date": "2026-10-11",
+    "queries": [
+      "\"10.1038/s41587-021-00948-x\" correction retraction",
+      "\"Fully implantable and bioresorbable cardiac pacemakers without leads or batteries\" correction"
+    ],
+    "crossref_relation": {},
+    "crossref_update_to": null,
+    "result": "No dedicated correction or retraction found in publisher/PubMed indexed results or Crossref record. This is a bounded search, not an exhaustive guarantee. PMID34244679 is commentary, not correction.",
+    "evidence": "source-assets/crossref-metadata.json"
+  },
+  "rights": {
+    "copyright": "The authors, under exclusive licence to Springer Nature America, Inc. 2021",
+    "open_reuse_license_found": false,
+    "crossref_license": "Springer text-and-data-mining terms, not a demonstrated CC redistribution license.",
+    "originals": "Local-only research reading/inspection; exclude source-assets entirely from distribution. Do not redistribute downloaded paper, extracted text or figure screenshots.",
+    "original_redraw": "New abstraction and layout drawn with our own geometric primitives. No traced artwork or original pixels."
+  },
+  "read_locators": [
+    {
+      "id": "S-design",
+      "locator": "PDF p3 / article p1229, Design of bioresorbable, battery-free cardiac pacemakers",
+      "read": "Rx W/Mg dual coil; PLGA dielectric and encapsulation; Si NM PIN diode; capacitor-free rectification; flexible W/Mg extension; bipolar exposed contact pad."
+    },
+    {
+      "id": "S-power",
+      "locator": "PDF p3 / article p1229 last paragraph and PDF p19 Extended Data Fig4 caption",
+      "read": "Waveform generator RF bursts, amplifier, Tx and Rx coils, inductive power transfer; diode produces approximately DC cathodal output at pads. Extended Data4 image was not inspected; only caption read."
+    },
+    {
+      "id": "S-fig1",
+      "locator": "PDF p4 / article p1230, Fig1a–d and full caption",
+      "read": "Exactly one complete original figure viewed; a device layers and contacts; b in-vitro dissolution photos; c proposed inductive operation; d proposed later bioresorption."
+    },
+    {
+      "id": "S-canine",
+      "locator": "PDF p5 / article p1231, In vivo pacing in a large-animal model; PDF p14 Methods, In vivo canine model study",
+      "read": "Waveform generator/amplifier drive Tx; surface limb electrodes connected to six-lead ECG. Effective capture confirmed by surface ECG. No feedback controller described."
+    },
+    {
+      "id": "S-limit",
+      "locator": "PDF p11–12 / article p1237–1238, Discussion",
+      "read": "Animal proof-of-concept; sensor integration for closed-loop operation is a future direction. Human tissue experiments were ex vivo, not clinical implantation."
+    },
+    {
+      "id": "S-human",
+      "locator": "PDF p13–14, Preparation of human ventricular heart slices and Optical mapping",
+      "read": "Discarded donor heart slices and evoked optical action potentials; this is not human clinical pacemaker validation."
+    }
+  ],
+  "visual_inspection": {
+    "complete_original_figures": 1,
+    "files": [
+      "source-assets/figure1-full-page.png",
+      "source-assets/figure1a-device-detail.png",
+      "source-assets/figure1c-coupling-detail.png"
+    ],
+    "observed": [
+      "Exploded layered receiver plus flexible extension and paired exposed contacts in Fig1a.",
+      "Fig1c depicts a Tx coil outside body and receiver near heart; this is labeled proposed utilization, not proof of a deployed clinical system.",
+      "Dissolution photographs and arrow to later resorption have temporal semantics, not data/feedback."
+    ],
+    "not_viewed": [
+      "Other full original figures including Fig4 and Extended Data4; their relevant text/captions were read."
+    ]
+  },
+  "scope": "Draw functional wireless power/control chain plus canine experimental ECG observation. Do not model detailed circuit, measured waveforms, resorption kinetics, or human treatment efficacy."
+}

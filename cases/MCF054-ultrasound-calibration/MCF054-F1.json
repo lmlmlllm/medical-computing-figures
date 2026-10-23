@@ -1,0 +1,114 @@
+{
+  "case_id": "MCF054-F1",
+  "dedup_id": "10.1038/s41551-018-0287-x|Wang2018-author-versions|Figure1",
+  "title": "Monitoring of the central blood pressure waveform via a conformal ultrasonic device",
+  "source_url": "https://doi.org/10.1038/s41551-018-0287-x",
+  "source_figure": "Whole Figure1a–b, one source unit across separately pinned PMC manuscript image and UCSD author-hosted article/supplement; dependent Methods/Notes8–9 are not extra cases.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Bounded primary reading of main text, Figure1 caption, Methods and Notes8–9 including Eqs1–3, conflicted7–8 and Note9.4; not full106-page or source-code/experiment validation.",
+    "visual": "Whole primary Figure1 in both pinned versions, relevant equation/method pages and four actual original-output views inspected. Independent staged image/source/spec review, native/edit views and fresh replay PDF/PNG inspected.",
+    "archive": "Primary PDF/JPEG/text/page pixels local-review-only. Clean27-member ZIP contains the original qualitative explanation, editable SVG/native PDF/PNG, full caption, portable permitted renderer and licensed font; no primary artwork."
+  },
+  "question": "How do tracked ultrasound wall echoes become geometric diameter/area quantities and then an arterial pressure estimate using separate cuff and calibration inputs?",
+  "elements": [
+    {
+      "id": "observed_echoes",
+      "role": "Recorded wall echoes and peak tracking yield diameter geometry; pressure is a later model estimate."
+    },
+    {
+      "id": "target_geometry",
+      "role": "Target d(t) and diastolic d_D define A(t), A_d and the squared diameter ratio under circular/rotational symmetry."
+    },
+    {
+      "id": "cuff_pressures",
+      "role": "Brachial p_s and p_d are separately measured calibration inputs; p_d also scales the pressure estimate directly."
+    },
+    {
+      "id": "calibration_geometry",
+      "role": "Systolic/diastolic area endpoints supply calibration geometry. Reused A_d notation does not assert equality with a different site's target area."
+    },
+    {
+      "id": "derived_alpha",
+      "role": "Coefficient derived from both cuff pressures and area endpoints, with subject/state and cross-site reuse assumptions."
+    },
+    {
+      "id": "estimated_pressure",
+      "role": "Arterial exponential model uses the target area ratio, alpha and p_d, subject to stated vessel and calibration conditions."
+    }
+  ],
+  "relations": [
+    {
+      "from": "wall echoes",
+      "to": "tracked diameter d(t)",
+      "type": "observation and signal tracking",
+      "source": "Figure1a; Note8 peak tracing"
+    },
+    {
+      "from": "diameter and diastolic reference",
+      "to": "area and normalized area ratio",
+      "type": "geometric derivation",
+      "source": "Main text/Note9.1 Eqs1–2; Note9.3 d_D definition; explicit algebraic synthesis"
+    },
+    {
+      "from": "cuff p_s,p_d and calibration A_s,A_d",
+      "to": "derived alpha",
+      "type": "calibration dependency",
+      "source": "Note9.1/9.3 Eq3"
+    },
+    {
+      "from": "target A(t)/A_d, alpha and cuff p_d",
+      "to": "estimated arterial p(t)",
+      "type": "conditional model computation",
+      "source": "Main text/Note9.1 Eq1"
+    },
+    {
+      "from": "vessel elasticity and subject/state/site conditions",
+      "to": "calibration applicability",
+      "type": "model and reuse assumption",
+      "source": "Methods; Notes9.1/9.3"
+    }
+  ],
+  "visual_design": "An original staged layout separates echo tracking, target geometry, two calibration sources and estimated pressure. Two cuff routes distinguish input to alpha from direct p_d scaling. Equations preserve squared geometry and exponent grouping; notes state dimension and reuse conditions. No waveform or anatomy is reconstructed.",
+  "transferable_rules": [
+    "Separate directly observed signals, derived geometry and calibrated model estimates; show external calibration measurements as their own source.",
+    "Preserve nonlinear geometry and dimensionless ratios, and distinguish calibration endpoints from target-record references even when the source reuses a symbol.",
+    "Attach conditions to their scientific role and state which quantities may transfer across state/site; conditional coefficient reuse does not establish equality of all geometry."
+  ],
+  "gaps": [
+    "Rotational-symmetry note is visibly between target and calibration geometry but close to the cuff-to-alpha route; its attachment remains weak. Target/calibration A_d and s/d shorthand need the full caption; lower notes were readable at the tested preview convention but no printed-size guarantee.",
+    "Source Eqs7–8 conflict with exponential Eq1; the f extension is excluded and implementation choice remains unknown. Venous Eqs4–6 are outside the arterial explanation.",
+    "Exact cuff/geometry pairing, diastolic-reference acquisition/storage, extrema detection, invalid-domain handling and automatic recalibration are not established in the bounded read.",
+    "Note9.4 reports one healthy subject's static carotid ultrasound/tonometer comparison in close succession. No original measurements, validation experiment, general clinical performance or device operation was reproduced.",
+    "PMC Cu/Zn versus UCSD Cu/Sn artwork labels differ; no formal-file equivalence or correct material selection is inferred. Source access/notice/rights checks are bounded.",
+    "Model reviews are not human expert certification or a new held-out-paper test; browser/editor/cross-host and journal compliance remain unverified."
+  ],
+  "license": "Primary article/artwork redistribution permission not established; all source originals excluded from clean ZIP. Original explanatory code is accompanied by separately checked packaged font permission and full DejaVu notice.",
+  "notice_scope": "Bounded source identity/version/access/rights checks in selection/orientation; no exhaustive current-notice clearance.",
+  "transfer_entry": "tests/batches/ultrasound-calibration-stage-01/README.md",
+  "test_limits": [
+    "Original UC01–UC08 source-aware independent model final8/8 and31/31 unchanged finite checks. Image-only, direct-source and full-spec stages sealed before later exposures; Stage2 incidental embedded pre-seal self-review disclosed.",
+    "Pre-layout15objects18relations13claims24literal payloads. Native691glyphs actual minimum9pt; maxima baseline0.0009765625pt, advance0.0046875pt, effective size0pt, vector0.0000122070313pt.619paint619outline72whitespace separately checked;28nativeprimitives correspond to19logicalvectors.",
+    "Four canonical views and isolated scientific-label/vector edits actually viewed and natively verified; canonical outputs remain unchanged.",
+    "Exact27-member cleanZIP replay in five logical phases/seven same-profile commands: all10canonical outputs including environment byteexact; before/after102controls each,40existing data-open denials,4real connectEPERM probes after successful socket creation/settimeout. Same host/runtime only.",
+    "Runtime before/after557/556 module records correspond to553/552 distinct underlying files because four aliases share paths; encodings.utf_16_be only before. Historical loaded-files wording clarified additively in final root freeze; no evidence rewritten.",
+    "One wholeFigure1 semantic_partial admission. New general rule prose is not independently regressed on another case; original error/missing-calibration future controls remain unexecuted and outside31."
+  ],
+  "evidence_pins": {
+    "protocol.json": "17b0e21f431b16fce6fba1ad0e660c13bab10485454d3dbb30766c375be0ada9",
+    "scientific-freeze-01.json": "7f6ecad1af54ff1be36496ddd4be94a578a077a1820b75b2c2f68042b9541c7f",
+    "author-output-freeze-01.json": "1c66633f13659754ff3d809c25b0791f41964cfabaabc62b95f96ba353967ae1",
+    "review/stage1-freeze-01.json": "7930a890261a32c83a6011d079d5788705739eaedafcf9fb541aad711ba30c7e",
+    "review/source-first-freeze-01.json": "dac1e3a411139af7dbfcb2962aa605a5cc5c2b499491279d1f81b75759103baa",
+    "review/stage2-freeze-01.json": "c8b065841c2f65216c7dd3d725ce1169c89e136270e42bf739ae7c0e34d58abb",
+    "output-audit/native-freeze-01.json": "015a783ce4666ae26837e95ecfb13a107f51c8e6a65c5ffa25251d8f3506dc5b",
+    "output-audit/replay-freeze-01.json": "1c8538b08c8d6295f57715f903196055684eafc22a26a1491d38a31b7233f763",
+    "final-assessment-01/findings.json": "a4175d5805a972c1d72285479e42cb10ba6e754f23611261d79a1a18891a9c3f",
+    "review/final-assessment-freeze-01.json": "57898abdea7c7ca5bd0db9e5d1c6cc3e0fc2d25836d6d7af85c583793860a184",
+    "author/production-01/ultrasound-calibration-clean-01.zip": "cc3a1430697f8b60ff26f4e57f9d435310a7b139075aea38cbf1942ecdd40070"
+  }
+}

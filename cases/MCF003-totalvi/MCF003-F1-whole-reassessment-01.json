@@ -1,0 +1,297 @@
+{
+  "id": "MCF003-F1",
+  "revision": "whole-reassessment-01",
+  "created_utc": "2026-10-19T05:53:51.886333+00:00",
+  "status": "complete_whole_figure_joint_verification_at_declared_abstraction",
+  "semantic_status": "full_joint_verified",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "role": "existing_development_case_not_transfer",
+  "historical_card": {
+    "path": "<SKILL_ROOT>/cases/MCF003-totalvi/MCF003-F1.json",
+    "bytes": 11093,
+    "sha256": "4f9d0f585e3699db4870abe9d2898efa8fc1cf966e37d5a51c68175d3d60434d"
+  },
+  "new_case_or_paper_count": 0,
+  "paper": {
+    "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+    "authors": "Gayoso et al.",
+    "identity": "10.1038/s41592-020-01050-x",
+    "version_read": "PMC7954949 / NIHMS1656427 author manuscript, cached 2026-10-11",
+    "journal": "Nature Methods 18,272–282 (2021)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+    "code_read": false,
+    "model_executed": false
+  },
+  "figure": {
+    "number": "Figure 1",
+    "scope": "Whole panels a and b at published schematic abstraction, with explicitly attributed Methods refinements. No panels or difficult branches dropped.",
+    "original_entities": 21,
+    "original_relations": 21,
+    "delivered_entities": 41,
+    "delivered_relations": 27,
+    "source_notes": 15,
+    "active_source_bindings": 161
+  },
+  "scientific_question": "How do paired cell-by-gene and cell-by-protein counts enter conditional probabilistic inference and support distinct cell-level and feature-level queries?",
+  "source_reading": {
+    "original_figure": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/source-01/original-figure1.jpg",
+      "bytes": 521865,
+      "sha256": "21aeacbd3164b2dbfbf88bb78018a7a3fb37125cc141112590bf5837f5a799ff"
+    },
+    "primary_text": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/source-01/primary-author-manuscript.cached-2026-10-11.html",
+      "bytes": 391948,
+      "sha256": "1cbc3d7c50d5c57a9275cbdd10f14a0b79e05a379901500d03cdc46115364582"
+    },
+    "scope": "Whole original Figure1a/b and caption; Results model overview; Methods S13 Eq1–9/Algorithm1, inference/missing proteins S17 Eq10, queries S20–25 Eq12–29; staged source reader additionally inspected S36/S41. Original whole image and required details actually viewed; independent science and final visual reviews are linked.",
+    "current_version_limit": "Live PMC challenge, DOI/Nature access limitations and author-PDF429 retained. Cached selected primary supports this reconstruction; current publisher equivalence and comprehensive correction status not established."
+  },
+  "semantic_readback": {
+    "inputs": "Paired X(N×G) and Y(N×T), common cell rows; optional categorical batch S.",
+    "posterior": "q(z|x,y,s), q(l|x,y,s), q(beta|z,s); posterior mean z for cell analysis is distinct from z sample to decoder.",
+    "decoder": "z sample and s parameterize rho, alpha, pi; l and beta are latent nuisance quantities; theta[g] and phi[t] are feature-specific dispersion parameters.",
+    "likelihood": "RNA NB(mean=l*rho, inverse dispersion theta); protein mixture BG mean beta, FG mean beta*alpha, shared phi; pi=Pr(BG).",
+    "outputs": "Three overview/cell-level uses and all four named feature-level tasks preserved. Background decoupling, batch correction, missing-protein imputation and differential expression are distinct posterior queries, not four direct numeric outputs of a likelihood node.",
+    "conditions": "Denoised foreground expression involves E_q[(1−pi)*beta*alpha] with stated batch treatment. Missing protein prediction is conditional inference, not a physical measurement. Embedding/grid/distribution marks are schematic.",
+    "alpha_conflict": "Prose alpha>1 versus Algorithm ReLU+1/[1,infinity) remains unresolved. Separately specified BG/FG mean parameters need not always differ numerically."
+  },
+  "design": {
+    "argument": "Paired measurement overview above expanded per-cell inference; separate mean/sample routes and cell/feature analysis branches.",
+    "native_canvas_pt": [
+      1640,
+      1190
+    ],
+    "minimum_text_pt": 18,
+    "primitives": 318,
+    "retained_native_shapes": 246,
+    "retained_native_characters": 1302,
+    "scope": "Editable explicit-position text and vector primitives; no arbitrary-editor roundtrip, printed proof or target-journal-size claim."
+  },
+  "controlled_assessment": {
+    "error_families": 1,
+    "correct_controls": 1,
+    "insufficient_controls": 1,
+    "paired_stages": 2,
+    "family": "Reverse the background-probability meaning of pi in image/caption; derived manifestations are not separate trials.",
+    "image_source_fidelity": "not_assessable; visible A/B difference correctly located without claiming source error",
+    "source_scores": {
+      "detection": "full",
+      "localization": "full",
+      "explanation": "full",
+      "repair_proposal": "partial"
+    },
+    "points": {
+      "detection": 2,
+      "localization": 2,
+      "explanation": 2,
+      "repair_proposal": 1
+    },
+    "correct_control_target_false_positives": 0,
+    "other_definite_false_positive_families": 0,
+    "insufficient_behavior": "preserved u assignment and original posterior target as unknown; supported remainder retained",
+    "material_claim_support": {
+      "C": {
+        "supported": 55,
+        "overstated": 1
+      },
+      "PNG": {
+        "supported": 81,
+        "not_assessable": 2
+      },
+      "source": {
+        "supported": 80,
+        "not_assessable": 2
+      }
+    },
+    "limitations": "Original repair proposal omits complete actual-output/native synchronization verification, remains partial1. C minimum-material-set qualifier is overstrong; future readability/provenance assertions remain unassessed. Later execution does not improve reader scores. No composite accuracy."
+  },
+  "actual_repair": {
+    "authority": "Source-bound science03 applied to altered A input, not copied B output.",
+    "changed_scientific_fields": 4,
+    "regenerated_bundle_files_byte_equal_correct_control": 14,
+    "regenerated_exports_byte_equal_correct_control": 8,
+    "formal_appearance_only_changes": 3,
+    "retained_semantics": "All scientific objects, caption, source notes and all text strings preserved during final appearance revision.",
+    "timing": "Root executed known-key repair while restricted reader/scorer stages remained independent; actual repair files were never released to scorer. No backfill or new trial."
+  },
+  "acceptance": {
+    "native_checks": 13622,
+    "native_all_passed": true,
+    "root_and_independent_actual_PNG_PDF_whole_details": "completed; final overlaps resolved; no blocking finding",
+    "final_zip_members": 39,
+    "zip_bytes": 2305428,
+    "actual_preparation_byte_matches": 5,
+    "actual_export_byte_matches": 8,
+    "same_host": true,
+    "OS_sandbox": false,
+    "cross_platform_tested": false,
+    "root_readback": "Root verified final native checks, score ledger completeness, archive hash/CRC/member bytes, actual subprocess sequence, all prepared/export comparisons and unchanged package."
+  },
+  "protocol_scope": {
+    "T01": "Development case excluded from fixed two-transfer denominator; P1 not yet claimed.",
+    "T02_T06": "Whole source inventory and source-bound prelayout specification independently checked; current source conflict retained.",
+    "T07": "Generic tooling developed before transfer; independent native expected values derived from frozen scene/source TTF before export.",
+    "T08_T09": "Actual native SVG/PDF and whole/detail PNG/PDF views passed for final artifacts.",
+    "T10_T14": "One family with correct and genuinely insufficient controls; fresh staged reading, policy-first/prekey-before-key scoring complete with partial proposal preserved.",
+    "T15": "Actual authority repair, derived closure, native and visual rechecks complete.",
+    "T16_T17": "Explicit whitelist, original media excluded, final ZIP actually extracted and own producer run; exact bytes matched.",
+    "T18": "Development failures and source/version/format/environment limits preserved; no transfer claim."
+  },
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/protocol-01.json",
+      "bytes": 20247,
+      "sha256": "2f2c02a3c37d44a52fc370573b55f51de9dd876fb4601588b0537209474b73bb"
+    },
+    "whole_inventory": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/source-01/whole-figure-coverage.json",
+      "bytes": 15174,
+      "sha256": "1cee5e35729d7a3cf9335592751af0f579db2098a51d69b5b163db218c35c42e"
+    },
+    "source_vs_visible": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/source-01/source-vs-visible-figure.json",
+      "bytes": 6962,
+      "sha256": "df037227baa596acfd1c62533f983fc41d252c3b8c9ac2724a86353af8b6fc0c"
+    },
+    "prelayout_spec": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/science-03/scientific-spec.json",
+      "bytes": 46562,
+      "sha256": "7e4fd3ad8cbe64764c6bd0dfb18ba6276215a1415f69c2825c2ded84d64355e9"
+    },
+    "prelayout_coverage": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/science-03/coverage-map.json",
+      "bytes": 17371,
+      "sha256": "dbf06ac1da01f181f88394d08023d5b846486ef3d6ffce5b676e4dabfba60870"
+    },
+    "independent_science": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/science-review-02/review.json",
+      "bytes": 4304,
+      "sha256": "f9a7a92e967f9d17551e89cec812ba081810c5b15bc1bfdf4b6caa7737f35734"
+    },
+    "preexport_expectations": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/pre-export-expectations-01.json",
+      "bytes": 2274,
+      "sha256": "a810f75276eb1f7118f4b6c87f1d3fb4fabff042042451c4a655db691d136249"
+    },
+    "layout_mapping": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/layout-03/mapping.json",
+      "bytes": 47155,
+      "sha256": "19a33577eb3f34ddcf123e515c1b8cb6f64c2981dc406990770417380cfd428d"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/native-01/report.json",
+      "bytes": 1116015,
+      "sha256": "16e4de3270a0e66f7e5eff343c4aa04d7ab0285cb3dbd4e39e73bc9551f7f44f"
+    },
+    "root_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/visual-01/root-review.json",
+      "bytes": 3085,
+      "sha256": "d56e7e0524c36feba18f3e83f76fb3330a984473b4f72163722d412337de8c91"
+    },
+    "independent_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/final-visual-review-01/review.json",
+      "bytes": 14083,
+      "sha256": "736ec6187f2b9e88a4a2622501221494fe899845481f7c974097f1b62ae5921d"
+    },
+    "actual_repair": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/repair-01/actual-scientific-repair-01.json",
+      "bytes": 12061,
+      "sha256": "85beb99b0ed89d05472403f2f2de467ebb63cc4312b1f7d5c2328c62ac6438aa"
+    },
+    "repair_byte_closure": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/repair-01/export-byte-closure-01.json",
+      "bytes": 5951,
+      "sha256": "d3d2dc3a3791f8ec7b2053f1a0bbeb65e8b100c0e1d9fa6ae690c8b6d770dfcc"
+    },
+    "appearance_refinement": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/appearance-change-01.json",
+      "bytes": 2050,
+      "sha256": "3b4e5292686b2ac56119c178e3aec8e1a4b98a4b01c36afae8c030191790c682"
+    },
+    "delivered_sources": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/delivered-dependency-check-01.json",
+      "bytes": 28545,
+      "sha256": "eb1798770d7929840931c729472747f520fccc45840b6c71c802e173339af64c"
+    },
+    "score": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-01/assessment-01/score-01.json",
+      "bytes": 27537,
+      "sha256": "6c99d1c067a9b6142a6dc3ec811a42ef2a9f4cee318f83ab01f53c8af37e05e4"
+    },
+    "key_release": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-01/key-release-01.json",
+      "bytes": 1782,
+      "sha256": "15e70b89d6b470c872463fe0901f576b37a251a484b890f588b95be9efede988"
+    },
+    "zip_whitelist": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/delivery-01/zip-validation-01.json",
+      "bytes": 6968,
+      "sha256": "bffa302b0eaf88538049661283aa3523d61c8bd340fec4a40864754502bfc87e"
+    },
+    "zip_extraction": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/zip-replay-01/extraction-receipt-01.json",
+      "bytes": 10424,
+      "sha256": "3658c5d8b85dbab066eb43d77f92658fac976f1e88d6cade8d85e58438d771e8"
+    },
+    "zip_replay": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/zip-replay-01/run-01/replay-report.json",
+      "bytes": 35161,
+      "sha256": "c4ae79bce540d5969d501811db42a3e575cfc12ac7cf6d3a25216be17fcb801f"
+    }
+  },
+  "delivery": {
+    "ZIP": {
+      "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/totalvi-whole-figure1-final-01.zip",
+      "bytes": 2305428,
+      "sha256": "bf763c8294da8fa9ead0cc594322c9a033eb943a520286f86b6743e7376f5911"
+    },
+    "entry": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/delivery-01/package/evidence/CASE.md",
+    "formal": {
+      "figure.pdf": {
+        "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/graphics-01/figure.pdf",
+        "bytes": 61429,
+        "sha256": "ac9a1cf12ad5451437fe4995e12fee6306752fd73c81e9b3ad2c8d4fe81b8739"
+      },
+      "figure.svg": {
+        "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/graphics-01/figure.svg",
+        "bytes": 2045515,
+        "sha256": "f80bddb7186c074677809b57dfe8f275dabe9e2ec65ee4d33c43472cabc9f1e3"
+      },
+      "figure.png": {
+        "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/graphics-01/figure.png",
+        "bytes": 424184,
+        "sha256": "c058bee30a2478e22a02660c7eaa8ded7355dd37f6afe22f0ed2995e859ac328"
+      },
+      "figure_spec.json": {
+        "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/graphics-01/figure_spec.json",
+        "bytes": 67836,
+        "sha256": "c1a33e2e736246fe9afd7bd85282a1bef922e221521ef726a7aa4d5f4739017a"
+      },
+      "caption.txt": {
+        "path": "<SKILL_ROOT>/tests/batches/totalvi-whole-reassessment-01/formal-01/graphics-01/caption.txt",
+        "bytes": 1648,
+        "sha256": "d0fa7073b02d73ce0247356043f4210f170d6fd60eaad194ed6107a875260b62"
+      }
+    }
+  },
+  "rights": {
+    "original_source_media": "Local inspection only; open reuse license not confirmed. No original JPG, HTML, paper PDF, screenshots, crops or extracted fulltext in ZIP.",
+    "delivery": "Own schematic and analysis with source citations; pinned DejaVu font license and notice shipped."
+  },
+  "preserved_failures": [
+    "science01 expectation notation and science02 guaranteed-distinct-means qualification revised in new records",
+    "science03 postwrite generator .items reporting error retained",
+    "native inspector v1 fill-only dashes=None rejection retained; v2 corrects applicable stroke semantics without loosening tolerances",
+    "layout01 relation/group clarity issues and layout02 two label collisions retained; layout03 final typography re-viewed",
+    "outer packaging JavaScript parse failure before any write retained"
+  ],
+  "remaining_limits": [
+    "No totalVI training, real-data rerun, empirical figure reconstruction or clinical validation.",
+    "Source alpha bound, exact current implementation and live publisher equivalence remain unresolved.",
+    "Only selected simple vector/text native syntax and pinned same-host runtime; byte replay is not independent scientific/native/visual validation.",
+    "Existing case promotion adds no paper or original figure; transfer targets remain two and unselected."
+  ]
+}

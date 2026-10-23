@@ -1,0 +1,107 @@
+{
+  "id": "MCF070-F1",
+  "paper": "DOI:10.1038/s41587-021-01001-7",
+  "version": "Nature Biotechnology 40:121–130; online2021-08-30, issue2022-01. Institutional publisher-formatted PDF snapshot retrieved2026-10-17; current publisher byte equivalence not established.",
+  "figure": "Whole original Figure1 a–e viewed; one partial architecture a/b and Methods explanation. Empirical c–e results not reconstructed; appearance copy not an extra unit.",
+  "domain": "conditional_model_adaptation_parameter_origin_update_and_output_roles",
+  "figure_types": [
+    "reference_parameter_transfer",
+    "condition_dimension_expansion",
+    "restricted_parameter_update",
+    "conditional_forward_computation"
+  ],
+  "card": "cases/MCF070-scarches-condition-adaptors/MCF070-F1.json",
+  "reading": "Original PDF1–3,11–12 and14 Model output,rights10; independent image-first/source-aware/final scientific readings. Code/supplement and model execution excluded.",
+  "visual": "Whole original Figure1 p3 and Methods p11/12 viewed. Complete baseline/appearance PNG,PDF and exact-font restricted staticSVG viewed.592.67×426.86mm,min15pt,50textgroups,2329glyphs; journal-size/print/browser untested.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "Reference weights initialize distinct encoder/decoder subsets; minimal query fitting updates only new study-condition blocks in both. Frozen weights still compute. Same-gene query input and missing placeholders; latent Z differs from condition-confounded reconstruction.",
+  "transfer": "Fixed SA01–SA08 independently supported8/failed0/unassessed0 for the baseline/appearance pair with corrected caption. One source-aware caption repair retained.18 same-host replay matches include8exports;48member metadata repack verifies10inputs/8exports unchanged. Not heldout/OS isolation/research replication.",
+  "archive": "Article CC BY4.0 notice read; no visible Figure1 exception. Original paper PDF/pages retained locally only. Delivery contains original explanation/source and licensed DejaVu font; no publisher pixels.",
+  "at_utc": "2026-10-17T08:18:42.400750+00:00",
+  "source_urls": [
+    "https://doi.org/10.1038/s41587-021-01001-7",
+    "https://push-zb.helmholtz-munich.de/deliver.php?id=31243"
+  ],
+  "question": "Which inherited/new weights compute and update during query adaptation, and what do the latent and reconstructed outputs mean?",
+  "grouping_and_layout": "A reference fitting; B copied parameters and new condition blocks; C restricted query fitting; D conditional computation reused during fitting/readout. Distinct copied encoder/decoder subsets bind separately.18 typed arrows plus4 explicit label/group relations; branch marker and legend distinguish crossings.",
+  "relationship_evidence": "Original Fig1a/b on PDF3, Architecture surgery PDF11, CVAEs/feature overlap/base-model sections PDF11–12, Model output PDF14. Whole Fig1c–e viewed but not reconstructed.",
+  "transferable_principles": [
+    "Parameter provenance, update status and computational participation are separate attributes; freezing does not remove a parameter from the forward computation.",
+    "Do not transfer an integration interpretation from latent representation to ordinary conditional reconstruction.",
+    "A fitted readout adds no extra fitting step; that boundary must not deny the preceding query adaptation.",
+    "Observed condition categories specify input dimensions and associated parameter blocks; their values do not compute random initialization."
+  ],
+  "non_transferable_contents": [
+    "No automatic first-layer-only freezing rule for other methods or current software versions.",
+    "No universal covariate-removal, biological-preservation, missing-gene tolerance or formal privacy claim."
+  ],
+  "limitations": [
+    "Only generic minimal CVAE surgery; model-specific architecture, code/supplement and runtime state are unverified.",
+    "Prime/unprimed condition-weight notation and decoder x/z gradient tension preserved; no formula silently fixed.",
+    "Paper snapshot/current publisher byte equivalence and full notice history are not established.",
+    "Initial layout defects and one later caption claim-scope correction retained.",
+    "PyMuPDF SVG importer failure retained; restricted exact-font CairoSVG view accepted. Browser/editor and journal-size print use untested.",
+    "One development case; no heldout or expert/model performance evidence."
+  ],
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/protocol.json",
+      "bytes": 5601,
+      "sha256": "cd24ec38de99c2149f490a3a51e8808ca00556a17dbb797a3bc8c6fe8833cde9"
+    },
+    "semantic_spec": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/figure_spec.json",
+      "bytes": 34576,
+      "sha256": "14343abbc4a0e85b695eccf0f78b1d7dc33edb0361fb485b1a92fe77b56449c1"
+    },
+    "image_first": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/image-reader-01/stage1.json",
+      "bytes": 12245,
+      "sha256": "036831cedee763d9aca607b117de81940108bc6b97247f173594438208badefc"
+    },
+    "source_followup": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/image-reader-01/source-review.json",
+      "bytes": 16758,
+      "sha256": "4fc6d132464f516d95d6831d421e86b2e9c20b42fdef93bb15d8985ade3fc950"
+    },
+    "final_assessment": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/assessor-01/report.json",
+      "bytes": 30587,
+      "sha256": "c2893eb59e4aa7441aa9bbe109dec265d34040ca9f3a156976820f0a5434f898"
+    },
+    "static_SVG": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/svg-review-01/report-01.json",
+      "bytes": 13812,
+      "sha256": "bddb85c7eda25922460f1524ec038402d27e48575d43d2b2d3ce94055cba5f06"
+    },
+    "root_acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/root-final-acceptance-01.json",
+      "bytes": 3100,
+      "sha256": "565b69eb51c486846b5df727dfbeedec7915b0f599e6b4086cc85abc287ffe4c"
+    },
+    "package": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/scarches-condition-adaptors-01.zip",
+      "bytes": 4052344,
+      "sha256": "3ee277dff63cd5119e45528b7c3a3a5cf2aa9f5033776195acf87419ed3933b4"
+    },
+    "package_check": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/delivery-package-verification-01.json",
+      "bytes": 1572,
+      "sha256": "30d7fdcd105d5a4fe9bcec918dada2371037b9ad20e4fd316ee85067e05462cd"
+    },
+    "delivery_audit": {
+      "path": "<SKILL_ROOT>/tests/batches/scarches-condition-adaptors-01/delivery-audit-01.json",
+      "bytes": 7040,
+      "sha256": "5394cdbb4b45c4130ebf06a6856de6db170b61f9415f176fbcefb145ebba3b7e"
+    }
+  },
+  "source_selection": {
+    "path": "<SKILL_ROOT>/tests/batches/next-selection-after-independent-edits-01/source-selection-01.json",
+    "bytes": 7497,
+    "sha256": "8c24ba38c1a14d1f8bb3075d11431f6e59f5c10dbeb679d117d07e2a06158a4c"
+  },
+  "delivery": "tests/batches/scarches-condition-adaptors-01/DELIVERY.md",
+  "new_rule_scope": "Conditional provenance/update/output guidance used in this case only. No generalization rate claimed."
+}

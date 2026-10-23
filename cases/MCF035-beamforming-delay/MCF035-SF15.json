@@ -1,0 +1,116 @@
+{
+  "case_id": "MCF035-SF15",
+  "dedup_id": "doi:10.1038/s41586-022-05498-z|publisher2023|SupplementaryFigure15",
+  "paper": {
+    "title": "A wearable cardiac ultrasound imager",
+    "authors": "Hu, Huang, Li et al.",
+    "doi": "10.1038/s41586-022-05498-z",
+    "publication": "Nature613:667-675(2023)",
+    "published": "2023-01-25",
+    "read_version": "Nature613:667-675(2023), published2023-01-25; publisher supplement and author-lab combined PDF"
+  },
+  "source_url": "https://www.nature.com/articles/s41586-022-05498-z",
+  "figure_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-022-05498-z/MediaObjects/41586_2022_5498_MOESM1_ESM.pdf",
+  "source_figure": "Whole Supplementary Fig15a-c, supplement page68/printed67",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "metadata": "Primary publisher/PubMed identity and author copy checked; normal TLS",
+    "reading": "Introduction; selected imaging/resolution text; Supplementary Discussion6 pages24-28 and Eq13-24; full Fig15caption",
+    "visual": "Whole Fig15 in author combined page91 and publisher supplement page68 viewed separately; same original figure unit; typeset Eq24page also viewed",
+    "license": "Article CC BY4.0 with credited third-party exceptions; repository MIT. Original files remain local and excluded",
+    "archive": "link_only originals;183selected own runtime/export/evidence files",
+    "notice_check": "Bounded publisher/PubMed check found no linked correction/retraction; linked NatRevCardiol item is commentary, not correction"
+  },
+  "question": "How do channel waveform processing and timing controls support receive beamforming under distinct recording starts?",
+  "cannot_conclude": [
+    "Original acquisition or beamforming implementation reproduced",
+    "Adaptive apodization fit implemented",
+    "Full B-mode image computed",
+    "Sound-field/SNR/sidelobe or clinical benefit from own scalar sum"
+  ],
+  "elements": [
+    {
+      "id": "waveform-chain",
+      "role": "Transducer,TGC,ADC,per-channel delay,apodization,sum",
+      "source": "SupplementaryFig15a and caption"
+    },
+    {
+      "id": "timing-control",
+      "role": "Delay calculator supplies delay parameters rather than transporting RF waveforms",
+      "source": "Fig15a lower control branch"
+    },
+    {
+      "id": "geometry",
+      "role": "Curved-array x/z geometry and depth examples; not implemented",
+      "source": "Fig15b,c; Discussion6.2"
+    },
+    {
+      "id": "local-time",
+      "role": "Transmit+return travel time minus channel recording start",
+      "source": "Eq15/17/23 and adjacent explanation"
+    },
+    {
+      "id": "sampled-sum",
+      "role": "RF indexed by local delay×fs; complete display conventions not provided",
+      "source": "Eq24; caption adaptive-apodization wording"
+    }
+  ],
+  "relations": [
+    {
+      "source": "waveform-chain",
+      "target": "sampled-sum",
+      "type": "signal transformation and combination",
+      "condition": "Original hardware/processing reference, not executed here",
+      "source_locator": "Fig15a"
+    },
+    {
+      "source": "timing-control",
+      "target": "waveform-chain",
+      "type": "timing control of delay elements",
+      "condition": "Channel-specific delay",
+      "source_locator": "Fig15a"
+    },
+    {
+      "source": "geometry",
+      "target": "local-time",
+      "type": "travel-time calculation",
+      "condition": "Source curved-array model; own fixture supplies times instead",
+      "source_locator": "Discussion6.2 Eq13-23"
+    },
+    {
+      "source": "local-time",
+      "target": "sampled-sum",
+      "type": "sample evaluation dependency",
+      "condition": "Frequency and channel recording reference specified",
+      "source_locator": "Eq24"
+    }
+  ],
+  "visual_design": {
+    "source": "Parallel channel signal paths and lower control branch separate transported signals from timing parameters; geometry and depth panels state physical context",
+    "own": "Source roles above; four signed traces and open interpolation points align with channel table; common amplitude scale and explicit zero-based index",
+    "counterexample": "Two different errors can both yield total9: q3 from an authorized B start change and q6 from a sign fault. Total alone cannot verify channel timing",
+    "limit": "Own supplied weights/interpolation are test conventions, not source implementation claims"
+  },
+  "gaps": [
+    "Caption adaptive-apodization versus Eq24 omitted explicit weights",
+    "Envelope/sign/reference-level/log/interpolation implementation incomplete in source equation",
+    "Linked inspected repository tree contains segmentation resources but no beamforming implementation",
+    "No curved-array propagation, original hardware/model or clinical results reproduced"
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/beamforming-delay-01/DELIVERY.md",
+    "acceptance_sha256": "bc26c629057edf5dde9df8d39d2212dba32ae777b73814bff9959cd0f9fd00b1",
+    "scope": "Same-executor simulated four-channel arithmetic"
+  },
+  "record_pins_base": "tests/batches/beamforming-delay-01/",
+  "record_pins": {
+    "protocol.json": "ce4cb30fa59d4e2f3e790ef771f96439ea1b53486c0b67831033586025904136",
+    "source-notes.md": "2450e7813f84525a44231506a692a9453121d353a009e1d9cacf54aa637b3876",
+    "source-view-01.json": "71db823fbee2234dd64b4522d68bed9985cdd9f4f1e56698baed8448f8c89b8a",
+    "acceptance.json": "bc26c629057edf5dde9df8d39d2212dba32ae777b73814bff9959cd0f9fd00b1",
+    "visual-review-02.json": "10aa5b400c2750bcbc91434ae4558c8b099716a414d12235da78a6fb0dc3b422",
+    "semantic-review-01.json": "4d15ecc24b5b8af3db39f02acf75fde426ea93deb204a918a0203031c2fd0388"
+  }
+}

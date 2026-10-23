@@ -1,0 +1,176 @@
+{
+  "case_id": "MCF058-F1",
+  "dedup_id": "DOI:10.1038/s41587-022-01284-4|publisher2022|Figure1-whole",
+  "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+  "source_url": "https://www.nature.com/articles/s41587-022-01284-4",
+  "source_figure": "WholeFigure1 PDFp2/printed1459; Methods andrights pages aredependencies, notextrafigures.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned22-page publisher PDF; direct fulltext pp1,2,7,9,10,11,14; whole Figure1 onPDFp2 and Methods dependencies. No full22page/code/dataset/experiment verification.",
+    "visual": "WholeprimaryFigure1 andwholeMethods pages10/11 actually viewed. Original drawing fourcanonical views andtwoisolatededits viewed; independent orderedimage/source/spec stages, independentnative12wholeviews andexactZIPreplay actualviews retained.",
+    "archive": "Originalpaper/text/pagepixels including Servier assets local-review-only. Clean27memberZIP contains original editable SVG/PDF/PNG, spec/layout/caption, helpers, pinned DejaVu font and licenses; no source artwork."
+  },
+  "question": "How do feature-graph embeddings couple probabilistic omics reconstruction while cell embeddings undergo adversarial modality alignment?",
+  "elements": [
+    {
+      "id": "feature_prior",
+      "role": "Signedweightedprior graph overfeatures, graphencoder, featureembeddings andspecificparameter-free graphdecoder."
+    },
+    {
+      "id": "cell_reconstruction",
+      "role": "Separateomicsencoders, unpairedcellrepresentations anddualinput decoder usingmatchingfeatureembeddings."
+    },
+    {
+      "id": "objectives",
+      "role": "Originalobservations arereconstructiontargets; graphfeature andcellposterior regularization distinct."
+    },
+    {
+      "id": "modality_alignment",
+      "role": "Cellrepresentations feedmodalitydiscriminator, observedlayeridentity supervisesclassification; no pairingkey."
+    },
+    {
+      "id": "optimization",
+      "role": "Discriminator minimizesLD; dataencoders opposeit alongside data/graph objective optimization; two-stage weightedreportedtraining retained."
+    }
+  ],
+  "relations": [
+    {
+      "from": "priorfeaturegraph",
+      "to": "featureembeddings",
+      "type": "variationalencoding",
+      "source": "PDFp10Eqs10–12"
+    },
+    {
+      "from": "featureembeddings",
+      "to": "graphobjective",
+      "type": "probabilisticgraphlikelihood andfeatureposteriorregularization",
+      "source": "PDFp10Eq6;p11Eq17"
+    },
+    {
+      "from": "cellU_k andfeaturesV_k",
+      "to": "dataobjective",
+      "type": "dualinputprobabilistic reconstruction inoriginalfeatures",
+      "source": "PDFp10Eqs3/7–9/16"
+    },
+    {
+      "from": "cellU_k",
+      "to": "modalityprobabilities",
+      "type": "discriminatorprediction",
+      "source": "PDFp11Eq18"
+    },
+    {
+      "from": "observedmodalityk",
+      "to": "discriminatorloss",
+      "type": "supervision",
+      "source": "PDFp11Eq18"
+    },
+    {
+      "from": "discriminatorloss",
+      "to": "opposingoptimizationcards",
+      "type": "minimizedforD andmaximizedthroughdataencoders",
+      "source": "PDFp11Eqs19–20/weightedalignment"
+    }
+  ],
+  "visual_design": "Originalthreepanelportrait separatesfeaturegraph, modality-specificcelldatareconstruction andadversarialtraining. Explicitobservedtargets, namedfeature/objectif aliases andtwoopposingupdatecards avoidinventedpaired-cell orfullgradientroutes.",
+  "transferable_rules": [
+    "Separatefeature andcell identity even whenlatentdimensions arecompatible; sharedspace doesnot meanpairedsamples orsharedencoderweights.",
+    "Show bothcell andmatchingfeature inputs toprobabilisticdecoder; distinguish originalobservations/reconstructiontarget fromlatentrepresentations.",
+    "Separate priorgraph fromlearnedlikelihood andfeatureposterior versuscellposterior regularization.",
+    "Name modalitysupervision andopposingoptimization roles; listparameterupdates withoutsuggesting theadversarialterm directlytrainseverymodule."
+  ],
+  "gaps": [
+    "G-S1 negative-edge printsign;G-S2 embeddingtranspose convention;G-S3 genericcaptionversusspecificparameter-free decoder;G-S4 Eq13 conditioningtension allretained.",
+    "Code/checkpoint/runidentity,empiricalquality,cell-specificregulatorycausality andclinicalbenefit unverified.",
+    "ORD-O1–O4 optionalimprovements andsource-specO01/O02 remainunimplemented; no mandatorycorrection identified.",
+    "No crosshost/browser/GUIeditor/physicalprint/targetjournal/expert certification; boundeddevelopmentcase, notnewheld-outpaper."
+  ],
+  "license": "ArticleCCBY4.0 andseparatelyattributedServierFigure1assetsCCBY3.0 recordedseparately. Neitheroriginalasset typeisredistributed. Owngeometry/helpers andDejaVufont noticesretained.",
+  "notice_scope": "Boundedprimarynotice/accesschecks; rejectedunrelatedPMID35697807, validPMID35501393, stoppedPMC CAPTCHA andNatureaccesshistoryretained. No exhaustiveclearance.",
+  "transfer_entry": "tests/batches/glue-feature-cell-coupling-01/README.md",
+  "test_limits": [
+    "FixedGL01–GL08 independent8/8 criteria32/32 finitechecks after native/replay seals. Root read all32 rationales/evidence and verifiedexactIDs/checktexts, sixfileassessmenttree,366inputpins andTERMINALlast. Unknown-disclosure compliance doesnot resolve unknownfacts.",
+    "17objects26relations6claims49visibletexts;sciencefrozenbeforelayout.1714glyphs1553ink161spaces,61nativepieces/42logicalvectors;min10.199999809265137pt.",
+    "Separate maximumabsoluteerrorspt:baseline0.0007812500001023182;advance0.004218749999999716;size1.9073486257070726e-7;vector4.8828125045474735e-5.",
+    "Nonnumericrolelabel edit andpanelrule+2pt edit localizedafterexport/readback/fourviewchecks;15canonicalinputs10outputs unchanged.",
+    "27ZIPmembers;7commands/fivephases underonesameOSprofile;10canonicaloutputs includingenvironmentbyteexact. Before/aftereach140controls:58existingmetadata+58dataopenEPERM+4realconnectEPERM+14positiveinputreads+2write/readback+3writedenials+1runtimecheck.",
+    "Runtimebefore557/after556modulerecords,553/552distinctbackingfiles; finitecontrols notexhaustivesystemdependencies oruniversalisolation.",
+    "Stage3earlierreview-summaryexposure, sourcereviewer/native roleoverlap, originalreadbackKeyError andfinalassessormanifestwalkerKeyErrorretained. Rootwideoutputtruncated thenall32basisreadbounded; nofigurepatch.",
+    "Newruleswrittenafterfiniteacceptance; notindependentlybehavior-regressedonanothercase. No newcontrolled-errorpair ororiginalresearchreproduction."
+  ],
+  "evidence_pins": {
+    "protocol.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/protocol.json",
+      "bytes": 13117,
+      "sha256": "95e4e88bc47eb53f86ebecc8d9eb6c4711a1e4cb32ad3a52e4a547c80d91cccb"
+    },
+    "science-freeze-01.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/science-freeze-01.json",
+      "bytes": 5063,
+      "sha256": "0690914e03a75f5e7251833556202f202480c67ec9c48e2f1a9488ff4e164727"
+    },
+    "author/semantic-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/author/semantic-01/TERMINAL.json",
+      "bytes": 525,
+      "sha256": "a02828ef5ed0edaa2b9b3111e71b743a4ca5bf249a5a8eafe07a26a453e589de"
+    },
+    "author/production-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/author/production-01/manifest.json",
+      "bytes": 24297,
+      "sha256": "24af2a136d3e80316228e9525f35035e3128f78e86a4d557a55c6d0e8b326286"
+    },
+    "author/production-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/author/production-01/TERMINAL.json",
+      "bytes": 377,
+      "sha256": "df6b645a55f684ac4e56b820927b6e0506fb47cfac3a870528538d693d8edee5"
+    },
+    "review/ordered-reader-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/review/ordered-reader-01/TERMINAL.json",
+      "bytes": 3929,
+      "sha256": "7a11a961bb09d03de5389cef08044194a70e0e2d20e2a0f5cd64aeb14b689384"
+    },
+    "output-audit/native-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/output-audit/native-01/TERMINAL.json",
+      "bytes": 651,
+      "sha256": "3990df56286d987f050f266ed87a177d54c489394e3dd09e5272b9386e7c81fb"
+    },
+    "output-audit/replay-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/output-audit/replay-01/TERMINAL.json",
+      "bytes": 2743,
+      "sha256": "cf20d18b1523e744bdcdcda9bdaf66a2d245518e8b86c6c1c27375891658d819"
+    },
+    "root-review-disposition-01.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/root-review-disposition-01.json",
+      "bytes": 8989,
+      "sha256": "977e448aaabe690ce5b10d0827c768063f0ab8bffb13b1d00abf21a54542312f"
+    },
+    "final-assessment-01/scorecard.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/final-assessment-01/scorecard.json",
+      "bytes": 69347,
+      "sha256": "22e29aff399bef8cd5247110901538853b07a1ec76ae092b1c72f3160ac1ea3b"
+    },
+    "final-assessment-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/final-assessment-01/manifest.json",
+      "bytes": 1201,
+      "sha256": "52fe51ea11fb4e9df51e02aa6cc6b51a3e212fbbb77fe346452734bde4ca628f"
+    },
+    "final-assessment-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/final-assessment-01/TERMINAL.json",
+      "bytes": 1256,
+      "sha256": "095f597b944e4dbc5539d84991b435514450beef06d01e4816aaa830df39adf1"
+    },
+    "author/production-01/glue-feature-cell-coupling-clean-01.zip": {
+      "path": "<SKILL_ROOT>/tests/batches/glue-feature-cell-coupling-01/author/production-01/glue-feature-cell-coupling-clean-01.zip",
+      "bytes": 1674817,
+      "sha256": "7c8dec6f5be3dd896514ea2a0d5a5353dec958c2caf73c66b040d5467a28251d"
+    },
+    "primary_source": {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-clam-02-source/GLUE-s41587-022-01284-4.pdf",
+      "bytes": 6935972,
+      "sha256": "f6d812d3ef55c65a2ec30661a05f3ecbc3981e14236a018731ec186a13e99537"
+    }
+  }
+}

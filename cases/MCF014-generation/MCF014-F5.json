@@ -1,0 +1,439 @@
+{
+  "schema": "medical_computing_figure_case_v1",
+  "case_id": "MCF014-F5",
+  "dedup_id": "10.1038/s41598-023-39278-0|publisher-VOR-2023-07-26|Figure5",
+  "local_source_path_base": "tests/batches/generation-01",
+  "admission": {
+    "status": "admitted_source_familiar_maintenance_case",
+    "catalog_admission_claimed": true,
+    "global_catalog_or_cases_written": true,
+    "admitted_at_utc": "2026-10-11T15:33:05.878908+00:00",
+    "baseline_state": "accepted after bounded independent targeted retest",
+    "initial_review": "Core topology supported; F1 minor sampler-clarity recommendation and F2 conditional smaller-page reuse risk.",
+    "targeted_retest": "F1 resolved, no new finding; F2 remains a conditional reuse limit. No retrospective initial-pass credit.",
+    "basis": "Whole original Fig5 plus relevant primary text/code jointly reviewed; editable three-stage redraw actually viewed, qualified, independently retested and source-free reproduced. Admission decision and merge precede control outcome.",
+    "acceptance_gate": "tests/batches/generation-01/baseline-acceptance.json",
+    "acceptance_gate_sha256": "936454d36a517fe367f52e49a0b1aeef0bed5b149ca170ba340ba0eb0ab82b44",
+    "control_outcomes_consulted": false
+  },
+  "counting_scope": {
+    "candidate_source_unit": "One whole original Figure 5, panels A–D",
+    "planned_case_units": 1,
+    "accepted_case_units": 1,
+    "whole_source_view_events_this_draft": 1,
+    "other_figures": "Figure 2 caption was read only to document the channel-count conflict; its image was not viewed. Supplementary figures were not viewed.",
+    "panels_crops_reviews_rerenders": "Do not create additional source cases",
+    "holdout": false,
+    "source_familiar_development": true
+  },
+  "paper": {
+    "title": "A multimodal comparison of latent denoising diffusion probabilistic models and generative adversarial networks for medical image synthesis",
+    "authors": "Gustav Müller-Franzes, Jan Moritz Niehues, Firas Khader et al.",
+    "journal": "Scientific Reports",
+    "year": 2023,
+    "volume": "13",
+    "article_number": "12098",
+    "doi": "10.1038/s41598-023-39278-0",
+    "pmid": "37495660",
+    "pmcid": "PMC10372018",
+    "publication_type": "Original journal research article"
+  },
+  "version_and_identity": {
+    "publisher_version_of_record": "2023-07-26",
+    "publisher_url": "https://www.nature.com/articles/s41598-023-39278-0",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37495660/",
+    "identity_locator": "P:267–273; PMID/PMCID retained from source-probe identity record, not from the local PubMed challenge page",
+    "code_commit": "4b92854dd1599edc091f9793390be4dea07b62e3",
+    "code_commit_date": "2022-12-16T08:23:17Z",
+    "version_limit": "Pinned code predates the version of record; README:6 links arXiv 2212.07501. Formal-paper experiment/checkpoint equivalence is unverified. No preprint text substituted for the article.",
+    "notice_check": "Read the archived 2026-10-11 Crossmark text reporting Document is current. The source probe records a bounded publisher/PubMed/Crossref/search check with no notice found; this draft did not repeat that network search and does not guarantee absence of notices."
+  },
+  "license_and_rights": {
+    "article_and_figure5": "CC BY 4.0; P:262–263 covers article images unless separately excluded. No excluded third-party credit was seen in the whole Figure 5 image or its full caption P:125.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "adaptation_obligations": "Attribute authors and source, link the license, and identify changes. An original redraw is not the publisher's editable artwork.",
+    "code": "Pinned repo-LICENSE.txt: MIT, Copyright (c) 2022 mueller-franzes; separate from article CC BY.",
+    "code_license_url": "https://github.com/mueller-franzes/medfusion/blob/4b92854dd1599edc091f9793390be4dea07b62e3/LICENSE",
+    "datasets_weights_upstream": "Separate rights not evaluated; no data/weight license inferred from article or code, and no upstream-code license audit claimed.",
+    "reference_distribution": "link_only",
+    "original_files": "Source originals remain local in .inspection and are excluded from skill distribution; this card contains notes and links, no copied image or source code."
+  },
+  "original_figure": {
+    "label": "Figure 5 — Illustration of the Medfusion model",
+    "url": "https://www.nature.com/articles/s41598-023-39278-0/figures/5",
+    "inspection_file": ".inspection/figure5-original.png",
+    "sha256": "32aba588d7032d34684489b489080d6514c06f5d2aab1f7f8c80d2374413de89",
+    "native_pixels": [
+      1983,
+      1085
+    ],
+    "actual_whole_view": {
+      "scope": "Whole A–D, no crop; fresh view while preparing this draft",
+      "tool": "tools.view_image detail=original, emitted with image detail=original",
+      "presented_pixels": [
+        1983,
+        1085
+      ],
+      "resize_notice": false,
+      "readability": "Panel letters, module names, arrowheads, dashed AE route, multiplication/addition symbols and binary class label were legible.",
+      "physical_print_measured": false,
+      "source_vector_editability_verified": false
+    },
+    "caption_locator": "P:125, complete Figure 5 A–D caption"
+  },
+  "source_locator_key": {
+    "P": ".inspection/publisher-text.txt (line numbers also printed in extracted text)",
+    "S": ".inspection/supplement-text.txt (extracted numbered paragraphs)",
+    "C": ".inspection/code--medical_diffusion--models--pipelines--diffusion_pipeline.py",
+    "A": ".inspection/code--medical_diffusion--models--embedders--latent_embedders.py",
+    "N": ".inspection/code--medical_diffusion--models--noise_schedulers--gaussian_scheduler.py",
+    "CT": ".inspection/code--scripts--train_diffusion.py",
+    "CS": ".inspection/code--scripts--sample.py",
+    "F": "Whole original Figure 5 A–D, actual viewed pixels",
+    "navigation_only": "source-probe.json and source-probe.md; scientific assertions below cite the primary locators rather than treating the probe as primary evidence"
+  },
+  "read_scope": [
+    {
+      "source": "P",
+      "range": "70–145, 250–280",
+      "focus": "Results channel conflict and limitations; full relevant Methods/experimental design/statistics/implementation/data availability; complete Fig5 caption; rights and version metadata"
+    },
+    {
+      "source": "S",
+      "range": "1–46",
+      "focus": "Whole extracted supplement text, particularly AE losses 6–9 and DDIM sampling 34–38; result images not opened and numerical results not extracted for plotting"
+    },
+    {
+      "source": "C",
+      "range": "35–170, 230–345",
+      "focus": "Frozen AE, sampled noise training target, class conditioning, sampling update/decoder order and optimizer scope"
+    },
+    {
+      "source": "A/N/CT/CS",
+      "range": "A:20–33, 620–628, 700–777; N:61–103, 119–136; CT:64–137; CS:20–55",
+      "focus": "Gaussian reparameterization and VAE encode/decode; current-state/noise scheduler; illustrative training and sampling configurations"
+    },
+    {
+      "source": "metadata",
+      "range": "repo-README.md:1–61; repo-LICENSE.txt complete; crossmark-text.txt complete; repo-latest-commit.json identity/date",
+      "focus": "Preprint-linked code version, separate MIT terms and archived status check"
+    }
+  ],
+  "scientific_scope": {
+    "question": "How do learned image compression, latent noise-prediction training and conditional latent sampling produce synthetic medical images?",
+    "unit": "Observed image and its latent representation; the paper compares imaging domains, not aligned modalities from the same patient (P:112–115, 122).",
+    "original_A": "Compact architecture overview superposes AE and diffusion operations; it is not an explicit three-stage execution diagram.",
+    "original_B": "AE internals and stochastic reparameterization; dashed direct latent-to-decoder connection is active for AE training (P:125).",
+    "original_C_D": "UNet conditioning and nested module details, rather than separate experiments or additional whole-figure cases.",
+    "redraw_scope": "A new three-stage method explanation: AE training, frozen-AE diffusion training, and fixed-model conditional generation. Bounded reconstruction accepted by the separately linked review and retest; no research-model run."
+  },
+  "original_elements": [
+    {
+      "id": "a-input",
+      "panel": "A",
+      "type": "symbolic_observed_image",
+      "visible_label": "x"
+    },
+    {
+      "id": "a-encoder",
+      "panel": "A",
+      "type": "model_module",
+      "visible_label": "Encoder"
+    },
+    {
+      "id": "a-diffusion",
+      "panel": "A",
+      "type": "forward_noising_operation",
+      "visible_label": "Gaussian Diffusion"
+    },
+    {
+      "id": "a-class",
+      "panel": "A",
+      "type": "binary_condition",
+      "visible_label": "Label ∈ {0,1}"
+    },
+    {
+      "id": "a-unet",
+      "panel": "A",
+      "type": "noise_estimator_overview",
+      "visible_label": "UNet"
+    },
+    {
+      "id": "a-decoder",
+      "panel": "A",
+      "type": "model_module",
+      "visible_label": "Decoder"
+    },
+    {
+      "id": "a-output",
+      "panel": "A",
+      "type": "symbolic_output_image",
+      "visible_label": "x-tilde",
+      "limit": "Output meaning depends on training versus generation; do not call all outputs reconstructions."
+    },
+    {
+      "id": "b-distribution",
+      "panel": "B",
+      "type": "distribution_parameters",
+      "visible_label": "mean; std",
+      "limit": "Code predicts mean/log variance and transforms the latter to std (A:23–27)."
+    },
+    {
+      "id": "b-noise",
+      "panel": "B",
+      "type": "reparameterization_draw",
+      "visible_label": "noise"
+    },
+    {
+      "id": "b-reparameterize",
+      "panel": "B",
+      "type": "multiply_then_add",
+      "visible_label": "× then +"
+    },
+    {
+      "id": "c-embedding",
+      "panel": "C",
+      "type": "conditioning_projection",
+      "visible_label": "Linear",
+      "text_support": "Time and label input meaning comes from caption P:125, not an explicit top-node pixel label."
+    },
+    {
+      "id": "c-ublocks",
+      "panel": "C",
+      "type": "nested_unet_modules",
+      "visible_label": "U-Block; endpoint No Up/No Down annotations"
+    },
+    {
+      "id": "d-blocks",
+      "panel": "D",
+      "type": "module_definitions",
+      "visible_label": "U-Block; ResBlock; ConvBlock; Down; Up",
+      "limit": "Repeated detail objects do not imply independent models or clinical stages."
+    }
+  ],
+  "original_relations": [
+    {
+      "from": "a-input",
+      "to": "a-encoder",
+      "type": "data_input",
+      "evidence": "F:A solid rightward arrow; P:122",
+      "id": "orig-r01"
+    },
+    {
+      "from": "a-encoder",
+      "to": "a-diffusion",
+      "type": "latent_data_flow",
+      "evidence": "F:A solid rightward arrow; P:122",
+      "id": "orig-r02"
+    },
+    {
+      "from": "a-diffusion",
+      "to": "a-unet",
+      "type": "noised_latent_input",
+      "evidence": "F:A right-side bent arrow; P:122; C:96–126",
+      "id": "orig-r03"
+    },
+    {
+      "from": "a-class",
+      "to": "a-unet",
+      "type": "conditioning",
+      "evidence": "F:A downward arrow; F:C fan-out and P:125",
+      "id": "orig-r04"
+    },
+    {
+      "from": "a-encoder",
+      "to": "a-decoder",
+      "type": "AE_training_bypass",
+      "evidence": "F:A dashed branch; P:125 specifies AE training only; no generation-time patient skip inferred",
+      "id": "orig-r05"
+    },
+    {
+      "from": "a-unet",
+      "to": "a-decoder",
+      "type": "visible_overview_connection",
+      "evidence": "F:A leftward arrow",
+      "limit": "Abstraction omits sampler/state update; not evidence that a predicted noise tensor is decoded directly. P:122 and C:278–308 supply the missing operations.",
+      "id": "orig-r06"
+    },
+    {
+      "from": "a-decoder",
+      "to": "a-output",
+      "type": "image_output",
+      "evidence": "F:A leftward arrow; P:125",
+      "id": "orig-r07"
+    },
+    {
+      "from": "b-noise",
+      "to": "b-reparameterize",
+      "type": "stochastic_operand",
+      "evidence": "F:B noise→multiply, std→multiply, multiply→add; A:23–27",
+      "id": "orig-r08"
+    },
+    {
+      "from": "b-distribution",
+      "to": "b-reparameterize",
+      "type": "distribution_parameter_operands",
+      "evidence": "F:B std enters ×, mean enters +; output leaves + to the right; A:23–27",
+      "id": "orig-r09"
+    },
+    {
+      "from": "b-reparameterize",
+      "to": "a-decoder",
+      "type": "detail_to_overview_correspondence",
+      "evidence": "F:B dashed sampled-latent route enters decoder ResBlock chain; P:125; A:756–769",
+      "limit": "Correspondence across panels, not a drawn cross-panel connector.",
+      "id": "orig-r10"
+    },
+    {
+      "from": "c-embedding",
+      "to": "c-ublocks",
+      "type": "conditioning_fanout",
+      "evidence": "F:C top Linear branches into the repeated U-Blocks; P:125 identifies time/label embedding",
+      "id": "orig-r11"
+    },
+    {
+      "from": "d-blocks",
+      "to": "c-ublocks",
+      "type": "module_definition_correspondence",
+      "evidence": "F:D named nested detail; P:125",
+      "limit": "No drawn cross-panel data flow. Internal bypass routes are not new clinical feedback loops.",
+      "id": "orig-r12"
+    }
+  ],
+  "visual_decomposition": {
+    "layout": "Two-by-two overview/detail arrangement, black vertical/horizontal dividers and large A–D labels; A left overview, B top-right AE expansion, C bottom-left UNet expansion, D bottom-right reusable module definitions.",
+    "hierarchy": "Large gray rounded containers group AE/diffusion networks; named color blocks define repeated submodules. Black circular ports mark module boundaries.",
+    "color_and_symbols": "Blue architecture modules/ResBlocks, purple U-Blocks, green ConvBlocks, orange Down and yellow Up; explicit names carry meaning. Multiplication and addition circles in B express different operators. D shows residual additions and inner bypasses.",
+    "legend": "No separate color legend; module names and repeated color identities provide the key. Caption supplies dashed-line AE-only scope, time/label input meaning and default kernel/normalization/activation. The AE-only dashed-shortcut qualifier is localized to A/B. D also contains dashed projections; their full conditional activation is not mapped in this macro card. Do not assign one meaning to every dashed mark.",
+    "reading_path": "A starts left→right for encoding/noising and returns right→left through UNet/decoder; B similarly folds encoder and decoder rows. Detail panels explain nesting rather than chronological new stages.",
+    "reuse_boundary": "Transfer overview/detail hierarchy and explicit operator meaning. Do not copy exact palette, layer counts, architecture settings, source pixels or the overview's omitted sampling transition into a new literal execution graph."
+  },
+  "redraw_mapping": [
+    {
+      "original": "A dashed bypass and B reparameterization",
+      "proposed": "AE-training stage: observed x→encoder distribution→sampled z→decoder→reconstruction; observed x also supplies reconstruction reference",
+      "support": "P:122,125; S:6–9; A:20–33,756–769",
+      "boundary": "KL acts on the encoded distribution; multi-resolution L1/LPIPS/SSIM/PatchGAN belong to AE training. If discriminator training is not expanded, do not imply it is absent."
+    },
+    {
+      "original": "A Gaussian Diffusion, binary condition and UNet; C conditioning",
+      "proposed": "Diffusion-training stage: frozen encoder yields z0; sampled perturbation and time yield zt; conditioned UNet estimates noise; L1 compares estimate with the sampled noise",
+      "support": "P:113–115,122,125; C:56–60,80–99,121–149,338–339; CT:124",
+      "boundary": "Dataset class is conditioning, not the numerical noise target. CheXpert uncertain classes were relabeled; class does not universally mean measured clinical truth."
+    },
+    {
+      "original": "A UNet-to-decoder overview route",
+      "proposed": "Conditional generation: fresh latent Gaussian initialization→current latent; UNet prediction plus current latent/schedule→DDIM update; final generated latent→fixed decoder→synthetic image",
+      "support": "P:122; S:34–38; C:232–251,268–317; N:119–136; CS:30–45",
+      "boundary": "Noise estimate and latent state are different objects. Ordinary sample() takes no observed patient image or encoder input; generated output is neither a new clinical observation nor reconstruction of an identified input."
+    },
+    {
+      "original": "C–D complete module expansions",
+      "proposed": "Keep macro module names and conditioning; omit layer-level expansions unless the task needs them",
+      "support": "F:C–D and P:125",
+      "boundary": "No complete layer/checkpoint matching or inferred parameter-sharing among imaging domains."
+    }
+  ],
+  "nontransferable_or_unresolved": [
+    "P:77 says 4 instead of 8 channels, whereas Figure 2 caption P:82 attributes improved reconstruction to 8. CT:85–86 uses 8 in its example. This is retained as a real source conflict; no exact shared latent channel count is selected, and Figure 2 was not visually inspected.",
+    "P:122 supports 1000 training noise-schedule steps and 150 DDIM generation steps; these are study-specific, not defaults for other diagrams. Its 256→32 and 512→64 examples indicate per-axis spatial reduction, not an eightfold reduction of all tensor elements.",
+    "Pinned code supports class dropout, guidance and optional unconditional execution (C:121–126,232–251; README:51); the paper's figure is actually conditional. Full experimental CFG/eta configuration is unresolved; C:301–304 allows per-step stochasticity, so deterministic DDIM is not assumed.",
+    "The pre-publication code's exact correspondence to formal experiment checkpoints, every imaging-domain model and layer/tensor setting is unverified.",
+    "F:A omits sampling state updates. Preserve its role as an overview; do not take the drawn UNet→decoder connection as a literal noise-estimate→decoder algorithm.",
+    "No performance values or patient images are reconstructed here. Reported image metrics and downstream classification do not establish clinical validity or privacy; P:90,104–106 reports relevant limitations.",
+    "No same-patient multimodal fusion, clinical deployment, anonymization guarantee, generated disease ground truth, model execution or weights/data license is inferred."
+  ],
+  "evidence_record_refs": {
+    "source-probe.json": "9a542a1e8fb3513a8798dc92fb06ff2c71cc62a7f4827e4a0c8ee0e24e79fd59",
+    "source-probe.md": "fb198599edf81912dd0dced9a1f42405e3c647af90e60f65baded9c0c33b46d5",
+    ".inspection/publisher.html": "f1ab15ade4318562d833ac67dc4e9681c993326917d36b2d93d937f084f28983",
+    ".inspection/publisher-text.txt": "8c8008e201b7c270752b9cd1c696d3252620e25c9c411c25a1b78960fe6d8a14",
+    ".inspection/supplement.docx": "86095173ea4df81a389fc018bdbbca5c63233ab768660465be6adcdf5840f387",
+    ".inspection/supplement-text.txt": "e3531636a11864f99caac07a751dfc6d572117d1009666ccb2a255344229fdcf",
+    ".inspection/figure5-original.png": "32aba588d7032d34684489b489080d6514c06f5d2aab1f7f8c80d2374413de89",
+    ".inspection/code--medical_diffusion--models--pipelines--diffusion_pipeline.py": "089270e3f689c667fe2e29ff4adc7c3695bf47e4e06fc5bed6f6587893f2a3fb",
+    ".inspection/code--medical_diffusion--models--embedders--latent_embedders.py": "d6d58e9cd23193fabf295ba948c56466794c38fd7d023228958cc3e7d6fa5a95",
+    ".inspection/code--medical_diffusion--models--noise_schedulers--gaussian_scheduler.py": "ebbdd14ee8cb426f84ad9436f74fd26c57607ac88ee3d55193a2ad85439917f9",
+    ".inspection/code--scripts--train_diffusion.py": "8d8a0efb06cfe36c67f6109adb7c0d2c3e6a903b652c52953fb511b14116562b",
+    ".inspection/code--scripts--sample.py": "e5ebceacdec50200bf79291e9486806c270c3fddb4afaff674ed74ea1b6bc268",
+    ".inspection/repo-README.md": "e5e07479d0224f47e0d60ca1c74c93ea32bad7cadf1f78c7de2257ef8e406a1b",
+    ".inspection/repo-LICENSE.txt": "4bc939e896f364825665967bd956c40ea3626ab8d301d77ebd1b730ed6764993",
+    ".inspection/crossmark-text.txt": "447d9a213bac042b0bb0412a948df391f3ebaf9b77abfd0661bb4fe1f414f014",
+    ".inspection/repo-latest-commit.json": "24a5c0a563f7c917fa85e73b22aebd7b07cfea3cea6f08ead7a58e75f23539c5"
+  },
+  "draft_recorded_at_utc": "2026-10-11T15:14:22.547154+00:00",
+  "provenance_check": {
+    "referenced_files": 16,
+    "primary_files_matching_frozen_source_manifest": 14,
+    "all_compared_hashes_match": true,
+    "native_image_dimensions_match": true,
+    "scope": "Integrity check of referenced local bytes; not a scientific accuracy test or source re-fetch."
+  },
+  "transferable_rules": [
+    {
+      "rule": "Separate learned compression, diffusion learning and synthesis stages when an overview superposes them.",
+      "condition": "Training/frozen boundaries and generation inputs must be established from methods. Verification is limited to this sourced method reconstruction and review.."
+    },
+    {
+      "rule": "Type random draws, noise estimates and latent states separately, and make each operator's required inputs explicit.",
+      "condition": "VAE draw, training perturbation and generation initialization are distinct; any per-step sampling noise depends on the configured sampler."
+    },
+    {
+      "rule": "Separate direct data arrows, supervision, parameter updates and cross-panel module correspondences.",
+      "condition": "A module-definition panel is not another experiment; a reconstruction reference is not a generation-time input."
+    },
+    {
+      "rule": "Name dataset annotation and requested generation class according to stage.",
+      "condition": "Preserve relabeling/uncertainty provenance and do not promote chosen conditioning to patient diagnosis."
+    }
+  ],
+  "source_card_preparation": {
+    "created_files": [
+      "case-draft.json"
+    ],
+    "baseline_or_renderer_changed": false,
+    "control_key_or_control_outcomes_read": false,
+    "redraw_review_or_expected_checklist_read": false,
+    "new_network_search_performed": false,
+    "research_code_imported_or_executed": false,
+    "source_files_changed": false,
+    "testability_or_general_accuracy_claim": false,
+    "scope": "Original source-only preparer exposure and writes; later parent admission evidence recorded separately.",
+    "draft_sha256": "7892e24e8e843bab9ca04d0b0e8ebfd89117721d6142d6703d25935d9d78cb08"
+  },
+  "parent_admission_review": {
+    "source_image": "Whole Fig5A–D re-viewed at original detail, native/returned1983×1085, no resize notice. No extra figure count.",
+    "macro_scope": "Core original A/B data and reparameterization flows and C/D module-definition relationships checked; no exhaustive layer/checkpoint correspondence claim.",
+    "reconstructed_visual_review": "parent-revision-review.json; full1984×3505 and preview794×1402 actually viewed, no new collision found.",
+    "metadata_erratum": "parent-visual-review-erratum.json preserves and corrects the earlier parent native-preview-width typo.",
+    "physical_page_limit": "Custom210×371mm; smaller intended pages require reflow or splitting then actual final-size inspection. No print/journal-size certification."
+  },
+  "transfer_evidence": {
+    "frozen_requirements": {
+      "count": 20,
+      "path": "tests/batches/generation-01/expected.json",
+      "sha256": "2934894a12c8f41eb738861b5accba149fbd3dd8896818c496b7aefa73d0f65f",
+      "meaning": "Author-level requirement mapping, not20 independent scientific proofs"
+    },
+    "source_free_replay": "Four-file isolated author replay reproduces six exports; Python audit-hook denial is distinct from OS-level package isolation.",
+    "current_artifacts": {
+      "caption.md": "adb44aa21ced9192a41df01c34b8439652be5de9d82336fd0edef2b2eb2f49d0",
+      "figure_spec.json": "deafa6ab8dcc620139fad0b7bd9f39478ba28e0f6ced66cf8879b5e8148ac506",
+      "preview_96ppi.png": "dfe013a1564279b3a1c43d0f55c6bce7c717d9833538a6c8a0df072d817b7fda",
+      "figure.svg": "a4d9a862de3eb233f073b4281a3fc2c62e10a2daf0ebb0643b3e62ad4c16c80b",
+      "figure.pdf": "e84f8030e5ccc2d1ef41e815e3218eb68a21267a9190bf7667efd6b165e20ac7",
+      "figure.png": "c8bcfb911ea1adb02afaf63837b91c5e4ec81c9bc60c977d84c1f1ad18c9fd6c"
+    },
+    "review_refs": {
+      "independent-review-initial.json": "ac4657bcd5b7cee43cd00c80b6937b6cf74046a75c9fcbab0828406d0bfb5fdc",
+      "independent-review.json": "ae069177bc8629cf6611b85bbc3f93ca4b4e844c2d2260e79a202b2cd66c6e76",
+      "independent-retest-initial.json": "1b9c8d2ad9a02add83a0aa1bd65b88be2243eec81b2ad1a82befaa73ccc944f6",
+      "independent-retest.json": "511c65a1c10804cfa2107e5bfab6f2beaa1a9edc5d20f7c5a456024e383dd0bb",
+      "targeted-revision-report.json": "329d8d631f16aa78eabc8b9f5e57aba8c43005b012d8b4d3a2cffa99fda04ec9",
+      "parent-revision-review.json": "0e9439a9d5088451789a0ebbf4efeaa15458807df1d0525b2759fdd94706a542",
+      "parent-visual-review-erratum.json": "81d4958d6ee1a2f4b7d17d03ff01f2f8f601320abc389a90288371cc97a3e0f8"
+    },
+    "controls": "Separate fixed test still under first review at admission; no outcomes used for this card.",
+    "research_code_or_model_execution": false
+  }
+}

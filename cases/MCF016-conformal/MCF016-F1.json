@@ -1,0 +1,221 @@
+{
+  "id": "MCF016-F1",
+  "status": "Admitted semantic_partial after finite transfer acceptance",
+  "paper": {
+    "authors": "Olsson H et al.",
+    "title": "Estimating diagnostic uncertainty in artificial intelligence assisted pathology using conformal prediction",
+    "doi": "10.1038/s41467-022-34945-8",
+    "version": "Nature Communications 13, 7761 (2022), version of record 2022-12-15",
+    "url": "https://www.nature.com/articles/s41467-022-34945-8"
+  },
+  "figure": "Figure 1, A-E",
+  "deduplication_key": "10.1038/s41467-022-34945-8|2022-12-15|Figure1",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "eligibility": "catalog-eligibility.md fixed the ceiling before control scoring. Not a newly reserved holdout: already used for rule development. S1/Table S1 are dependencies; authored versions/controls/repairs add no original figures. Local drawing success cannot resolve the source formula/version conflict.",
+  "panels": [
+    {
+      "panel": "A",
+      "locator": "Fig1 upper right/caption A; Par24",
+      "question": "What does AI output?",
+      "visible": "Slide/patch extraction feeds AI; its right arrow reaches a point-prediction frequency summary.",
+      "limit": "Frequency is not a patient probability or reliability guarantee."
+    },
+    {
+      "panel": "B",
+      "locator": "Fig1 middle left/caption B; Par24-28",
+      "question": "How does CP change the output form?",
+      "visible": "AI feeds CP, which feeds benign/cancer/uncertain frequency groups.",
+      "limit": "Three bars are neither all four binary sets nor a coverage-error partition. No exact p arithmetic is visible."
+    },
+    {
+      "panel": "C",
+      "locator": "Fig1 lower-left green brace/caption C; Results Par9/12",
+      "question": "How are matched-setting tests grouped?",
+      "visible": "CP branches to baseline Test1 and Imagebase Test2 under one brace.",
+      "limit": "Reliability wording is a source claim, not proof of per-case correctness."
+    },
+    {
+      "panel": "D",
+      "locator": "Fig1 lower-middle red brace/caption D; Results Par13-14",
+      "question": "How are scanner/laboratory shifts examined?",
+      "visible": "Test3 changes scanner; Test4/5 change laboratory/scanner. Their brace motivates corrective action.",
+      "limit": "This does not establish an implemented recalibration loop or arbitrary-shift validity."
+    },
+    {
+      "panel": "E",
+      "locator": "Fig1 lower-right red brace/caption E; Results Par15-16",
+      "question": "How are unusual morphologies assessed?",
+      "visible": "Test6 links atypical tissue to possible human intervention.",
+      "limit": "Flagging proves neither distribution shift nor successful review."
+    }
+  ],
+  "layout": {
+    "meaning": "AI-to-CP hierarchy contrasts output types above a branching evaluation design; C/D/E braces encode scenario membership. Green/red and reliability labels are communication choices, not clinical safety certificates.",
+    "arrow_scope": "Branches organize evaluations; they do not generate datasets or define a sequential deployed patient pathway.",
+    "omissions": "Training/calibration/test roles, class references, p formula, strict threshold and truth-only evaluation require Methods/S1/Table S1, not main-figure arrows.",
+    "limits": "No bar extraction, performance replication or pathology interpretation. Bottom text touches the boundary; source pixels were not repaired."
+  },
+  "dependencies_and_gaps": {
+    "split": "S1 p4 reports man-level training/test then proper/calibration splits. Par27/30/33 distinguish fitting from calibration. No patient IDs audited.",
+    "threshold": "Par26, Table S1 and code agree on p_y > 1-c; equality excluded. Class p values are not normalized class probabilities.",
+    "formula": "Table S1 p9 counts N+1 nonconformity scores with >=, including self. functions.R L89-112 uses (# calibration scores < test score + U * # ties)/(n_y+1), U=runif(1), without numerator self/+1. Reversing score direction does not resolve this difference.",
+    "version": "Author v1.0.0 tag resolves to the previously pinned3dd31205commit; this resolves tag identity only. Exact Zenodo archive bytes remain unverified after403, and actual publication-run identity is unknown. Six selected unmodified functions ran in current R4.5.1 on invented inputs; no clinical/demo data or master pipeline ran.",
+    "policy": "Deployment may use set cardinality. Table S1/functions.R L276-300 also use truth-dependent groups, which are not deployment states. Empty excludes truth and is a coverage failure even where a local Error category omits it.",
+    "review": "Par11/S5 p8 assume expert assessment in an experimental collaboration. Non-singleton-to-review is a task illustration, not validated clinical routing. Distributional assumptions and the conflicting implementation remain unverified."
+  },
+  "historical_scope": [
+    {
+      "observer": "ROOT",
+      "record": "source-observations.json, 2026-10-11T20:58:52Z",
+      "read": "Fig1, Results/Methods, permissions/availability; supplement text focused on p4/p9.",
+      "actual_view": "Earlier original-detail full Fig1 (1501x1063), full p4/p9 renders (150 dpi). Other supplemental result figures not counted as viewed."
+    },
+    {
+      "observer": "waveform_data_audit; cp_code_read assisted commit metadata",
+      "record": "source-review.md/evidence-ledger.json, 2026-10-11T21:00:28Z",
+      "read": "Fig1, Par9/11/24-35, Table1; S1/Table S1; S5 p8 caption text; three code files statically.",
+      "actual_view": "Earlier independent original-detail full Fig1 and p4/p9 views; model review, not human expert review."
+    },
+    {
+      "observer": "current draft assembly",
+      "read": "Eligibility, observations, review/ledger and relevant local JATS.",
+      "actual_view": "No fresh view; historical evidence attributed above. Controls/reader/acceptance scores not inspected."
+    },
+    {
+      "observer": "ROOT final integration",
+      "actual_view": "Full original Fig1 viewed again with view_image(detail=original), 1501x1063. Confirmed A upper right, B middle left, C/D/E lower braces; not an additional original figure.",
+      "scope": "Draft locators confirmed; partial ceiling unchanged."
+    },
+    {
+      "observer": "ROOT conformal-version-01 continuation",
+      "read": "Targeted pinned Methods/availability, complete functions.R346lines and master/README; current tagAPI and Zenodo record",
+      "actual_view": "Whole existing Fig1 and complete supplementary p9 raster viewed again; no new original count. Own eleven previews/two main views plus finalbaseline repeat; source-aware developer review.",
+      "scope": "Actual rank/tie/self and threshold illustration verified; source formula conflict and scientific guarantee scope remain partial."
+    }
+  ],
+  "sources": [
+    {
+      "role": "article/caption",
+      "path": "source-assets/EuropePMC-fullText.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9755280/fullTextXML",
+      "bytes": 114433,
+      "sha256": "bc32fe268f355f644397366d0e0b87cbfa9eb13457052e44cbb8b7dadd2a3b46"
+    },
+    {
+      "role": "original Fig1",
+      "path": "source-assets/original-fig1.png",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-022-34945-8/MediaObjects/41467_2022_34945_Fig1_HTML.png",
+      "bytes": 167781,
+      "sha256": "4078a0b48ddfb78572ccaef73db9de5ac58ff49ee69563a41d30dfe708c1d6f2"
+    },
+    {
+      "role": "supplement dependency",
+      "path": "source-assets/supplementary-info-media.pdf",
+      "url": "https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41467-022-34945-8/MediaObjects/41467_2022_34945_MOESM1_ESM.pdf",
+      "bytes": 1237212,
+      "sha256": "2d0a3a9397569be448f55eda378cc8f26810f0c4f8584dc0b85bbf46a7b9c4d7"
+    }
+  ],
+  "code_dependency": {
+    "commit": "3dd31205b4a5a35065e084b7b3e81c152412156d",
+    "url": "https://github.com/heolss/Conformal_analyses/commit/3dd31205b4a5a35065e084b7b3e81c152412156d",
+    "files": [
+      {
+        "path": "functions.R",
+        "sha256": "9ab654a326e407806926b11a2ed29674977b1600231ec1bdeffa8cb86f204519"
+      },
+      {
+        "path": "analysis/CP_LO_TEST.R",
+        "sha256": "b7fa6a7536a1e4928ef698d0ea1df582dcd85479eb1c1fda43d511e3c7bc2b38"
+      },
+      {
+        "path": "master.R",
+        "sha256": "17aded9661817958d1232018656f4c79f892acc9299016d50f81a6b8e33c1065"
+      }
+    ],
+    "file_urls_and_locators": "source-audit-assets/evidence-ledger.json",
+    "executed": "Six selected pure function definitions executed on synthetic inputs in R4.5.1; master/top-level package call not executed",
+    "copies_retained": "Raw functions/master/README local development evidence only; excluded from distribution",
+    "author_tag": "v1.0.0 -> 3dd31205b4a5a35065e084b7b3e81c152412156d",
+    "actual_publication_execution_verified": false
+  },
+  "rights": {
+    "article": "CC BY 4.0 per JATS, subject to third-party credits; no exception observed for inspected Fig1/S1. https://creativecommons.org/licenses/by/4.0/",
+    "code": "License not established; public access and article CC BY 4.0 do not establish code reuse rights.",
+    "access": "Normal-TLS Europe PMC/CDN successes; earlier failures retained. No challenge bypass or clinical-data download.",
+    "distribution": "Citation eligibility only; original source text/figures/supplement default to local evidence, not packaging."
+  },
+  "transferable_rules": [
+    {
+      "rule": "Separate proper fitting, labeled calibration and truth-free inference; test truth enters only post-hoc evaluation.",
+      "locators": "Par27/30; S1 p4; functions.R L64-87/L113-121",
+      "effect": "Show fixed-model reuse; forbid calibration/test-to-fit and test-truth-to-p arrows in this inductive workflow."
+    },
+    {
+      "rule": "Separate cardinality routing from truth-dependent coverage evaluation.",
+      "locators": "Par24/26; Par11; Table S1; functions.R L276-300",
+      "effect": "Singleton means candidate, not known-correct; two labels mean uncertainty, not two diagnoses; empty retains no label and fails coverage."
+    },
+    {
+      "rule": "Keep stratum size, less/tie counts, self term and saved random draw explicit when numerical source rules conflict; compare without silently adjudicating. A fixed-case graphic must reject inputs outside its labelled counts.",
+      "locators": "functions.R64–112; SupplementTableS1p9; current own numeric/render/guard evidence",
+      "effect": "Distinct circle/square p-values with strict threshold and prediction-set strip; test truth supplies only optional evaluation."
+    }
+  ],
+  "boundary_example": {
+    "classification": "SIMULATED TEST, NOT RESEARCH RESULTS",
+    "given_p": {
+      "B": "0.05",
+      "C": "0.70"
+    },
+    "change": "Strict p_y > epsilon, epsilon=1-c: c=.95 yields epsilon=.05 and {C}; equality excludes B. c=.99 yields epsilon=.01 and {B,C}.",
+    "limit": "Task inputs only; no p generation, article-result reproduction, coverage or review-efficacy estimate."
+  },
+  "record_pins": {
+    "catalog-eligibility.md": "072fdd1dd224ce1ae0a9619771c633a1721a6c010de801aa02ac6dfd1fe110aa",
+    "source-observations.json": "5ea455ce67484e63a6cb405f120ec036049db100d46913d2fd9a8d638535c0f7",
+    "source-review.md": "0b3f2bb0847cbbcdbb847c7926735db51189e7daff876846a609bb87c23ed012",
+    "source-audit-assets/evidence-ledger.json": "6311e216b98bc8f87958f42347d56ed1ef40dc933c40457838ddad96b14676ee",
+    "tests/batches/conformal-version-01/acceptance.json": "21afe22a4ff225cf4d4df5158f2cb3f0c1ab4c94a4e97584d17b7fdbc1874be1",
+    "tests/batches/conformal-version-01/source-notes.md": "e2bea72e86bc17c553b2316d631dad4c7c6a0390044166f8b1ee1e1476bc0725",
+    "tests/batches/conformal-version-01/numeric-check-01.json": "ab92a7a97430acf5dc64b3d241c074c780bb0855e1e6776ae70a5eb4a404875c",
+    "tests/batches/conformal-version-01/numeric-supplement-01.json": "3b33d9d17367d3a8f939d928bcb565a4071e83814138a9505099e2bf29653f76",
+    "tests/batches/conformal-version-01/visual-review-final.json": "04f3ef43be3037eba7876251f23cf2b595bc6e79d442a15270057389426acd72",
+    "tests/batches/conformal-version-01/replay-02/result.json": "7804c1d4e4b58e923803c086108ef33f6338f20a11c8f9cf80854ef95889a250"
+  },
+  "local_source_path_base": "tests/batches/conformal-pathology-01",
+  "transfer_evidence": {
+    "acceptance": "tests/batches/conformal-pathology-01/acceptance.json",
+    "batch_report": "tests/batches/conformal-pathology-01/BATCH_REPORT.md",
+    "first_metrics": "controls/scores-first.json",
+    "followup": "controls/scores-followup.json",
+    "software": "35/35 bounded; current OS replay 14/14; no clinical/statistical validity proof",
+    "author_figure": {
+      "initial": "author/initial/exports/figure.svg",
+      "revised": "author/revised/exports/figure.svg"
+    }
+  },
+  "transfer_evidence_source_version": {
+    "batch": "tests/batches/conformal-version-01",
+    "acceptance": "tests/batches/conformal-version-01/acceptance.json",
+    "current_delivery": "tests/batches/conformal-version-01/DELIVERY.md",
+    "requirements": 16,
+    "numeric_original": 74,
+    "numeric_supplement": 20,
+    "valid_native_checks": 248,
+    "known_errors_detected": 3,
+    "misses": 0,
+    "correct_control_false_positives": 0,
+    "repairs": 3,
+    "invalids": 10,
+    "isolated_exports": 54,
+    "elements": 11,
+    "relations": 6,
+    "holdout": false,
+    "independent_reader": false,
+    "expert_review": false
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "case_id": "MCF033-F2",
+  "dedup_id": "doi:10.52202/079017-1902|NeurIPS2024|Figure2",
+  "paper": {
+    "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+    "authors": [
+      "Bernal Jiménez Gutiérrez",
+      "Yiheng Shu",
+      "Yu Gu",
+      "Michihiro Yasunaga",
+      "Yu Su"
+    ],
+    "doi": "10.52202/079017-1902",
+    "publication": "NeurIPS2024",
+    "read_version": "Official38-page proceedings PDF; selected legacyv1.0.0 code",
+    "code_commit": "b144c46df14cabe5f5822d8caded4bec5f709461"
+  },
+  "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html",
+  "figure_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/6ddc001d07ca4f319af96a3024f6dbd1-Paper-Conference.pdf",
+  "source_figure": "Whole Figure2 on page4",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "metadata": "Verified primary proceedings source and legacy tag",
+    "reading": "Abstract/overview,Sections2.2–2.3,Figure2,Section3.4,AppendixH and selected legacy code sections",
+    "visual": "Whole original PDF page4 actually rendered and viewed1275x1650; not pixel digitization",
+    "license": "Code MIT; paper/artwork redistribution unconfirmed; original copies local only",
+    "archive": "link_only originals; own176selected files",
+    "notice_check": "Bounded proceedings notice search found no linked correction/retraction; not exhaustive"
+  },
+  "question": "How do offline extraction/synonymy and query-conditioned seed weighting feed graph diffusion and passage ranking?",
+  "cannot_conclude": [
+    "Brain mechanism equivalence",
+    "Original benchmark reproduced",
+    "Medical utility",
+    "Legacy tag proves exact published invocation"
+  ],
+  "elements": [
+    {
+      "id": "offline",
+      "role": "LLM-extracted triples plus encoder-based synonymy construct graph",
+      "source": "Figure2; Section2.2"
+    },
+    {
+      "id": "seed-reset",
+      "role": "Query NER/linking selects nodes; specificity weights normalized reset",
+      "source": "Section2.3; AppendixH; code418–420,619–628"
+    },
+    {
+      "id": "diffusion",
+      "role": "Undirected weighted personalized PageRank over stored graph",
+      "source": "Section2.3; code441–466,532–534"
+    },
+    {
+      "id": "passage-score",
+      "role": "Aggregate node values through fact/document matrices then normalize",
+      "source": "code208–231; own fixture illustrates explicit raw count aggregation only"
+    }
+  ],
+  "relations": [
+    {
+      "source": "offline",
+      "target": "diffusion",
+      "type": "stored graph dependency",
+      "condition": "Graph construction precedes query-dependent diffusion in this source",
+      "source_locator": "Figure2; Sections2.2–2.3"
+    },
+    {
+      "source": "seed-reset",
+      "target": "diffusion",
+      "type": "personalization",
+      "condition": "Query-linked nodes and declared weighting",
+      "source_locator": "Section2.3; AppendixH"
+    },
+    {
+      "source": "diffusion",
+      "target": "passage-score",
+      "type": "numeric aggregation",
+      "condition": "Original implementation has fact-mediated maps and normalization; own C is explicit simulation",
+      "source_locator": "code208–231"
+    }
+  ],
+  "visual_design": {
+    "source": "Brain/component analogy columns and offline/online grouping explain conceptual roles, not measured brain correspondence",
+    "own": "Upper dependency lanes followed by graph/T, intermediate all-node states and count contribution tables make each transformation auditable",
+    "counterexample": "Wrong nonseed specificity can leave final ranks unchanged; intermediate columns are necessary",
+    "limit": "Native four-node fixture does not reproduce original illustrations or corpus"
+  },
+  "gaps": [
+    "Original author model not run",
+    "Exact tuned invocation not checked",
+    "Weighted/general/disconnected graph behavior outside own runtime",
+    "Paper/source image rights not established",
+    "Original min–max document score normalization not reproduced"
+  ],
+  "transfer_evidence": {
+    "entry": "tests/batches/graph-diffusion-01/DELIVERY.md",
+    "acceptance_sha256": "a09e9b146f5f24d7403bcd12657c35af1a76c1cdcbb4075a79faf39d55353286",
+    "scope": "Source-aware same-executor simulated development"
+  },
+  "record_pins_base": "tests/batches/graph-diffusion-01/",
+  "record_pins": {
+    "protocol.json": "408b3984c25fba8edbb2f073fe134fbec84560847b8330d603327658526ff0b2",
+    "source-notes.md": "ac46578540dd8e51a8ccfac13b896e72c5812f72f12d2810d1176a2f6a2da940",
+    "source-view-01.json": "b5893e418fdec37238e1df95fdc6854e28f5b49a6b1d22cc82d7a965602eb433",
+    "acceptance.json": "a09e9b146f5f24d7403bcd12657c35af1a76c1cdcbb4075a79faf39d55353286",
+    "visual-review-02.json": "e1d8b5e09d985327e18fcb4aca5345a0151351bd552163584c82322721d96614",
+    "semantic-review-01.json": "451e84b9704a3e4dcf1b40699c3cfa095d5557b109a5fb9691043d617adcd76a"
+  }
+}

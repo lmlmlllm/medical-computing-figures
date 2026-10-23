@@ -1,0 +1,214 @@
+{
+  "case_id": "MCF004-F1",
+  "paper_id": "10.1177/15330338261447344",
+  "dedup_key": "10.1177/15330338261447344|SAGE-2026-04-29-version-of-record|Figure 1",
+  "batch_id": "M2-development-batch-1",
+  "role": "development_reference",
+  "date": "2026-10-11",
+  "title": "A Hybrid CNN-Transformer Deep Learning Model for Differentiating Benign and Malignant Breast Tumors Using Multi-View Ultrasound Images",
+  "version": "SAGE-2026-04-29-version-of-record",
+  "figure": "1",
+  "figure_types": [
+    "multiview_shared_encoder",
+    "masked_set_fusion",
+    "study_overview"
+  ],
+  "source": {
+    "primary_url": "https://journals.sagepub.com/doi/full/10.1177/15330338261447344",
+    "doi": "10.1177/15330338261447344",
+    "locators": [
+      "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "Section 3.3 lesion-level partition; Section 3.4 padding/mask/CLS; Section 3.6 training configuration"
+    ],
+    "source_material_role": "reference expression and semantic study, not facts for another current manuscript",
+    "correction_retraction_check": "No correction or retraction notice seen on inspected primary record; not a comprehensive registry search"
+  },
+  "states": {
+    "bibliography": "primary_verified",
+    "reading": "relevant_fulltext_and_caption_read",
+    "visual": "complete_figure_and_needed_detail_viewed",
+    "semantic": "key_elements_and_relations_checked_against_sources",
+    "license": "CC-BY-NC-4.0 article license verified",
+    "archive": "local_inspection_only; link_only_for_distribution",
+    "code": "not_read_not_run",
+    "results": "published_results_inspected_not_reproduced",
+    "transfer_test": "not_executed_for_this_individual_reference",
+    "review": "executor_model_review; no human expert review"
+  },
+  "visual_evidence": {
+    "tool": "functions tools.view_image",
+    "inspection_date": "2026-10-11",
+    "files": [
+      {
+        "path": ".inspection/figure1.jpg",
+        "scope": "complete panels a–c, 3797x2082; full image displayed at 2048x1123"
+      },
+      {
+        "path": ".inspection/figure1-model-detail.png",
+        "scope": "complete model panel b at enlarged scale: shared weights, 1280D, masks, no positional encoding, CLS head"
+      }
+    ],
+    "hash_manifest": "inspection-manifest.json",
+    "actual_observations": [
+      "Large dashed stage boundaries group preparation, architecture and evaluation; dashed boundaries are not hypothetical relationships.",
+      "Parallel ultrasound views converge into one EfficientNetV2 block explicitly labeled shared weights.",
+      "Valid feature tokens show Mask:1; gray zero pads show Mask:0. A yellow CLS path enters attention and reaches the MLP head.",
+      "Positional Encoding is crossed out; Transformer says 8 layers, 8 heads. Evaluation thumbnails are illustrative at overview scale, not sources for precise values."
+    ],
+    "scope": "Complete original figure, including all panels; crops are children, never counted as additional cases"
+  },
+  "scientific_task": {
+    "question": "How are variable numbers of views from one lesion fused into a lesion-level prediction?",
+    "supported_claim": "A shared CNN extracts per-view features; masked Transformer aggregation without positional encoding produces a CLS-derived malignancy probability.",
+    "cannot_conclude": [
+      "Parallel views are not independent patients or independent model parameters.",
+      "Grad-CAM and ROC thumbnails do not prove causal explanation or clinical deployment benefit.",
+      "The overview does not establish every training detail such as hybrid-backbone freezing."
+    ]
+  },
+  "elements": [
+    {
+      "id": "views",
+      "name": "Unordered views of one lesion",
+      "role": "variable-size input set",
+      "panel": "a,b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "cnn",
+      "name": "EfficientNetV2",
+      "role": "shared per-view feature extractor",
+      "panel": "b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "tokens",
+      "name": "1280D feature tokens plus CLS",
+      "role": "Transformer inputs",
+      "panel": "b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "mask",
+      "name": "Valid/padding mask",
+      "role": "excludes dummy positions",
+      "panel": "b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "tr",
+      "name": "Transformer encoder",
+      "role": "8 layers/8 heads; no positional encoding",
+      "panel": "b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "head",
+      "name": "CLS MLP/sigmoid head",
+      "role": "lesion prediction",
+      "panel": "b",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    },
+    {
+      "id": "eval",
+      "name": "Evaluation panels",
+      "role": "diagnostic metrics and interpretation displays",
+      "panel": "c",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "source": "views",
+      "target": "cnn",
+      "type": "shared_computation",
+      "direction": "directed",
+      "condition": "all views from one lesion; same weights",
+      "stage": "feature extraction",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    },
+    {
+      "id": "r2",
+      "source": "cnn",
+      "target": "tokens",
+      "type": "data_flow",
+      "direction": "directed",
+      "condition": "one vector per real view",
+      "stage": "feature extraction",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    },
+    {
+      "id": "r3",
+      "source": "tokens",
+      "target": "tr",
+      "type": "data_flow",
+      "direction": "directed",
+      "condition": "CLS prepended; no positional embedding",
+      "stage": "fusion",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    },
+    {
+      "id": "r4",
+      "source": "mask",
+      "target": "tr",
+      "type": "attention_constraint",
+      "direction": "directed",
+      "condition": "padded scores set to negative infinity before softmax",
+      "stage": "fusion",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    },
+    {
+      "id": "r5",
+      "source": "tr",
+      "target": "head",
+      "type": "readout",
+      "direction": "directed",
+      "condition": "final CLS state only",
+      "stage": "prediction",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    },
+    {
+      "id": "r6",
+      "source": "head",
+      "target": "eval",
+      "type": "evaluation_input",
+      "direction": "directed",
+      "condition": "performance requires actual held-out predictions",
+      "stage": "evaluation",
+      "evidence": "SAGE Figure 1a–c and caption; Sections 3.2–3.5.2, Eqs3–7; PubMed 42052813 figure record",
+      "status": "source_supported"
+    }
+  ],
+  "design_analysis": {
+    "layout": "Left preparation opens into a wider architecture lane; a lower evaluation lane separates model computation from testing. The explicit shared-weight label prevents duplicated views being read as independently parameterized branches.",
+    "color": "Green valid tokens, gray padding and yellow CLS encode distinct roles; labels redundantly name them.",
+    "omissions": "Training loss is not shown. A training diagram needs a separate label-to-loss path rather than inserting labels into inference."
+  },
+  "transferable_rules": [
+    "Use one shared encoder block or explicit tying marks across repeated views.",
+    "Show masking at the operation it constrains, and distinguish dummy inputs from missing measured information.",
+    "Set versus sequence semantics require positional-encoding and readout conditions, not the word Transformer alone.",
+    "Overview thumbnails must never supply invented precise result numbers."
+  ],
+  "nontransferable_content": [
+    "Number of layers, heads, feature dimension and max views are study-specific.",
+    "Do not infer hybrid CNN freezing from a baseline subsection; request/inspect code or a specific statement before drawing it."
+  ],
+  "limitations_and_ambiguities": [
+    "Paper Section 3.4 describes dummy images before extraction while the figure depicts zero pads alongside tokens: a high-level padding abstraction, not proof of an exact implementation location.",
+    "No source code inspected. The figure suggests Doppler and grayscale views but does not alone define modality-level preprocessing."
+  ],
+  "license": {
+    "status": "CC-BY-NC-4.0 article license verified",
+    "evidence_url": "https://journals.sagepub.com/doi/full/10.1177/15330338261447344",
+    "copyright": "The Authors 2026",
+    "third_party_assets": "Device, anatomy icons and ultrasound images not separately audited",
+    "distribution": "Originals excluded from skill distribution. License does not authorize unrestricted commercial redistribution."
+  }
+}

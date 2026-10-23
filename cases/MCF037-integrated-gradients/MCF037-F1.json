@@ -1,0 +1,83 @@
+{
+  "case_id": "MCF037-F1",
+  "dedup_id": "PMLR70|sundararajan17a|conference2017|Fig1",
+  "title": "Axiomatic Attribution for Deep Networks",
+  "authors": [
+    "Mukund Sundararajan",
+    "Ankur Taly",
+    "Qiqi Yan"
+  ],
+  "source_url": "https://proceedings.mlr.press/v70/sundararajan17a.html",
+  "source_figure": "Figure1, PDFpage4",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Relevant pp1–5 methods and p6 approximation/application text; not full10-page reading",
+    "visual": "Whole Figure1 on PDFp4 and contextual full pages3/5 actually viewed",
+    "archive": "link_only third-party originals; own code, inputs, figures and selected evidence"
+  },
+  "question": "How does the selected baseline-to-input path define feature attribution?",
+  "elements": [
+    {
+      "id": "baseline",
+      "role": "Reference point(r1,r2), shared by the three paths",
+      "source": "Fig1 and§3"
+    },
+    {
+      "id": "input",
+      "role": "Explained input(s1,s2), common endpoint",
+      "source": "Fig1"
+    },
+    {
+      "id": "P2",
+      "role": "Straight interpolation defining integrated gradients",
+      "source": "Fig1, Eq1"
+    },
+    {
+      "id": "P1-P3",
+      "role": "Alternative coordinate-order and smooth curved paths",
+      "source": "Fig1,§4.1 Eq2"
+    }
+  ],
+  "relations": [
+    {
+      "from": "baseline",
+      "to": "input",
+      "type": "feature-space interpolation",
+      "condition": "Chosen path and regular function; not biological time or causal intervention",
+      "source": "Fig1/Eq2"
+    },
+    {
+      "from": "path tangent",
+      "to": "feature integral",
+      "type": "multiplicative computational factor",
+      "condition": "General path uses coordinate derivative; straight path has constant displacement",
+      "source": "Eqs1–2"
+    },
+    {
+      "from": "signed attribution sum",
+      "to": "F(input)-F(baseline)",
+      "type": "completeness identity",
+      "condition": "Exact integration with sufficient regularity; finite sums approximate it",
+      "source": "Proposition1/Eq3"
+    }
+  ],
+  "visual_design": "Three differently colored routes share two marked endpoints; minimal numeric information. Transfer the shared-endpoint comparison, then add explicitly computed integrands and component contributions. Do not digitize the qualitative path as author data.",
+  "source_conflict": "Printed p3 scalar quotient inequality telescopes to equality when denominators are nonzero; visually confirmed and excluded as an oracle. External uniqueness/regularity proofs not audited.",
+  "license": "Explicit redistribution license not established; author copyright retained. PDF, rasters and extracted text excluded from distribution.",
+  "notice_scope": "Bounded publisher page/correction search2026-10-12; no linked notice encountered, not exhaustive",
+  "test_limits": [
+    "Own smooth polynomial and two declared paths only",
+    "No patient heatmap, model training, source empirical replication, clinical/causal/expert or held-out validation",
+    "Independent rational code is not an independent scientific reviewer"
+  ],
+  "transfer_entry": "tests/batches/integrated-gradients-01/DELIVERY.md",
+  "evidence_pins": {
+    "task-definition.json": "6fdd24ff6708a194629ea8064850e3156bc403ac17ab2703addb9926a49a2ae8",
+    "source-view-01.json": "4cccba507157eb20613c3885384f10bf2c56d47d590e18bd19873c15106208f5",
+    "source-notes-01.md": "462f02a07c1ef6ce7b667465e7da040f9b9f887590429137d62dd75fbbf4e889",
+    "acceptance.json": "f70e62aa02c18ffc41f86ff06c20e94bfea657ee1096554ca519d77143be1adf",
+    "visual-review-01.json": "3b1e9fb5fb791249d410b7dedf52b317798b3581688a49daeb00fe202dc75f91"
+  }
+}

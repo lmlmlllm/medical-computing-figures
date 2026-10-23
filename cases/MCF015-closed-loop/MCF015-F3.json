@@ -1,0 +1,650 @@
+{
+  "schema": "medical_computing_figure_case_v1",
+  "case_id": "MCF015-F3",
+  "dedup_id": "10.1126/science.abm1703|publisher-formatted-2022-05-27|Figure3",
+  "local_source_path_base": "tests/batches/closed-loop-01",
+  "prepared_utc": "2026-10-11T16:05:00.463511+00:00",
+  "admission": {
+    "status": "admitted_semantic_partial_after_pre_control_eligibility; release_1.10.0",
+    "acceptance_gate": "tests/batches/closed-loop-01/baseline-acceptance.json",
+    "acceptance_gate_sha256": "86e3834924681f99fa01575aed244a5d45e7d06ccb48ec3ba3ed6be7c7595287",
+    "semantic_status": "semantic_partial",
+    "reason": "Whole Figure3 and relevant main text are available, but supplementary Methods/Text8 are inaccessible; exact timing, scheduling and implementation relationships remain unresolved. Bounded explanatory redraw accepted separately.",
+    "control_outcomes_consulted": false,
+    "catalog_merge_utc": "2026-10-11T16:45:56.842255+00:00",
+    "frozen_candidate_sha256": "d97d7f0fee3ec45dca1ce1a4aa3c8ee5f80222b39901196d6035b643e6b579df",
+    "decision_scope": "The baseline eligibility decision predates control scores; later catalog merge does not promote missing supplement relationships to fully verified."
+  },
+  "counting_scope": {
+    "whole_original_figures": 1,
+    "fully_verified_case_units": 0,
+    "partial_case_units": 1,
+    "not_additional_cases": "Panels A–E, redraws, controls and repairs do not add source cases.",
+    "holdout": false,
+    "same_team_lineage": "Distinct2022Science paper from MCF0082021NatureBiotechnology; overlapping device team, not independent-team transfer."
+  },
+  "paper": {
+    "title": "A transient, closed-loop network of wireless, body-integrated devices for autonomous electrotherapy",
+    "authors": "Yeon Sik Choi, Hyoyoung Jeong, Rose T. Yin et al.; 49 authors; final John A. Rogers",
+    "doi": "10.1126/science.abm1703",
+    "pmid": "35617386",
+    "pmcid": "PMC9282941",
+    "journal": "Science",
+    "volume": 376,
+    "issue": 6596,
+    "pages": "1006–1012",
+    "epub": "2022-05-26 (PubMed)",
+    "issue_date": "2022-05-27 (PubMed/Crossref/PDF)",
+    "type": "original research",
+    "versions": {
+      "primary": "Author-hosted publisher-formatted final article,8 PDF pages=7 article pages+summary page",
+      "file": ".inspection/scienceclosedloop.pdf",
+      "publisher_page": "https://www.science.org/doi/10.1126/science.abm1703",
+      "author_pdf": "https://rogersgroup.northwestern.edu/files/2022/scienceclosedloop.pdf",
+      "author_index": "https://rogersgroup.northwestern.edu/publications/publications-2022.php",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/35617386/",
+      "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9282941/",
+      "pmc_version": "Indexed as author manuscript available2022-07-14, not the primary PDF used here; direct page gated"
+    }
+  },
+  "source_status": {
+    "public_retrieval": "System curl with normal TLS verification; no installation, credentials, challenge solving or access-control bypass.",
+    "failed_routes": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.abm1703",
+        "result": "web403"
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9282941/",
+        "result": "webbrowser verification; search index only supplies selected article text/identity"
+      },
+      {
+        "url": "https://escholarship.org/uc/item/387971d5",
+        "result": "JavaScript robot verification; no further access"
+      },
+      {
+        "url": "https://www.science.org/doi/suppl/10.1126/science.abm1703/suppl_file/science.abm1703_sm.pdf",
+        "result": "web unavailable; curl403 HTML saved, not PDF"
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC9282941",
+        "result": "HTML exception response saved under .xml; not an OA grant or machine-readable article"
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/9282941/bin/NIHMS1816496-supplement-word_version.docx",
+        "result": "curl200 text/html preparing-download proof-of-work page; not a DOCX; challenge not solved"
+      }
+    ],
+    "bounded_notice_queries": [
+      "\"10.1126/science.abm1703\" correction retraction",
+      "\"A transient, closed-loop network\" supplement materials methods"
+    ],
+    "notice_result": "No dedicated correction/retraction located in bounded search; PMID35617399 is accompanying perspective, not correction. Crossref relation{} and update-to absent. Crossmark explicitly data unavailable, NOT up-to-date confirmation.",
+    "crossmark": ".inspection/crossmark-content.html"
+  },
+  "license_and_rights": {
+    "article": "Copyright2022 authors, exclusive licenseeAAAS, some rights reserved; PDFp7. No CC licence found in retrieved Crossref/PDF.",
+    "figure": "Fig3 original diagram/photo/optical map/measuredECG not granted separate redistribution rights; local inspection only. No separate third-party credit visible in fullFig3/caption; absence is not permission.",
+    "code": "No source repository/licence located in main text; no code downloaded, read or run.",
+    "distribution": "Exclude all .inspection contents and raw sources from distributable skill; future new diagram may use independently created geometry and source-attributed scientific facts only."
+  },
+  "original_figure": {
+    "label": "Figure3A–E, Treatment of temporary bradycardia",
+    "url": "https://rogersgroup.northwestern.edu/files/2022/scienceclosedloop.pdf",
+    "page": "PDF page4 / article4 of7",
+    "local_inspection": ".inspection/figure3-full-page.png",
+    "sha256": "3615ed591f6e2dfdae11aef993283896f9205cc20c0cf0701ea19cd6665ca05c",
+    "native_pixels": [
+      1485,
+      1890
+    ],
+    "actual_whole_views": "Source preparer, parent and independent baseline auditor each actually viewed whole page; separate view ledgers retain exact scopes. No crops counted.",
+    "parent_view_this_preparation": "tools.view_image detail=original and original forwarding; all panels and complete caption legible.",
+    "other_figures": "Fig1 caption incidentally read on page2; no Fig1 image inspection claimed in this batch."
+  },
+  "read_scope": {
+    "source_preparer": [
+      {
+        "id": "S0",
+        "file": ".inspection/main-page-01.txt",
+        "locator": "PDF p1, title/authors/intro and seven components",
+        "actual_read": "Identity; device groupings; BLE sensor-to-control communication; distinction of wearable components and bioresorbable pacemaker."
+      },
+      {
+        "id": "S1",
+        "file": ".inspection/main-page-02.txt",
+        "locator": "PDF p2, paragraphs before Fig1",
+        "actual_read": "Rx coil/Si diode/interconnects/electrodes; Tx→Rx magnetic induction; cathodic stimulation; chest cardiac module supplies RF and measures physiology. Fig1 caption read incidentally; image not viewed."
+      },
+      {
+        "id": "S2",
+        "file": ".inspection/main-page-04.txt",
+        "locator": "PDF p4 opening text and Fig3 full caption, extracted lines144–147",
+        "actual_read": "General body sensor positions; cardiac AFE/MCU HR calculation; complete Fig3A–E caption including ex vivo model and example parameters."
+      },
+      {
+        "id": "S3",
+        "file": ".inspection/main-page-06.txt",
+        "locator": "PDF p6, extracted lines8–56",
+        "actual_read": "Wireless cardiac/Rx stimulation; animal contexts; ex vivo human hysteresis experiment; separate electrode manual heart-rate manipulation; low-rate detection, pacing, timed cessation, intrinsic ECG reassessment."
+      },
+      {
+        "id": "S4",
+        "file": ".inspection/main-page-06.txt",
+        "locator": "PDF p6, lines57–132",
+        "actual_read": "Full-network haptic and rate-adaptive extensions; healthy volunteer exercise/processed pacing-signal comparison; body temperature and SpO2 context. These are outside the selected Fig3 closed-loop experiment."
+      },
+      {
+        "id": "S5",
+        "file": ".inspection/main-page-07.txt",
+        "locator": "PDF p7 lines1–19",
+        "actual_read": "Data/materials statement; exclusive AAAS licence; listed Methods, supplementary text, figures, checklist and movie; submitted/accepted dates."
+      },
+      {
+        "id": "V3",
+        "file": ".inspection/figure3-full-page.png",
+        "locator": "PDF p4, complete Fig3A–E and caption",
+        "actual_read": "Actual image inspection: apparatus/photo, optical action-potential map, decision branches, paired programmed-rate/measured-ECG plot."
+      }
+    ],
+    "parent_direct": "Relevant page2 text and incidental Fig1 caption; complete page4 text/Fig3; page6 lines1–85; page7 licence and supplement list. Metadata and broader access history taken from the frozen source-probe record rather than a repeated network check.",
+    "independent_baseline_auditor": "Primary text pages2,3,4,5,6 and whole original Figure3; not independent rights, live status, supplementary access or code audit."
+  },
+  "scientific_scope": {
+    "question": "How does the reported ex vivo perfused human-heart experiment connect physiological sensing, app feedback, wireless energy and pacing, and what conditional scheme is visibly reported?",
+    "analysis_unit": "Isolated Langendorff-perfused human whole heart; not an in vivo human trial.",
+    "claim_bound": "Reported apparatus/functional control and observed traces support the experimental demonstration; no executable timing specification, clinical benefit or device approval is established by this reconstruction.",
+    "panels": {
+      "A": "Apparatus schematic: heart, cannula/perfusion, ECG cable, cardiac module, bioresorbable module and external control module.",
+      "B": "Photograph of the actual apparatus, with5cm scale; supports arrangement without resolving electrode wiring.",
+      "C": "Optical epicardial activation map,0–120ms scale and5mm spatial scale; observation supports activation origin, not controller input.",
+      "D": "Eight-stage conditional flow, with twelve directed routes; strict lower/higher threshold comparisons and a conditionally reached duration check.",
+      "E": "Programmed HR in bpm above measured ECG in mV on a shared time axis in seconds; manual perturbation and automatic pacing are distinct. Settings54bpm lower limit,10s duration and100bpm pacing rate belong to the example. Higher limit unknown."
+    }
+  },
+  "original_elements": [
+    {
+      "id": "heart",
+      "name": "Langendorff-perfused human whole heart",
+      "type": "biological_system",
+      "scope": "Fig3A–E",
+      "evidence": "S2,S3,V3"
+    },
+    {
+      "id": "ecg_acquisition",
+      "name": "ECG monitoring cable and acquisition",
+      "type": "physiological_sensor",
+      "scope": "Fig3A; exact electrode locations unresolved",
+      "evidence": "S2,V3"
+    },
+    {
+      "id": "cardiac_module",
+      "name": "Cardiac module: ECG front end/MCU and RF Tx",
+      "type": "physical_module",
+      "scope": "General chest-mounted device; positioned outside perfused heart in Fig3A",
+      "evidence": "S1,S2,V3"
+    },
+    {
+      "id": "hr",
+      "name": "Measured heart-rate estimate",
+      "type": "derived_physiological_variable",
+      "scope": "bpm",
+      "evidence": "S2,V3"
+    },
+    {
+      "id": "controller",
+      "name": "Mobile application hysteresis controller",
+      "type": "software_controller",
+      "scope": "Control module; Fig3D",
+      "evidence": "S3,V3"
+    },
+    {
+      "id": "settings",
+      "name": "Programmed pacing settings",
+      "type": "control_configuration",
+      "scope": "Example lower54 bpm, duration10 s, pacing100 bpm; upper limit unspecified",
+      "evidence": "S2,S3,V3"
+    },
+    {
+      "id": "tx",
+      "name": "RF transmitter in cardiac module",
+      "type": "energy_source",
+      "scope": "Gated according to controller; functional abstraction",
+      "evidence": "S1,S3,V3"
+    },
+    {
+      "id": "rx",
+      "name": "Bioresorbable receiver and diode rectifier",
+      "type": "energy_harvester",
+      "scope": "Fig3A; 25 mm coil example; not an ECG sensor",
+      "evidence": "S1,S2,V3"
+    },
+    {
+      "id": "electrodes",
+      "name": "Bioresorbable interconnects and epicardial electrodes",
+      "type": "electrical_actuator",
+      "scope": "Myocardial interface",
+      "evidence": "S1,S3,V3"
+    },
+    {
+      "id": "external_pacing",
+      "name": "Separate pacing electrode",
+      "type": "experimental_intervention",
+      "scope": "Manual HR manipulation to mimic bradycardia; not a patient override",
+      "evidence": "S3"
+    },
+    {
+      "id": "optical_map",
+      "name": "Optical action-potential mapping",
+      "type": "observational_measurement",
+      "scope": "Fig3C, epicardium, activation time ms",
+      "evidence": "S2,S3,V3"
+    },
+    {
+      "id": "monitor",
+      "name": "Monitor ECG",
+      "type": "controller_stage",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "lower_check",
+      "name": "HR < lower rate limit?",
+      "type": "decision",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "higher_check",
+      "name": "HR > higher rate limit?",
+      "type": "decision",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "state_check",
+      "name": "Electrical stimulation on/off?",
+      "type": "state_test",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "duration_check",
+      "name": "Duration < setting value?",
+      "type": "decision",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "stim_on",
+      "name": "Electrical stimulation on",
+      "type": "control_action",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "stim_off",
+      "name": "Electrical stimulation off",
+      "type": "control_action",
+      "scope": "Fig3D",
+      "evidence": "V3"
+    },
+    {
+      "id": "programmed_trace",
+      "name": "Programmed baseline HR schedule",
+      "type": "experimental_setting_trace",
+      "scope": "Fig3E upper panel, bpm; grey step pattern",
+      "evidence": "S2,S3,V3"
+    },
+    {
+      "id": "measured_trace",
+      "name": "Measured ECG and annotated HR",
+      "type": "observed_result",
+      "scope": "Fig3E lower panel, mV vs s; not recreated here",
+      "evidence": "S2,S3,V3"
+    }
+  ],
+  "original_relations": [
+    {
+      "id": "r01",
+      "source": "heart",
+      "target": "ecg_acquisition",
+      "type": "physiological_measurement",
+      "direction": "forward",
+      "condition": "Electrical cardiac activity; includes paced periods and post-pacing reassessment",
+      "evidence": "S2,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r02",
+      "source": "ecg_acquisition",
+      "target": "cardiac_module",
+      "type": "electrical_signal_acquisition",
+      "direction": "forward",
+      "condition": "Cabled ECG path in the ex vivo experiment; do not redraw as wireless implanted sensing",
+      "evidence": "S2,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r03",
+      "source": "cardiac_module",
+      "target": "hr",
+      "type": "signal_processing",
+      "direction": "forward",
+      "condition": "AFE/MCU process acquired ECG to calculate HR",
+      "evidence": "S2",
+      "status": "source_supported"
+    },
+    {
+      "id": "r04",
+      "source": "cardiac_module",
+      "target": "controller",
+      "type": "wireless_data_transfer",
+      "direction": "forward",
+      "condition": "BLE physiological stream; exact division/packet of ECG and HR not recovered",
+      "evidence": "S0,S2,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r05",
+      "source": "settings",
+      "target": "controller",
+      "type": "control_configuration",
+      "direction": "forward",
+      "condition": "Example experimental settings; no clinical prescription implied",
+      "evidence": "S2,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r06",
+      "source": "controller",
+      "target": "tx",
+      "type": "wireless_control_command",
+      "direction": "forward",
+      "condition": "BLE-enabled control of cardiac module; command payload/latency unknown",
+      "evidence": "S0,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r07",
+      "source": "tx",
+      "target": "rx",
+      "type": "wireless_energy_transfer",
+      "direction": "forward",
+      "condition": "Magnetic induction, not ECG telemetry; gated RF supplies stimulation energy",
+      "evidence": "S1,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r08",
+      "source": "rx",
+      "target": "electrodes",
+      "type": "electrical_conduction",
+      "direction": "forward",
+      "condition": "Diode rectifies received RF; interconnect carries output; functional path not circuit-return schematic",
+      "evidence": "S1,S3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r09",
+      "source": "electrodes",
+      "target": "heart",
+      "type": "electrical_stimulation",
+      "direction": "forward",
+      "condition": "Epicardial stimulation can drive activation under the reported ex vivo test",
+      "evidence": "S2,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r10",
+      "source": "external_pacing",
+      "target": "heart",
+      "type": "experimental_perturbation",
+      "direction": "forward",
+      "condition": "Separate manually controlled pacing electrode mimics bradycardia; not an identified override of the wireless controller",
+      "evidence": "S3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r11",
+      "source": "heart",
+      "target": "optical_map",
+      "type": "observational_measurement",
+      "direction": "forward",
+      "condition": "Epicardial activation map supports spatial origin of paced activation; not an input to the hysteresis controller",
+      "evidence": "S2,S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r12",
+      "source": "monitor",
+      "target": "hr",
+      "type": "signal_processing",
+      "direction": "forward",
+      "condition": "Flowchart functional calculation stage; block location is not a hardware allocation assertion",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r13",
+      "source": "hr",
+      "target": "lower_check",
+      "type": "computation_dependency",
+      "direction": "forward",
+      "condition": "Each flowchart traversal",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r14",
+      "source": "lower_check",
+      "target": "stim_on",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "Yes: HR below lower limit",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r15",
+      "source": "stim_on",
+      "target": "monitor",
+      "type": "control_flow_return",
+      "direction": "forward",
+      "condition": "Continue ECG monitoring after enabling stimulation",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r16",
+      "source": "lower_check",
+      "target": "higher_check",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "No: HR not below lower limit",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r17",
+      "source": "higher_check",
+      "target": "stim_off",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "Yes: HR above higher limit; numerical higher limit not stated in read sources",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r18",
+      "source": "higher_check",
+      "target": "state_check",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "No: HR not above higher limit",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r19",
+      "source": "state_check",
+      "target": "duration_check",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "Stimulation on",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r20",
+      "source": "state_check",
+      "target": "monitor",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "Stimulation off",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r21",
+      "source": "duration_check",
+      "target": "monitor",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "Yes: duration below setting",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r22",
+      "source": "duration_check",
+      "target": "stim_off",
+      "type": "conditional_control_flow",
+      "direction": "forward",
+      "condition": "No: duration at or above setting",
+      "evidence": "V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r23",
+      "source": "stim_off",
+      "target": "monitor",
+      "type": "control_flow_return",
+      "direction": "forward",
+      "condition": "Resume ECG monitoring; main text specifically reassesses underlying intrinsic ECG after a treatment interval",
+      "evidence": "S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r24",
+      "source": "external_pacing",
+      "target": "programmed_trace",
+      "type": "experimental_setting_representation",
+      "direction": "forward",
+      "condition": "Main text identifies separate electrode to set model HR; upper plot is programmed HR, not delivered automatic pacing rate",
+      "evidence": "S3,V3",
+      "status": "source_supported"
+    },
+    {
+      "id": "r25",
+      "source": "heart",
+      "target": "measured_trace",
+      "type": "observational_measurement",
+      "direction": "forward",
+      "condition": "Recorded lower ECG trace includes responses; no data extraction, model/device run or recreated signal here",
+      "evidence": "S2,S3,V3",
+      "status": "source_supported"
+    }
+  ],
+  "visual_decomposition": {
+    "layout": "Apparatus schematic/photo and spatial activation evidence above a conditional flowchart and paired time traces; successive panels add different kinds of evidence rather than proving every implementation detail.",
+    "visual_roles": "Source panelD uses explicit Yes/No and On/Off branches; its convergent return line returns to monitoring. Source panelE grey programmed-HR steps, red threshold/on markers and shaded pacing intervals must be read with the lower black ECG trace and separate axes.",
+    "color_and_symbols": "The activation-map colorbar is a measured timing scale, not a style palette. Red threshold/markers in source do not imply source certainty or causal proof. No source image recoloring/copying performed.",
+    "limitations": "Original flow and prose differ in their detail of duration handling; missing Text8/code prevents reconstructing scheduling. Compact layout does not resolve this gap."
+  },
+  "transferable_rules": [
+    {
+      "rule": "Keep signal acquisition, data communication, control commands, energy transfer and stimulation as different named directed relations.",
+      "condition": "Use only source-supported routes and hardware membership; no complete circuit or firmware claim."
+    },
+    {
+      "rule": "Represent physical composition and functional branching as complementary views.",
+      "condition": "Do not infer every functional stage executes at the phone or equate group position with a processing stage."
+    },
+    {
+      "rule": "Preserve an observed conditional decision route even when it differs from an idealized controller.",
+      "condition": "Record unresolved timing or source tension; no independent timer added to repair the publication by assumption."
+    },
+    {
+      "rule": "Keep experimental perturbations and observational instruments outside the controller unless a source establishes a feedback path.",
+      "condition": "Manual perturbation is not automatically a clinician override; an optical map is not automatically control data."
+    }
+  ],
+  "nontransferable_or_unresolved": [
+    {
+      "id": "U1",
+      "issue": "Materials and Methods and Supplementary Text8 unavailable",
+      "impact": "Cannot verify exact ECG electrode placement, acquisition/filter/window settings, HR estimator, pacer timing/reset/refractory/blanking logic, software or experiment replicate count. Fig3A shows ECG cable but no complete wiring specification."
+    },
+    {
+      "id": "U2",
+      "issue": "Upper rate limit value not given in the inspected main text/caption",
+      "impact": "Retain symbolic higher-limit branch if Fig3D is reconstructed; do not invent or equate it to the lower limit or100 bpm pacing set point."
+    },
+    {
+      "id": "U3",
+      "issue": "Fig3D conditional routing versus prose duration description",
+      "impact": "The visual duration check occurs only after HR is not below the lower and not above the higher limit and stimulation is on. Prose says stop after10 s and reassess. Without Supplementary Text8/code, do not claim a complete executable scheduler or silently redraw a timer that bypasses those visible decisions."
+    },
+    {
+      "id": "U4",
+      "issue": "BLE payload and precise processing placement not recovered",
+      "impact": "Text attributes HR calculation to cardiac AFE/MCU and feedback scheme to mobile app; Fig3D is functional. Do not assert all signal processing is on phone or that only HR rather than ECG reaches phone."
+    },
+    {
+      "id": "U5",
+      "issue": "Clinical scope and manual override",
+      "impact": "Fig3 is ex vivo human whole heart; rats/canines establish other capabilities and healthy humans demonstrate sensing/derived pacing signals. No in vivo human implantation or clinical outcome validation shown by this figure. Separate electrode is an experimental perturbation, not demonstrated clinician emergency override."
+    },
+    {
+      "id": "U6",
+      "issue": "Current-version status not conclusively verified",
+      "impact": "Author-hosted publisher-formatted PDF bears 2022May28 download and article publication2022May27; Crossref relation empty/update-to absent, bounded search no dedicated notice found, but Crossmark states data unavailable and publisher gate prevents full live status inspection."
+    },
+    {
+      "id": "U7",
+      "issue": "Source/code/figure reuse licence",
+      "impact": "Exclusive AAAS licence stated; no CC identified. No code repository or software licence recovered. Original figures/text remain local-only. No copying/tracing of original art, measured traces, photos or optical maps into redraw."
+    }
+  ],
+  "redraw_mapping": {
+    "outputs": "tests/batches/closed-loop-01/rendered",
+    "purpose": "Original two-panel functional reconstruction using independent boxes/lines; no original pixels, measured traces, anatomy tracing or numeric physiology.",
+    "semantic_objects": 16,
+    "typed_relations": 20,
+    "control_panel_objects": 8,
+    "control_panel_relations": 12,
+    "chosen_size_mm": [
+      210,
+      425
+    ],
+    "minimum_font_pt": "9 per author deterministic record; independent image audit did not inspectfont metadata.",
+    "retained_scope": "Seven source unknowns and smaller-page reflow limit remain.",
+    "source_figure_vs_new_diagram": "New A maps physical roles from original A/B plus text; new B maps original D. Original C/E are described as supporting observations, not redrawn as results."
+  },
+  "transfer_evidence": {
+    "author_handoff": "7ac9eb8bf26b801bc08e3403a6906f5ae50257ead64a2c00d752c1c1a1fc1fff",
+    "parent_visual_review": "5cb1aee849f8e833b9a55cb01828fd06101896e4285f13f09208b7bfb39ec351",
+    "independent_initial": "f2807233fa550f25954cd6ada7a7d10fee2d9d78b7404a01918859ccf83f2586",
+    "independent_first_final": "6a3f71aac77b6091359863d95c9257c86edc8dd355553243d8dc19981d3be33d",
+    "bounded_result": "No source-backed baseline error identified; no blocking visual defect; long return route is an optional presentational observation. No independent geometry/replay/rights or expert certification.",
+    "controls": "Not reviewed or scored at card preparation; outcomes cannot determine this eligibility."
+  },
+  "provenance": {
+    "source_probe_sha256": "88afde8ad659e92f08de236e9b8de84bdf0913183d8e6835fa31f4f8b4bbf7f5",
+    "source_assets_reverified": 16,
+    "source_originals_in_distribution": false,
+    "reference_storage": "link_only; local inspection assets excluded",
+    "catalog_updated": false
+  }
+}

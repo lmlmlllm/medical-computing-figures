@@ -1,0 +1,95 @@
+{
+  "case_id": "MCF044-F1",
+  "dedup_id": "10.1109/TCI.2020.3006727|arXiv1907.11374v3-2020-06-18|Figure1",
+  "title": "Deep-Learning-Based Optimization of the Under-Sampling Pattern in MRI",
+  "source_url": "https://arxiv.org/abs/1907.11374v3",
+  "source_figure": "Whole author-deposited v3 Figure 1, p5; journal identity linked, publisher/PMC typesetting equivalence unverified",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Author-deposited PDF pp1,3–6,8,10–11 including Methods Eqs1–6, complete Figure1 caption and relevant Discussion. Code, full supplements and publisher/PMC equivalence unverified.",
+    "visual": "Whole original p5 and whole Fig1 crop actually viewed; source includes full figure detail. Final original PNG/PDF and exact-font SVG inspected separately.",
+    "archive": "Source PDF, page/crop, extracted text and primary metadata retained for local review only. Clean delivery excludes them, runtime, caches and review history."
+  },
+  "question": "How do shared learned probabilities become binary or relaxed mask realizations, and how does retrospective reconstruction optimize sampling and reconstruction parameters?",
+  "elements": [
+    {
+      "id": "probability_chain",
+      "role": "Shared learned O, sigmoid probability P, normalized N_alpha(P) and distinct slopes t/s versus density alpha"
+    },
+    {
+      "id": "mask_roles",
+      "role": "Independent uniform U, conceptual binary realization M, and continuous relaxed forward mask; no numerical MRI/mask values"
+    },
+    {
+      "id": "forward_path",
+      "role": "Complex image x to fixed F, elementwise k-space mask, fixed F^H, aliased image and abstract reconstruction A_theta"
+    },
+    {
+      "id": "learning_and_later_stage",
+      "role": "Same image reference, reported magnitude-image L2 comparison, joint learning only of O/theta, then separate binary-mask retraining statement"
+    }
+  ],
+  "relations": [
+    {
+      "from": "O and probability normalization",
+      "to": "binary and relaxed realizations",
+      "type": "parameterization and conditional sampling",
+      "source": "PDFpp3–4 Eqs1–6; expected count follows from normalized Bernoulli definitions"
+    },
+    {
+      "from": "relaxed mask and Fourier-transformed image",
+      "to": "aliased image and reconstruction",
+      "type": "retrospective computational dependency",
+      "source": "PDFp4 Eq6/implementation, Fig1p5"
+    },
+    {
+      "from": "reconstruction/reference discrepancy",
+      "to": "O and theta",
+      "type": "joint optimization",
+      "source": "PDFpp3–4 Eqs1–6; magnitude-domain loss Discussionpp10–11"
+    },
+    {
+      "from": "relaxed optimization",
+      "to": "later binary-mask reconstruction retraining",
+      "type": "separate later-stage statement, not specified weight transfer",
+      "source": "PDFp10 relaxation paragraph; final selection and initialization unknown"
+    }
+  ],
+  "visual_design": "Source Fig1 shows a branched learned sampling/reconstruction architecture. Original three-panel transfer separates probability/mask roles, retrospective forward and reference/learning paths, and later retraining. Repeated O, relaxed-mask and image aliases preserve identity. Dashed arrows mean parameter learning, not scientific uncertainty. No invented finalization connector fills the source gap.",
+  "transferable_rules": [
+    "A probability mean or expectation constraint does not impose exact count/mean on each binary or relaxed realization. Name the constrained object and derived expectation separately.",
+    "Keep differentiable training surrogates, final discrete objects and later retraining distinct; preserve unknown selection/freezing/initialization instead of inventing a pipeline.",
+    "Combining marks and plain-text spacing can differ across editable export engines. Share geometry where appropriate, prove any spacing-glyph substitution from actual font outlines, and disclose Unicode/editing limits."
+  ],
+  "gaps": [
+    "Source Fig1 Binary Mask versus continuous forward model, initial channel1 versus complex two-channel text, arrowcolors/legend, normalization shorthand and formal/empirical loss tensions retained",
+    "Final binary selection/cardinality correction, freezing and reconstruction initialization unknown in checked text",
+    "Exact output channels/magnitude placement, original implementation/supplements, publisher/PMC and IPMI2019 equivalence unverified",
+    "Line-constrained stochastic coupling, trajectories, physical costs, real MRI reconstruction and clinical outcomes not tested",
+    "Combined figure/caption/spec assessment; t/s/d and Fourier definitions depend on full caption/spec"
+  ],
+  "license": "arXiv nonexclusive distribution license does not grant general image republication. Deliver only own schematic/code/spec/caption and licensed DejaVu font bytes; exclude source article/image.",
+  "notice_scope": "Primary arXiv/Crossref and NCBI identity checks retained in selection records; access challenges retained; notice search bounded, not exhaustive current certification.",
+  "transfer_entry": "tests/batches/loupe-sampling-01/README.md",
+  "test_limits": [
+    "One original qualitative figure with30elements/34relations/13arrows; final fixed8requirements pass combined figure/caption/spec/process scope",
+    "Independent image-first then primary-source reader and source-informed followups; fresh final assessor directly checked primary. No new controlled-error TP/FP or held-out paper",
+    "Revision04 native text/tilde failure retained; revision05 independent1287glyph/43vector audit meets fixed0.25pt",
+    "Exact18-file ZIP same-host OS-isolated replay reproduced8exports byte-for-byte;6known-existing file-read denials plus network/outsidewrite denial",
+    "190×270mm,min8.1pt,glyph-level editable native text;3source U+0303 accents use proven U+02DC outlines, so raw Unicode differs; exactSVGfonts required; no arbitrary-editor/print/crosshost guarantee",
+    "Replay completion record changed after rootfreeze; exact original bytes recovered and current bytes separately pinned in additive disposition. Core reports/ZIP/exports unchanged; failure not erased"
+  ],
+  "evidence_pins": {
+    "protocol.json": "f43353be60ed687f4e2d2f3899aa1e1b76fef8c4ef517195c16e029ba5797d1f",
+    "assessment.json": "28c159ebf6f0669638e6f3efb9f6c09b5afb6c9c27135ea74c2d6960947ef697",
+    "assessment-freeze-01.json": "9fb78a7b48c543ecb2f4d2fb580070b06324c356f35fe939cd62743df2ba5dd5",
+    "loupe-original-figure-01.zip": "49482ed9d2361c95bb235fc9c559d549ab9836c0d57c2236ebf1df22c5bebd93",
+    "output-audit/native-02-freeze.json": "87c0aa9bebe2d812822943ce153e8077e9f068feaecd21e0ea68e630b62af7eb",
+    "replay-freeze-01.json": "1892ec45a2d20c97bbf33ddd91e144cb2fe5d552a582532b9203e6ec69033735",
+    "replay-postfreeze-disposition-01.json": "31b00f97fdbd2e1b78ff88c068b6233a15a9058930c803485b798d8f016d03c6"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "case_id": "MCF059-F3",
+  "dedup_id": "DOI:10.1038/s41598-018-24271-9|publisher2018|Figure3-whole",
+  "title": "Recurrent Neural Networks for Multivariate Time Series with Missing Values",
+  "source_url": "https://www.nature.com/articles/s41598-018-24271-9",
+  "source_figure": "Whole Figure3a/b/c on PDFp3; Figure2 and Methods are dependencies only.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned12-page formal publisher PDF; full text pp1,2,3,4,5,10,12 read; whole pp2–5 viewed. Remaining pages machine-extracted only; no supplement/code/dataset/experiment validation.",
+    "visual": "Whole Figure3a/b/c on PDFp3 counts once; Figure2/Methods are dependencies. Canonical four views and two edited copies viewed. Three-stage independent image/source/spec reading, native12 views and replay4 views retained.",
+    "archive": "Original paper/text/page pixels local-review-only. Clean27-member ZIP has original SVG/PDF/PNG, spec/layout/caption, helpers and DejaVu font/license; no published artwork or research code."
+  },
+  "question": "How do missingness and elapsed intervals condition recurrent measurements and hidden history, enter GRU-D gates directly, and support final-state sequence classification?",
+  "elements": [
+    {
+      "id": "measurement_and_mask",
+      "role": "Current values, binary observation mask and per-variable elapsed intervals have different roles; incoming intervals use the previous mask."
+    },
+    {
+      "id": "missing_entry_references",
+      "role": "Last observed values and training-only empirical means condition missing entries; observed values are preserved."
+    },
+    {
+      "id": "separate_decay_maps",
+      "role": "Distinct learned input and hidden decay maps; diagonal restriction applies to the input map only."
+    },
+    {
+      "id": "recurrent_computation",
+      "role": "Conditioned input, decayed history and direct mask terms enter reset/update/candidate through separate learned linear maps."
+    },
+    {
+      "id": "state_and_sequence",
+      "role": "Source-specific update convention mixes history and candidate; shared parameters across steps feed classification from the last state."
+    }
+  ],
+  "relations": [
+    {
+      "from": "elapsed intervals",
+      "to": "input and hidden decay maps",
+      "type": "separate learned transforms",
+      "source": "PDF p4 Eq10; p5 Eq12"
+    },
+    {
+      "from": "current values, mask, last observation, training mean and input decay",
+      "to": "conditioned input",
+      "type": "observed values kept; missing-only blend",
+      "source": "PDF p3 Eq7; p4 Eq11"
+    },
+    {
+      "from": "previous hidden state and hidden decay",
+      "to": "decayed history",
+      "type": "elementwise scaling before recurrence",
+      "source": "PDF p5 Eq12"
+    },
+    {
+      "from": "conditioned input, decayed history and current mask",
+      "to": "reset/update/candidate",
+      "type": "distinct learned W/U/V transformations, with reset acting before candidate U",
+      "source": "PDF p5 Eqs13–15"
+    },
+    {
+      "from": "update gate, decayed history and candidate",
+      "to": "current state",
+      "type": "source Eq16 elementwise mixture; history carry represented by visible formula",
+      "source": "PDF p5 Eq16"
+    },
+    {
+      "from": "shared recurrent sequence",
+      "to": "last hidden state and classifier",
+      "type": "same cell parameters over time; final-state sigmoid/softmax classification",
+      "source": "PDF p3 Figure3c; p5 final-prediction paragraph"
+    }
+  ],
+  "visual_design": "Three panels separate input/history conditioning, one GRU-D update, and sequence-level readout. Named input aliases reduce crossings. The carry contribution, next-step transition and cell-definition relationship are explicit text/formula annotations, not separately drawn data arrows.",
+  "transferable_rules": [
+    "Separate observation coding, elapsed intervals and measurement values; a current observation need not set its incoming interval to zero.",
+    "Place conditions at the operation: preserve observed values and apply last/mean blending only to missing entries.",
+    "Distinguish raw input decay from hidden-state decay, including their different parameter constraints and representational levels.",
+    "Identify matrix-vector maps versus elementwise scaling/reset/state mixing; one common input list does not establish common weights or one raw sum.",
+    "Preserve source-specific gate mixing and final-state versus per-step readout; shared parameters do not mean an unchanged hidden state.",
+    "Do not infer monotonicity from the name of a learned transform without checking coefficient constraints; keep mathematical qualification separate from actual implementation claims."
+  ],
+  "gaps": [
+    "GD-S1 formula-only monotonicity is not guaranteed for unrestricted signed coefficients; actual weights/constraints remain unverified.",
+    "GD-S2 main time-by-variable notation versus Figure2 display transpose and GD-S3 PDF publication placeholder versus publisher date remain explicitly recorded.",
+    "First missing-history behavior, initial hidden state, code/checkpoints, supplements, cohort processing and experiments remain unverified.",
+    "Four optional improvements remain: direct carry arrow, clearer shared-input wording, conventional math typography, reduced-size/print readability.",
+    "N01 duplicate R23 membership remains in one binding list; one scientific relation, one visible text parent and one native relation record, with no measured tool impact.",
+    "No cross-host, browser, GUI-editor, print, target-journal or expert certification; development case, not a new held-out paper."
+  ],
+  "license": "Article CC BY4.0 with third-party exceptions; no separate Figure3 credit observed in bounded reading. Original paper/assets excluded from distribution; DejaVu notices included.",
+  "notice_scope": "Recorded bounded Nature/PubMed checks and ordinary-access failure/success history retained; no exhaustive or refreshed notice clearance. PDF publication placeholder and publisher2018-04-17 date remain distinct provenance.",
+  "transfer_entry": "tests/batches/grud-missingness-decay-01/DELIVERY.md",
+  "test_limits": [
+    "Corrected semantic02/production01 only: original GD01–GD08 IDs/texts fixed before authoring; independent8/8 and32/32. Root read all32 rationales/evidence/limits, verified exact15-file final lane and429 unchanged input pins. Six unscored knowledge topics remain unknown/unobserved; disclosure is not validation.",
+    "19 objects,28 relations,5 claims,44 visible texts and7 caption blocks frozen before layout. Canonical1580 glyphs=1399 ink+181 spaces;42 logical vectors/61 native pieces. Minimum10.5pt on1000×1470pt canvas.",
+    "Separate maximum absolute errors pt: baseline0.0007812500001591616;advance0.004218749999999716;effective-size1.9073486257070726e-7;vector4.8828125045474735e-5. All below0.25pt.",
+    "Nonnumeric role-label and2pt panel-rule edits separately exported, read back and viewed; only target native/raster regions changed.27 original inputs and10 original outputs preserved.",
+    "Exact27-member ZIP;8 sequential commands under one unchanged OS profile.10 canonical files including render-environment.json literally byte-identical, no exclusions. Before/after each140 controls:58 existing metadata+58 data-open EPERM+4 real connect EPERM+14 positive reads+2 write/readback+3 write-denials+1 runtime import.",
+    "Finite same-host isolation;553/552 distinct runtime module files from557/556 module records; no universal containment or exhaustive OS dependency claim.",
+    "Historical F01 repaired before layout. Four optional clarity improvements, N01 metadata redundancy, source tensions, first-history/hidden-state unknowns and all author/auditor/replay/assessor failures retained. Source-informed native review and stage3 prior-disposition exposure disclosed; not expert review.",
+    "New rules inferred after bounded acceptance; no independent cross-case behavior regression. No new held-out paper, controlled-error pair or original experiment claimed by this admission."
+  ],
+  "evidence_pins": {
+    "protocol.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/protocol.json",
+      "bytes": 13537,
+      "sha256": "4c8032ebfc0e462a535b78d451d891b8bfa44d18d0abc68cada272efd017ec25"
+    },
+    "science-freeze-01.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/science-freeze-01.json",
+      "bytes": 6814,
+      "sha256": "b4938fc3464a293b891065951203ad26ca388a0e3d6a33dc06b0c9b9bce39ab0"
+    },
+    "author/semantic-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/author/semantic-01/TERMINAL.json",
+      "bytes": 463,
+      "sha256": "fb6e11e102befa3c9ca4b39e63689d40ec3bac4624998d3ee97890c02506ad2b"
+    },
+    "author/semantic-02/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/author/semantic-02/TERMINAL.json",
+      "bytes": 460,
+      "sha256": "0f89910a56170cde61fa61ddd3b331a43628b32c053dd17c220550afeabd386f"
+    },
+    "author/production-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/author/production-01/manifest.json",
+      "bytes": 30169,
+      "sha256": "db34cdf4c093b5f2d9ffe2857353666ff87e8db8c8846e669a1cf0536cdbbf58"
+    },
+    "author/production-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/author/production-01/TERMINAL.json",
+      "bytes": 411,
+      "sha256": "5128643567942ea24726d12c36c892481657f1cee6f5affa51cea9746ddd5c4b"
+    },
+    "review/ordered-reader-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/review/ordered-reader-01/TERMINAL.json",
+      "bytes": 642,
+      "sha256": "5579566c947a20aa38351defe6b3a4426703ac6325a2c175aad6b8cce13c17c0"
+    },
+    "output-audit/native-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/output-audit/native-01/TERMINAL.json",
+      "bytes": 650,
+      "sha256": "fc9f00dd0c85787bf013108343d0bf4d05cc3a1ff2bdb919fbf6f1483e305d5f"
+    },
+    "output-audit/replay-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/output-audit/replay-01/TERMINAL.json",
+      "bytes": 2815,
+      "sha256": "00eb276585dead2c5361c4492c246be8ed8e395979778ff0d41b01b9019e8d6c"
+    },
+    "root-review-disposition-01.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/root-review-disposition-01.json",
+      "bytes": 9706,
+      "sha256": "74bca871eae80d899f709641a8c81d9f77f93752b4194df35bab25d02cf5e52a"
+    },
+    "final-assessment-01/scorecard.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/final-assessment-01/scorecard.json",
+      "bytes": 76027,
+      "sha256": "b3f59aaf7f8ea15eb1b94cfa61778ba661f4eb916cc1f57bb32375c598086495"
+    },
+    "final-assessment-01/manifest.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/final-assessment-01/manifest.json",
+      "bytes": 2420,
+      "sha256": "4beee23524548870e3bdce051da1b257754e5c95ebeb1a9a808f7e4edbfad491"
+    },
+    "final-assessment-01/TERMINAL.json": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/final-assessment-01/TERMINAL.json",
+      "bytes": 1325,
+      "sha256": "6b1867ccf26dc015c10dfa4d1d46033ba5f150cca886fdd45216b3b2dfc3e2ea"
+    },
+    "author/production-01/grud-missingness-decay-clean-01.zip": {
+      "path": "<SKILL_ROOT>/tests/batches/grud-missingness-decay-01/author/production-01/grud-missingness-decay-clean-01.zip",
+      "bytes": 1610322,
+      "sha256": "0ff098efb8698bd533f90fadeec9536e7fd8510ec8f8f971f0860ecea5535404"
+    },
+    "primary_source": {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-glue-02-source/GRUD-s41598-018-24271-9.pdf",
+      "bytes": 1960720,
+      "sha256": "c56c612a56770caaa97a7b20056009d6a84c227df641652d1ae0fad40fdefc7d"
+    }
+  }
+}

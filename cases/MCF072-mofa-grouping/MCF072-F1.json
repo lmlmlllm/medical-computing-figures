@@ -1,0 +1,58 @@
+{
+  "id": "MCF072-F1",
+  "paper": "DOI:10.1186/s13059-020-02015-1",
+  "version": "Genome Biology 21:111, version of record 2020-05-11; publisher HTML/figure and linked supplementary-methods snapshots read 2026-10-18 UTC. Bounded publisher/PubMed/Crossref notices check; not exhaustive correction history.",
+  "figure": "Whole original Figure1a/b viewed; one partial model/grouping method unit with Methods and supplementary prior/plate dependencies. Two local diagrams are baseline and substantive edit, not extra source units.",
+  "domain": "multimodal_latent_factor_grouping_centering_parameter_sharing_and_prior_noise_indices",
+  "figure_types": [
+    "group_specific_centering",
+    "shared_view_weights",
+    "group_specific_factors",
+    "hierarchical_prior_and_inference_roles"
+  ],
+  "card": "cases/MCF072-mofa-grouping/MCF072-F1.json",
+  "reading": "Relevant publisher HTML model, dimensions, regularization, inference, likelihood, factors, grouping/view and preprocessing sections; targeted supplementary methods. Author code/data and numerical fitting not read or run.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "Two groups/two views change to one pooled group/two views: stack transformed pre-centering X then recenter; retain sample/view identity and original-condition metadata; new K_pool/Z_pool/W_pool; group prior families 2→1 and group-view noise vectors 4→2. Observed Y, reconstruction, residual, prior and inference distinguished.",
+  "archive": "CC BY4.0 publisher article and Figure1, no differing figure credit observed; linked supplement retained with article attribution. Minimal evidence images/text redistributed with source/license and transformation notice. Licensed unmodified DejaVu font retained. No source software or research data included.",
+  "visual": "Whole original Figure1a/b and supplementary prior-plate page viewed. Final two full PNGs and Poppler PDF pages actually viewed; native SVG XML/text/font declarations checked, browser layout unverified.240×180mm,min9pt; no print/journal acceptance.",
+  "transfer": "Bounded new-source symbolic transfer: frozen K01–K12 individually supported12/failed0/unassessed0, correlated facets not12trials. Actual G2→G1 config edit; staged image/source reader and final re-view. A1/A2 font failures retained; A3 native384runs/3106chars/31rect8arrows pass at fixed0.002pt.18-input fresh same-host replay yields28byte-equal outputs;121-member whitelist ZIP verified. No OS sandbox, original-fit reproduction or general transfer estimate.",
+  "what_it_answers": "How changing the operative model groups changes centering and indexed latent/prior/noise entities while two views, paired sample identities and original-condition metadata remain.",
+  "source_reading_boundary": "Publisher HTML and targeted supplementary methods, original Figure1 whole a/b and supplementary pages6/7 seen during source admission. Independent staged reader viewed Figure1 and supplement page7, not page6. Main article PDF, full supplemental figures, author code and sample matrices excluded.",
+  "layout_reasoning": [
+    "A uses matrix rows for operative groups and columns for views; the baseline four observed blocks become two pooled blocks only after pre-centering X is stacked and recentered.",
+    "B aligns one view-specific W header with each view column and each group-specific Z row with both views. Equations distinguish observed Y, reconstruction and residual and explicitly reconcile whole-product transpose.",
+    "C separates regularization from posterior inference and reconstruction through labels and legend lines. The image-first reader retained a noncritical clarity suggestion: detached style arrows and B-before-C placement still rely on caption/text."
+  ],
+  "omitted_and_nontransferable": [
+    "Published ELBO, R² heatmaps, weights, violins and trajectories are not copied into the local symbolic configurations.",
+    "No actual sample/feature/factor counts, new fit values, missingness masks, convergence or clinical/biological effects are available.",
+    "Group change does not establish equal latent widths, factor identities, weights or MOFAv1 software behavior.",
+    "This Gaussian complete-observation configuration and its source hierarchy are not universal rules for other likelihoods or models."
+  ],
+  "retained_issues": [
+    "Source R² expression unresolved; supplementary caption six-view versus five-item/row discrepancy retained.",
+    "Exact reduction to old MOFA priors/software unverified.",
+    "Native A1 source width truncation and A2 interpreted glyph drift are separately retained; A3 passes the unchanged origin/source-advance contract.",
+    "get_text(sort=False) preserves character order after LF removal; sort=True reorders and inserts1716spaces. Plain extraction loses semantic run IDs.",
+    "SVG browser layout, actual implicit terminal cursor, third-party editor usability, print and journal compliance unverified."
+  ],
+  "rule_increment": [
+    "Propagate grouping through centering, latent entities, prior families, noise indices, labels and caption while preserving row/view identity.",
+    "Check embedded font identity, source widths and actual interpreter origins separately; font embedding and numeric /W compliance alone did not ensure placement here."
+  ],
+  "current_artifacts": {
+    "delivery": "tests/batches/mofa-grouping-transfer-01/delivery-01/README.md",
+    "archive": "tests/batches/mofa-grouping-transfer-01/mofa-grouping-transfer-01.zip",
+    "archive_sha256": "827522904b3b48a65ec5188a31eacc4d30555025950912169d058b8d6934f971",
+    "root_acceptance": "tests/batches/mofa-grouping-transfer-01/root-acceptance.json",
+    "root_acceptance_sha256": "75479f66f20d5de8883ba0202695cc9231d8cb12d9293d2dd0e22411f09b893b",
+    "independent_science": "tests/blind/mofa-grouping-20261018-01/reader-01/source-stage.json",
+    "independent_native": "tests/batches/mofa-grouping-transfer-01/native-audit-01/repair-02/actual-03/audit-report.json",
+    "replay": "tests/batches/mofa-grouping-transfer-01/replay-06-01/replay-result.json",
+    "package_verification": "tests/batches/mofa-grouping-transfer-01/package-readback.json"
+  },
+  "classification": "One newly cataloged partial method unit from one source figure/paper. The two local configurations, revisions and repeated audits do not add source figures or independent trials."
+}

@@ -1,0 +1,169 @@
+{
+  "id": "MCF018-F2",
+  "status": "Admitted semantic_partial after finite developer drawing tests",
+  "paper": {
+    "title": "Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity",
+    "doi": "10.18653/v1/2024.naacl-long.389",
+    "official_url": "https://aclanthology.org/2024.naacl-long.389/",
+    "publication": "NAACL 2024 Long Papers, 7036–7050",
+    "authors_pdf": [
+      "Soyeong Jeong",
+      "Jinheon Baek",
+      "Sukmin Cho",
+      "Sung Ju Hwang",
+      "Jong C. Park"
+    ]
+  },
+  "figure": "Figure2, whole A–C, PDF page2 / printed7037",
+  "deduplication_key": "10.18653/v1/2024.naacl-long.389|NAACL2024|Figure2",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "eligibility": "Development reading preceded this test; not a held-out paper. Own diagrams, controls, repairs and appearance do not add original cases.",
+  "question": "How does query complexity select no-retrieval, single-step or multi-step QA, and how are the classifier labels obtained?",
+  "elements_and_relations": [
+    {
+      "visible": "Left panel A: simple and complex example queries each pass through retrieval/documents to answers.",
+      "meaning": "Single-step strategy; the complex-query illustration is marked inaccurate. The illustration does not establish an error rate.",
+      "evidence": "Original Figure2A and caption; §3.1."
+    },
+    {
+      "visible": "Middle panel B: retrieval and intermediate answers are connected by a k-times loop for both example queries.",
+      "meaning": "Multi-step strategy; unnecessary effort for a simple query is conceptual, not a measured runtime on this drawing.",
+      "evidence": "Figure2B/caption; §3.1 and Appendix A.2."
+    },
+    {
+      "visible": "Right panel C: three differently coloured example queries converge at one classifier then take three paths.",
+      "meaning": "Alternative questions and routes, not evidence one question executes all paths. A/B/C class labels in methods are separate from original panel letters.",
+      "evidence": "Figure2C/caption; §3.2."
+    },
+    {
+      "visible": "Orange path reaches answer without a retrieval icon; green has one retrieval; blue has an intermediate-answer loop.",
+      "meaning": "No-retrieval, single-step and multi-step strategy choices. Generation inputs and context composition require methods, not icons alone.",
+      "evidence": "Figure2; §3.1 equations and footnote1."
+    }
+  ],
+  "layout": {
+    "grouping": "Horizontal comparison of three strategies; repeated query examples support conceptual comparison. Branch colours bind complexity examples to routes.",
+    "transfer": "Make mutually exclusive conditions explicit, separate decision labels from query data, and use named-variable references for repeated inputs.",
+    "omissions": "Original figure does not expose classifier training, exact stopping implementation, cached evaluation or actual service topology; these need additional sources.",
+    "not_transferred": "Decorative icons, relative efficiency or accuracy claims, clinical usage and unknown pipeline implementation."
+  },
+  "conflicts_and_scope": {
+    "panel_references": "Some prose references to Figure2(A)/(B) disagree with panel headings/caption. Preserve discrepancy and use explicit strategy names.",
+    "training_assembly": "§3.2 describes inductive-bias fallback on unlabelled queries. Fixed code independently constructs a raw-training bias pool and combines it with dev silver data after ID filtering. No exact publication-run identity established.",
+    "runtime_level": "Paper describes choosing a strategy based on current query. The read evaluation code precomputes strategy outputs and selects cached answers by predicted category; this does not verify online one-backend execution.",
+    "context": "History contents vary by implementation. Appendix A.2 gives solution or maximum-step termination; no numeric limit or exact predicate added.",
+    "supervision": "Query-only classification inputs are distinct from stored labels and posthoc evaluation fields. Label assignment can be imperfect; no oracle truth claim.",
+    "unverified": "No executed research code, training samples, checkpoint, retrieval corpus, prediction archives, actual sample independence or clinical performance audit."
+  },
+  "reading_and_viewing": {
+    "read_scope": {
+      "pdf_full_text_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        12,
+        13,
+        14
+      ],
+      "page15": "Text returned with output truncation; no full-page reading claimed",
+      "methods": "§3.1–3.2 complete; §4.1–4.4; Appendix A.1–A.3; selected results prose, no numerical audit",
+      "original_view": "Whole Figure2 and caption on entire PDF page2, 1241×1754, actually viewed; no other original figures visually examined",
+      "repository_complete_files": [
+        "README.md",
+        "classifier/preprocess/preprocess_silver_train.py",
+        "classifier/preprocess/preprocess_binary_train.py",
+        "classifier/preprocess/concat_binary_silver_train.py",
+        "classifier/preprocess/preprocess_utils.py",
+        "classifier/preprocess/preprocess_predict.py",
+        "classifier/postprocess/predict_complexity_on_classification_results.py",
+        "classifier/postprocess/postprocess_utils.py",
+        "classifier/run/run_large_train_xl.sh",
+        "evaluate_final_acc.py"
+      ],
+      "repository_partial_files": {
+        "classifier/run_classifier.py": "keyword locations plus lines676–747",
+        "classifier/utils.py": "preprocess_features_function lines79–138",
+        "LICENSE": "Apache-2.0 heading and start inspected; downloaded full bytes"
+      }
+    },
+    "integration_scope": "No new original-image or source-code read claimed for admission; prior exact scope/pins retained.",
+    "reviewer_type": "ROOT model execution and known-key self-review; no independent blind reader or human expert."
+  },
+  "source_pins": {
+    "feasibility/adaptive-rag-naacl-2024.pdf": "1e5abee712c5d8552416b2fd456bcf2c37a0ba518372e64302db2b7b7bdf643f",
+    "feasibility/adaptive-rag-figure2-page2.png": "41bf1925f78eb0f267b6f02538b7c573cf645d1ef18ffb2336f77de705d15ca2",
+    "feasibility/repository/README.md": "1420c1778e1c61a13a5c9f92b19000638b590944bed791881b39e3c4784aa1c9",
+    "feasibility/repository/classifier/preprocess/preprocess_silver_train.py": "f0f2019fc096053365cab2aa277a75b09210cc5e455d023e78dca07da3cc0af5",
+    "feasibility/repository/classifier/preprocess/preprocess_binary_train.py": "34bf0e08b13c311902d1ec96a2644ed9bce42ac5b45081ab2190b99466f2f18a",
+    "feasibility/repository/classifier/preprocess/concat_binary_silver_train.py": "72a6d1a58c1ae2b1afde6625ca63c870921286434f76a90a111b9a4cb81bb9dd",
+    "feasibility/repository/classifier/preprocess/preprocess_utils.py": "943f258812875dcf2ac09c97d347b57599b5381b06cb89a415391575433331cc",
+    "feasibility/repository/classifier/preprocess/preprocess_predict.py": "512395d4db39c2ccb4b2e550627f322c6304ba5672f5e9370e60f2b85c327665",
+    "feasibility/repository/classifier/postprocess/predict_complexity_on_classification_results.py": "679ae105cf4e0f8f0289ebeea2bddf93e422c0976068d85f22b5c30fe76c5bbf",
+    "feasibility/repository/classifier/postprocess/postprocess_utils.py": "fb7a17399f3b72639135fcc3b2d1cc689c12b158c4c40e02b391664a90d63ee1",
+    "feasibility/repository/classifier/run/run_large_train_xl.sh": "1366cb72b1e4bdf73b8adbbf00bb694180473ece92d0828ae84006d9cad1cf47",
+    "feasibility/repository/evaluate_final_acc.py": "c9aff894ac2ad9da33f6dc0189a4aff7afe88553fa66ff8e749709ac905c69bd",
+    "feasibility/repository/classifier/utils.py": "42cbb7fd5674762ef89e751be5e3de33409e7dce43c5b7328dcaaa6bb1c561a8",
+    "feasibility/repository/classifier/run_classifier.py": "adff6869e862712d34b08ec316980e707bc46722bc333a290c10e0b925532b54",
+    "feasibility/repository/LICENSE": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+  },
+  "local_source_path_base": "tests/batches/rag-routing-01",
+  "code_dependency": {
+    "commit": "0c88670af8707667eb5c1163151bb5ce61b14acb",
+    "url": "https://github.com/starsuzi/Adaptive-RAG/tree/0c88670af8707667eb5c1163151bb5ce61b14acb",
+    "static_read_only": true,
+    "original_files_not_distributed": true
+  },
+  "rights": {
+    "ACL_footer": "ACL 2016+ materials CC BY4.0; third-party material separately copyrighted",
+    "repository": "Root LICENSE says Apache-2.0; no source code reuse planned",
+    "original_icons": "Individual rights not established; exclude original figure/PDF from release",
+    "distribution": "Own diagrams, linked sources and paraphrased source notes only"
+  },
+  "status_search": {
+    "date_utc": "2026-10-11T22:34:22.557098+00:00",
+    "queries": [
+      "\"Adaptive-RAG\" \"correction\"",
+      "\"Adaptive-RAG\" \"retraction\"",
+      "\"2024.naacl-long.389\" correction retraction"
+    ],
+    "official_record_note": "empty when checked",
+    "finding": "No paper-specific correction/retraction notice identified in the returned results. Many generic RAG posts excluded; this is a bounded lookup, not proof none exists."
+  },
+  "record_pins": {
+    "source-review.md": "966f7b5661735aac1f6eee21ebda5f145f1c7994a47b12b3b39069d3de4d4ef0",
+    "figure-plan.md": "afdac109c9ce99d8f5813540e98d5c96bb354c164c68f49e6364c5c67ff32b2e",
+    "expected.json": "ea1b98b3c12065ad2222410388a3b04446532e818b570edd28c454061967ca15",
+    "verification/acceptance.json": "b2e265bec7785836a5eb3a008dcbf3afedf9b98df91ac1adb859dc813c128f1d",
+    "verification/visual-review.json": "8177e49d82eedbe412237159f01f8b97965981a7616e9347bf62de60849c3ff3",
+    "controls/scores-first.json": "3d1f36d30eae5eef75dc78669ebcdb6ee31539e4142a1269ffeb678deb32a67c",
+    "replay-01/result.json": "51106752a081460e1f5eaffa92cd9295e28c0fab30336904c86f62271efcda45"
+  },
+  "transfer_evidence": {
+    "report": "tests/batches/rag-routing-01/README.md",
+    "frozen_requirements": 17,
+    "formal_diagrams": {
+      "initial": "19nodes/18edges;71finitechecks",
+      "changed": "15nodes/13edges;58finitechecks;explicit simulated policy C→single-step"
+    },
+    "appearance": "Palette only; mapping except colors and caption unchanged;71checks",
+    "controls": "3known-key targeted errors detected; correct target findings0/1diagram;1missing-run-material packet undecidable",
+    "repairs": "3targeted repairs,21exports equal correct baseline;previews viewed",
+    "replay": "3copiedspecs/21exports under5OSdeniedsource/oldskill/originalinputprobes andnetworkdenial",
+    "views": "15whole generated-image views; full exports downscaled from3543×4086to1470×1696,previews1134×1308",
+    "first_defect_preserved": "Changed-policy source note called panel2 the original paper concept; corrected source note/current caption inexports-02.",
+    "not_established": "Universal routing correctness, original experiments, independent reader accuracy or medical validity"
+  },
+  "source_linked_delivery": {
+    "version": "1.20.0 PREPACKAGE",
+    "report": "tests/batches/spec-evidence-01/README.md",
+    "acceptance_sha256": "ec061e2bbd75cbe2a5eadaf3801e41ed0e5d99361267618a6f36923faa206352",
+    "scope": "New metadata delivery; original case reading, visual review, controls and first acceptance remain history. No original-case increment or new independent validation."
+  }
+}

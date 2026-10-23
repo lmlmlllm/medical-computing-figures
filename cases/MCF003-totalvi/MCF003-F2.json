@@ -1,0 +1,180 @@
+{
+  "case_id": "MCF003-F2",
+  "paper_id": "10.1038/s41592-020-01050-x",
+  "dedup_key": "10.1038/s41592-020-01050-x|PMC-NIHMS1656427-author-manuscript|Figure 2",
+  "batch_id": "M2-development-batch-1",
+  "role": "development_reference",
+  "date": "2026-10-11",
+  "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+  "version": "PMC-NIHMS1656427-author-manuscript",
+  "figure": "2",
+  "figure_types": [
+    "linked_diagnostic_panels",
+    "embedding_plus_distributions",
+    "real_published_results"
+  ],
+  "source": {
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+    "doi": "10.1038/s41592-020-01050-x",
+    "locators": [
+      "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression",
+      "Methods > Classification of cell type by marker proteins; Denoised protein expression Eqs15–16"
+    ],
+    "source_material_role": "reference expression and semantic study, not facts for another current manuscript",
+    "correction_retraction_check": "No correction or retraction notice seen on inspected primary record; not a comprehensive registry search"
+  },
+  "states": {
+    "bibliography": "primary_verified",
+    "reading": "relevant_fulltext_and_caption_read",
+    "visual": "complete_figure_and_needed_detail_viewed",
+    "semantic": "key_elements_and_relations_checked_against_sources",
+    "license": "PMC author manuscript research-use terms; open reuse license not confirmed",
+    "archive": "local_inspection_only; link_only_for_distribution",
+    "code": "not_read_not_run",
+    "results": "published_results_inspected_not_reproduced",
+    "transfer_test": "not_executed_for_this_individual_reference",
+    "review": "executor_model_review; no human expert review"
+  },
+  "visual_evidence": {
+    "tool": "functions tools.view_image",
+    "inspection_date": "2026-10-11",
+    "files": [
+      {
+        "path": ".inspection/figure2.jpg",
+        "scope": "complete panels a–j, 1500x1443; thresholds, axes, group colors and bottom density panels legible"
+      }
+    ],
+    "hash_manifest": "inspection-manifest.json",
+    "actual_observations": [
+      "Rows a–c and d–f repeat the same logic for CD20/Ms4a1 and CD28/Cd28.",
+      "Scatter thresholds at foreground probabilities 0.2/0.8 and a protein-specific vertical GMM cutoff define four colored groups; intermediate probabilities remain gray.",
+      "The 2x2 UMAP displays and RNA histograms repeat those group colors, with all remaining cells gray.",
+      "Bottom panels g–j instead use a B-cell/T-cell legend; density axes are capped at 3."
+    ],
+    "scope": "Complete original figure, including all panels; crops are children, never counted as additional cases"
+  },
+  "scientific_task": {
+    "question": "Can a count-only threshold miss foreground/background structure that joint molecular profiles help resolve?",
+    "supported_claim": "The selected cells and marker examples show distinct assignments and background-corrected distributions in SLN111-D1.",
+    "cannot_conclude": [
+      "UMAP separation does not independently prove cell identity or mechanism.",
+      "The example panels do not establish universal denoising quality or clinical diagnostic sensitivity."
+    ]
+  },
+  "elements": [
+    {
+      "id": "sc",
+      "name": "Count versus foreground-probability scatter",
+      "role": "cell observations and threshold groups",
+      "panel": "a,d",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    },
+    {
+      "id": "gmm",
+      "name": "Vertical GMM cutoff",
+      "role": "baseline split at approximately 0.5 GMM foreground probability",
+      "panel": "a,d",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    },
+    {
+      "id": "umap",
+      "name": "UMAP coordinates",
+      "role": "embedding of same cells, not tissue coordinates",
+      "panel": "b,e",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    },
+    {
+      "id": "rna",
+      "name": "RNA density histograms",
+      "role": "cross-modal context for same selected groups",
+      "panel": "c,f",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    },
+    {
+      "id": "raw",
+      "name": "Raw protein distributions",
+      "role": "B/T cell comparison",
+      "panel": "g,i",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    },
+    {
+      "id": "den",
+      "name": "Denoised protein distributions",
+      "role": "posterior predictive summaries",
+      "panel": "h,j",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "source": "sc",
+      "target": "umap",
+      "type": "correspondence",
+      "direction": "noncausal",
+      "condition": "same cells selected by quadrant",
+      "stage": "visual comparison",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression",
+      "status": "source_supported"
+    },
+    {
+      "id": "r2",
+      "source": "sc",
+      "target": "rna",
+      "type": "correspondence",
+      "direction": "noncausal",
+      "condition": "same selected cells and matched marker gene",
+      "stage": "visual comparison",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression",
+      "status": "source_supported"
+    },
+    {
+      "id": "r3",
+      "source": "gmm",
+      "target": "sc",
+      "type": "comparison",
+      "direction": "noncausal",
+      "condition": "count cutoff vs joint model probability",
+      "stage": "evaluation",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression",
+      "status": "source_supported"
+    },
+    {
+      "id": "r4",
+      "source": "raw",
+      "target": "den",
+      "type": "comparison",
+      "direction": "noncausal",
+      "condition": "same protein and cell populations; different quantities",
+      "stage": "post-fit analysis",
+      "evidence": "PMC7954949 Figure 2a–j and caption; Results > totalVI identifies and corrects for protein background; Methods > GMM-based cutoff; Denoised protein expression",
+      "status": "source_supported"
+    }
+  ],
+  "design_analysis": {
+    "layout": "Repeated three-column blocks carry selection, location and molecular context. Bottom pairs answer a different question: raw versus denoised distributions.",
+    "grouping": "Color means quadrant in upper blocks and cell class in bottom blocks; explicit local legends are required.",
+    "axes": "Foreground probability differs from expression intensity. Density differs from cell count; truncated y limits need disclosure."
+  },
+  "transferable_rules": [
+    "Use linked highlighting to follow identical units across plots, preserving a neutral background for unselected units.",
+    "When color semantics change between panel groups, supply local legends rather than relying on global color memory.",
+    "Pair observed and transformed distributions with explicit quantity names and any axis truncation.",
+    "Keep model-derived probability distinct from ground-truth label."
+  ],
+  "nontransferable_content": [
+    "Marker identities, thresholds, quadrants and distributions do not transfer to other assays.",
+    "Cannot fabricate the underlying points or recreate densities from this image as exact published data."
+  ],
+  "limitations_and_ambiguities": [
+    "Panel group correspondence is evidence-supporting, not an independent validation cohort.",
+    "No underlying count matrix downloaded; result reproduction remains untested."
+  ],
+  "license": {
+    "status": "PMC author manuscript research-use terms; open reuse license not confirmed",
+    "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+    "copyright": "See PMC article copyright and Nature manuscript terms",
+    "third_party_assets": "Not separately cleared",
+    "distribution": "Do not distribute original HTML, JPGs or derived crops. Local inspection only; distribute links and original analysis."
+  }
+}

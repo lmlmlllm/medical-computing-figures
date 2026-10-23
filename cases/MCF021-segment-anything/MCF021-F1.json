@@ -1,0 +1,107 @@
+{
+  "id": "MCF021-F1",
+  "status": "admitted as bounded developer reference; semantic_partial",
+  "paper": {
+    "identity": "arXiv:2304.02643",
+    "title": "Segment Anything",
+    "version_read": "CVF ICCV2023 accepted main PDF and supplement",
+    "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Kirillov_Segment_Anything_ICCV_2023_paper.html",
+    "pages": "4015–4026",
+    "arxiv_record": "2304.02643v1,2023-04-05; metadata only",
+    "IEEE_final_compared": false
+  },
+  "figure": {
+    "number": "Figure1",
+    "scope": "full A/B/C viewed; C detail focuses data engine",
+    "PDF_page_1based": 1
+  },
+  "deduplication_key": "CVF:ICCV2023:Kirillov_Segment_Anything:Figure1",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "question": "Which annotation stages train the automatic generator, and what does sampled quality review actually establish?",
+  "elements_and_relations": {
+    "stage1_and_2": "human-assisted masks and prefilled-plus-additional annotations feed a collected pool and model development",
+    "generator": "dedicated model trained only on stage1/2 labels; parameters applied to image/crop and point-prompt inference",
+    "mask_processing": "predicted-score/stability filtering and cleanup grouped without a full execution-order assertion",
+    "quality": "automatic population→sample→professional correction→measured pairwise IoU; reported fraction limited to assessed pairs"
+  },
+  "layout": {
+    "original": "A task, B promptable model, C annotation/training cycle over dataset; gray dashed connector is dataset elaboration, not hypothesis",
+    "transfer": "three horizontal sections; data, training/model and sample comparison separated; temporal next label; distinct pool ports",
+    "size_mm": [
+      240,
+      180
+    ],
+    "omitted": "full network internals, exact processing order, individual masks, dataset distribution or clinical application claims"
+  },
+  "unresolved_and_scope": [
+    "Full processing execution order not established by grouped diagram",
+    "Overlap of filter-threshold selection sample and reported500-image quality sample not specified",
+    "No code reading/running, dataset download, original-result recalculation or expert validation",
+    "CVF accepted version not compared bytewise to IEEE final"
+  ],
+  "reading": {
+    "main": "p1 metadata/Fig1/abstract and introduction visually; p2 full extracted text; p4 full §2; pp5–6 full §3–5 text; not whole 12 pages",
+    "supplement": "p3 full text including §C; pp7–8 text returned by targeted search (not figures viewed); pp14–15 §G.2 and adjacent text; p12–14 search excerpts only otherwise; not whole21pages",
+    "landing": "full page text incl accepted-version and copyright notice"
+  },
+  "visual": {
+    "actual_viewed": [
+      "original-page1-150ppi.png",
+      "original-F1C-detail-220ppi.png",
+      "original-F1C-complete-220ppi.png"
+    ],
+    "not_viewed": [
+      "original-page2-150ppi.png"
+    ],
+    "crop_limits": {
+      "original-F1C-detail-220ppi.png": "first crop clips lower C; not a full panel view",
+      "original-F1C-complete-220ppi.png": "parent Figure1 crop [380,195,565,323] PDF points; complete panel C"
+    }
+  },
+  "source_pins": {
+    "feasibility/cvf-landing.html": "7ed7cb744168670bd2fead4df767569b12ed2456caca96c96162deb2780dbe35",
+    "feasibility/original-page2-150ppi.png": "cf6bd15a13a61f3b4819fc09c0b6a1a4546183dd2ed709eaaa32752f88ac72c3",
+    "feasibility/original-F1C-complete-220ppi.png": "6587cde26ab7fea0eb33cc8cdd5e4c3ef078621d7ab11a7b03c88bd944de8b48",
+    "feasibility/original-F1C-detail-220ppi.png": "6078f5d9e551cf7412fb4b148d21dbb43d1197ec740696ca7acfeca213b7c0de",
+    "feasibility/sam-iccv2023-supplement.pdf": "e2564d05619cba00a7b8905e41183b803e5403bbad55737ec8c1c081b256258d",
+    "feasibility/sam-iccv2023.pdf": "77992e7a518edcaf5200a750299b98f99de051066f7c1dac357e6baf8ce068bb",
+    "feasibility/original-page1-150ppi.png": "f081f434190953761490fa67f425a4f72fbf9d923dde10acb97d05f463d4976a"
+  },
+  "local_source_path_base": "tests/batches/annotation-engine-01",
+  "rights": {
+    "paper_and_pixels": "copyright retained by authors/holders; no broad redistribution permission established; local reading, link_only in skill distribution",
+    "arxiv": "nonexclusive arXiv distribution license reviewed; not our image republication license",
+    "code": "not read or executed, no code copied",
+    "dataset": "not downloaded; paper states restricted research-use agreement"
+  },
+  "status_search": {
+    "scope": "bounded official CVF/arXiv metadata and searches for Segment Anything correction on CVF/IEEE; no matching correction or withdrawal notice found in inspected results",
+    "unrelated_notice_excluded": "Correction to Segment Anything Is Not Always Perfect, Ji et al., DOI10.1007/s11633-024-1526-0 is a different paper",
+    "limit": "not an exhaustive publisher status guarantee"
+  },
+  "record_pins": {
+    "tests/batches/annotation-engine-01/acceptance.json": "0e806d53553553b212b1d9d683a30365cce81591dd4b481412e15467960c4bea",
+    "tests/batches/annotation-engine-01/source-review.md": "fb8791e1d8cc8bf4d112e8fd5d766d7362b32b2959239355d3831bd75a7c25d9",
+    "tests/batches/annotation-engine-01/visual-review-final.json": "cb791879b8cf767feff0819eace316c3128c251942671d8b46a1bf3d9ad23c65",
+    "tests/batches/annotation-engine-01/controlled/result.json": "7f5e39df426009c7eaf0ff4d43b94ffcaf6a7c6e10db6b0f17b308b0f1ca8992",
+    "tests/batches/annotation-engine-01/replay-01/result.json": "432c6d86396c7d492e6d98a5ecae26cdfc84d74187e89a185b5c4ef176d3510a"
+  },
+  "transfer_evidence": {
+    "batch": "tests/batches/annotation-engine-01/README.md",
+    "native_counts": [
+      135,
+      135,
+      135
+    ],
+    "known_controls": "3 known errors found/repaired,1 correct with0 false positive,1 insufficient retained; initial insufficient layout132/133 failed, revised133/133",
+    "OS_replay": "21exports,11 supplied inputs,9 denied reads and network",
+    "holdout": false,
+    "independent_reader": false,
+    "formal_drawings": 2,
+    "appearance_variants": 1,
+    "original_figure_count": "one, no crop/variant duplication"
+  }
+}

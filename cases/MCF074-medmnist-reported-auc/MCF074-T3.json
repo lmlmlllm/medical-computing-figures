@@ -1,0 +1,184 @@
+{
+  "id": "MCF074-T3",
+  "document_type": "partial reference case with actual bounded development evaluation",
+  "created_utc": "2026-10-18T15:55:40.161671+00:00",
+  "paper": {
+    "title": "MedMNIST v2 – A large-scale lightweight benchmark for 2D and 3D biomedical image classification",
+    "doi": "10.1038/s41597-022-01721-8",
+    "historical_preprint": "arXiv:2110.14795v2,2022-09-25",
+    "journal": "Scientific Data10:41,2023-01-19"
+  },
+  "unit": {
+    "parent": "Table3",
+    "count": 1,
+    "semantic_status": "semantic_partial",
+    "selected": "BreastMNIST first four ResNet rows; Table2 counts are context, not another unit"
+  },
+  "read_and_view_scope": "Admission agent actually viewed full author-draft Table3/page8 and read related preprocessing/evaluation methods. Independent source-first official HTML/data.js transcription matched8/8 metrics and28 context fields; separate methods text review. Root read sealed source evidence, CSV, official HTML and independent records, not a new original-PDF visual inspection.",
+  "source_version_boundary": "Author-hosted line-numbered draft SHA92cb0a03b1417c9ee7edbc2e36de5396287cba4f9c8f97b8f2584e31b9f85801; whole-document/arXiv/publisher equivalence unverified. Bounded correction queries found no identified notice, not exhaustive.",
+  "question": "What are the four selected reported mean test AUC values, with their method/input identity and evidence limits?",
+  "mapping": [
+    {
+      "id": "r18_28",
+      "method": "ResNet-18(28)",
+      "AUC": "0.901",
+      "adjacent_ACC_context_only": "0.863"
+    },
+    {
+      "id": "r18_224",
+      "method": "ResNet-18(224)",
+      "AUC": "0.891",
+      "adjacent_ACC_context_only": "0.833"
+    },
+    {
+      "id": "r50_28",
+      "method": "ResNet-50(28)",
+      "AUC": "0.857",
+      "adjacent_ACC_context_only": "0.812"
+    },
+    {
+      "id": "r50_224",
+      "method": "ResNet-50(224)",
+      "AUC": "0.866",
+      "adjacent_ACC_context_only": "0.842"
+    }
+  ],
+  "statistics": "At least3-trial arithmetic means; exact n/dispersion unknown.156 test images,546 training/78 validation; no patient-count inference.224 resized28; interpolation unknown.",
+  "layout": "210×145mm,min9pt; four unconnected horizontal points, source order, one color, direct three-decimal labels. Explicit limited AUC axis0.80–0.92. Class spacing does not imply continuous process; magnified spacing does not imply significance.",
+  "editable_and_visual": "Native SVG text and point paths; PDF embedded font and native vectors, not raster wrapping. Root completePNG and PopplerPDFpage, independent completePNG actually viewed; no clipping or occlusion observed.",
+  "licensing": "Official HTML/data.js and Apache2 license, factual CSV and own records; DejaVu license; Matplotlib excerpt attribution/license. No authorPDF/pixels, clinical data or models redistributed. Final erratum supersedes historical commit-identity overclaim.",
+  "transfer": "Explicit dataset/method/input/metric binding, staged source-dependent assessment and synchronized actual repair. Original metric values and rankings cannot transfer to another study. Not held-out.",
+  "results": {
+    "schema": "medmnist-root-bounded-acceptance-v1",
+    "created_utc": "2026-10-18T15:55:40.155135+00:00",
+    "status": "Finite case completed within declared scope; overall maintenance goal remains active",
+    "unit": "MCF074-T3 / semantic_partial",
+    "image_stage": {
+      "visible_readback": "1/1",
+      "source_boundary": "1/1",
+      "statistical_boundary": "2/2",
+      "hidden_source_fault_facets": "NA, not a false negative"
+    },
+    "source_stage": {
+      "detection": "1/1",
+      "localization": "1/1",
+      "explanation": "2/2",
+      "repair_proposal": "2/2",
+      "correct_control_target_false_positive_count": 0
+    },
+    "score_boundary": "Plain-language keyed metric selection and synchronization accepted under frozen policy before actual repair; no execution credit added.",
+    "actual_repair": "Only r50_28.value_field ACC→AUC; rebuilt from unchanged CSV, 0.812→0.857; other three rows and caption preserved.",
+    "verification": {
+      "independent_source_checks": 135,
+      "source_failures": 0,
+      "native_checks": 575,
+      "native_failures": 0,
+      "ordinary_exact_final_zip_members": 260,
+      "minimum_inputs": 22,
+      "fresh_prepared_artifacts_equal": 8,
+      "receipt_equal": true,
+      "canonical_exports_equal": 12,
+      "actual_edit_marker_and_render_exit": 0,
+      "root_and_independent_complete_image_views": true
+    },
+    "historical_failures": "Original oracle16 failures per pair; helper syntax errors; package01 attribution overclaim; historical pending snapshots preserved and explicitly superseded.",
+    "limits": [
+      "Only four BreastMNIST ResNet rows of historical Table3; semantic_partial development case, not held-out or full-paper verification.",
+      "Reported arithmetic mean AUC over at least three trials; exact trial counts, dispersion, seeds and patient counts remain unknown. No model rerun, ROC, CI or significance reconstruction.",
+      "156 test images is not a patient count or AUC binomial denominator; 224 inputs are resized from28, not native224 or MedMNIST+.",
+      "Original native oracle failed16 baseline checks per pair. Post-output v2 corrects actual normal font metric path with unchanged tolerances. No retroactive pre-export pass.",
+      "Frozen attribution text overstates commit-specific identity; final erratum explicitly withdraws it. HTML/LICENSE fetched from main; metadata observed separately; author draft is not byte-certified as arXiv/publisher PDF.",
+      "One pair and two correlated stages; no overall accuracy, source-effect causality, human expert, clinical, journal, cross-platform, browser or OS-sandbox claim."
+    ],
+    "evidence": [
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/contract.json",
+        "bytes": 9283,
+        "sha256": "44799db54e4fadaa536405d8d81045125ed59ed20e49362434317b20a5b63f33"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/classification-policy.json",
+        "bytes": 7994,
+        "sha256": "3a8ee4f1f12afdb9e31637ef0ed1de2d4fd56b6836b76576ae9e8713acce5533"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/both-reader-stages-sealed.json",
+        "bytes": 943,
+        "sha256": "9276f97032120edcb85e275227b5f491851788d324d75467143d445c2c1cc220"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/classification-sealed-root-readback.json",
+        "bytes": 845,
+        "sha256": "c7e76721dbf77b53a04fe16c2ee3255936c812161ab749b80dbe022da7c9aa9b"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/claim-classification-02/classification.json",
+        "bytes": 396321,
+        "sha256": "2e7c54f04e1efc047b6c296b96e692fdf33e3f298130236a170ca56650ae4477"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/claim-classification-02/semantic-score.json",
+        "bytes": 33151,
+        "sha256": "fa96d3fc6b3b158d83332481b4e7cf3af06f1ac18f03cef3861c407fd0ae83ab"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/repair-01/source-repair-readback.json",
+        "bytes": 786,
+        "sha256": "4bbac5aecbc4705032c98fe2d6b57c3ce40f074323e3171467f5456a7f1b2465"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/repair-01/root-visual/review.json",
+        "bytes": 1858,
+        "sha256": "46ba88934ad7fad225da26d5b2043ffbde29526723dd6f249405ddcf3cf71e57"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/native-audit-01/native-final-review.json",
+        "bytes": 11770,
+        "sha256": "5e3b6cf25112264bf31d31e6eee26f328999f62ff52ae90be6b6eea89071bf0d"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/native-audit-01/repair-native-final-review.json",
+        "bytes": 7603,
+        "sha256": "d1a0411e4f62eed078218e4ce260e031d18bc4fdfcdc0c616da3b51c5660f197"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/delivery-02/independent-package-review.json",
+        "bytes": 19351,
+        "sha256": "530216dfee5dd1c20774b683d58df052389ea02932900af7ca0f5289eaf0429d"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/delivery-02/zip-replay/replay-result.json",
+        "bytes": 3500,
+        "sha256": "96f34661fb757dae64b35791b4fbbf3112649033e60f20812799503efebf1dcb"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/delivery-02/zip-replay/root-visual-review.json",
+        "bytes": 1254,
+        "sha256": "e3a8059c1953e0185898ac25583f73c4b3e0826869fbd810c61de19dd1335b5c"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/delivery-02/package/bundle/PROVENANCE_ERRATUM.md",
+        "bytes": 4154,
+        "sha256": "d90ff7d1ea36760aa493cc94516fa0c4823d7c5da39251a6b61dc7859cd4654d"
+      },
+      {
+        "path": "tests/batches/medmnist-reported-auc-01/medmnist-reported-auc-02.zip",
+        "bytes": 3813954,
+        "sha256": "6ac69ece1d3875c6b86701016092b6fe405af9528a5597695c365e894f6e15f4"
+      }
+    ]
+  },
+  "understanding_draft": {
+    "path": "tests/batches/medmnist-reported-auc-01/case-draft-01/understanding.md",
+    "bytes": 5932,
+    "sha256": "12a1f1aef4830226b7bfc98a603e28dab8f5359f7e353c15618b2663b3473f0e"
+  },
+  "limits": [
+    "Only four BreastMNIST ResNet rows of historical Table3; semantic_partial development case, not held-out or full-paper verification.",
+    "Reported arithmetic mean AUC over at least three trials; exact trial counts, dispersion, seeds and patient counts remain unknown. No model rerun, ROC, CI or significance reconstruction.",
+    "156 test images is not a patient count or AUC binomial denominator; 224 inputs are resized from28, not native224 or MedMNIST+.",
+    "Original native oracle failed16 baseline checks per pair. Post-output v2 corrects actual normal font metric path with unchanged tolerances. No retroactive pre-export pass.",
+    "Frozen attribution text overstates commit-specific identity; final erratum explicitly withdraws it. HTML/LICENSE fetched from main; metadata observed separately; author draft is not byte-certified as arXiv/publisher PDF.",
+    "One pair and two correlated stages; no overall accuracy, source-effect causality, human expert, clinical, journal, cross-platform, browser or OS-sandbox claim."
+  ]
+}

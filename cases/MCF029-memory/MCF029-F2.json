@@ -1,0 +1,107 @@
+{
+  "id": "MCF029-F2",
+  "status": "admitted bounded source-aware developer reference",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "paper": {
+    "identity": "arXiv:2408.00874",
+    "title": "Medical SAM 2: Segment Medical Images as Video via Segment Anything Model 2",
+    "authors": [
+      "Jiayuan Zhu",
+      "Abdullah Hamdi",
+      "Yunli Qi",
+      "Yueming Jin",
+      "Junde Wu"
+    ],
+    "version": "2408.00874v2,4December2024",
+    "publication_type": "preprint; no formal venue verified",
+    "url": "https://arxiv.org/html/2408.00874v2",
+    "disambiguation": "Not Ma et al. MedSAM2 arXiv2504.03600"
+  },
+  "figure": {
+    "number": "Figure2",
+    "scope": "Whole1600×900 original PNG; no extra cropped-case count",
+    "view": "actual view_image full pixels; image includes intrinsic large top white margin"
+  },
+  "deduplication_key": "arXiv:2408.00874v2:Figure2",
+  "original_figure_units": 1,
+  "question": "How do memory-based segmentation, a temporary query-conditioned read and later conditional bank updates relate?",
+  "reading": {
+    "paper": "Figure2 caption, Methods3.1–3.3 equations1–6 in versioned HTML",
+    "PDF": "Attempt timed out; no full-PDF or appendix-theory verification",
+    "code": "Seven selected files at18b0f5b; primary2D train_sam85–125,128–190,201–240; validation318–444; memory encoding664–702; limited3D/video-path contrast",
+    "code_run": false,
+    "local_math_run": "Independent local reduced-vector operators only"
+  },
+  "elements_and_relations": {
+    "overview": "Image encoder→memory attention→mask decoder→memory encoder→bank→weighted resampling→attention; prompt encoder visibly feeds mask decoder.",
+    "selected_code": "Image read keys and mask-memory write features differ. Softmax over old-bank entries; B with-replacement draws gather payload/position together. Later local min/max similarity choice and predicted-IoU comparison condition a replacement.",
+    "time": "Read precedes current candidate write; one inner update is not full batch behavior.",
+    "semantic_unit": "Memory entry/slot identity, not patient, image count or independent biological replication"
+  },
+  "layout": {
+    "original": "Bottom processing chain and upper return path; duplicated colored memory bar, concrete medical input examples; confidence/update-time detail omitted",
+    "transfer": "Three panels: supplied bank, current read distribution/slots, later conditional update. Grouped probability fanout makes all inputs and both sampled slots explicit.",
+    "why": "Separates persistent state, temporary sampled multiplicity and later write; table distinguishes two embedding roles",
+    "omitted": "Neural computation, other query rows/iterations, training, initialization, actual image masks and metrics"
+  },
+  "source_conflicts": [
+    "Paper total-dissimilarity TopK/fixedconfidence vs selected-code local pairwise replacement/relative strict confidence",
+    "Paper similarity-sum normalization vs code softmax",
+    "Paper K draws vs code batch-size B draws",
+    "Paper fixed first prompt vs code points every fifth batch"
+  ],
+  "unknown": [
+    "Complete tensor permutation compatibility",
+    "Full3D aggregation/implementation",
+    "Experimental checkpoint/configuration match",
+    "Paper entropy/mutual-information proof",
+    "Initialization/tie/overflow behavior beyond declared fixture"
+  ],
+  "local_source_path_base": "tests/batches/memory-selection-01",
+  "source_pins": {
+    "feasibility/figure2-arxiv.png": "d834eac7711694a604baf57a28c66a1541ae4620bca470a211473799f687078b",
+    "feasibility/code/cfg.py": "ec3f7b64e82d613ee73a1362fb5681c2d4795437c530ef1c80e7589748074f44",
+    "feasibility/code/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "feasibility/code/README.md": "a2e94dfaed2d04dd459769bfae29100a31a307da886062b12139050d938b1710",
+    "feasibility/code/train_2d.py": "69a4599bea4620da37e9af9831e05958ae8d6b570d930e331ce007a2202ac6d1",
+    "feasibility/code/func_3d/function.py": "34d717c851e6feda9f470e09834e163d6098dc93b3dda07fc7659922a50394e6",
+    "feasibility/code/func_2d/function.py": "4469ea7df67c1d511bafb49a49f4f1ef38527926e2845369cc85c7318e69df6b",
+    "feasibility/code/sam2_train/modeling/sam2_base.py": "518540e5091564883c68a550d0badff6fb0ce139bf4fa6b4c2b3d9a774071200"
+  },
+  "code_commit": "18b0f5bcea75cb0c212d652ff22ad063bf39ee3a",
+  "source_status_search_record": "tests/batches/memory-selection-01/source-probe-01.json",
+  "rights": {
+    "paper_figure": "arXiv non-exclusive distribution; local reading/link_only, raw PNG excluded",
+    "code": "Root Apache2.0 read, seven source files local reading only and excluded",
+    "local_assets": "Own simulated fixtures and own vector figures; no model or dataset download"
+  },
+  "record_pins": {
+    "tests/batches/memory-selection-01/acceptance.json": "be7b73a9e94db0859b4c60943a4c131de04d999ec7b1027bafc29e6f83155db6",
+    "tests/batches/memory-selection-01/source-notes.md": "5e33ee213c5d4cd05c25ed53991c25cbce790fec05a51f07bd4d76b728f45144",
+    "tests/batches/memory-selection-01/visual-review.json": "eb1a81cb2b3f8a7838d6bc769fb5dd11e4f0b258369b63093a38ec6a99061792",
+    "tests/batches/memory-selection-01/protocol-freeze.json": "fa2178269dedd42ad22942a265738fe81fefecc66b40d66fc1406716536801e7",
+    "tests/batches/memory-selection-01/validation/result.json": "884c7741268b447d0452a1a675637797ca2b2ac234965adffcdd5d92522a26ce",
+    "tests/batches/memory-selection-01/replay-01/result.json": "d775ebf1d97373115d06fe2a8105f38aa4e650b43166ce0ce078384b86059eb0",
+    "tests/batches/memory-selection-01/.history/missing-input-initial-failure.json": "2d005d32484105c85f89e17ef5469f7465d20f1207360d7615dfc4922ebbb825"
+  },
+  "transfer_evidence": {
+    "fixed_requirements": 15,
+    "native_checks": 286,
+    "final_exports": 11,
+    "actual_current_equivalent_views": 14,
+    "known_errors": 3,
+    "misses": 0,
+    "correct_control_false_positives": 0,
+    "missing_case_unknown_fields": 4,
+    "repairs": 3,
+    "invalid_rejections": 8,
+    "historical_visual_failures": 2,
+    "historical_material_failure": "R14; preserved old25/26, actual field omission repaired26/26",
+    "isolation": "36+9 exact exports;12reads and network denied;13supplied pins unchanged",
+    "holdout": false,
+    "independent_reader": false,
+    "expert_review": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MCF079-T1",
+  "document_type": "partial reported-table case with percent-conversion control, actual repair and final ZIP replay",
+  "created_utc": "2026-10-18T21:26:19.424807+00:00",
+  "paper": {
+    "title": "On Calibration of Modern Neural Networks",
+    "authors": "Chuan Guo, Geoff Pleiss, Yu Sun, Kilian Q. Weinberger",
+    "venue": "ICML2017 PMLR70:1321–1330",
+    "source_url": "https://proceedings.mlr.press/v70/guo17a.html",
+    "pdf_url": "https://proceedings.mlr.press/v70/guo17a/guo17a.pdf"
+  },
+  "unit": {
+    "parent": "WholeFigure1 andTable1 viewed; selectedTable1 Uncalibrated/Temp.Scaling columns forCIFAR10/CIFAR100",
+    "count": 1,
+    "semantic_status": "semantic_partial",
+    "excluded": "CompleteFigure1,reliability bins,full table/fullpaper,model fitting/experiments"
+  },
+  "question": "How do source percent values, exact internal fractions and displayed percent marks stay synchronized?",
+  "elements_and_relations": "20cells,10dataset/model configurations,2methods;131SVG IDs,78text,30lines,22marks including legends. Both axes0–18; unconnected method dots/direct values.",
+  "scope_limits": [
+    "M15 equal-width confidence bins; weighted absolute calibration gap,not accuracy.",
+    "SD stochastic depth; onepositiveT/validationNLL in source method note.",
+    "Per-row n unverified; source split facts not row denominators; reported rounding preserved."
+  ],
+  "layout": "210×236mm,8–14pt,300ppi PNG; native editable text/vector output and embedded licensed fonts.",
+  "controlled_test": "One multiplier,46primitive delta; pre-key17groups/3037leaves complete material classification; source detection/localization1/1,explanation/proposal1/2,targetFP0of1;image metricunits1/2,source fidelityNA.",
+  "actual_repair": "Fault-only16inputs,15 unchanged,selector1→100 and45derived leaves;148preflight/808native checks;root wholePNG/Poppler views.",
+  "replay": "Actual final163memberZIP extraction;5prepared and11exports byteequal;7active bindings,82runtime+40mapping refs and204historical aliases verified.",
+  "licensing": "Original article/artwork link-only; own reconstruction and complete DejaVu font notices packaged.",
+  "transfer": "Preserve printed source facts and precision; derive internal fraction and percent display once; repair one active authority then regenerate values,labels,caption,spec,mapping andnative exports.",
+  "catalog_identity": "New stored Guo2017 paper identity; MCF030 is CORP/PAV2021,conceptual overlap only. No heldout/unseenclaim.",
+  "result_record": {
+    "file": "tests/batches/calibration-percent-conversion-01/root-acceptance.json",
+    "bytes": 14922,
+    "sha256": "10a6c1c1824d042f30bca288150d524a3fab30b9cfe046c91b10bb4daf2ec592"
+  },
+  "transfer_limits": "One partial development case; no aggregateaccuracy,causal source-benefit,modelrun,expert,OSsandbox or journal acceptance."
+}

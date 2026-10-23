@@ -1,0 +1,190 @@
+{
+  "case_id": "MCF004-F2",
+  "paper_id": "10.1177/15330338261447344",
+  "dedup_key": "10.1177/15330338261447344|SAGE-2026-04-29-version-of-record|Figure 2",
+  "batch_id": "M2-development-batch-1",
+  "role": "development_reference",
+  "date": "2026-10-11",
+  "title": "A Hybrid CNN-Transformer Deep Learning Model for Differentiating Benign and Malignant Breast Tumors Using Multi-View Ultrasound Images",
+  "version": "SAGE-2026-04-29-version-of-record",
+  "figure": "2",
+  "figure_types": [
+    "cohort_selection",
+    "parallel_validation_sources"
+  ],
+  "source": {
+    "primary_url": "https://journals.sagepub.com/doi/full/10.1177/15330338261447344",
+    "doi": "10.1177/15330338261447344",
+    "locators": [
+      "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "PubMed 42052813 verifies DOI, title, authors and Mengjian Zhang affiliation"
+    ],
+    "source_material_role": "reference expression and semantic study, not facts for another current manuscript",
+    "correction_retraction_check": "No correction or retraction notice seen on inspected primary record; not a comprehensive registry search"
+  },
+  "states": {
+    "bibliography": "primary_verified",
+    "reading": "relevant_fulltext_and_caption_read",
+    "visual": "complete_figure_and_needed_detail_viewed",
+    "semantic": "key_elements_and_relations_checked_against_sources",
+    "license": "CC-BY-NC-4.0 article license verified",
+    "archive": "local_inspection_only; link_only_for_distribution",
+    "code": "not_read_not_run",
+    "results": "published_results_inspected_not_reproduced",
+    "transfer_test": "not_executed_for_this_individual_reference",
+    "review": "executor_model_review; no human expert review"
+  },
+  "visual_evidence": {
+    "tool": "functions tools.view_image",
+    "inspection_date": "2026-10-11",
+    "files": [
+      {
+        "path": ".inspection/figure2.jpg",
+        "scope": "entire parallel cohort flow, 3696x1932; all counts, dates and criteria legible in full display"
+      }
+    ],
+    "hash_manifest": "inspection-manifest.json",
+    "actual_observations": [
+      "Two parallel columns are labeled Primary Dataset and External Dataset, with no arrow crossing between them.",
+      "Each main vertical arrow has a right-facing branch to a gray exclusion box.",
+      "Final green boxes split into benign and malignant patients with image counts on a separate line.",
+      "Primary 980 minus 140 gives 840; external 180 minus 47 gives 133. Benign/malignant counts sum within each retained cohort."
+    ],
+    "scope": "Complete original figure, including all panels; crops are children, never counted as additional cases"
+  },
+  "scientific_task": {
+    "question": "Which source populations and exclusions produce the internal and external cohorts?",
+    "supported_claim": "The diagram accounts for the two retrospective source cohorts and separates patient counts from their multiple images.",
+    "cannot_conclude": [
+      "This figure alone does not show model split membership or guarantee absence of patient-level leakage.",
+      "The later prospective cohort is not part of this flow and must not be silently merged."
+    ]
+  },
+  "elements": [
+    {
+      "id": "p0",
+      "name": "Primary screened patients: 980",
+      "role": "June 2023–April 2025 source cohort",
+      "panel": "left",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    },
+    {
+      "id": "px",
+      "name": "Primary excluded: 140",
+      "role": "three listed criteria; reason-specific counts absent",
+      "panel": "left",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    },
+    {
+      "id": "p1",
+      "name": "Primary retained: 840",
+      "role": "430 benign / 410 malignant; 1566 / 2220 images",
+      "panel": "left",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    },
+    {
+      "id": "e0",
+      "name": "External screened patients: 180",
+      "role": "October 2024–April 2025 source cohort",
+      "panel": "right",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    },
+    {
+      "id": "ex",
+      "name": "External excluded: 47",
+      "role": "same exclusion criteria",
+      "panel": "right",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    },
+    {
+      "id": "e1",
+      "name": "External retained: 133",
+      "role": "70 benign / 63 malignant; 223 / 440 images",
+      "panel": "right",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "source": "p0",
+      "target": "px",
+      "type": "exclusion",
+      "direction": "directed",
+      "condition": "shown overview",
+      "stage": "cohort selection",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "status": "source_supported"
+    },
+    {
+      "id": "r2",
+      "source": "p0",
+      "target": "p1",
+      "type": "selection",
+      "direction": "directed",
+      "condition": "980-140=840",
+      "stage": "cohort selection",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "status": "source_supported"
+    },
+    {
+      "id": "r3",
+      "source": "e0",
+      "target": "ex",
+      "type": "exclusion",
+      "direction": "directed",
+      "condition": "shown overview",
+      "stage": "cohort selection",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "status": "source_supported"
+    },
+    {
+      "id": "r4",
+      "source": "e0",
+      "target": "e1",
+      "type": "selection",
+      "direction": "directed",
+      "condition": "180-47=133",
+      "stage": "cohort selection",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "status": "source_supported"
+    },
+    {
+      "id": "r5",
+      "source": "p1",
+      "target": "e1",
+      "type": "comparison",
+      "direction": "noncausal",
+      "condition": "separate sources, not sequential cohorts",
+      "stage": "validation design",
+      "evidence": "SAGE Figure 2; Section 3.1; Section 3.3; Tables 1 and 2",
+      "status": "source_supported"
+    }
+  ],
+  "design_analysis": {
+    "layout": "Parallel lanes expose identical selection logic and distinct source populations. Lateral exclusion branches conserve a clear retained-population path.",
+    "color": "Green denotes retained/source flow; gray exclusion boxes supply both color and text distinction.",
+    "unit": "Patients and images have explicitly different labels; the lower split is diagnostic category, not train/test allocation."
+  },
+  "transferable_rules": [
+    "Retain analysis-unit labels beside every count; images are nested observations and cannot be substituted for patients.",
+    "Audit arithmetic separately from scientific independence.",
+    "Represent external cohorts in a separate lane; add train/validation/test splits only from explicit source evidence.",
+    "If exclusion-reason subtotals are absent, do not manufacture them."
+  ],
+  "nontransferable_content": [
+    "Cohort sizes, dates, criteria and split percentages do not transfer to another study.",
+    "Do not rename the pictured retrospective external cohort as prospective."
+  ],
+  "limitations_and_ambiguities": [
+    "Methods describes lesion-level splits while flow uses patients; equal counts in tables do not establish that all patients had exactly one lesion.",
+    "No per-criterion exclusion counts or IDs supplied; arithmetic checks do not establish disjointness."
+  ],
+  "license": {
+    "status": "CC-BY-NC-4.0 article license verified",
+    "evidence_url": "https://journals.sagepub.com/doi/full/10.1177/15330338261447344",
+    "copyright": "The Authors 2026",
+    "third_party_assets": "Device, anatomy icons and ultrasound images not separately audited",
+    "distribution": "Originals excluded from skill distribution. License does not authorize unrestricted commercial redistribution."
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "case_id": "MCF009-F2",
+  "dedup_id": "10.1038/s41586-019-1799-6|Cambridge-accepted-manuscript-3ffac2531ce8f2c0|Figure2",
+  "paper": {
+    "title": "International evaluation of an AI system for breast cancer screening",
+    "authors": "McKinney SM, Sieniek M, Godbole V, et al.",
+    "doi": "10.1038/s41586-019-1799-6",
+    "pmid": "31894144",
+    "journal": "Nature 577:89–94 (2020)",
+    "version": "Cambridge accepted author manuscript (35 PDF pages), cross-linked to publisher record. Numerical transcription uses current public publisher Extended Data Table 2a; this mixed-version choice is explicit.",
+    "source_url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/973c43cb-96f5-43a9-882b-722a44a469da/content",
+    "publisher_url": "https://www.nature.com/articles/s41586-019-1799-6",
+    "figure_location": "PDF p33, complete Figure 2; caption p13",
+    "numerical_source": "https://www.nature.com/articles/s41586-019-1799-6/tables/2"
+  },
+  "publication_status": {
+    "checked_date": "2026-10-11",
+    "doi": "10.1038/s41586-019-1799-6",
+    "published_online": "2020-01-01",
+    "published_print": "2020-01-02",
+    "crossmark": {
+      "url": "https://crossmark.crossref.org/dialog/?doi=10.1038/s41586-019-1799-6",
+      "local": ".inspection/crossmark.html",
+      "finding": "Updates are available: Addendum dated 2020-10-14. No retraction is listed in this checked Crossmark record."
+    },
+    "addendum": {
+      "doi": "10.1038/s41586-020-2679-9",
+      "url": "https://www.nature.com/articles/s41586-020-2679-9",
+      "scope": "Expanded supplementary training methods, optimization hyperparameters and data augmentation; links to Matters Arising and Reply. Read full public addendum body. No change to plotted Table 2 values is stated in that body."
+    },
+    "bounded_status": "No retraction notice encountered in the checked publisher/Crossmark pages; not a guarantee about every possible record. This is not an audit of training reproducibility or clinical effectiveness.",
+    "license": {
+      "publisher": "Author(s), under exclusive licence to Springer Nature Limited; publisher metadata open:false; no CC redistribution licence observed.",
+      "accepted_manuscript": "Legally public institutional manuscript; separate reuse licence not established from downloaded PDF.",
+      "policy": "All raw PDF/HTML/source-table/figure images and crops remain local-only. Share source links, original case analysis, typed numerical facts and original redraw only."
+    }
+  },
+  "states": {
+    "metadata": "verified against publisher/Crossmark",
+    "text": "Related Methods, Results, caption, limitation paragraphs and Addendum read",
+    "visual": "Complete Figure 2 actually viewed, then UK detail including inset; official Table2 cells also actually viewed",
+    "semantic": "Source-bounded ROC/operating-point structure understood; four numerical difference CIs verified; no patient-level statistics reproduced",
+    "license": "No broad CC found; source assets local-only",
+    "code": "not read or run; model not reproduced",
+    "results": "Four aggregate rows transcribed and replotted, not re-estimated",
+    "transfer": "tests/batches/uncertainty-01; expected checklist frozen before drawing"
+  },
+  "question": "How an AI ROC and validation-selected operating points compare with historical clinical reader decisions under different cohort definitions, and how numerical CIs qualify the selected performance differences.",
+  "elements": [
+    {
+      "id": "uk_roc",
+      "object": "AI ROC on UK held-out screening cases",
+      "level": "cohort aggregate across thresholds",
+      "axes": "x=1−specificity, y=sensitivity; dimensionless proportions"
+    },
+    {
+      "id": "uk_readers",
+      "object": "first reader, second reader and consensus operating points",
+      "level": "historical clinical benchmarks; not three training seeds"
+    },
+    {
+      "id": "uk_thresholds",
+      "object": "three AI operating points marked by crosses",
+      "level": "thresholds selected on separate validation data"
+    },
+    {
+      "id": "uk_inset",
+      "object": "magnified high-specificity region",
+      "level": "view of existing aggregate points; not a second dataset"
+    },
+    {
+      "id": "us_rocs",
+      "object": "solid joint UK+US training ROC and dotted UK-only training ROC",
+      "level": "distinct training configurations, not uncertainty bounds"
+    },
+    {
+      "id": "us_clinical",
+      "object": "mean clinical reader point and AI operating-point crosses",
+      "level": "paired same-case predictions with sampling weights"
+    }
+  ],
+  "relations": [
+    {
+      "from": "uk_roc",
+      "to": "uk_thresholds",
+      "type": "threshold selection on a separate validation set; test points shown",
+      "direction": "operating points lie on test ROC"
+    },
+    {
+      "from": "uk_thresholds",
+      "to": "uk_readers",
+      "type": "paired performance comparison",
+      "direction": "AI minus clinical benchmark"
+    },
+    {
+      "from": "uk_inset",
+      "to": "uk_readers",
+      "type": "detail magnification",
+      "direction": "same data"
+    },
+    {
+      "from": "us_rocs",
+      "to": "us_clinical",
+      "type": "weighted paired comparison",
+      "direction": "AI minus clinical benchmark"
+    },
+    {
+      "from": "UK+US training",
+      "to": "UK-only training",
+      "type": "different training cohorts",
+      "direction": "no causal or uncertainty-band relation"
+    }
+  ],
+  "observations": {
+    "whole": "Two adjacent ROC panels share full 0–1 axes. UK panel has inset, three distinct clinical marker shapes, orange AI crosses and delta annotation. US panel has two purple line styles, one clinical benchmark and two AI operating points. No interval bars or confidence band appear in the original graphic.",
+    "detail": "UK gray region is an inset locator, not a confidence region. The inset enlarges near x=.04–.12 and y=.62–.70, identifies i/ii/iii thresholds, and links first-reader point to threshold i with a dashed guide. Crosses are operating points, not error bars.",
+    "transfer_omission": "The new graphic deliberately discards the ROC/inset geometry and uses published Table 2a CIs; no curve coordinates were digitized."
+  },
+  "uncertainty": {
+    "dataset": "data.csv",
+    "source_url": "https://www.nature.com/articles/s41586-019-1799-6/tables/2",
+    "fields": {
+      "estimate": "difference_pp",
+      "lower": "ci_low_pp",
+      "upper": "ci_high_pp",
+      "row": "id",
+      "group": "cohort",
+      "label": "endpoint",
+      "n": "n",
+      "denominator": "denominator"
+    },
+    "estimate": "published AI-minus-clinical-reader absolute difference",
+    "unit": "percentage points",
+    "interval": {
+      "level": 0.95,
+      "definition": "confidence interval on difference, method varies by cohort",
+      "UK": "Wald using Obuchowski variance for paired binomial proportions, adjusted for reader clustering",
+      "US": "bootstrap, 1000 replications, inverse probability weighted observations; resampling algorithm and interval recipe not specified in inspected Methods"
+    },
+    "paired_comparison": "Same eligible case has an AI prediction and a historical clinical reader decision. Test case is one selected mammogram examination per woman. Different reader identities constitute clusters in UK analysis. The US bootstrap resampling unit is not explicitly described, despite case-level pairing.",
+    "n_definition": "Endpoint-specific cases with available clinical read: cancer cases for sensitivity, non-cancer cases for specificity; unweighted N while US estimates are weighted.",
+    "source_priority": "transcribe publisher Table 2 delta/CI/N columns verbatim in precision; main Results is rounding cross-check",
+    "computed_statistics": "none",
+    "unit_conversion": "percentage difference is represented as percentage points, numeric values unchanged",
+    "selection": "Four main clinical comparisons in Results; two metrics for UK first reader and US clinical reader, system trained on UK+US. No unselected comparison is inferred.",
+    "source_sha256": "02b0b36882176d9b9a1d62de8c360c71dcae5570cad2d0ee57c0a944d494c269",
+    "excluded": "No raw data, error reconstruction, ROC reconstruction, pooling, P values, independent-country ranking, retraining, SD-to-CI conversion or seed inference."
+  },
+  "support_bounds": [
+    "CIs quantify paired endpoint differences in retrospective evaluation; they are neither patient risk nor random-seed variation.",
+    "Cancer follow-up differs: 39 months UK and 27 months US. A common visual scale does not authorize pooling or comparing the country effects.",
+    "The drawn four comparisons use the UK+US-trained system. The original dotted US curve is a separate UK-only-trained generalization experiment, excluded from the redraw.",
+    "One exam per woman does not imply every statistical operation was patient-bootstrap; exact US bootstrap mechanism is not described in inspected Methods.",
+    "UK sensitivity CI includes zero; preserve absence of a superiority claim. Noninferiority margin is distinct and not drawn."
+  ],
+  "source_conflicts": [
+    "Unselected UK consensus specificity row displays equal clinical/AI percentages but delta -3.35; retain source inconsistency without attempting correction.",
+    "UK sensitivity published delta 2.70 is not exactly the subtraction of displayed rounded percentages 65.42 and 62.69. We transcribe delta, not calculate a replacement.",
+    "Main prose rounds UK specificity to 1.2 [0.29,2.1] and US CIs more coarsely; numerical source priority is official Table 2a.",
+    "Public publisher article body is a subscription preview; full Methods read from legal Cambridge accepted manuscript. This mixed-version evidence is declared; Addendum reviewed for updated training details.",
+    "Figure 2 panel titles abbreviate follow-up as 3 years (UK) and 2 years (US); caption and cohort Methods define 39 and 27 months. Redraw uses the precise definitions."
+  ],
+  "layout_rules": [
+    {
+      "rule": "Give every interval an estimand, uncertainty type, confidence level, statistical unit and method; group rows when methods differ.",
+      "condition": "A result panel mixes cohorts, endpoints or analysis methods."
+    },
+    {
+      "rule": "Preserve direct reported difference CIs; marginal metric CIs and rounded point percentages cannot supply paired-difference CIs.",
+      "condition": "Comparing model and clinician on the same cases."
+    },
+    {
+      "rule": "Display endpoint-specific N with its class/level and note whether estimates are weighted.",
+      "condition": "Sensitivity and specificity use different denominator subsets, or enrichment weights are used."
+    },
+    {
+      "rule": "Use a zero reference for differences and show the full interval even when it crosses zero.",
+      "condition": "CIs include both negative and positive differences; do not hide one side or annotate all rows as superiority."
+    },
+    {
+      "rule": "Separate SD across seeds/readers from sampling CI; do not silently convert or treat 1000 resamples as N.",
+      "condition": "Any error bar or uncertainty label."
+    },
+    {
+      "rule": "A source ROC needs threshold-level scores; scalar differences and intervals support a new point+CI graph only.",
+      "condition": "Only aggregate numerical results are legally available."
+    }
+  ],
+  "nontransferable": [
+    "All study-specific values, CIs, sample counts, follow-up periods, weighting and thresholds.",
+    "Retrospective results do not establish clinical deployment benefit, device-general performance or prospective effectiveness.",
+    "Public access to a manuscript does not license redistribution of the original figures.",
+    "The bootstrap interval construction and resampling scheme cannot be invented from a generic bootstrap convention."
+  ],
+  "source_locators": {
+    "numerical": "Publisher Extended Data Table 2a: UK/first reader/sensitivity and specificity; USA/reader/sensitivity and specificity; delta, 95% CI and N columns.",
+    "clinical_results": "Accepted PDF p4 lines 107–134.",
+    "cohort_unit": "PDF p15 lines 486–495 and p16 lines 521–540: one selected exam per woman and missing clinical-read exclusions.",
+    "weighting": "PDF p17 lines 543–565: inverse probability weighting.",
+    "threshold_selection": "PDF p18 lines 614–626 and p19 lines 628–630.",
+    "statistical_definition": "PDF p21 lines 723–736: UK paired-binomial Wald/Obuchowski and US weighted bootstrap; AUC methods appear immediately before and must not be substituted.",
+    "limitations": "PDF p7–8 lines 247–281: enriched single-centre US data, device concentration, follow-up and clinical-trial limits.",
+    "figure": "Complete PDF p33; caption p13 lines 409–429; UK detail rendered from left half of same page."
+  },
+  "inspection_files": [
+    {
+      "file": ".inspection/mckinney-accepted.pdf",
+      "sha256": "3ffac2531ce8f2c0e51a2c52a17efe4a3466d865862b8689cce423d30e37fac9",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/page33.png",
+      "sha256": "d7ec0c13829ba42968554211af11b2712ca0b15be6206ae104697703678c8086",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/figure2-uk-detail.png",
+      "sha256": "6bbfeb0ba7a7b89314aeed939157a49a5e5a5855d82e5abed9c9fc2e9be872a1",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/table2.jpg",
+      "sha256": "02b0b36882176d9b9a1d62de8c360c71dcae5570cad2d0ee57c0a944d494c269",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/table2.html",
+      "sha256": "0f92a3461b83bf12d66f2ba1ca266384d404004ea0e0112e9f8c19f986fcdca9",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/crossmark.html",
+      "sha256": "5c2a9dd50bb744303de8d0903fd45a836d3d486eddce0d93dbbaf79a07f7d62f",
+      "distribution": "local-only"
+    },
+    {
+      "file": ".inspection/addendum.html",
+      "sha256": "5e9dde36417e51f8d1a8064b724d7bdadb3b3168e3b508256ca62182c43ec407",
+      "distribution": "local-only"
+    }
+  ],
+  "expected_sha256": "a581a9ebcbb022436f4f058dbf6f90ddd3348514d63ed80bead05385fea0c899",
+  "original_figure_count": 1,
+  "table_source_count": 1,
+  "uncertainty_type_rules": [
+    {
+      "type": "across-seed SD",
+      "unit": "independent training runs or seeds",
+      "meaning": "variation of a metric over those runs",
+      "boundary": "Not a patient-sampling CI. Run count cannot replace endpoint N. No run replicates are available in this case."
+    },
+    {
+      "type": "proportion variability / standard error",
+      "unit": "must specify observations, clusters and weighting",
+      "meaning": "An outcome SD, estimator SE and across-replicate SD are different quantities, even when written in percent.",
+      "boundary": "Do not derive an unweighted binomial interval from an aggregate percentage plus N when pairing, reader clustering or sampling weights matter."
+    },
+    {
+      "type": "reader SD",
+      "unit": "readers",
+      "meaning": "between-reader dispersion, distinct from mean-reader or paired-difference CI",
+      "boundary": "The paper has a separate six-reader analysis; its SD cannot be used as any of the four plotted error bars."
+    },
+    {
+      "type": "patient/case bootstrap CI",
+      "unit": "must be stated by source; multiple records must retain patient clustering when applicable",
+      "meaning": "resampling-based uncertainty in a specified estimator",
+      "boundary": "In this paper, one selected case per woman establishes observation level, while the exact US bootstrap algorithm is not described in inspected Methods. Do not promote that inference to an explicit patient-bootstrap recipe."
+    },
+    {
+      "type": "confidence interval",
+      "unit": "estimator-specific",
+      "meaning": "A stated confidence level and construction attached to the exact estimand",
+      "boundary": "The UK difference CI uses Wald/Obuchowski, not the DeLong AUC method. US uses reported bootstrap CI, not an invented percentile or BCa interval."
+    }
+  ],
+  "audit_boundary": "Metadata verification, actual viewing and developer pass states describe specific recorded actions only. They are not independent review approval. Parent-coordinated blind audit must compare the final rendering/caption to source evidence without consulting this card, expected answers or self-review first.",
+  "independent_review_status": {
+    "status": "completed within the four-row published-difference scope",
+    "report": "tests/batches/uncertainty-01/independent-review.json",
+    "report_sha256": "1f246621f281ab2bb45185845f20d7b13145d704f2ec068b0f3ca81ff1e7f278",
+    "blocking": 0,
+    "nonblocking": 0,
+    "limits": "Independent model audit; not a heldout paper, expert review or whole-study acceptance. Initial card pending state retained above."
+  },
+  "independent_review_initial_state": "pending separately; no claim of independent approval in this source card"
+}

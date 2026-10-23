@@ -1,0 +1,97 @@
+{
+  "id": "MCF067-F1",
+  "paper": "DOI:10.18653/v1/2023.emnlp-main.495",
+  "version": "Official ACL Anthology EMNLP2023 PDF, pp7969–7992; retrieved2026-10-15. Bounded notice check, not full version-history review.",
+  "figure": "Whole Figure1 viewed; one partial explanation of later FLAREdirect implicit masked-query iteration. Figures2/3 and Tables7–9 are dependencies, not added units.",
+  "domain": "conditional_forward_retrieval_and_sentence_commit",
+  "figure_types": [
+    "provisional_vs_accepted_text",
+    "conditional_retrieval_and_regeneration",
+    "context_update_and_initialization_exception"
+  ],
+  "card": "cases/MCF067-flare-forward-sentence/MCF067-F1.json",
+  "reading": "Root text PDF2–6,9,14,16; independent source reviewer and released image reader have separate bounded scopes. No code/model/API run or full-paper validation.",
+  "visual": "Whole Figure1 on PDF2; root whole PDF pages2/4/5/14/16, reader/final assessor also page3. Baseline/appearance whole PNG/PDF/static SVG viewed;330×278mm,30textgroups,1008glyphs,8nodes/10relations,min10.5pt.",
+  "semantic_status": "semantic_partial",
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic": "Temporary draft drives query formulation; θ triggers and β masks. Same x and old accepted prefix condition regeneration, only selected sentence appends. First-sentence exception and specific-setting unknowns retained.",
+  "transfer": "Fixed8 independent final evidence assessment supported8/failed0/unassessed0. Native139 each and9 comparison separate.21memberZIP and9input fresh replay reproduce8canonical outputs same host. No new heldout, model reproduction or OS isolation.",
+  "archive": "Official ACL policy identifies2016+ materials CC BY4.0; no separate Figure1 notice found, icon ownership unverified. SourcePDF/pages remain local review. Package only original explanation/code and licensed DejaVu font.",
+  "at_utc": "2026-10-15T13:48:39.407527+00:00",
+  "source_urls": [
+    "https://aclanthology.org/2023.emnlp-main.495/",
+    "https://aclanthology.org/2023.emnlp-main.495.pdf"
+  ],
+  "source_record": "tests/batches/flare-forward-sentence-01/root-source-notes.json",
+  "question": "How does a temporary future sentence trigger retrieval without becoming committed context before it is accepted or regenerated?",
+  "grouping_and_layout": "A central context/draft/decision spine separates direct acceptance on the left from query/retrieval/regeneration on the right. Both branches feed one append operation. An outside right line supplies unchanged context; left continuation updates it after acceptance. These are computational/state relationships, not truth or evidence strength.",
+  "relationship_evidence": "PDF3 §§2.1/2.3 for ordered current-document context; PDF4 §3.2.1 for draft and piecewise acceptance; PDF5 §3.2.2 for independent masking threshold; PDF14 AppendixA for initialization/first-sentence extraction.",
+  "transferable_principles": [
+    "Separate provisional proposals from accepted state and from retrieved evidence.",
+    "Put conditional alternatives before their shared state update; an unaccepted candidate need not enter downstream generation.",
+    "Different thresholds can act on the same probability objects but make different decisions.",
+    "Show initialization exceptions and distinguish a conceptual loop from verified termination code."
+  ],
+  "non_transferable_contents": [
+    "Do not transfer this algorithm’s exact thresholds or masked-query behavior to other RAG methods.",
+    "No source biography verification, query results, factuality guarantee or medical validation.",
+    "Do not infer cumulative document memory from stacked source cards."
+  ],
+  "limitations": [
+    "Prompt3.2 explicit-query y≤t ambiguity retained outside selected variant.",
+    "Table9 combined single/multiple retrieval implementation unknown.",
+    "Empty-query/retrieval, stopping/retry/rounding, code and actual API execution unverified.",
+    "Append-state formula is original explanatory notation, not printed source equation.",
+    "Font/viewer/editor interoperability and journal-specific reduction unverified."
+  ],
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/transfer-before-source.json",
+      "bytes": 6980,
+      "sha256": "cdab30774d8e346a35c1b25dfff7eaf3840ffbf113ba2eec2e45dd235b7295bf"
+    },
+    "exposure_clarification": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/selection-exposure-clarification.json",
+      "bytes": 1278,
+      "sha256": "f38d0bd84ca1771795e4cdd1f05c3d29f324cfded499428e8be165809022930b"
+    },
+    "final_assessment": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/final-assessment-01/assessment.json",
+      "bytes": 18027,
+      "sha256": "88544e600e8d7c9b9196c03cf411e67ab7682ece649f189e44e780b5d02d2bce"
+    },
+    "final_seal": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/final-assessment-01/seal.json",
+      "bytes": 4793,
+      "sha256": "c36c962d041f2bc62b40527750ed0c52cb5a6064973788bc0ab9129c4f080427"
+    },
+    "reader": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/reader-01/seal-stage2.json",
+      "bytes": 7219,
+      "sha256": "3c8cb3e9962ef2ad87bbb29eda44649ce820388da3020d7328fb17673bda187f"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/native-audit-01/seal.json",
+      "bytes": 587,
+      "sha256": "42944afe56a4a9958c78bcf65e3ff38507901376a2ec8299d623a76bf4d99af9"
+    },
+    "package": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/flare-forward-sentence-clean-01.zip",
+      "bytes": 1798857,
+      "sha256": "57f678154f062541093f472bb52d6bc592e67fa6bea0bf0fc87ee4314d96ade2"
+    },
+    "replays": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/root-export-replay-summary-01.json",
+      "bytes": 4206,
+      "sha256": "c0dfce85b7e764cd58b84a311957cb5e939a7f473e7776f60407cd50bb69ef44"
+    },
+    "root_acceptance": {
+      "path": "<SKILL_ROOT>/tests/batches/flare-forward-sentence-01/root-final-readback-01.json",
+      "bytes": 5289,
+      "sha256": "553b0f630de82f4c2c726954c4850d8d140ae98129bf853ff7977e5a618ab923"
+    }
+  },
+  "delivery": "tests/batches/flare-forward-sentence-01/DELIVERY.md",
+  "new_rule_scope": "Prior rules fixed before detailed root reading applied here. Post-assessment wording about provisional/accepted state is not separately validated across another case."
+}

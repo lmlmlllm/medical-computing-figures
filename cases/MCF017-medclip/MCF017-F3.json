@@ -1,0 +1,166 @@
+{
+  "id": "MCF017-F3",
+  "status": "Admitted semantic_partial after finite developer drawing tests",
+  "paper": {
+    "title": "MedCLIP: Contrastive Learning from Unpaired Medical Images and Text",
+    "authors": "Zifeng Wang, Zhenbang Wu, Dinesh Agarwal, Jimeng Sun",
+    "doi": "10.18653/v1/2022.emnlp-main.256",
+    "version": "EMNLP 2022 proceedings, pp.3876–3887; official ACL PDF",
+    "url": "https://aclanthology.org/2022.emnlp-main.256/"
+  },
+  "figure": "Figure 3, whole workflow, printed p3879 / PDF page4",
+  "deduplication_key": "10.18653/v1/2022.emnlp-main.256|EMNLP2022|Figure3",
+  "semantic_status": "semantic_partial",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "eligibility": "Development case, not a reserved holdout. Partial ceiling stated in source-review before specs, renders and controls. Source conflicts persist; own matrix variants are not additional source figures.",
+  "question": "How do medical semantic labels supervise the matching of image and text embeddings when original patient pairing is not required?",
+  "elements_and_relations": [
+    {
+      "visible": "Upper report/text stream feeds Text Encoder then matrix columns labelled v.",
+      "evidence": "Figure3 upper/right; §3.1 Eq2 defines text as t, not v.",
+      "status": "visible source conflict"
+    },
+    {
+      "visible": "Lower image stream feeds Image Encoder then matrix rows labelled t.",
+      "evidence": "Figure3 lower/right; §3.1 Eq1 defines image as v, not t.",
+      "status": "visible source conflict"
+    },
+    {
+      "visible": "Image diagnosis labels and extracted text entities feed semantic target construction.",
+      "evidence": "Figure3 left; §3.2–3.3. Text computational unit is sentence after report splitting.",
+      "status": "supported at paper level"
+    },
+    {
+      "visible": "Label vectors border semantic S; learned embeddings border predicted similarity.",
+      "evidence": "Figure3 central two matrices; Eq3/Eq6.",
+      "status": "target and prediction roles supported; precise operators disputed"
+    },
+    {
+      "visible": "A large double-headed arrow between matrices is labelled Semantic Matching Loss.",
+      "evidence": "Figure3; Eq8–9.",
+      "status": "matching/training relation, not labels being generated from predictions"
+    }
+  ],
+  "layout": {
+    "grouping": "Separated upper text and lower image streams converge in adjacent matrices; colour also associates modality sides. Labels/entities are shown in a separate left construction area.",
+    "transfer": "Name row/column modality and separate target from prediction before choosing a matrix layout; use explicit computations to clarify the central loss.",
+    "omissions": "Projection heads, unit normalization, softmax axes, batch-unit details and optimization stages need methods/code. Figure3 itself does not establish a full data sampler, patient-independent cohort or deployed inference inputs.",
+    "original_assets": "Radiograph thumbnails inspected only as part of original whole figure; no clinical interpretation or copied image pixels in new diagrams."
+  },
+  "conflicts_and_scope": {
+    "symbols": "Figure3 Text Encoder→v and Image Encoder→t oppose §3.1 definitions. Redraw uses explicit modality names.",
+    "axis": "Eq4 normalizes image i over text j, while printed Eq7 denominator uses i. Pinned losses.py:74–84 uses row normalization for both target/prediction and transposes score matrices for reverse direction. This establishes that code subpath, not the publication run.",
+    "label_operator": "Paper Eq3 cosine versus pinned losses.py:49 direct dot product. dataset.py:349–355 stacks labels without normalization in the inspected path; comment about clamp at losses.py:71 is not an executed clamp.",
+    "sampling": "Paper §3.3 says separately sampled modalities; pinned dataset.py:192–216 samples a sentence from the same row report when available, else230–248 samples label-conditioned prompts. Whole-batch combinations do not imply two statistically independent samplers.",
+    "code_branches": "Only both-labels-present, no-text-augmentation soft-loss subpath is drawn. Missing-label hard loss, default augmentation and deployment are outside scope.",
+    "execution": "Six source files read statically; no model, labels, training CSV, weights or original research code executed/downloaded. Fixed commit9c3396f is not established as the published run."
+  },
+  "reading_and_viewing": {
+    "ROOT_read": "PDF p1 abstract/code footnote, p3–5 §3.1–3.3 Eq1–9, full Fig3/caption and adjacent dataset/implementation text; six fixed code files as documented in source-review. Not all experiments/appendix audited.",
+    "ROOT_view": "Actually viewed whole official page4 image1072×1516 in prior development turn; complete Figure3 and caption included. No fresh original view claimed for this integration step.",
+    "preflight": "Separate feasibility reader previously viewed same original whole figure; candidate-medclip.json preserves exact PDF coordinates of axis/symbol issues.",
+    "reviewer_type": "Model execution and developer self-review; not human expert review."
+  },
+  "sources": [
+    {
+      "role": "official paper",
+      "url": "https://aclanthology.org/2022.emnlp-main.256.pdf",
+      "local_path": "feasibility/medclip-acl-2022.pdf",
+      "sha256": "5b1239fd0b2aec285f06412da557983c0cdd27af174d62811c8e28fc406c72c2"
+    },
+    {
+      "role": "whole Figure3 page render",
+      "local_path": "feasibility/medclip-figure3-page4.png",
+      "sha256": "77b1b0f72dd3552595d6f6e6e82262d3ff064003c9a2c94f40f9938fb40a0c72"
+    }
+  ],
+  "code_dependency": {
+    "commit": "9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+    "url": "https://github.com/RyanWangZf/MedCLIP/tree/9c3396f20d5d54e4fae241b8cb06ca45848e98c9",
+    "read_not_run": true,
+    "local_snapshots_not_distributed": true,
+    "files": [
+      {
+        "path": "code/medclip/modeling_medclip.py",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/medclip/modeling_medclip.py",
+        "bytes": 18131,
+        "sha256": "53286d5012eb19591b276bf1d0ea68967f4d202b0e61ae53cdef831e18e43475"
+      },
+      {
+        "path": "code/medclip/dataset.py",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/medclip/dataset.py",
+        "bytes": 25439,
+        "sha256": "9769c7bca5db7ac0cf7b0ecbeffb45ce17e44db65f7c9a30ad188cf9e0793451"
+      },
+      {
+        "path": "code/medclip/losses.py",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/medclip/losses.py",
+        "bytes": 4868,
+        "sha256": "4a53ff81c5dd62cde29e5b4b5d34c1cd41631348c775f1e8896358b413a05fe6"
+      },
+      {
+        "path": "code/examples/run_medclip_pretrain.py",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/examples/run_medclip_pretrain.py",
+        "bytes": 3672,
+        "sha256": "19f11733a077332453fcd9dca0ae2c2e18365de88c17e7e6c74fe637c86cbd37"
+      },
+      {
+        "path": "code/README.md",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/README.md",
+        "bytes": 3156,
+        "sha256": "4f552d69eb10b9005adf94a041c0b731b2479b98e940d9c84a12f94939479a1e"
+      },
+      {
+        "path": "code/setup.py",
+        "url": "https://raw.githubusercontent.com/RyanWangZf/MedCLIP/9c3396f20d5d54e4fae241b8cb06ca45848e98c9/setup.py",
+        "bytes": 1122,
+        "sha256": "4e1a9928dd3e1620abd574dd7009d68f189af25f5288cf2b735a1f1a9c4a033a"
+      }
+    ]
+  },
+  "rights": {
+    "article": "ACL2016+ CC BY4.0 subject to third-party exceptions; https://aclanthology.org/faq/copyright/",
+    "radiographs": "Individual third-party thumbnail rights not established; no source pixels redistributed.",
+    "code": "Tree has no LICENSE; setup.py BSD classifier does not provide full terms. No source code redistributed or imported.",
+    "distribution": "New own diagrams/code/specs and source metadata only; originals excluded."
+  },
+  "local_source_path_base": "tests/batches/multimodal-contrastive-01",
+  "record_pins": {
+    "source-review.md": "df84f586e742d2f37219b292629276539a376398e97887ac308411494e785aee",
+    "figure-plan.md": "b8327be852eca082bd4388077d61d5422a064d44d275d466f97cd85fcd000bf9",
+    "expected.json": "89847a9318a004c543cba979913eb8081676fea56419946cbea23f00f6145838",
+    "verification/baseline-02.json": "880deaef481d6ed6640c8f35b8375bb56051ebbf0d48c4e33207028f8cea7d9b",
+    "verification/visual-review.json": "990acdbffdd6c5e40e5f8672615ac1576c35199336683bbabbf3c60fdfcef164",
+    "controls/scores-first.json": "26af7a7b699221732f0d4807a5659e1715f7f640700f77ff34b802436638fd14",
+    "replay-01/result.json": "a8d9b0bdd434d84872366f2e8c9061d52325914a37c5ce60c6cfc95feb01cb4f"
+  },
+  "transfer_evidence": {
+    "report": "tests/batches/multimodal-contrastive-01/README.md",
+    "requirements": "16 predeclared requirements mapped by developer; source unknowns not made true by drawing tests.",
+    "software": "13/13 grouped checks;90 cells across2 synthetic variants; source-denied replay23/23exports.",
+    "controls": "Known-key numerical controls: correct0 findings,3 wrong operators/axes detected;1 evidence-insufficiency gate undecidable. Not independent model accuracy.",
+    "repairs": "Three repairs24 exports match correct initial; previews actually re-viewed.",
+    "appearance": "Recoloured revision preserves calculations, labels, geometry and caption; preview/full viewed.",
+    "formal_figures": [
+      "author/method",
+      "author/SIMULATED_TEST/initial",
+      "author/SIMULATED_TEST/revised"
+    ]
+  },
+  "limits": [
+    "semantic_partial remains",
+    "not a held-out paper",
+    "no human expert review",
+    "no training or patient audit",
+    "unequal batch is a declared local algebra test, not a published experiment",
+    "no paper performance carried into modified example"
+  ],
+  "source_linked_delivery": {
+    "version": "1.20.0 PREPACKAGE",
+    "report": "tests/batches/spec-evidence-02/README.md",
+    "acceptance_sha256": "1526a4022a22e270aeab296d42729795b8f6f096e22cf28ea64468219b43bec9",
+    "scope": "New metadata delivery; original case reading, visual review, controls and first acceptance remain history. No original-case increment or new independent validation."
+  }
+}

@@ -1,0 +1,1 @@
+Test request fixed before drawing: change prompt encoder from frozen to updated during adaptation. Preserve other data paths. Label this hypothetical, not original MedSAM. No model training and no performance carryover.

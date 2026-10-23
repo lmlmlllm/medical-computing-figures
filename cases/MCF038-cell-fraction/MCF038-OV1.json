@@ -1,0 +1,91 @@
+{
+  "case_id": "MCF038-OV1",
+  "dedup_id": "08023-x|author-FigureMethod.jpg|sha256:15f2478a6c3c21cfa3b7422de6e9930b3d92492030ba352c1c2ed272aa2bf974",
+  "title": "Bulk tissue cell type deconvolution with multi-subject single-cell expression reference",
+  "doi": "10.1038/s41467-018-08023-x",
+  "source_url": "https://xuranw.github.io/MuSiC/articles/MuSiC.html",
+  "source_figure": "author-hosted overview, not verified journal Figure1",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 0,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Current author tutorial and code operations; journal full methods/caption unavailable",
+    "visual": "Whole1727x952 author-hosted overview actually viewed; no numerical digitization",
+    "archive": "link_only originals; own code, figures and selected evidence"
+  },
+  "question": "How do multi-subject reference information and staged estimation lead to cell-type proportions, and where do denominator assumptions enter?",
+  "elements": [
+    {
+      "id": "reference",
+      "role": "Three schematic subjects with colored cell clusters",
+      "source": "author overview left"
+    },
+    {
+      "id": "mean-variance",
+      "role": "Across-subject mean/variance matrices and gene weights",
+      "source": "author overview center; tutorial basis outputs"
+    },
+    {
+      "id": "hierarchy",
+      "role": "Cluster-level to within-cluster estimation",
+      "source": "author overview two-stage tree and tutorial"
+    },
+    {
+      "id": "fractions",
+      "role": "Illustrative per-sample type proportions",
+      "source": "author overview right; not numerical observations"
+    }
+  ],
+  "relations": [
+    {
+      "from": "subjects",
+      "to": "mean/variance",
+      "type": "reference aggregation",
+      "condition": "biological subject identity retained",
+      "source": "author tutorial/overview"
+    },
+    {
+      "from": "gene variability",
+      "to": "gene weights",
+      "type": "estimation weighting",
+      "condition": "current full toolkit; not run in local simple test",
+      "source": "author tutorial and analysis.R"
+    },
+    {
+      "from": "theta and size S",
+      "to": "design D",
+      "type": "column scaling",
+      "condition": "type IDs aligned; proxy and measurement assumptions explicit",
+      "source": "construct.R418-460 at pinned commit"
+    },
+    {
+      "from": "raw NNLS coefficients",
+      "to": "closed cell fractions",
+      "type": "normalization",
+      "condition": "size-scaled design and declared included-type denominator",
+      "source": "analysis.R33-75 at pinned commit"
+    }
+  ],
+  "visual_design": "Overview groups reference preparation and recursive estimation into a left-to-right pipeline. Type colors persist across sketches and outputs; arrows mean calculation, not biological causality. Local drawing adds explicit input matrices, separate raw-coefficient paths and comparative fractions rather than importing schematic bar values.",
+  "gaps": [
+    "Original journal full text/caption inaccessible; figure identity not matched",
+    "Original2019 code version not audited; current2024 toolkit includes newer interfaces",
+    "Overview does not itself show size correction",
+    "No biological data, full toolkit run, uncertainty estimation or clinical validation"
+  ],
+  "license": "Original author image and code remain local reference only; no third-party file redistributed. Image license not inferred from toolkit GPL notice.",
+  "notice_scope": "Bounded publisher/PubMed search, no linked notice encountered; not exhaustive",
+  "test_limits": [
+    "Small complete-gene unweighted linear model",
+    "Executor-authored development tests; not held-out or expert verification",
+    "All three incorrect fraction paths can preserve the exact bulk fit"
+  ],
+  "transfer_entry": "tests/batches/cell-fraction-01/DELIVERY.md",
+  "evidence_pins": {
+    "checkpoint-source-02.json": "2aa2cc60e4ae49b113d82a9a0e4da7699af6b112b59c50d47ebf9fed08c67b69",
+    "source-notes-01.md": "98551580ffeb2b5516e876171903ae76f8b215737cbcd05ae020e252ef102a32",
+    "task-definition-02.json": "b9118121543eef7289042ae5d67efc06ed76c6b43c8cc9c9bb3f123f17d547ba",
+    "acceptance.json": "8e9d3faa1dbc4956e9e5953c10202877e1801a6fb131349a66ead53d94a93729",
+    "visual-review-02.json": "c423ef6ea2382e04246c38b8dafbb3a56249aa5679fe57a11df2c0461e998e87"
+  }
+}

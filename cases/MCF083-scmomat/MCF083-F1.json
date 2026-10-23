@@ -1,0 +1,411 @@
+{
+  "id": "MCF083-F1",
+  "revision": "whole-transfer-01",
+  "created_utc": "2026-10-19T07:32:54.755367+00:00",
+  "status": "complete_whole_figure_joint_verification_at_declared_abstraction",
+  "semantic_status": "full_joint_verified",
+  "original_figure_units": 1,
+  "fully_verified_case_units": 1,
+  "partial_case_units": 0,
+  "role": "locally_undeveloped_paper_transfer_under_unchanged_P1",
+  "new_case_units": 1,
+  "new_paper_units": 1,
+  "paper": {
+    "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+    "doi": "10.1038/s41467-023-36066-2",
+    "PMCID": "PMC9873790",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9873790/",
+    "version_read": "Version of record published 24 January 2023; Europe PMC JATS PMC9873790.1, retrieved 19 October 2026; publisher CDN original Figure1; supplementary information version accompanying article.",
+    "code_read": false,
+    "model_executed": false
+  },
+  "figure": {
+    "number": "Figure1",
+    "scope": "Whole original both panels with explicitly attributed Methods explanations; source numeric scatter/score marks represented as disclosed schematic roles, not reconstructed empirical coordinates.",
+    "original_entity_groups": 42,
+    "original_relation_groups": 16,
+    "delivered_objects": 75,
+    "delivered_relations": 23,
+    "source_notes": 12,
+    "active_source_bindings": 163
+  },
+  "scientific_question": "How does a connected mosaic of observed batch/modality matrices share cell and feature factors, then use cluster-conditioned retraining to derive feature scores and marker-based annotation?",
+  "semantic_readback": {
+    "inputs": "Four batches by protein/gene/region modalities; P1/P3,G1/G3/G4,R2/R4 observed; five absent matrices are missing, not zero. Same-batch cell factors and same-modality feature factors shared.",
+    "factorization": "Generic X cells-by-features approximated by alpha Ccell Sigma CfeatT plus broadcast cell/feature biases. Generic association is distinct from joint effective shared Sigma plus matrix-specific residual Delta alias.",
+    "initial_fit": "Initial cell/feature factors are simplex-valued; initial d need not be cluster count. Cell factors feed normalized/pruned neighborhood graph, UMAP and Leiden roles.",
+    "retraining": "Cluster labels initialize one-hot cell factors that are held fixed; remaining parameters are retrained. Marker scores Mfeat=Cfeat SigmaT use retrained feature factors and shared association, not matrix-specific residual.",
+    "outputs": "Feature embedding, cluster feature scores, top protein/gene/region-or-motif markers and annotation back to cell clusters; six displayed labels are marker groups by cell type, not molecular-marker identities.",
+    "conditions": "Connected entity graph required; source-defined pseudo-count bridges support disconnected layouts and may strengthen connected layouts. Initial-versus-retraining dimensions distinguished. Eq1 nonnegative/Eq2 strict-positive simplex boundary retained; no model/score/biological validation run."
+  },
+  "design": {
+    "canvas": {
+      "background": "#ffffff",
+      "height_pt": 1640,
+      "origin": "top-left",
+      "raster_dpi": 144,
+      "unit": "pt",
+      "width_pt": 1900
+    },
+    "primitives": 166,
+    "text_primitives": 94,
+    "minimum_text_pt": 18,
+    "scope": "Editable SVG text/vector primitives, vector PDF and PNG. Actual whole-page/zoom review; no target-journal-width print proof or arbitrary editor roundtrip."
+  },
+  "controlled_assessment": {
+    "score": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/score-01.json",
+      "bytes": 104763,
+      "sha256": "459b328d9c2607a681215bf725c6204109d0dc30a863372de479502ff90db5aa"
+    },
+    "root_readback": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/root-score-readback.json",
+      "bytes": 5565,
+      "sha256": "6fb31b6becd752c881d31f8fd3492b34a8dfc1abf036fc2265ec4076ad052945"
+    },
+    "inventory_claims": 297,
+    "claims_by_stage": {
+      "image_only": 129,
+      "source_aware": 136,
+      "insufficient_packet_only": 32
+    },
+    "support_counts": {
+      "supported_at_available_stage": 297
+    },
+    "source_aspects": {
+      "detection": {
+        "level": "full",
+        "points": 2
+      },
+      "localization": {
+        "level": "full",
+        "points": 2
+      },
+      "explanation": {
+        "level": "full",
+        "points": 2
+      },
+      "original_repair_proposal": {
+        "level": "partial",
+        "points": 1
+      }
+    },
+    "PNG_source_fidelity": "not_assessable; correct abstention, no later source or key backfill",
+    "correct_control": {
+      "candidate": "B",
+      "targeted_false_positive_present": false,
+      "other_established_unsupported_scientific_visual_families": []
+    },
+    "insufficient_control": "known packet content retained; hidden determining properties remain unknown; no method guess",
+    "original_proposal_partial_reason": "The original proposal supplies the correct fixed-cell authority change, coordinates the two visible titles with the caption, and names the important states/relations to preserve. It does not explicitly require propagation into all affected actual exports and verification of their synchronized contents. That material output-closure omission prevents full credit under the frozen rubric.",
+    "later_actual_repair_credit": false,
+    "provenance_support_boundary": "Cobolt scorer retains 33 historical-access/crop-byte claims as not independently assessable. scMoMaT scorer supports provenance only at supplied-access-receipt level, not as independent forensic proof. Retain both judgments and do not pool their status counts as a comparable accuracy statistic.",
+    "denominator": {
+      "planned_transfer_papers": 2,
+      "this_paper": 1,
+      "controlled_error_families": 1,
+      "correct_controls": 1,
+      "insufficient_controls": 1,
+      "claims_checks_stages_repairs_replays_not_independent_trials": true
+    }
+  },
+  "actual_repair": {
+    "root_key_informed": true,
+    "source_authority": "Reviewed source-derived science01 restored the altered authority; correct scene/output not copied as repair.",
+    "all14_bundle_and5_prepare_match_correct": true,
+    "all8_actual_repaired_exports_match_correct": true,
+    "later_final_refinement": "Source-specific marker-group terminology clarified in scene/caption/spec/source note;165otherprimitives unchanged.",
+    "original_reader_proposal_not_backfilled": true
+  },
+  "acceptance": {
+    "native_checks": 16541,
+    "native_all_passed": true,
+    "actual_whole_detail_PNG_PDF": "root and independent final visual accepted",
+    "ZIP_members": 39,
+    "prepared_byte_matches": 5,
+    "export_byte_matches": 8,
+    "subprocesses_exit0": 6,
+    "actual_final_ZIP_extracted": true,
+    "same_host": true,
+    "OS_sandbox": false,
+    "cross_platform_tested": false
+  },
+  "protocol_execution": [
+    {
+      "id": "T01",
+      "execution": "completed_with_stated_scope",
+      "result": "P0 then P1 before fixed two-paper selection; authored-record search found no prior local use. Foundation-model unseen not asserted."
+    },
+    {
+      "id": "T02",
+      "execution": "completed_with_stated_scope",
+      "result": "Whole original Figure1 both panels and necessary detail actually viewed; complete caption/Methods/supplement scope in source registry and prelayout access."
+    },
+    {
+      "id": "T03",
+      "execution": "completed_with_stated_scope",
+      "result": "Source-first stable whole inventory mapped bidirectionally to scientific/native objects, including repeated identities and equivalent groupings. Unknown exact formulas are not certified."
+    },
+    {
+      "id": "T04",
+      "execution": "completed_with_stated_scope",
+      "result": "Versioned source notes and precise locators; all active source pointers resolve within delivered figure_spec and equal bundle; scientific support reviewed separately."
+    },
+    {
+      "id": "T05",
+      "execution": "completed_with_stated_scope",
+      "result": "Inputs, stages, identities, conditions, unknowns and excluded inferences retained; no empirical outputs invented."
+    },
+    {
+      "id": "T06",
+      "execution": "completed_with_stated_scope",
+      "result": "Science01 spec/caption/coverage before case layout. All subsequent source-specific/layout edits retained as new versions."
+    },
+    {
+      "id": "T07",
+      "execution": "completed_with_stated_scope",
+      "result": "Frozen producer, independent inspector, replay driver, rules, fonts and installed runtime pins unchanged. Preexport expectations from sealed scene/source fonts before actual export."
+    },
+    {
+      "id": "T08",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual final SVG/PDF native geometry, paths, text origins, glyph/font mapping and scientific bindings checked under frozen support/tolerances."
+    },
+    {
+      "id": "T09",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual final PNG and independent PDF whole/detail rasters viewed by root and independent reviewer; final blocking visual findings resolved."
+    },
+    {
+      "id": "T10",
+      "execution": "completed_with_stated_scope",
+      "result": "One shared scientific-error family, neutral correct and genuinely insufficient controls fixed before candidate rendering. Multiple manifestations not independent trials."
+    },
+    {
+      "id": "T11",
+      "execution": "completed_with_stated_scope",
+      "result": "Fresh image reader first saw only neutral PNGs, sealed raw, then authorized full original/source/captions and sealed second raw. No key or policy given to reader."
+    },
+    {
+      "id": "T12",
+      "execution": "completed_with_stated_scope",
+      "result": "Different fresh reader received only genuinely incomplete anonymous packet with removed determining inputs; full graphs/captions/source/key withheld."
+    },
+    {
+      "id": "T13",
+      "execution": "completed_with_stated_scope",
+      "result": "Scorer policy-first receipt; C and all image/source material claims classified/sealed before explicit key release and key-access receipt."
+    },
+    {
+      "id": "T14",
+      "execution": "completed_with_stated_scope",
+      "result": "Completed separate aspect scores and all-claim support ledger. Original partial proposal/unknown/unsupported outcomes retained, no composite accuracy. See controlled_assessment."
+    },
+    {
+      "id": "T15",
+      "execution": "completed_with_stated_scope",
+      "result": "Actual altered scientific authority repaired from reviewed source; dependent scene/spec/caption/native index/manifests regenerated, all8 outputs byteequal correct control before any later explicit refinement; native and actual visual rechecked. No proposal backfill."
+    },
+    {
+      "id": "T16",
+      "execution": "completed_with_stated_scope",
+      "result": "Final39-member ZIP explicit whitelist:27required+11authored evidence+manifest; original article media/fulltext/cache/screenshots excluded; licenses and active dependencies provided."
+    },
+    {
+      "id": "T17",
+      "execution": "completed_with_stated_scope",
+      "result": "Final exact ZIP hash verified, really extracted to fresh directory, own packaged driver/producer in fresh processes;5prepare+8exports byteequal,6subprocesses exit0, markeronce, package unchanged."
+    },
+    {
+      "id": "T18",
+      "execution": "completed_with_stated_scope",
+      "result": "Failed candidate data-status assembly and all source/layout/visual revisions retained. No outcome-conditioned generic rule/tool/tolerance changes; finite samehost/file-format scope only."
+    }
+  ],
+  "failure_history": [
+    "construction01 used unsupported controlled-test-altered data status; frozen validator rejected. Construction02 uses already-supported synthetic-test. Generic validator/rules unchanged; old failed data retained.",
+    "All case-specific source/layout revisions and earlier raw/scoring records remain immutable. No success-conditioned replacement of either fixed target."
+  ],
+  "limitations": [
+    "Exactly one controlled family with one correct and one insufficient control on this paper; related stages/claims/checks/glyphs/repairs/replays do not increase independent sample counts.",
+    "Source scientific unknowns remain unknown; no author-code audit, original model/experiment replication, new numerical or biological result, expert acceptance, clinical claim, general accuracy or model-weight training.",
+    "Artifact replay is the pinned samehost Darwin environment; startup isolation only, no OSsandbox or crossplatform result. Stable full-skill distribution remains1.44.0; these caseZIPs are not a new whole-skill release."
+  ],
+  "evidence": {
+    "protocol": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/protocol-01.json",
+      "bytes": 20247,
+      "sha256": "2f2c02a3c37d44a52fc370573b55f51de9dd876fb4601588b0537209474b73bb"
+    },
+    "P1": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/freeze-01/P1-freeze.json",
+      "bytes": 24175,
+      "sha256": "ae56894949b791607ea7562cc45bc6003c86eeea25ac6d6effe50feb516dbc4b"
+    },
+    "selection": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-multimodal-transfer-01/selection-01.json",
+      "bytes": 3575,
+      "sha256": "4671613b07484032725bd43a72b54b9a649160cbbbbe64cac1dfe03272c8553f"
+    },
+    "source_registry": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/source-01/registry-01.json",
+      "bytes": 6047,
+      "sha256": "139144db4b8f1a47e38974a8d5722831b3c4e319aac1956ba83d78d7fdd1b636"
+    },
+    "original_figure": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/source-01/original-figure1.png",
+      "bytes": 217826,
+      "sha256": "0912d0adf56b0dc4a6a027d4ef76d3f23f253ef54366a31bc59e44855d6e84be"
+    },
+    "primary_text": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/source-01/primary-europepmc.xml",
+      "bytes": 211292,
+      "sha256": "854287fea5a77d4382e9354b126b80860e1e01ef5c43ff5b1d42c33487c31df9"
+    },
+    "prelayout_spec": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/science-01/scientific-spec.json",
+      "bytes": 47542,
+      "sha256": "3a0a802c4adf0081910cdaf5fe2ff61ed1ae2a17df9c10a22e32c0176dbafdc5"
+    },
+    "prelayout_access": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/science-01/prelayout-access-01.json",
+      "bytes": 3194,
+      "sha256": "144830c07e0a1556ee64c51b5ba9bb507bcbbaa9f7965591a26dd5c8ca332f88"
+    },
+    "whole_inventory": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/science-01/coverage-map.json",
+      "bytes": 26576,
+      "sha256": "6fb845e67a4a58e884b57cc567a871cc570dc5f5c7de0de72c4b79beed317367"
+    },
+    "source_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/science-review-01/review.json",
+      "bytes": 3479,
+      "sha256": "44e10f70c080a765af92ecb0b6f73b8e5f4f26830b8ff0be0667440f30f43625"
+    },
+    "current_science_review": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/science-02/review-and-change.json",
+      "bytes": 5946,
+      "sha256": "4fb15ec1691aa4cebdeb855c060d175058e88a389cdb4d122a517fb560de46e6"
+    },
+    "preexport": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/pre-export-expectations.json",
+      "bytes": 6913,
+      "sha256": "1b0eca48029d9fdac3a69e07201c7268a150e2b3d1f2d0000163cb4375eaef6a"
+    },
+    "layout_map": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/layout-04/mapping.json",
+      "bytes": 59279,
+      "sha256": "919079161cf539075a25ada7243c99f1dd8d2a73e564812a651a0c9ee90d8d36"
+    },
+    "native": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/native-01/report.json",
+      "bytes": 1323845,
+      "sha256": "9ca8538b2452800b3e0ab7c2bdf9d837551b5f7dd188a40ca5c5fa290b9891ac"
+    },
+    "root_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/visual-01/root-review.json",
+      "bytes": 3292,
+      "sha256": "8b1685e0d2884fad59429d86865af17a1723815f4834f011841a3fc8bf1cdd6d"
+    },
+    "independent_visual": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/final-visual-review-02/review.json",
+      "bytes": 9817,
+      "sha256": "a0f2b4e86631df7d4a478085db7428b4b674ef09e0168073ab2eb18305a91c96"
+    },
+    "delivered_sources": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/delivered-dependency-check.json",
+      "bytes": 24034,
+      "sha256": "8833ee4229d7d62fc341b2df6659190c68d1970e157f416bd269a0070464bc99"
+    },
+    "controlled_input_failure_history": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/construction-02/input-assembly-02.json",
+      "bytes": 5329,
+      "sha256": "8c2dda216717a77ecab042f59d80f131d1befc5d5115f06ce0d34ea1d432ef94"
+    },
+    "controlled_pair": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/construction-02/pre-export-pair-diff.json",
+      "bytes": 584,
+      "sha256": "e582559ba0f952832ff7e749e4ea570a2219e165117d2307ae1d11276c3c808c"
+    },
+    "image_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/image-stage-01/reader/raw-report.md",
+      "bytes": 7439,
+      "sha256": "6748166812081838564a7f138a7a11cd45899354d34cc2c8afba54e9f9d216ea"
+    },
+    "source_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/source-stage-01/reader/raw-report.md",
+      "bytes": 8467,
+      "sha256": "2b3c77cc2b420d6231b04eb96420f03139b48dc044c453141295f48fb812337c"
+    },
+    "insufficient_raw": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/insufficient-01/reader/raw-report.md",
+      "bytes": 1325,
+      "sha256": "30eb60356f57fe97ddb39538c50796a22167f7815956a9ecf79f9bd9bf31fafe"
+    },
+    "prekey_image_source": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/prekey-image-source.json",
+      "bytes": 187885,
+      "sha256": "e3e0607d6fa87a36d454b534c2f82212f962ebc51fb3585f5b916b4adf6a5fbd"
+    },
+    "prekey_insufficient": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/prekey-insufficient.json",
+      "bytes": 23930,
+      "sha256": "af8f2683b0f141912cf873b34b5c1cbf35d25a1c0578d4a5bbf1a92549ff9b38"
+    },
+    "key_release": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/key-release-01.json",
+      "bytes": 5477,
+      "sha256": "1314a74d765aa63e80959854afd1f403d8cf8298c0ce7d4242cbcab05e8e2d70"
+    },
+    "score": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/score-01.json",
+      "bytes": 104763,
+      "sha256": "459b328d9c2607a681215bf725c6204109d0dc30a863372de479502ff90db5aa"
+    },
+    "score_root_readback": {
+      "path": "<SKILL_ROOT>/tests/blind/mcf-20261019-03/assessment-01/root-score-readback.json",
+      "bytes": 5565,
+      "sha256": "6fb31b6becd752c881d31f8fd3492b34a8dfc1abf036fc2265ec4076ad052945"
+    },
+    "repair_authority": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/repair-01/repair-authority-and-closure.json",
+      "bytes": 19362,
+      "sha256": "9bbde0ecb90d9130e6ce1825038c0e9ed74703334abed4b1bac178549f8bb078"
+    },
+    "repair_actual_exports": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/repair-01/repair-export-check.json",
+      "bytes": 5961,
+      "sha256": "2d8ea8301298b5e2e72c824236de4f3d99d4b3df737f69369e7249810f942e14"
+    },
+    "zip": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/scmomat-whole-figure1-final-01.zip",
+      "bytes": 2346559,
+      "sha256": "45a9ec2229014bcbcef597229131254ced90c0b62d7c0fd04ff89d3277a8e7d8"
+    },
+    "actual_extraction": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/zip-replay-01/extraction-receipt-01.json",
+      "bytes": 9721,
+      "sha256": "f15fbe35ce0717b884d8d3ad65ea193a42347357097a546a251a5fdacddd02d3"
+    },
+    "actual_replay": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/zip-replay-01/run-01/replay-report.json",
+      "bytes": 35026,
+      "sha256": "30b5db6783bc1665415c25d2d4e6af20835aed797c07dae6faf3b328b3feaba4"
+    },
+    "replay_root_readback": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/zip-replay-01/root-readback.json",
+      "bytes": 2686,
+      "sha256": "6ee23c796ac91166f45c830f4040b7951b7b436290acd899dd4d323732147836"
+    },
+    "terminology_change": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/formal-01/appearance-change.json",
+      "bytes": 4325,
+      "sha256": "788215e4072923f6c498b06c875b778ca42009c8224a15dade19766e623b10fa"
+    },
+    "earlier_visual_finding": {
+      "path": "<SKILL_ROOT>/tests/batches/m2-transfer-scmomat-01/final-visual-review-01/review.json",
+      "bytes": 10119,
+      "sha256": "123042ecc24818e023a821d18e95387b5d836f35733a36e92d4d3785d490719a"
+    }
+  }
+}

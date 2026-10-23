@@ -1,0 +1,191 @@
+{
+  "case_id": "MCF061-F1",
+  "dedup_id": "arXiv:1907.07034|v1|Figure1-whole",
+  "title": "Uncertainty-aware Self-ensembling Model for Semi-supervised 3D Left Atrium Segmentation",
+  "source_url": "https://arxiv.org/abs/1907.07034v1",
+  "source_figure": "Whole Figure1 on PDFp3, counted once; Methods and equations on pp4–6 are dependencies.",
+  "original_figure_units": 1,
+  "original_table_units": 0,
+  "fully_verified_case_units": 0,
+  "partial_case_units": 1,
+  "semantic_status": "semantic_partial",
+  "states": {
+    "reading": "Pinned9-page arXiv v1 text read; relevant Methods pp3–6 directly cross-checked. Formal Springer preview identity only; no source code/weights/data/training or performance reproduction.",
+    "visual": "Whole primary Figure1 and pages4–5 dependencies actually viewed. Original intended/full PNG, PDF and restricted static SVG viewed, then four repaired views; two edited previews and current replay intended/PDF viewed. Ordered independent image/source/repair reviews retained.",
+    "archive": "Primary paper/text/page pixels stay local-review-only. Clean ZIP contains original editable SVG/PDF/PNG, spec/layout/caption, mechanical helpers and attributed DejaVu font/license; no source artwork/code/data/weights."
+  },
+  "question": "How does teacher predictive uncertainty select voxel-level consistency while student optimization and teacher parameter averaging retain distinct objects and supervision domains?",
+  "semantic_spec": "tests/batches/uamt-uncertainty-gating-01/author/production-03/delivery/figure_spec.json",
+  "semantic_inventory": {
+    "objects": 18,
+    "relations": 25,
+    "claims": 5,
+    "visible_literals": 43
+  },
+  "pre_fulltext_rule_snapshot": {
+    "path": "tests/batches/uamt-uncertainty-gating-01/admission-backup-01/references/understanding.md",
+    "sha256": "00af10acae27437b12df5d4ff68ff91a9b32d189a0105360f045c1e5dd020440",
+    "scope": "Exact rule bytes used by selection and independent assessment before this admission updates the live rule file."
+  },
+  "element_groups": [
+    "Labeled/unlabeled input identity, source-specific perturbations, student/teacher parameter states and predictions.",
+    "Same teacher and same volume, stochastic probability samples, pass mean, class entropy and strict per-voxel selector.",
+    "Labeled-only joint cross-entropy/Dice and selected-voxel squared consistency over both training sets.",
+    "Combined student objective, separate loss weighting and teacher EMA from old teacher/current student parameters."
+  ],
+  "source_relations": [
+    {
+      "location": "p3 Figure1/caption, Section2.1 Eq1",
+      "meaning": "Same input under distinct perturbations; labeled supervision versus labeled+unlabeled consistency; same architecture does not tie parameter states."
+    },
+    {
+      "location": "p4 teacher recurrence and Section2.2 Eq2",
+      "meaning": "Parameter EMA differs from T stochastic teacher predictions; mean probabilities over passes before entropy over classes."
+    },
+    {
+      "location": "p4 Eq3",
+      "meaning": "Strict entropy threshold selects the squared-discrepancy numerator and selected-count denominator."
+    },
+    {
+      "location": "p5 Section2.3 and implementation",
+      "meaning": "Joint CE+Dice; dropout on in training/uncertainty, off in testing; T8, alpha0.99; distinct lambda warm-up and binary H range."
+    },
+    {
+      "location": "p6 UA-MT-UN comparison",
+      "meaning": "Standard UA-MT consistency uses both training sets; the unlabeled-only variant is not silently substituted."
+    }
+  ],
+  "visual_design": "A separates prediction and labeled supervision; B orders probability mean, entropy and selection; C expands the selected ratio; D separates student optimization and teacher EMA. Explicit aliases retain one scientific entity across panels. Native math scripts preserve summation domains; labeled-only text sits inside its owning loss box.",
+  "transferable_rules": [
+    "Name update objects and aggregation axes before sharing a visual metaphor: teacher parameters, MC probabilities and uncertainty scores are distinct.",
+    "Preserve noncommuting operation order, selection comparator and denominator; unknown empty-set behavior stays unknown.",
+    "Keep source-standard training domains separate from reported comparison variants.",
+    "Do not identify a teacher consistency target with an MC mean without source support, or infer target correctness from low entropy.",
+    "Editable mathematics needs checked script attachment and actual native baselines, not only flattened text matching."
+  ],
+  "gaps": [
+    "Teacher consistency target f-prime versus MC probability mean numerical/call relationship unspecified; neither equality nor inequality is asserted.",
+    "Empty-selected-set implementation, exact standalone H(t), perturbation draw dependence, teacher initialization/within-step ordering and test model/checkpoint are not specified by inspected evidence.",
+    "Shared student drawing is a network-role abstraction, not proof of one identical stochastic call for both losses.",
+    "Source v1 versus formal full-text equivalence, training code/weights/data/outputs unverified; low entropy is not calibrated correctness and increasing H does not prove monotone accepted counts.",
+    "No new heldout case, human expert review or clinical validation, GUI/browser/editor/physical-print or journal-specific acceptance in this batch."
+  ],
+  "license": "arXiv non-exclusive distribution grant is not general CC reuse permission. Source assets remain local-review-only. Original diagram geometry/explanation; unmodified DejaVu font with notices bundled.",
+  "notice_scope": "No correction/retraction notice observed in inspected arXiv metadata and official publisher preview; not exhaustive clearance.",
+  "transfer_entry": "tests/batches/uamt-uncertainty-gating-01/DELIVERY.md",
+  "test_limits": [
+    "Original24 fixed diagram/evidence checks:24 supported,0 failed,0 unassessed. Source implementation unknowns remain unknown, not verified implementations.",
+    "1120x1590pt explanation plate,43 labels/142 runs/1744 glyphs/46 vectors. Independent native minimum12pt; all49 script runs,78 used codepoints and18 arrowheads checked. Maximum PDF baseline error0.00004883pt and vector error0.00002442pt below0.25pt.",
+    "Initial image-only findings F1–F4 retained, then source-aware repair verified. Same reviewer retest is not another blind sample. Native auditor continues as final assessor with exposure disclosed.",
+    "Production02 pre-export text-overlap rejection and independent audit-code syntax/legend-ID failures retained. Production03 fixes run spacing and line interval without weakening checks.",
+    "Two actual local edits and their outputs checked; changes do not alter the scientific method.",
+    "28-member package,10 canonical outputs including environment byte-exact in author-run same-host OS replay;7 command receipts and40before+40after controls.19 denied protected reads,14 permitted inputs,2 denied writes,4 denied socket connections and1 allowed output write/read per phase. Independent assessment verifies bytes/receipts, not a separate rerun.",
+    "DINO update-object rule was pinned before UA-MT full text and applied to this different medical paper. This is bounded cross-case application, not new heldout/general behavior accuracy. New uncertainty/display rules are post-case summaries awaiting another-case validation."
+  ],
+  "evidence_pins": [
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/protocol.json",
+      "bytes": 6252,
+      "sha256": "b7a227d68009ec1fb87214b6e0a3571b746594ed23680ac9cb2ed4dddd9c908c"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-dino-01/selection-before-fulltext.json",
+      "bytes": 2886,
+      "sha256": "edddd55857065ffa95a3d5440e08c8b09cbef9255d5fac924b63c35514563ba3"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-dino-01/source-access-01.json",
+      "bytes": 2123,
+      "sha256": "04494d56b9adcc13e629c2e40efcedac32fcf6ccba3705c4c601d22b9f7db5c3"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/next-selection-after-dino-01/UA-MT-1907.07034v1-complete-02.pdf",
+      "bytes": 2696358,
+      "sha256": "58ce201498468d9354ddd10fcfb47119888ffe0bf2ac037b2ff24b0d4a92764d"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/science-freeze-03.json",
+      "bytes": 1720,
+      "sha256": "b44c5c7d886375868b219ef66006f905e14777ed5c7b036bfd03bbe0ab1f8111"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/review/science-01/TERMINAL.json",
+      "bytes": 812,
+      "sha256": "6bde286f0625afac2a10948435dd3aba1d33deb54ec3e7de49f0d1fefdb39925"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/review/image-stage1-01/TERMINAL.json",
+      "bytes": 930,
+      "sha256": "06d958bd502b7287c7eab5f4bc52eff94a30fc26f6a1e3a5e301e79c3046c70d"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/review/image-stage2-01/TERMINAL.json",
+      "bytes": 1187,
+      "sha256": "255fb6081a255ef0e94a1d9d10c4c154f30bd82cdfe78a3dad2277f51b6b1df1"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/review/image-repair-01/TERMINAL.json",
+      "bytes": 1213,
+      "sha256": "9df61b8ebfcea8afd6610cb3f5014c6b9d86e47b9c488658a17011e62bd6909a"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/output-audit/independent-native-01/TERMINAL",
+      "bytes": 554,
+      "sha256": "0085db8f4d8ab51e5d2d76a3cc1683ea6f4f8b80b2f5d4fbabf21ffe73db115c"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/final-assessment-01/TERMINAL.json",
+      "bytes": 757,
+      "sha256": "67603adc69d62a05b558cad336a4c78a9ae66f4bdbdfe87fa1cee0eb64a3182e"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/author/production-03/TERMINAL.json",
+      "bytes": 441,
+      "sha256": "3b6d38284fa67505a4706cd8955832459106cb9780e726163723f30ab6f52c48"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/author/edit-probes-02/TERMINAL.json",
+      "bytes": 443,
+      "sha256": "5c32edc239a183a98cc0be17ffd9634188750e9b06f8a6edb7d4aa985c2c3283"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/replay-03/TERMINAL.json",
+      "bytes": 571,
+      "sha256": "2efa357f73fe6d8e4eba7196700be243dd8618444aeefc2ed659e3441e0263bc"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/author/production-03/uamt-uncertainty-gating-clean-03.zip",
+      "bytes": 1746144,
+      "sha256": "ef384dd718708f9d4993e2818cf5c2c4fb13d95c2f266e16fccb052835216373"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/author/production-03/render-01/figure.pdf",
+      "bytes": 35129,
+      "sha256": "cce3818546d2230038354f555856ef6965f88f9e39595c24682ad867d68386ae"
+    },
+    {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-uncertainty-gating-01/author/production-03/delivery/figure_spec.json",
+      "bytes": 51622,
+      "sha256": "d63983b95cac7031399236e0db95823a16ce589f74196835dfceb782cccf4163"
+    }
+  ],
+  "separate_control_test": {
+    "record": "tests/batches/uamt-threshold-direction-control-01/completion-01.json",
+    "report": "tests/batches/uamt-threshold-direction-control-01/README.md",
+    "source_aware": "detection/location/explanation/committedcorrection1/1each;correctcontroltarget/allscientificFP0/1each",
+    "image_only": "detection/location/explanation1/1each;committedcorrection0/1conditional;FP0/1each",
+    "repair": "17inputs/10outputsexact;2actualviews",
+    "original24unchanged": true,
+    "scope": "Same developedcase; notnewheldout/generalaccuracy/expertverification.",
+    "score": {
+      "path": "<SKILL_ROOT>/tests/independent-reading/session-c846a1/scorer-final-01/TERMINAL.json",
+      "bytes": 1397,
+      "sha256": "ffa406aeee53dc75a49a96e0dc4753a77bb43534c8259e0d439f416e16ddb193"
+    },
+    "repair_seal": {
+      "path": "<SKILL_ROOT>/tests/batches/uamt-threshold-direction-control-01/repair-01/TERMINAL.json",
+      "bytes": 1910,
+      "sha256": "25f84f1e8512ad81bafc27937d72b59674c1e9710d68f7f5ee584d49b2c6a9ed"
+    }
+  }
+}
